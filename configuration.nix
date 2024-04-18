@@ -13,6 +13,12 @@
 		./system/users.nix
 		./system/desktop/desktop.nix
 		];
+	programs.nh = {
+		enable = true;
+		clean.enable = true;
+		clean.extraArgs = "--keep-since 7d --keep 3";
+		flake = "/home/judah/NixOS-Config";
+	};
 
 	# Enable automatic login for the user.
 	services.displayManager.autoLogin.enable = true;

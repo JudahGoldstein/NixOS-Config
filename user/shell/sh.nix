@@ -15,7 +15,7 @@ in
 		shellAliases = myAliases;
 		oh-my-zsh = {
 			enable = true;
-			custom = "$./custom";
+			custom = "$HOME/NixOS-Config/user/shell/custom";
 			theme = "gruvbox";
 		};
 	};	
