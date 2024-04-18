@@ -15,7 +15,7 @@ in
 		shellAliases = myAliases;
 		oh-my-zsh = {
 			enable = true;
-			custom = "$HOME/.dotfiles/user/shell/custom";
+			custom = "$./custom";
 			theme = "gruvbox";
 		};
 	};	
