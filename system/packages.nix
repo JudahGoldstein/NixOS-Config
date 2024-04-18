@@ -4,6 +4,9 @@
 	
 	environment.systemPackages = with pkgs; 
 	[
+	#editor
+	micro
+	
 	#downloaders
 	wget
 	curl
@@ -14,6 +17,9 @@
 	noto-fonts
 	noto-fonts-cjk
 	noto-fonts-emoji
+
+	#misc I always want
+	neofetch
 	];
 
 	# List services that you want to enable:
