@@ -1,6 +1,6 @@
 {config, pkgs, ...}:
 let 
-	device = "/dev/vda";
+	device = "/dev/sda";
 	timeout = 3;
 	configurationLimit = 5;
 in
@@ -9,7 +9,7 @@ in
 		loader = {
 			inherit timeout;
 			grub = {
-				enable = true;
+				enable =true;
 				inherit device;
 				useOSProber = false;
 				inherit configurationLimit;	
