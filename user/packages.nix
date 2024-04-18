@@ -5,10 +5,10 @@
 	home.packages = with pkgs; 
 	[
 	micro
-	#jetbrains.idea-ultimate
+	jetbrains.idea-ultimate
 	neofetch	
-	#plover.dev
-	#discord
+	plover.dev
+	discord
 	];
 	#fix for application picker
 	programs.bash.enable = true;
