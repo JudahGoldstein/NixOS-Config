@@ -23,6 +23,4 @@
 			enable = true;
 		};
 	};
-
-		home.packages = with pkgs; [pkgs.gitkraken];
 }
