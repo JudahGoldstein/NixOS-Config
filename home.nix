@@ -10,6 +10,7 @@ in
 	./user/browser/firefox.nix
 	./user/packages.nix
 	./user/git.nix
+	./user/shell/terminal/terminal.nix
 	];
 	# Home Manager needs a bit of information about you and the paths it should
 	# manage.
@@ -21,7 +22,10 @@ in
 	home.file = {};
 
 	home.sessionVariables = {
-		EDITOR = "micro"; #nixvim coming soon i promise
+		EDITOR = "micro"; #nixvim coming soon I promise
+		BROWSER = "firefox";
+		TERMINAL = "kitty";
+		TERM = "kitty";
 	};
 
 	# You should not change this value, even if you update Home Manager. If you do
