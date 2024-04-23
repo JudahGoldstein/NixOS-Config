@@ -25,7 +25,6 @@
         enable = true;
         user = "judah";
     };
-    services.displayManager.
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
