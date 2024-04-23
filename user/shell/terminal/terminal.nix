@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
-
 {
-	imports =
-		[
-			./kitty.nix
-		];
+    imports =
+    [
+    ./kitty.nix
+    ];
 }

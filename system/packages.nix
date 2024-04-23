@@ -1,28 +1,24 @@
 { config, pkgs, ... }:
 {
-	nixpkgs.config.allowUnfree = true;
-	
-	environment.systemPackages = with pkgs; 
-	[
-	#editor
-	micro
-	
-	#downloaders
-	wget
-	curl
-	git
+    nixpkgs.config.allowUnfree = true;
 
-	#fonts
-	nerdfonts
-	noto-fonts
-	noto-fonts-cjk
-	noto-fonts-emoji
+    environment.systemPackages = with pkgs;
+        [
+        #editor
+        micro
 
-	#misc I always want
-	neofetch
-	];
+        #downloaders
+        wget
+        curl
+        git
 
-	# List services that you want to enable:
-	# Enable the OpenSSH daemon.
-	# services.openssh.enable = true;
+        #fonts
+        nerdfonts
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-emoji
+
+        #misc I always want
+        neofetch
+        ];
 }

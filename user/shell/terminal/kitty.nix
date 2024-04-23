@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
-	programs.kitty = {
-		enable = true;
-		theme = "Gruvbox Material Dark Hard";	
-	};
+    programs.kitty = {
+        enable = true;
+        theme = "Gruvbox Material Dark Hard";
+    };
 }
