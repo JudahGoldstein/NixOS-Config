@@ -3,7 +3,7 @@ with lib.hm.gvariant;
 {
     options = {
         gnome.enable = lib.mkEnableOption "gnome";
-        gnome.terminal = lib.mkOption {
+        terminal = lib.mkOption {
             default = "kitty";
             example = "gnome-terminal";
             description = "The terminal emulator to use.";
@@ -41,7 +41,7 @@ with lib.hm.gvariant;
 
                     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
                         binding = "<Super>Return";
-                        command = gnome.terminal;
+                        command = terminal;
                         name = "terminal";
                     };
                 };
