@@ -29,7 +29,7 @@
         pkgs.gnome-connections
         gnome-terminal
         pkgs.gnome-console
-        gnome-tour
+        pkgs.gnome-tour
         ];
     };
 }
