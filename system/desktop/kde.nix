@@ -13,7 +13,6 @@
     [
     konsole
     elisa
-    kwrite
     kwalletmanager
     ];
 
