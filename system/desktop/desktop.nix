@@ -13,5 +13,8 @@
     openbox.enable = lib.mkDefault false;
     xfce.enable = lib.mkDefault false;
 
-    services.xserver.enable = true;
+    services.xserver = {
+        enable = true;
+        excludePackages = [ pkgs.xterm ];
+    };
 }
