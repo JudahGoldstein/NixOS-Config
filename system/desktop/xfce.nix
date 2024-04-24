@@ -5,6 +5,6 @@
     };
     config =  lib.mkIf config.xfce.enable {
         services.displayManager.sddm.enable = true;
-        services.desktopManager.xfce.enable = true;
+        services.xserver.desktopManager.xfce.enable = true;
     };
 }
