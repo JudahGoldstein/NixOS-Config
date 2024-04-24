@@ -8,3 +8,4 @@
         services.xserver.desktopManager.openbox.enable = true;
     };
 }
+
