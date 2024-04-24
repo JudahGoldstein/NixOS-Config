@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }:
+with lib.hm.gvariant;
 {
     options = {
         gnome.terminal = lib.mkOption {
@@ -11,7 +12,7 @@
         home-manager.users.judah = {
             dconf = {
                 enable = true;
-                settings= {
+                settings = {
                     "org/gnome/desktop/interface" = {
                         color-scheme = "prefer-dark";
                         gtk-theme = "Adwaita-dark";
