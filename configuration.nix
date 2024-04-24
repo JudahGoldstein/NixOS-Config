@@ -27,7 +27,7 @@
         user = "judah";
     };
 
-    kde.enable = true;
+    gnome.enable = true;
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
