@@ -13,7 +13,7 @@ in
         };
     };
     config = lib.mkIf config.gnome.enable {
-        config.options.dconf = {
+        dconf = {
             enable = true;
             settings = {
                 "org/gnome/desktop/interface" = {
