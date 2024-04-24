@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, home-manager,... }:
 with lib.hm.gvariant;
 let
     terminal = config.terminal;
