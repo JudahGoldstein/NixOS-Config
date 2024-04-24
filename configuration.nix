@@ -27,7 +27,7 @@
         user = "judah";
     };
 
-    openbox.enable = true;
+    xfce.enable = true;
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
