@@ -8,6 +8,8 @@
     obsidian
     plover.dev
     discord
+    bitwarden-desktop
+    libreoffice
     ];
 
     #fix for application picker
