@@ -1,4 +1,4 @@
-{ config, pkgs, lib, home-manager,... }:
+{ config, pkgs, lib, ... }:
 with lib.hm.gvariant;
 let
     terminal = config.terminal;
@@ -13,7 +13,7 @@ in
         };
     };
     config = lib.mkIf config.gnome.enable {
-        home-manager.users.judah = {
+        config.users.judah = {
             dconf = {
                 enable = true;
                 settings = {
