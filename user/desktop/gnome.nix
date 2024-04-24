@@ -2,6 +2,7 @@
 with lib.hm.gvariant;
 {
     options = {
+        gnome.enable = lib.mkEnableOption "gnome";
         gnome.terminal = lib.mkOption {
             default = "kitty";
             example = "gnome-terminal";
@@ -21,7 +22,7 @@ with lib.hm.gvariant;
                     };
                     "org/gnome/desktop/peripherals/keyboard".numlock-state = true;
                     "org/gnome/desktop/privacy".report-technical-problems = false;
-                    "org/gnome/desktop/wm/keybindings"={
+                    "org/gnome/desktop/wm/keybindings" = {
                         move-to-monitor-down = "@as []";
                         move-to-monitor-left = "@as []";
                         move-to-monitor-right = "@as []";
