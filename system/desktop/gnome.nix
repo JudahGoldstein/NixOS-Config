@@ -7,4 +7,27 @@
         services.xserver.displayManager.gdm.enable = true;
         services.xserver.desktopManager.gnome.enable = true;
     };
+    environment.gnome.excludePackages = with pkgs.gnome;
+    [
+    eog
+    epiphany
+    gedit
+    simple-scan
+    totem
+    yelp
+    evince
+    file-roller
+    geary
+    seahorse
+    gnome-calculator
+    gnome-clocks
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-weather
+    pkgs.gnome-connections
+    gnome-terminal
+    ];
 }
