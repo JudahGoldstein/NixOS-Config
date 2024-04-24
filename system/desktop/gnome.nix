@@ -28,7 +28,7 @@
         gnome-weather
         pkgs.gnome-connections
         gnome-terminal
-        gnome-console
+        pkgs.gnome-console
         gnome-tour
         ];
     };
