@@ -8,7 +8,7 @@ with lib.hm.gvariant;
             description = "The terminal emulator to use.";
         };
     };
-    config = mkIf config.gnome.enable {
+    config = lib.mkIf config.gnome.enable {
         home-manager.users.judah = {
             dconf = {
                 enable = true;
