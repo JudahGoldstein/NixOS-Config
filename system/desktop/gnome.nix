@@ -10,7 +10,7 @@
         [
         eog
         epiphany
-        gedit
+        pkgs.gedit
         simple-scan
         totem
         yelp
