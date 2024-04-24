@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 with lib.hm.gvariant;
+let
+    terminal = config.terminal;
+in
 {
     options = {
         gnome.enable = lib.mkEnableOption "gnome";
