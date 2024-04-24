@@ -2,7 +2,6 @@
 {
     options = {
         gnome.enable = lib.mkEnableOption "gnome";
-        gnome.enable = lib.makeDefault false;
     };
     config = lib.mkIf config.gnome.enable{
         services.xserver.displayManager.gdm.enable = true;
