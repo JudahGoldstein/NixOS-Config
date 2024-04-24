@@ -25,18 +25,18 @@ in
                 "org/gnome/desktop/peripherals/keyboard".numlock-state = true;
                 "org/gnome/desktop/privacy".report-technical-problems = false;
                 "org/gnome/desktop/wm/keybindings" = {
-                    move-to-monitor-down = "'@as []'";
-                    move-to-monitor-left = "'@as []'";
-                    move-to-monitor-right = "'@as []'";
-                    move-to-monitor-up = "'@as []'";
+                    move-to-monitor-down = "@as []";
+                    move-to-monitor-left = "@as []";
+                    move-to-monitor-right = "@as []";
+                    move-to-monitor-up = "@as []";
                     move-to-workspace-left = ["<Shift><Super>Left"];
                     move-to-workspace-right = ["<Shift><Super>Right"];
                     switch-to-workspace-left = ["<Super>Left"];
                     switch-to-workspace-right = ["<Super>Right"];
                 };
                 "org/gnome/mutter/keybindings" = {
-                    toggle-tiled-left = "@as []";
-                    toggle-tiled-right = "@as []";
+                    toggle-tiled-left = ["@as []"];
+                    toggle-tiled-right = ["@as []"];
                 };
                 "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
                 "org/gnome/nautilus/compression".default-compression-format = "'7z'";
