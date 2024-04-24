@@ -1,7 +1,7 @@
 # TODO To hop to bare metal:
-- [ ] Configure bspwm to my liking
 - [ ] Get power managment worked out
 ## TODO After
+- [ ] Configure bspwm to my liking
 - [ ] Get a dynamic theme working with nix colours
 - [ ] Sops-nix for secrets managment
 - [ ] Imperminance 
