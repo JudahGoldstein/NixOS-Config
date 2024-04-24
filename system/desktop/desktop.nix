@@ -3,7 +3,7 @@
     imports =
     [
     ./gnome.nix
-    #./kde.nix
+    ./kde.nix
     ];
     services.xserver.enable = true;
 }
