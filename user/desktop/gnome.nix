@@ -29,6 +29,11 @@ in
                     move-to-monitor-left = "@as []";
                     move-to-monitor-right = "@as []";
                     move-to-monitor-up = "@as []";
+                    switch-to-monitor-down = "@as []";
+                    switch-to-monitor-left = "@as []";
+                    switch-to-monitor-right = "@as []";
+                    switch-to-monitor-up = "@as []";
+
                     move-to-workspace-left = ["<Shift><Super>Left"];
                     move-to-workspace-right = ["<Shift><Super>Right"];
                     switch-to-workspace-left = ["<Super>Left"];
