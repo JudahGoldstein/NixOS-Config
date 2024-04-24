@@ -2,11 +2,6 @@
 {
     options = {
         gnome.enable = lib.mkEnableOption "gnome";
-        gnome.terminal = lib.mkTextOption {
-            default = "kitty";
-            example = "gnome-terminal";
-            description = "The terminal emulator to use.";
-        };
     };
     config = lib.mkIf config.gnome.enable {
         services.xserver.displayManager.gdm.enable = true;
