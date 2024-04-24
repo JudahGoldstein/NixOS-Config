@@ -11,6 +11,7 @@ in
     ./user/packages.nix
     ./user/git.nix
     ./user/shell/terminal/terminal.nix
+    ./user/desktop/desktop.nix
     ];
 
     home.username = username;
