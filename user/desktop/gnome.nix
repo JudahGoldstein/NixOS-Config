@@ -25,10 +25,10 @@ in
                 "org/gnome/desktop/peripherals/keyboard".numlock-state = true;
                 "org/gnome/desktop/privacy".report-technical-problems = false;
                 "org/gnome/desktop/wm/keybindings" = {
-                    move-to-monitor-down = [];
-                    move-to-monitor-left = [];
-                    move-to-monitor-right = [];
-                    move-to-monitor-up = [];
+                    move-to-monitor-down=[];
+                    move-to-monitor-left=[];
+                    move-to-monitor-right=[];
+                    move-to-monitor-up=[];
                     move-to-workspace-left = ["<Shift><Super>Left"];
                     move-to-workspace-right = ["<Shift><Super>Right"];
                     switch-to-workspace-left = ["<Super>Left"];
