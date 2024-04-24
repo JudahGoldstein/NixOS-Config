@@ -13,6 +13,7 @@
     ./system/users.nix
     ./system/desktop/desktop.nix
     ];
+
     programs.nh = {
         enable = true;
         clean.enable = true;
@@ -25,6 +26,8 @@
         enable = true;
         user = "judah";
     };
+
+    gnome.enable = true;
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
