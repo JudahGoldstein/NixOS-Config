@@ -1,11 +1,8 @@
 { config, pkgs, lib, ... }:
 {
     options = {
-        kde.enable =
-            lib.mkEnableOption "kde" {
-                description = "Enable KDE desktop environment";
-                default = false;
-            };
+        kde.enable = lib.mkEnableOption "kde";
+        kde.enable = lib.mkDefault false;
     };
     config =  lib.mkIf config.kde.enable {
         services.displayManager.sddm.enable = true;
