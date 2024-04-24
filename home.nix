@@ -27,6 +27,7 @@ in
         TERMINAL = "kitty";
         TERM = "kitty";
     };
+    terminal = "kitty";
 
     gnome.enable = true;
 
