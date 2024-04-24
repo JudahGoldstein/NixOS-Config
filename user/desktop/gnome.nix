@@ -1,6 +1,13 @@
 { config, pkgs, lib, ... }:
 {
-config = mkIf config.gnome.enable {
+    options = {
+        gnome.terminal = lib.mkOption {
+            default = "kitty";
+            example = "gnome-terminal";
+            description = "The terminal emulator to use.";
+        };
+    };
+    config = mkIf config.gnome.enable {
         home-manager.users.judah = {
             dconf = {
                 enable = true;
