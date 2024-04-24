@@ -12,7 +12,6 @@
     environment.plasma6.excludePackages = with pkgs.kdePackages;
     [
     konsole
-
     elisa
     kwalletmanager
     ];
