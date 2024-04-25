@@ -53,6 +53,10 @@ in
                 	 dynamic-workspaces = true;
                 	 edge-tiling = true;
                 };
+                "org/gnome/desktop/peripherals/touchpad" = {
+                	natural-scroll = false;
+                	two-finger-scrolling-enabled = true;
+                };
                 "org/gtk/gtk4/settings/file-chooser".show-hidden = true;
                 "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
                 "org/gnome/nautilus/compression".default-compression-format = "'7z'";
