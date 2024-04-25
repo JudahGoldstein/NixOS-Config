@@ -4,12 +4,12 @@
         gnome.enable = lib.mkEnableOption "gnome";
     };
     config = lib.mkIf config.gnome.enable {
-        services.xserver.displayManager = {
-	        gdm={
+        services.xserver = {
+	        displayManager.gdm={
 		        enable = true;
 		        wayland = false;
 	        };
-        	gnome.enable = true;
+        	desktopManager.gnome.enable = true;
         };
         environment.gnome.excludePackages = with pkgs.gnome;
         [
