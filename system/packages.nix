@@ -10,7 +10,6 @@
         #downloaders
         wget
         curl
-        git
 
         #fonts
         nerdfonts
