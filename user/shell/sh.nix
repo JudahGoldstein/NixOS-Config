@@ -3,6 +3,7 @@ let
     myAliases = {
         "ll" = "ls -la";
         ".." = "cd ..";
+        "lg" = "lazygit";
     };
 in
 {
