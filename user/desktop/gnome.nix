@@ -13,6 +13,8 @@ in
         };
     };
     config = lib.mkIf config.gnome.enable {
+     	home.packages = with pkgs;
+        [ pkgs.gnome3.gnome-tweaks ];
         dconf = {
             enable = true;
             settings = {
@@ -38,9 +40,19 @@ in
                     toggle-tiled-left = [];
                     toggle-tiled-right = [];
                 };
+                "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+                "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+                	binding=["<Super>Return"];
+                	command="kitty";
+                	name="terminal";
+                }
+                "org/gnome/mutter" = {
+                	 dynamic-workspaces=true;
+                	 edge-tiling = true;
+                };
+                "org/gtk/gtk4/settings/file-chooser".show-hidden = true
                 "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
                 "org/gnome/nautilus/compression".default-compression-format = "'7z'";
-
                 "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
                     binding = "<Super>Return";
                     command = terminal;
