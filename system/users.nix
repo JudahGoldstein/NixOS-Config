@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
-    users.users.judah = {
+    users.users.v14 = {
         isNormalUser = true;
-        description = "judah";
+        description = "Judah (V14)";
         extraGroups = [ "networkmanager" "wheel" "dialout"];
         packages = with pkgs; [];
     };

@@ -11,12 +11,6 @@
         wget
         curl
 
-        #fonts
-        nerdfonts
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-emoji
-
         #misc I always want
         neofetch
         ];
