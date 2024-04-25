@@ -18,7 +18,7 @@
         enable = true;
         clean.enable = true;
         clean.extraArgs = "--keep-since 7d --keep 3";
-        flake = "/home/judah/NixOS-Config";
+        flake = "/home/v14/NixOS-Config";
     };
 
     # Enable automatic login for the user.
