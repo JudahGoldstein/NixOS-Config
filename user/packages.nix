@@ -11,6 +11,7 @@
     bitwarden-desktop
     libreoffice
     plover.dev
+	nerdfonts
     ];
 
     #fix for application picker

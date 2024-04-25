@@ -18,7 +18,7 @@
             };
         };
         homeConfigurations = {
-            judah = home-manager.lib.homeManagerConfiguration {
+            v14 = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [ ./home.nix ];
             };
