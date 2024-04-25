@@ -10,6 +10,7 @@
     discord
     bitwarden-desktop
     libreoffice
+    plover.dev
     ];
 
     #fix for application picker

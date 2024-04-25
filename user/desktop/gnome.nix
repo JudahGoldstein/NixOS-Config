@@ -14,7 +14,10 @@ in
     };
     config = lib.mkIf config.gnome.enable {
      	home.packages = with pkgs;
-        [ pkgs.gnome3.gnome-tweaks ];
+        [ 
+        pkgs.gnome3.gnome-tweaks 
+        pkgs.gnome-extension-manager
+        ];
         dconf = {
             enable = true;
             settings = {
