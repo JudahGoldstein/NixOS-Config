@@ -59,7 +59,8 @@ in
                 };
                 "org/gtk/gtk4/settings/file-chooser".show-hidden = true;
                 "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
-                "org/gnome/nautilus/compression".default-compression-format = "'7z'";
+                "org/gnome/nautilus/compression".default-compression-format = "7z";
+                "show-battery-percentage" = true;
             };
         };
     };
