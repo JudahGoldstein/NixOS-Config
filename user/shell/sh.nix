@@ -4,6 +4,7 @@ let
         "ll" = "ls -la";
         ".." = "cd ..";
         "lg" = "lazygit";
+        "nix-update" = "nh os switch --update && nh home switch --update && nh clean all && sudo nix-store --optimise -v"; #this is definitely not something to keep, but while getting an initial setup it's usefull
     };
 in
 {
