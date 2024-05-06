@@ -12,7 +12,7 @@
     ../../system/packages.nix
     ../../system/users.nix
     ../../system/desktop/desktop.nix
-    ../../system/battery.nix    
+    ../../system/battery/battery.nix
     ];
 
     programs.nh = {
