@@ -14,13 +14,13 @@
         nixosConfigurations = {
             nixos = lib.nixosSystem {
                 inherit system;
-                modules = [ ./configuration.nix ];
+                modules = [ ./hosts/V14/configuration.nix ];
             };
         };
         homeConfigurations = {
             v14 = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
-                modules = [ ./home.nix ];
+                modules = [ ./hosts/V14/home.nix ];
             };
         };
     };
