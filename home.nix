@@ -12,6 +12,7 @@ in
     ./user/git.nix
     ./user/shell/terminal/terminal.nix
     ./user/desktop/desktop.nix
+    ./user/syncthing.nix
     ];
 
     home.username = username;
