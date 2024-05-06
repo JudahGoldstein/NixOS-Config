@@ -4,15 +4,15 @@
     imports =
     [
     ./hardware-configuration.nix
-    ./system/bootloader.nix
-    ./system/networking.nix
-    ./system/localization.nix
-    ./system/io.nix
-    ./system/sh.nix
-    ./system/packages.nix
-    ./system/users.nix
-    ./system/desktop/desktop.nix
-    ./system/battery.nix    
+    ./bootloader.nix
+    ../../system/networking.nix
+    ../../system/localization.nix
+    ../../system/io.nix
+    ../../system/sh.nix
+    ../../system/packages.nix
+    ../../system/users.nix
+    ../../system/desktop/desktop.nix
+    ../../system/battery.nix    
     ];
 
     programs.nh = {
