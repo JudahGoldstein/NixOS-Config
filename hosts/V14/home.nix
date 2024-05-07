@@ -13,6 +13,7 @@ in
     ../../user/shell/terminal/terminal.nix
     ../../user/desktop/desktop.nix
     ../../user/syncthing.nix
+    ../../user/obs.nix
     ];
 
     home.username = username;

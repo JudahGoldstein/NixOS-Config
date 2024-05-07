@@ -12,8 +12,8 @@
     libreoffice
     plover.dev
 	nerdfonts
-	webcamoid
 	zoom
+	easyeffects
     ];
 
     #fix for application picker
