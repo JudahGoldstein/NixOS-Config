@@ -13,6 +13,7 @@
     ../../system/users.nix
     ../../system/desktop/desktop.nix
     ../../system/battery/battery.nix
+	../../system/obs.nix
     ];
 
     programs.nh = {
