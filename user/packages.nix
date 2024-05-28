@@ -4,7 +4,7 @@
 
     home.packages = with pkgs;
     [
-    jetbrains.idea-ultimate
+#    jetbrains.idea-ultimate
     obsidian
     plover.dev
     discord
@@ -12,10 +12,15 @@
     libreoffice
     plover.dev
 	nerdfonts
-	zoom
 	easyeffects
+	zoom-us
+	vlc
+	megasync
+	python3Full
     ];
 
+	programs.vscode.enable = true;
+	
     #fix for application picker
     programs.bash.enable = true;
     targets.genericLinux.enable = true;
