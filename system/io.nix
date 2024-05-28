@@ -10,5 +10,5 @@
         alsa.support32Bit = true;
         pulse.enable = true;
     };
-    services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
 }
