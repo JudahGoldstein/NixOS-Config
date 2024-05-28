@@ -29,6 +29,10 @@
         user = "v14";
     };
 
+	hardware.logitech.wireless = {
+		enable = true;
+		enableGraphical = true;
+	};
     gnome.enable = true;
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
