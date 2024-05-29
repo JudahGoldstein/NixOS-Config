@@ -1,9 +1,9 @@
 { config, pkgs, lib, ... }:
 {
-imports =
+  imports =
     [
-    ./gnome.nix
+      ./gnome.nix
     ];
 
-    gnome.enable = lib.mkDefault false;
+  gnome.enable = lib.mkDefault false;
 }
