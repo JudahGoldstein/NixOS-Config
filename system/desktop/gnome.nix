@@ -1,18 +1,18 @@
 { config, pkgs, lib, ... }:
 {
-    options = {
-        gnome.enable = lib.mkEnableOption "gnome";
+  options = {
+    gnome.enable = lib.mkEnableOption "gnome";
+  };
+  config = lib.mkIf config.gnome.enable {
+    services.xserver = {
+      displayManager.gdm = {
+        enable = true;
+        wayland = false;
+      };
+      desktopManager.gnome.enable = true;
     };
-    config = lib.mkIf config.gnome.enable {
-        services.xserver = {
-	        displayManager.gdm={
-		        enable = true;
-		        wayland = false;
-	        };
-        	desktopManager.gnome.enable = true;
-        };
-        environment.gnome.excludePackages = with pkgs.gnome;
-        [
+    environment.gnome.excludePackages = with pkgs.gnome;
+      [
         eog
         epiphany
         pkgs.gedit
@@ -35,6 +35,6 @@
         gnome-terminal
         pkgs.gnome-console
         pkgs.gnome-tour
-        ];
-    };
+      ];
+  };
 }

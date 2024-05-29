@@ -1,4 +1,4 @@
 { config, pkgs, lib, ... }:
 {
-    programs.obs-studio.enable = true;
+  programs.obs-studio.enable = true;
 }
