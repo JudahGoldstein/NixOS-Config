@@ -6,14 +6,7 @@ in
 {
   imports =
     [
-      ../../user/shell/sh.nix
-      ../../user/browser/firefox.nix
-      ../../user/packages.nix
-      ../../user/git.nix
-      ../../user/shell/terminal/terminal.nix
-      ../../user/desktop/desktop.nix
-      ../../user/syncthing.nix
-      ../../user/obs.nix
+      ../../user/default.nix
     ];
 
   home.username = username;
@@ -33,7 +26,7 @@ in
 
   gnome.enable = true;
 
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
 }
