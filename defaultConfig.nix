@@ -7,7 +7,6 @@
       ./system/io.nix
       ./system/sh.nix
       ./system/packages.nix
-      ./system/users.nix
       ./system/desktop/desktop.nix
       ./system/battery.nix
       ./system/obs.nix
