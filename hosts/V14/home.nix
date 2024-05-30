@@ -6,7 +6,7 @@ in
 {
   imports =
     [
-      ../../user/default.nix
+      ../../defaultHome.nix
     ];
 
   home.username = username;

@@ -5,7 +5,7 @@
     [
       ./hardware-configuration.nix
       ./bootloader.nix
-      ../../default.nix
+      ../../defaultConfig.nix
     ];
 
   # Enable automatic login for the user.
