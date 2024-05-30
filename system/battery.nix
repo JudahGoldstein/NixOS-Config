@@ -10,7 +10,7 @@ with lib;
       };
     };
 
-  config = lib.mkIf config.battery.enable {
+  config = lib.mkIf (config.battery.enable == true) {
     powerManagement.enable = true;
     services.tlp = {
       enable = true;
