@@ -2,15 +2,13 @@
 {
   imports =
     [
-      ./system/networking.nix
-      ./system/localization.nix
-      ./system/io.nix
-      ./system/sh.nix
-      ./system/packages.nix
-      ./system/users.nix
-      ./system/desktop/desktop.nix
-      ./system/battery/battery.nix
-      ./system/obs.nix
-      ./system/nh.nix
+      ./user/shell/sh.nix
+      ./user/browser/firefox.nix
+      ./user/packages.nix
+      ./user/git.nix
+      ./user/shell/terminal/terminal.nix
+      ./user/desktop/desktop.nix
+      ./user/syncthing.nix
+      ./user/obs.nix
     ];
 }
