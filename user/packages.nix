@@ -15,15 +15,7 @@
       zoom-us
       vlc
       megasync
-      python3Full
-      nil
-      nixpkgs-fmt
     ];
-
-  programs = {
-    direnv.enable = true;
-    vscode.enable = true;
-  };
 
   #fix for application picker
   programs.bash.enable = true;
