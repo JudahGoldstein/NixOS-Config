@@ -11,5 +11,6 @@
       ./system/desktop/desktop.nix
       ./system/battery/battery.nix
       ./system/obs.nix
+      ./system/nh.nix
     ];
 }
