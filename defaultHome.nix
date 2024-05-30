@@ -10,5 +10,6 @@
       ./user/desktop/desktop.nix
       ./user/syncthing.nix
       ./user/obs.nix
+      ./user/vscode.nix
     ];
 }
