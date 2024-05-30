@@ -18,8 +18,8 @@ with lib;
     };
 
   config = {
-    powerManagement.enable = if ((config.tlp.enable == true) or (config.power-profiles.enable == true)) then true else false;
-    services.power-profiles-daemon.enable = if ((config.power-profiles.enable == true) and (config.tpl.enable == false)) == true then true else false;
+    powerManagement.enable = if ((config.tlp.enable == true) || (config.power-profiles.enable == true)) then true else false;
+    services.power-profiles-daemon.enable = if ((config.power-profiles.enable == true) && (config.tpl.enable == false)) == true then true else false;
     services.tlp =
       if (config.tlp.enable == true) then {
         enable = true;
