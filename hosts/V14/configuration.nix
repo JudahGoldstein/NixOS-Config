@@ -20,7 +20,6 @@
   };
 
   gnome.enable = true;
-  obs.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
