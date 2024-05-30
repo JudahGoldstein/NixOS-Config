@@ -1,8 +1,5 @@
 { config, pkgs, lib, ... }:
 with lib.hm.gvariant;
-let
-  terminal = config.terminal;
-in
 {
   options = {
     gnome.enable = lib.mkOption {
@@ -48,7 +45,7 @@ in
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           binding = "<Super>Return";
           command = "kitty";
-          name = terminal;
+          name = "terminal";
         };
         "org/gnome/mutter" = {
           dynamic-workspaces = true;

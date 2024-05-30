@@ -22,8 +22,7 @@ in
     TERMINAL = "kitty";
     TERM = "kitty";
   };
-  terminal = "kitty";
-
+  
   gnome.enable = true;
 
   home.stateVersion = "23.11";
