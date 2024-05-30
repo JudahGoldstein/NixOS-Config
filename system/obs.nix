@@ -3,12 +3,12 @@
   options = {
     obs.enable = lib.mkOption {
       type = lib.types.bool;
-      default = false;
+      default = true;
       description = "Enable the OBS Studio streaming software kernel module for virtual video devices.";
     };
   };
 
-  config = {
+  config = lib.mkIf config.obs.enable{
     boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
     boot.kernelModules = [
       "v4l2loopback"
