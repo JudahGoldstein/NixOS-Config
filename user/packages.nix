@@ -4,17 +4,26 @@
 
   home.packages = with pkgs;
     [
+      # Editors
       obsidian
-      plover.dev
-      discord
-      bitwarden-desktop
       libreoffice
+
+      # Audio/Video
+      easyeffects
+      gimp
+      audacity
+      vlc
+
+      # Communication
+      zoom-us
+      discord
+
+      # Security
+      bitwarden-desktop
+      
+      # Misc
       plover.dev
       nerdfonts
-      easyeffects
-      zoom-us
-      vlc
-      megasync
     ];
 
   #fix for application picker
