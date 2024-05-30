@@ -25,6 +25,7 @@ in
   terminal = "kitty";
 
   gnome.enable = true;
+  obs.enable = true;
 
   home.stateVersion = "23.11";
 
