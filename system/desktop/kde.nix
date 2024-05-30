@@ -1,9 +1,13 @@
 { config, pkgs, lib, ... }:
 {
   options = {
-    kde.enable = lib.mkEnableOption "kde";
+    kde.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable KDE Plasma Desktop Environment";
+    };
   };
-  config = lib.mkIf config.kde.enable {
+  config = lib.mkIf (config.kde.enable == true) {
     services.displayManager.sddm.enable = true;
     services.desktopManager.plasma6.enable = true;
 
@@ -15,6 +19,5 @@
         elisa
         kwalletmanager
       ];
-
   };
 }
