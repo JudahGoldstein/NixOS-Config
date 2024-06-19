@@ -12,6 +12,8 @@
   config = {
     home.packages = with pkgs;
       [
+        vscode-fhs
+
         # for python coding
         python3Full
 
@@ -21,11 +23,13 @@
 
         # for android development
         android-tools
+        
+        # for ardunio development
+        arduino
       ];
 
     programs = {
       direnv.enable = true;
-      vscode.enable = true;
     };
   };
 }
