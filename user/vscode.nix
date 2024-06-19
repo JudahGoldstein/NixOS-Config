@@ -18,6 +18,9 @@
         # for nix coding
         nil
         nixpkgs-fmt
+
+        # for android development
+        android-tools
       ];
 
     programs = {
