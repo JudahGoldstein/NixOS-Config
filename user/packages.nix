@@ -20,10 +20,13 @@
 
       # Security
       bitwarden-desktop
-      
+
       # Misc
       plover.dev
       nerdfonts
+
+      # chrome for testing
+      chromium
     ];
 
   #fix for application picker
