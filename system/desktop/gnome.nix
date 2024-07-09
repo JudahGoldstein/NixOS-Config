@@ -16,30 +16,30 @@
       };
       desktopManager.gnome.enable = true;
     };
-    environment.gnome.excludePackages = with pkgs.gnome;
+    environment.gnome.excludePackages = with pkgs;
       [
-        eog
-        epiphany
-        pkgs.gedit
-        simple-scan
-        totem
-        yelp
-        evince
-        file-roller
-        geary
-        seahorse
-        gnome-calculator
-        gnome-clocks
-        gnome-contacts
-        gnome-font-viewer
-        gnome-logs
-        gnome-maps
-        gnome-music
-        gnome-weather
-        pkgs.gnome-connections
-        gnome-terminal
-        pkgs.gnome-console
-        pkgs.gnome-tour
+        gnome.eog
+        gnome.epiphany
+        gedit
+        gnome.simple-scan
+        gnome.totem
+        gnome.yelp
+        gnome.evince
+        gnome.file-roller
+        gnome.geary
+        gnome.seahorse
+        gnome.gnome-calculator
+        gnome.gnome-clocks
+        gnome.gnome-contacts
+        gnome.gnome-font-viewer
+        gnome.gnome-logs
+        gnome.gnome-maps
+        gnome.gnome-music
+        gnome.gnome-weather
+        gnome-connections
+        gnome.gnome-terminal
+        gnome-console
+        gnome-tour
       ];
   };
 }
