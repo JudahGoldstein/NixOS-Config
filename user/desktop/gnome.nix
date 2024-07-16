@@ -41,11 +41,16 @@ with lib.hm.gvariant;
           toggle-tiled-left = [ ];
           toggle-tiled-right = [ ];
         };
-        "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+        "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" ];
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           binding = "<Super>Return";
           command = "kitty";
           name = "terminal";
+        };
+         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+          binding = "<Super>w";
+          command = "plover";
+          name = "plover";
         };
         "org/gnome/mutter" = {
           dynamic-workspaces = true;
