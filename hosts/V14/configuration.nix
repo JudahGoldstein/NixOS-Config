@@ -21,18 +21,12 @@
     user = "v14";
   };
 
-  hardware.logitech.wireless = {
-    enable = true;
-    enableGraphical = true;
-  };
-
   #SSD trimming
   services.fstrim.enable = true;
 
   gnome.enable = true;
 
   programs.nix-ld.enable = true;
-
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
