@@ -4,10 +4,6 @@
 
   home.packages = with pkgs;
     [
-      # Editors
-      obsidian
-      libreoffice
-
       # Audio/Video
       easyeffects
       gimp
