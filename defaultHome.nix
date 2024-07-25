@@ -11,5 +11,6 @@
       ./user/syncthing.nix
       ./user/obs.nix
       ./user/vscode.nix
+      ./user/text-editors.nix
     ];
 }
