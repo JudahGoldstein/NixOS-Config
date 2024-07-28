@@ -23,9 +23,13 @@
 
         # for android development
         android-tools
-        
+
         # for ardunio development
         arduino
+
+        # for go development
+        go
+        
       ];
 
     programs = {
