@@ -4,12 +4,6 @@
 
   home.packages = with pkgs;
     [
-      # Audio/Video
-      easyeffects
-      gimp
-      audacity
-      vlc
-
       # Communication
       zoom-us
       discord
