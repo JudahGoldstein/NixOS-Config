@@ -15,6 +15,12 @@ with lib.hm.gvariant;
         gnome.gnome-tweaks
         gnome-extension-manager
       ];
+
+    #fix for application picker
+    programs.bash.enable = true;
+    targets.genericLinux.enable = true;
+    xdg.mime.enable = true;
+
     dconf = {
       enable = true;
       settings = {
@@ -47,7 +53,7 @@ with lib.hm.gvariant;
           command = "kitty";
           name = "terminal";
         };
-         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
           binding = "<Super>w";
           command = "plover";
           name = "plover";
