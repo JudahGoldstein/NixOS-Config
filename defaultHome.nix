@@ -12,5 +12,6 @@
       ./user/obs.nix
       ./user/vscode.nix
       ./user/text-editors.nix
+      ./user/audio-video.nix
     ];
 }
