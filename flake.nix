@@ -7,8 +7,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -21,8 +23,10 @@
           inherit system;
           modules = [ ./hosts/V14/configuration.nix ];
           specialArgs = {
+            inherit inputs;
             pkgs-unstable = pkgs-unstable;
             nixpkgs.config.allowUnfree = true;
+
           };
         };
       };
