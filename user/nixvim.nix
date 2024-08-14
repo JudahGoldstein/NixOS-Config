@@ -1,16 +1,7 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, nixvim, ... }:
 with lib;{
-  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
-  options = {
-    nixvim.enable = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Enable nixvim";
-    };
-  };
-  config = {
-    programs.nixvim = {
-      enable = true;
-    };
+  imports = [ nixvim.homeManagerModules.nixvim ];
+  programs.nixvim = {
+    enable = true;
   };
 }
