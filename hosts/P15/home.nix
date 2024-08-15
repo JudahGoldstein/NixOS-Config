@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  username = "v14";
+  username = "p15";
   homeDirectory = "/home/" + username;
 in
 {
@@ -20,7 +20,7 @@ in
     TERMINAL = "kitty";
     TERM = "kitty";
   };
-
+  
   gnome.enable = true;
 
   home.stateVersion = "23.11";

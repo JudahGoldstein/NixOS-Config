@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 {
-  networking = {
-    networkmanager.enable = true;
-    hostName = "nixos";
-  };
-
+  networking.networkmanager.enable = true;
   services.ivpn.enable = true;
   environment.systemPackages = with pkgs; [ ivpn ];
 }

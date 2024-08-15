@@ -8,9 +8,9 @@
       ../../defaultConfig.nix
     ];
 
-  users.users.v14 = {
+  users.users.p15 = {
     isNormalUser = true;
-    description = "Judah (V14)";
+    description = "Judah (P15)";
     extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" ];
     packages = with pkgs; [ ];
   };
@@ -18,10 +18,10 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin = {
     enable = false;
-    user = "v14";
+    user = "p15";
   };
 
-  networking.hostName = "v14";
+  networking.hostName = "p15";
 
   #SSD trimming
   services.fstrim.enable = true;
