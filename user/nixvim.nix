@@ -7,11 +7,13 @@ with lib;{
       description = "Enable nixvim";
     };
   };
-  
+
   config = lib.mkIf config.nixvim.enable {
     programs.nixvim = {
       enable = true;
       vimAlias = true;
+      clipboard.providers.xclip.enable = true;
+      colorschemes.gruvbox.enable = true;
     };
   };
 }
