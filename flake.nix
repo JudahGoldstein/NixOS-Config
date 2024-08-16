@@ -70,6 +70,7 @@
             ./hosts/P15/home.nix
             inputs.nixvim.homeManagerModules.nixvim
           ];
+          extraSpecialArgs = { inherit pkgs-unstable; };
         };
       };
     };
