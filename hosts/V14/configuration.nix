@@ -15,6 +15,8 @@
     packages = with pkgs; [ ];
   };
 
+  programs.nh.flake=/home/v14/NixOS-Config;
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin = {
     enable = false;
