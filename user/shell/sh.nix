@@ -10,7 +10,7 @@ let
     "..." = "cd ../..";
     "lg" = "lazygit";
     "v" = "nvim";
-    "nix-update" = "cd ~/NixOS-Config && nh os boot --update && nh home switch && nh clean all --keep 3 && git commit -m 'flake' flake.lock && git push"; #this is definitely not something to keep, but while getting an initial setup it's usefull. should be refacfored into a module.
+    "nix-update" = "cd ~/NixOS-Config && git pull && nh os boot --update && nh home switch && nh clean all --keep 3 && git commit -m 'flake' flake.lock && git push"; #this is definitely not something to keep, but while getting an initial setup it's usefull. should be refacfored into a module.
   };
 in
 {
