@@ -19,12 +19,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }@inputs:
     let
-      lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+
+      lib = nixpkgs.lib;
+
+      pkgs = import inputs.nixpkgs {
+        system = "x86_64-linux";
+      };
+
+      pkgs-unstable = import inputs.nixpkgs-unstable {
+        system = "x86_64-linux";
+      };
+
     in
     {
       nixosConfigurations = {
