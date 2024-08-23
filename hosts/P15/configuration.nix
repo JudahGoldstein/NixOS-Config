@@ -25,17 +25,14 @@
 
   networking.hostName = "p15";
 
-  #SSD trimming
+  # SSD trimming
   services.fstrim.enable = true;
 
-  hardware.nvidia.modesetting.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.prime.sync.enable = true;
-  hardware.nvidia.prime = {
-    nvidiaBusId = "PCI:01:00:0";  # Found with lspci | grep VGA
-    intelBusId = "PCI:00:02:0";  # Found with lspci | grep VGA
-  };
+  # Prime for Nvidia Optimus
+  nvidia-prime.enable = true;
+  nvidia-prime.offload = true;
 
+  # Desktop
   gnome.enable = true;
 
   programs.nix-ld.enable = true;

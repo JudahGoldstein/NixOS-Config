@@ -13,5 +13,6 @@
       ./system/nh.nix
       ./system/logitech.nix
       ./system/keyboard.nix
+      ./system/nvidia-prime.nix
     ];
 }
