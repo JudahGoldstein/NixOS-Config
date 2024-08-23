@@ -14,5 +14,6 @@
       ./user/text-editors.nix
       ./user/nixvim.nix
       ./user/audio-video.nix
+      ./user/gaming.nix
     ];
 }
