@@ -23,8 +23,6 @@ in
   
   gnome.enable = true;
 
-  steam.enable = true;
-
   home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
