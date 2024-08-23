@@ -14,5 +14,6 @@
       ./system/logitech.nix
       ./system/keyboard.nix
       ./system/nvidia-prime.nix
+      ./system/gaming.nix
     ];
 }
