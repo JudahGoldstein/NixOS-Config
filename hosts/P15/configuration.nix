@@ -16,7 +16,7 @@
   };
 
   programs.nh.flake = /home/p15/NixOS-Config;
-  
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin = {
     enable = false;
@@ -27,6 +27,14 @@
 
   # SSD trimming
   services.fstrim.enable = true;
+
+  #mount bulk drive for games
+    fileSystems."/bulk" =
+    {
+      device = "/dev/disk/by-uuid/5ef0952b-b607-40dc-9479-9007dea4252c";
+      fsType = "ext4";
+    };
+
 
   # Prime for Nvidia Optimus
   nvidia-prime.enable = true;
