@@ -25,12 +25,10 @@ with lib;
             multi = [ "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.plus.txt" ];
             scams = [ "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/fake.txt" ];
             threatIntel = [ "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/dnsmasq/tif.txt" ];
-            blacklist = ./blacklist.txt;
           };
           whiteLists = {
             # Piracy is bad kids
             notPiracy = [ "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/anti.piracy.txt" "https://blocklistproject.github.io/Lists/adguard/piracy-ags.txt" ];
-            whitelist = ./whitelist.txt;
           };
           clientGroupsBlock = {
             default = [ "multi" "scams" "threatIntel" "blacklist" ];
