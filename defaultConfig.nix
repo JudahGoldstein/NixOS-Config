@@ -16,5 +16,6 @@
       ./system/nvidia-prime.nix
       ./system/gaming.nix
       ./system/blocky/blocky.nix
+      ./system/arr.nix
     ];
 }
