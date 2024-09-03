@@ -18,9 +18,15 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, disko, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -61,6 +67,20 @@
             nixpkgs.config.allowUnfree = true;
           };
         };
+
+        HS = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/HS/configuration.nix
+            inputs.home-manager.nixosModules.default
+            disko.nixosModules.disko
+          ];
+          specialArgs = {
+            inherit inputs;
+            pkgs-unstable = pkgs-unstable;
+            nixpkgs.config.allowUnfree = true;
+          };
+        };
       };
 
       homeConfigurations = {
@@ -80,6 +100,16 @@
           ];
           extraSpecialArgs = { inherit pkgs-unstable; };
         };
+
+        HS = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./hosts/HS/home.nix
+            inputs.nixvim.homeManagerModules.nixvim
+          ];
+          extraSpecialArgs = { inherit pkgs-unstable; };
+        };
+
       };
     };
 }
