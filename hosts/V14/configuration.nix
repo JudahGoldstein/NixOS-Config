@@ -16,8 +16,6 @@
     hashedPassword = "$y$j9T$IrM25GlvdGjZCy.dbccYA/$mbTqZkDzzrsycms0Lq9bucjfmvJFw0inhzf0DtP1uy9";
   };
 
-  programs.nh.flake=/home/v14/NixOS-Config;
-
   # Enable automatic login for the user.
   services.displayManager.autoLogin = {
     enable = false;
