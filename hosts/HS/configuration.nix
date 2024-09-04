@@ -4,8 +4,8 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./bootloader.nix
       ../../defaultConfig.nix
+      ./disks.nix
     ];
 
   users.users.p15 = {
