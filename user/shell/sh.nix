@@ -23,7 +23,7 @@ in
     shellAliases = myAliases;
     oh-my-zsh = {
       enable = true;
-      custom = "$HOME/NixOS-Config/user/shell/custom";
+      custom = "etc/nixos/shell/custom";
       theme = "gruvbox";
       plugins = [ ];
     };
