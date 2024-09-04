@@ -13,7 +13,6 @@ in
   home.homeDirectory = homeDirectory;
 
   home.file = { };
-  programs.nh.flake=/etc/nixos;
 
   home.sessionVariables = {
     EDITOR = "micro";
