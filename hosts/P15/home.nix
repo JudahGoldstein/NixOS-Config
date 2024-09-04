@@ -12,7 +12,9 @@ in
   home.username = username;
   home.homeDirectory = homeDirectory;
 
-  home.file = { };
+  home.file = { };  
+  programs.nh.flake=/etc/nixos;
+
 
   home.sessionVariables = {
     EDITOR = "micro";
