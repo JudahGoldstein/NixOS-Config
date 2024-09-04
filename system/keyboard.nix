@@ -6,6 +6,8 @@
     [
       via
       vial
+
+      numlockx
     ];
 
   hardware.keyboard.qmk.enable = true;
