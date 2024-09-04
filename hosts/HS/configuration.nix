@@ -22,6 +22,8 @@
     user = "HS";
   };
 
+  gnome.enable = true;
+  
   networking.hostName = "HS";
 
   # SSD trimming
