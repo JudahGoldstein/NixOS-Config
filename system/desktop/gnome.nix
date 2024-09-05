@@ -37,8 +37,6 @@
         gnome.gnome-music
         gnome.gnome-weather
         gnome-connections
-        gnome.gnome-terminal
-        gnome-console
         gnome-tour
       ];
   };
