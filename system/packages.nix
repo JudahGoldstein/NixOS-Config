@@ -13,6 +13,7 @@
       #downloaders
       wget
       curl
+      git
 
       #misc I always want
       neofetch
