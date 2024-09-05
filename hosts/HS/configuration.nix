@@ -8,7 +8,7 @@
       ./disks.nix
     ];
 
-  users.users.p15 = {
+  users.users.hs = {
     isNormalUser = true;
     description = "Judah (HS)";
     extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" ];
@@ -25,6 +25,7 @@
   gnome.enable = true;
   
   networking.hostName = "HS";
+  services.openssh.enable = true;
 
   # SSD trimming
   services.fstrim.enable = true;
