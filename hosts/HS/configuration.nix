@@ -19,7 +19,7 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin = {
     enable = false;
-    user = "HS";
+    user = "hs";
   };
 
   gnome.enable = true;
