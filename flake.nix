@@ -90,6 +90,8 @@
           modules = [
             ./hosts/V14/home.nix
             inputs.nixvim.homeManagerModules.nixvim
+            sops-nix.homeManagerModules.sops
+
           ];
         };
 
@@ -98,6 +100,8 @@
           modules = [
             ./hosts/P15/home.nix
             inputs.nixvim.homeManagerModules.nixvim
+            sops-nix.homeManagerModules.sops
+
           ];
           extraSpecialArgs = { inherit pkgs-unstable; };
         };
@@ -107,6 +111,7 @@
           modules = [
             ./hosts/HS/home.nix
             inputs.nixvim.homeManagerModules.nixvim
+            sops-nix.homeManagerModules.sops
           ];
           extraSpecialArgs = { inherit pkgs-unstable; };
         };
