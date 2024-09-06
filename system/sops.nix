@@ -1,4 +1,4 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs;[ sops ];
+  # environment.systemPackages = with sops-nix;[ sops ];
 }
