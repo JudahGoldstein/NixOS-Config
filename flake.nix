@@ -52,7 +52,6 @@
           ];
           specialArgs = {
             inherit inputs;
-            pkgs-unstable = pkgs-unstable;
             nixpkgs.config.allowUnfree = true;
           };
         };
@@ -66,7 +65,6 @@
           ];
           specialArgs = {
             inherit inputs;
-            pkgs-unstable = pkgs-unstable;
             nixpkgs.config.allowUnfree = true;
           };
         };
@@ -81,7 +79,6 @@
           ];
           specialArgs = {
             inherit inputs;
-            pkgs-unstable = pkgs-unstable;
             nixpkgs.config.allowUnfree = true;
           };
         };
