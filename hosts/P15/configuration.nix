@@ -8,12 +8,15 @@
       ../../defaultConfig.nix
     ];
 
+  sops.secrets.user-password.neededForUsers = true;
+  users.mutableUsers = false;
+
   users.users.p15 = {
     isNormalUser = true;
     description = "Judah (P15)";
     extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" ];
     packages = with pkgs; [ ];
-    hashedPassword = "$y$j9T$iI82A2cddkXao1pEJQOp30$qU46CY2F/iJRwjgi2I4oH4sSwJHUxKBG2nnh.fIUZ95";
+    hashedPasswordFile = config.sops.secrets.user-password.path;
   };
 
   # Enable automatic login for the user.
