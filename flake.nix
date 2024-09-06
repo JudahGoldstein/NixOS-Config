@@ -26,7 +26,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, disko, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, disko, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -39,6 +39,7 @@
       pkgs-unstable = import inputs.nixpkgs-unstable {
         system = "x86_64-linux";
       };
+
     in
     {
       nixosConfigurations = {
@@ -47,6 +48,7 @@
           modules = [
             ./hosts/V14/configuration.nix
             inputs.home-manager.nixosModules.default
+            sops-nix.nixosModules.sops
           ];
           specialArgs = {
             inherit inputs;
@@ -60,6 +62,7 @@
           modules = [
             ./hosts/P15/configuration.nix
             inputs.home-manager.nixosModules.default
+            sops-nix.nixosModules.sops
           ];
           specialArgs = {
             inherit inputs;
@@ -73,6 +76,7 @@
           modules = [
             ./hosts/HS/configuration.nix
             inputs.home-manager.nixosModules.default
+            sops-nix.nixosModules.sops
             disko.nixosModules.disko
           ];
           specialArgs = {
