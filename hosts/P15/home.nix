@@ -11,7 +11,8 @@ in
 
   home.username = username;
   home.homeDirectory = homeDirectory;
-
+  sops-user = username;
+  
   home.file = { };  
 
   home.sessionVariables = {
