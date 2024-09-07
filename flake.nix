@@ -39,7 +39,6 @@
       pkgs-unstable = import inputs.nixpkgs-unstable {
         system = "x86_64-linux";
       };
-
     in
     {
       nixosConfigurations = {
@@ -52,6 +51,7 @@
           ];
           specialArgs = {
             inherit inputs;
+            inherit pkgs-unstable;
             nixpkgs.config.allowUnfree = true;
           };
         };
@@ -65,6 +65,7 @@
           ];
           specialArgs = {
             inherit inputs;
+            inherit pkgs-unstable;
             nixpkgs.config.allowUnfree = true;
           };
         };
@@ -79,6 +80,7 @@
           ];
           specialArgs = {
             inherit inputs;
+            inherit pkgs-unstable;
             nixpkgs.config.allowUnfree = true;
           };
         };
@@ -90,6 +92,7 @@
           ];
           specialArgs = {
             inherit inputs;
+            inherit pkgs-unstable;
             nixpkgs.config.allowUnfree = true;
           };
         };
