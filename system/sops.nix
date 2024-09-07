@@ -35,7 +35,6 @@ with lib;
         path = "/home/${config.name}/.ssh/${config.name}.pub";
         owner = "${config.name}";
       };
-      "public-keys/p15" = {};
     };
   };
 }
