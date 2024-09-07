@@ -117,7 +117,7 @@
           extraSpecialArgs = { inherit pkgs-unstable; };
         };
 
-        hs = home-manager.lib.homeManagerConfiguration {
+        HS = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             ./hosts/HS/home.nix
