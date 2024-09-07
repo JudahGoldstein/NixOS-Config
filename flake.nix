@@ -82,6 +82,17 @@
             nixpkgs.config.allowUnfree = true;
           };
         };
+
+        installer = lib.nixosSystem {
+          modules = [
+            ./hosts/installer/configuration.nix
+            sops-nix.nixosModules.sops
+          ];
+          specialArgs = {
+            inherit inputs;
+            nixpkgs.config.allowUnfree = true;
+          };
+        };
       };
 
       homeConfigurations = {
