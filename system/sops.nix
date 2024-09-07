@@ -19,6 +19,14 @@ with lib;
     };
 
     secrets = {
+      "private-keys/github" = {
+        path = "/home/${config.name}/.ssh/${config.name}";
+        owner = "${config.name}";
+      };
+      "public-keys/github" = {
+        path = "/home/${config.name}/.ssh/${config.name}.pub";
+        owner = "${config.name}";
+      };
       "private-keys/${config.name}" = {
         path = "/home/${config.name}/.ssh/${config.name}";
         owner = "${config.name}";
