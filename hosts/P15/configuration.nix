@@ -9,6 +9,7 @@
     ];
 
   sops.secrets.user-password.neededForUsers = true;
+
   users.mutableUsers = false;
 
   users.users.p15 = {
@@ -17,13 +18,10 @@
     extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" ];
     packages = with pkgs; [ ];
     hashedPasswordFile = config.sops.secrets.user-password.path;
-    openssh.authorizedKeys.keys =
-    [
-      (builtins.readFile ../public-keys/p15.pub)
-    ];
-
   };
 
+  sops-name = "p15";
+  
   # Enable automatic login for the user.
   services.displayManager.autoLogin = {
     enable = false;
