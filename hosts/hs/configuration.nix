@@ -8,7 +8,7 @@
       ./disks.nix
     ];
 
-  name = "HS";
+  name = "hs";
   longName = "Judah (HS)";
 
   gnome.enable = true;
