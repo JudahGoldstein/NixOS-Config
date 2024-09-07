@@ -9,12 +9,17 @@
   };
 
   config = lib.mkIf (config.gnome.enable == true) {
-    services.xserver = {
-      displayManager.gdm = {
+    services = {
+      displayManager.sddm = {
         enable = true;
+        wayland.enable = false;
+        theme = "./sddm-theme/sugar-dark";
+      };
+      xserver.displayManager.gdm = {
+        enable = false;
         wayland = false;
       };
-      desktopManager.gnome.enable = true;
+      xserver.desktopManager.gnome.enable = true;
     };
     environment.gnome.excludePackages = with pkgs;
       [
