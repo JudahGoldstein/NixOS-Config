@@ -23,7 +23,7 @@ with lib;
         path = "/home/${config.name}/.ssh/github";
         owner = "${config.name}";
       };
-      "public-keys/github" = {
+      "public-keys/github" ={
         path = "/home/${config.name}/.ssh/github.pub";
         owner = "${config.name}";
       };
