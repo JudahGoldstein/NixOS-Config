@@ -1,4 +1,4 @@
-{ config, pkgs, modulesPath, ... }:
+{ config, pkgs, modulesPath, lib, ... }:
 let
   aliases = {
     "gethw" = "nixos-generate-config --no-filesystems --dir /mnt && clear && cat /mnt/etc/nixos/hardware-configuration.nix";
@@ -13,8 +13,21 @@ in
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  users.users.nixos.hashedPassword = "$y$j9T$uM8nFY/K.shuMU.2BbMqD0$sc4/phy4qwFiSU/Ydfq4fCDvzIu3IC1DDMM7IEXbDdD";
+  users.users.nixos = {
+    password = "arst";
+    hashedPassword = lib.mkForce null;
+    hashedPasswordFile = lib.mkForce null;
+    initialPassword = lib.mkForce null;
+    initialHashedPassword = lib.mkForce null;
+  };
 
+  time.timeZone = "America/Toronto";
+  i18n.defaultLocale = "en_CA.UTF-8";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "colemak";
+  };
+  
   environment.systemPackages = with pkgs;
     [
       sops
