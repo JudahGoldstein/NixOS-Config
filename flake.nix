@@ -72,7 +72,7 @@
         hs = lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/HS/configuration.nix
+            ./hosts/hs/configuration.nix
             inputs.home-manager.nixosModules.default
             sops-nix.nixosModules.sops
             disko.nixosModules.disko
