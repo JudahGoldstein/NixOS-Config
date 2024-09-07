@@ -1,7 +1,7 @@
 { config, pkgs, modulesPath, lib, ... }:
 let
   aliases = {
-    "gethw" = "nixos-generate-config --no-filesystems --dir /mnt && clear && cat /mnt/etc/nixos/hardware-configuration.nix";
+    "gethw" = "sudo nixos-generate-config --no-filesystems --dir /mnt && sudo cat /mnt/hardware-configuration.nix";
     "getage" = "cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age";
   };
 in
@@ -12,6 +12,8 @@ in
     ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
+
+  services.openssh.enable = true;
 
   users.users.nixos = {
     password = "arst";
@@ -27,7 +29,12 @@ in
     layout = "us";
     variant = "colemak";
   };
-  
+  console.useXkbConfig = true;
+
+  programs.bash = {
+    shellAliases = aliases;
+  };
+
   environment.systemPackages = with pkgs;
     [
       sops
