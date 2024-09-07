@@ -8,12 +8,10 @@
       ./disks.nix
     ];
 
-  name = "p15";
-  longName = "Judah (P15)";
+  name = "HS";
+  longName = "Judah (HS)";
 
   gnome.enable = true;
-
-  networking.hostName = "HS";
 
   # SSD trimming
   services.fstrim.enable = true;
