@@ -69,7 +69,7 @@
           };
         };
 
-        HS = lib.nixosSystem {
+        hs = lib.nixosSystem {
           inherit system;
           modules = [
             ./hosts/HS/configuration.nix
@@ -117,10 +117,10 @@
           extraSpecialArgs = { inherit pkgs-unstable; };
         };
 
-        HS = home-manager.lib.homeManagerConfiguration {
+        hs = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            ./hosts/HS/home.nix
+            ./hosts/hs/home.nix
             inputs.nixvim.homeManagerModules.nixvim
             sops-nix.homeManagerModules.sops
           ];
