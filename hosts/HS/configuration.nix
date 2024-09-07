@@ -8,22 +8,8 @@
       ./disks.nix
     ];
 
-  sops.secrets.user-password.neededForUsers = true;
-  users.mutableUsers = false;
-
-  users.users.hs = {
-    isNormalUser = true;
-    description = "Judah (HS)";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" ];
-    packages = with pkgs; [ ];
-    hashedPasswordFile = config.sops.secrets.user-password.path;
-  };
-
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin = {
-    enable = false;
-    user = "hs";
-  };
+  name = "p15";
+  longName = "Judah (P15)";
 
   gnome.enable = true;
 
