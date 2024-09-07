@@ -1,16 +1,14 @@
 { config, pkgs, ... }:
-let
-  username = "p15";
-  homeDirectory = "/home/" + username;
-in
 {
   imports =
     [
       ../../defaultHome.nix
     ];
 
-  home.username = username;
-  home.homeDirectory = homeDirectory;
+  name = "p15";
+
+  home.username = config.name;
+  home.homeDirectory = "/home/${config.name}";
   
   home.file = { };  
 

@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+with lib;
 {
   imports =
     [
@@ -15,4 +16,10 @@
       ./user/nixvim.nix
       ./user/audio-video.nix
     ];
+  options = {
+    name = mkOption {
+      type = types.str;
+      default = "";
+    };
+  };
 }
