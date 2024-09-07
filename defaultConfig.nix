@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+with lib;
 {
   imports =
     [
@@ -18,5 +19,14 @@
       ./system/blocky/blocky.nix
       ./system/arr.nix
       ./system/sops.nix
+      ./system/user.nix
+      ./system/nix-ld.nix
     ];
+  options = {
+    name = mkOption {
+      type = types.str;
+      default = "";
+    };
+  };
+
 }
