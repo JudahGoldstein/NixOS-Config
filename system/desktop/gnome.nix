@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, pkgs-unstable, ... }:
 {
   options = {
     gnome.enable = lib.mkOption {
@@ -9,18 +9,20 @@
   };
 
   config = lib.mkIf (config.gnome.enable == true) {
-    services = {
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = false;
-        theme = "./sddm-theme/sugar-dark";
+    environment.systemPackages = with pkgs; [ numlockx ];
+    services.xserver = {
+      displayManager = {
+        setupCommands = ''
+          ${pkgs.numlockx}/bin/numlockx on
+        '';
+        gdm = {
+          enable = true;
+          wayland = false;
+        };
       };
-      xserver.displayManager.gdm = {
-        enable = false;
-        wayland = false;
-      };
-      xserver.desktopManager.gnome.enable = true;
+      desktopManager.gnome.enable = true;
     };
+
     environment.gnome.excludePackages = with pkgs;
       [
         gnome.eog
