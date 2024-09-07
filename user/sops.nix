@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
 {
-  optoins = {
+  options = {
     sops-user = mkOption {
       type = types.str;
       default = "";
@@ -9,14 +9,14 @@ with lib;
 
     config = {
       sops = {
-        age.keyFile = "/home/${sops-user}/.config/sops/keys/age/keys.txt";
+        age.keyFile = "/home/${config.sops-user}/.config/sops/keys/age/keys.txt";
 
         defaultSopsFile = "../secrets.yaml";
         validateSopsFiles = false;
 
         secrets = {
-          "private-keys/${sops-user}" = {
-            path = "/home/${sops-user}/.ssh/${sops-user}";
+          "private-keys/${config.sops-user}" = {
+            path = "/home/${config.sops-user}/.ssh/${config.sops-user}";
           };
         };
       };
