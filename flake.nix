@@ -46,7 +46,7 @@
         v14 = lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/V14/configuration.nix
+            ./hosts/v14/configuration.nix
             inputs.home-manager.nixosModules.default
             sops-nix.nixosModules.sops
           ];
@@ -59,7 +59,7 @@
         p15 = lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/P15/configuration.nix
+            ./hosts/p15/configuration.nix
             inputs.home-manager.nixosModules.default
             sops-nix.nixosModules.sops
           ];
@@ -88,7 +88,7 @@
         v14 = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            ./hosts/V14/home.nix
+            ./hosts/v14/home.nix
             inputs.nixvim.homeManagerModules.nixvim
             sops-nix.homeManagerModules.sops
 
@@ -98,7 +98,7 @@
         p15 = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            ./hosts/P15/home.nix
+            ./hosts/p15/home.nix
             inputs.nixvim.homeManagerModules.nixvim
             sops-nix.homeManagerModules.sops
 
