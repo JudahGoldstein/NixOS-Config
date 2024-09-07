@@ -17,6 +17,11 @@
     extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" ];
     packages = with pkgs; [ ];
     hashedPasswordFile = config.sops.secrets.user-password.path;
+    openssh.authorizedKeys.keys =
+    [
+      (builtins.readFile ../public-keys/p15.pub)
+    ];
+
   };
 
   # Enable automatic login for the user.
