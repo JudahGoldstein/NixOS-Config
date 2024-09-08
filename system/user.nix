@@ -18,6 +18,7 @@ with lib;
       hashedPasswordFile = config.sops.secrets.user-password.path;
       openssh.authorizedKeys.keys = [
         config.sops.secrets."public-keys/p15".path
+        config.sops.secrets."public-keys/hs".path
       ];
     };
     services.displayManager.autoLogin = {
