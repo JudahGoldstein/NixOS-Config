@@ -23,7 +23,7 @@ with lib;
         path = "/home/${config.name}/.ssh/github";
         owner = "${config.name}";
       };
-      "public-keys/github" ={
+      "public-keys/github" = {
         path = "/home/${config.name}/.ssh/github.pub";
         owner = "${config.name}";
       };
@@ -31,10 +31,16 @@ with lib;
         path = "/home/${config.name}/.ssh/${config.name}";
         owner = "${config.name}";
       };
-      "public-keys/${config.name}" = {
-        path = "/home/${config.name}/.ssh/${config.name}.pub";
-        owner = "${config.name}";
-      };
+      "public-keys/p15" =
+        if config.name == "p15" then {
+          path = "/home/${config.name}/.ssh/${config.name}.pub";
+          owner = "${config.name}";
+        } else { };
+      "public-keys/hs" =
+        if config.name == "p15" then {
+          path = "/home/${config.name}/.ssh/${config.name}.pub";
+          owner = "${config.name}";
+        } else { };
     };
   };
 }
