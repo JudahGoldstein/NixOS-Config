@@ -6,7 +6,10 @@
     [
       # Communication
       zoom-us
-      discord
+      (pkgs.discord.override {
+        withOpenASAR = true;
+        withVencord = true;
+      })
 
       # Security
       bitwarden-desktop
