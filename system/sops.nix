@@ -37,7 +37,7 @@ with lib;
           owner = "${config.name}";
         } else { };
       "public-keys/hs" =
-        if config.name == "p15" then {
+        if config.name == "hs" then {
           path = "/home/${config.name}/.ssh/${config.name}.pub";
           owner = "${config.name}";
         } else { };
