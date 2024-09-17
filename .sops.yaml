@@ -3,7 +3,7 @@ keys:
     - &judah age12tm8764kmufjt955lxc762ujf3mr8ms9mdfjlufj2t47suugu3jshftm4g
   - &hosts
     - &p15 age1us5c7c994fjc7mfl0xa3gqjavjeujs5j7saapg3fgvugy9eq3srsd4craq
-    - &hs age1pgckjnrkd6d5xrn8wa96uf68ajgxn8ts34edthpm9d2qrc8nhuesh7f3m0
+    - &hs age1f8kwk2kr5wv534245txc40mda4kdsqtejwj0ejz37u2k5lggtplslxlvt3
 creation_rules:
   - path_regex: secrets.yaml$
     key_groups:
