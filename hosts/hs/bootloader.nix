@@ -1,5 +1,16 @@
 { config, pkgs, ... }:
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+    grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = false;
+      efiSupport = true;
+    };
+  };
 }
