@@ -9,8 +9,8 @@
 
   home.username = config.name;
   home.homeDirectory = "/home/${config.name}";
-  
-  home.file = { };  
+
+  home.file = { };
 
   home.sessionVariables = {
     EDITOR = "micro";
@@ -18,8 +18,10 @@
     TERMINAL = "kitty";
     TERM = "kitty";
   };
-  
+
   gnome.enable = true;
+
+  cyber.enable = true;
 
   home.stateVersion = "23.11";
 
