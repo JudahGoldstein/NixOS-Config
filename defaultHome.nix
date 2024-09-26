@@ -15,6 +15,7 @@ with lib;
       ./user/text-editors.nix
       ./user/nixvim.nix
       ./user/audio-video.nix
+      ./user/cyber.nix
     ];
   options = {
     name = mkOption {
