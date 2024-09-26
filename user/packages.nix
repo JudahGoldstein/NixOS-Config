@@ -20,8 +20,6 @@
 
       # chrome for testing
       chromium
-
-      wireshark # CTF module soon
     ];
 
   #fix for application picker
