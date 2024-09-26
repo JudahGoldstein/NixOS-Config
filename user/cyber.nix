@@ -22,7 +22,6 @@ with lib;
         enum4linux
         enum4linux-ng
         wireshark
-        wireshark-cli
         bettercap
         burpsuite
         ettercap
