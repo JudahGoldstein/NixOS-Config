@@ -43,5 +43,5 @@ with lib;
         } else { };
     };
   };
-  services.buildkite-agents.${config.name}.privateSshKeyPath = "/home/${config.name}/.ssh/${config.name}";
+  services.buildkite-agents.${config.name}.privateSshKeyPath = "/home/${config.name}/.ssh/";
 }
