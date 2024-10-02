@@ -1,4 +1,4 @@
 { config, pkgs, ... }:
 {
-  services.openssh.enable = true;
+  services.ssh-agent.enable = true;
 }
