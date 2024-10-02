@@ -16,6 +16,7 @@ with lib;
       ./user/nixvim.nix
       ./user/audio-video.nix
       ./user/cyber.nix
+      ./user/ssh.nix
     ];
   options = {
     name = mkOption {
