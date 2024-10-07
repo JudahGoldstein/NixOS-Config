@@ -12,6 +12,8 @@
   name = "hs";
   longName = "Judah (HS)";
 
+  blocky.enable = true;
+
   gnome.enable = true;
 
   # SSD trimming
