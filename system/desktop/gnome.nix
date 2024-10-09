@@ -43,7 +43,6 @@
         gnome.gnome-maps
         gnome.gnome-music
         gnome.gnome-weather
-        gnome-connections
         gnome-tour
       ];
   };
