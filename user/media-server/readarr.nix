@@ -1,9 +1,11 @@
 { config, pkgs, lib, ... }:
 with lib;
 {
-  services.readarr = {
-    enable = true;
-    openFirewall = true;
-    dataDir = "/var/lib/readarr";
+  config = mkIf media-server.enable {
+    services.readarr = {
+      enable = true;
+      openFirewall = true;
+      dataDir = "/var/lib/readarr";
+    };
   };
 }

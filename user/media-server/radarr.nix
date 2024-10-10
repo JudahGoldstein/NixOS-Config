@@ -1,9 +1,11 @@
 { config, pkgs, lib, ... }:
 with lib;
 {
-  services.radarr = {
-    enable = true;
-    openFirewall = true;
-    dataDir = "/var/lib/radarr";
+  config = mkIf media-server.enable {
+    services.radarr = {
+      enable = true;
+      openFirewall = true;
+      dataDir = "/var/lib/radarr";
+    };
   };
 }
