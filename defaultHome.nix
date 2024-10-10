@@ -17,6 +17,8 @@ with lib;
       ./user/audio-video.nix
       ./user/cyber.nix
       ./user/ssh.nix
+      ./user/media-server/media-server.nix
+      ./user/torrent.nix
     ];
   options = {
     name = mkOption {
