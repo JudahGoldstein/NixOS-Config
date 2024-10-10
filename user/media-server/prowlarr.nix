@@ -1,8 +1,10 @@
 { config, pkgs, lib, ... }:
 with lib;
 {
-  services.prowlarr = {
-    enable = true;
-    openFirewall = true;
+  config = mkIf media-server.enable {
+    services.prowlarr = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 }
