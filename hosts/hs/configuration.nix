@@ -16,6 +16,8 @@
 
   gnome.enable = true;
 
+  steam.enable = true;
+  
   # SSD trimming
   services.fstrim.enable = true;
 
