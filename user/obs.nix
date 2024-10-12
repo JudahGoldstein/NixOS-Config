@@ -11,6 +11,10 @@
   config = lib.mkIf (config.obs.enable == true) {
     programs.obs-studio = {
       enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        obs-backgroundremoval
+        input-overlay
+      ];
     };
   };
 }
