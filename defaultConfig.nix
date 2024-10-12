@@ -21,6 +21,8 @@ with lib;
       ./system/sops.nix
       ./system/user.nix
       ./system/nix-ld.nix
+      ./system/media-server/media-server.nix
+      ./system/torrent.nix
     ];
   options = {
     name = mkOption {
