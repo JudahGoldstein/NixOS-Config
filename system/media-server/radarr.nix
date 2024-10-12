@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 with lib;
 {
-  config = mkIf media-server.enable {
+  config = mkIf config.media-server.enable {
     services.radarr = {
       enable = true;
       openFirewall = true;
