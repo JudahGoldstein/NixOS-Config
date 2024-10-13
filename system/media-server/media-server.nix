@@ -19,6 +19,6 @@ with lib;
   config = mkIf config.media-server.enable {
     torrent.enable = true;
     docker.enable = true;
-    nginx.enable = true;
+    caddy.enable = false;
   };
 }

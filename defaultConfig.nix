@@ -23,9 +23,9 @@ with lib;
       ./system/nix-ld.nix
       ./system/media-server/media-server.nix
       ./system/torrent.nix
-      ./system/nginx.nix
       ./system/docker.nix
       ./system/wireguard.nix
+      ./system/caddy.nix
     ];
   options = {
     name = mkOption {

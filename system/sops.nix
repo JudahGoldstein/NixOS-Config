@@ -41,6 +41,11 @@ with lib;
           path = "/home/${config.name}/.ssh/${config.name}.pub";
           owner = "${config.name}";
         } else { };
+      "duckdns-token" =
+        if config.caddy.enable == true then {
+          path = "/var/lib/secrets/duckdns-token";
+          owner = config.services.caddy.user;
+        } else { };
     };
   };
 }

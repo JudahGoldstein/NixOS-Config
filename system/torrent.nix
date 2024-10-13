@@ -35,5 +35,11 @@ with lib;
         Environment = "NODE_ENV=production";
       };
     };
+    services.caddy.virtualHosts."flood.janjuta.duckdns.org".extraConfig = ''
+      reverse_proxy http://127.0.0.1:3000
+      tls /var/lib/acme/janjuta.duckdns.org/cert.pem /var/lib/acme/janjuta.duckdns.org/key.pem {
+        protocols tls1.3
+      }
+    '';
   };
 }
