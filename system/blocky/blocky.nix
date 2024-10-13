@@ -36,6 +36,8 @@ with lib;
         };
       };
     };
-
+    networking.firewall.allowedTCPPorts = [ 53 ];
+    networking.firewall.allowedUDPPorts = [ 53 ];
+    networking.nameservers = [ "127.0.0.1" ];
   };
 }
