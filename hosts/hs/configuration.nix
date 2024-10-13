@@ -18,6 +18,8 @@
 
   steam.enable = true;
   
+  media-server.enable = true;
+  
   # SSD trimming
   services.fstrim.enable = true;
 
