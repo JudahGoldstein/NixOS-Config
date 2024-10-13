@@ -14,7 +14,7 @@ with lib;
 
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-      keyFile = "/home/${config.name}/.config/sops/age/keys.txt";
+      keyFile = "/root/.config/sops/age/keys.txt";
       generateKey = true;
     };
 
