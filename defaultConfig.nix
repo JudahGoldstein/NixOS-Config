@@ -23,6 +23,8 @@ with lib;
       ./system/nix-ld.nix
       ./system/media-server/media-server.nix
       ./system/torrent.nix
+      ./system/nginx.nix
+      ./system/docker.nix
     ];
   options = {
     name = mkOption {
