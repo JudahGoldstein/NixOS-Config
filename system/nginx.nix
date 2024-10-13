@@ -4,25 +4,17 @@ with lib;
   options = {
     nginx.enable = mkOption {
       default = false;
-      description = "Enable the ngnix service.";
+      description = "Enable the ngnix proxy manager.";
     };
   };
   config = mkIf config.nginx.enable {
-    security.acme = {
-      acceptTerms = true;
-      defaults.email = "yehudah.lev@gmail.com";
-      certs."janjuta.duckdns,org" = { 
-        domain = "*.janjuta.duckdns.org";
-        dnsProvider = "duckdns";
-        environmentFile = "/etc/nixos/duckdns-token";
-        dnsPropagatoinCheck = true;
-      };
-    };
-    networking.firewall.allowedTCPPorts = [ 80 443 ];
-    services.nginx = {
-      enable = true;
-      recommendedProxySettings = true;
-      recommendedTlsSettings = true;
+    virtualisation.oci-containers.containers.nginx = {
+      image = "jc21/nginx-proxy-manager:latest";
+      ports = [ "80:80" "443:443" "81:81" ];
+      volumes = [
+        "/data/nginx-proxy-manager/data:/data"
+        "/data/nginx-proxy-manager/letsencrypt:/etc/letsencrypt"
+      ];
     };
   };
 }
