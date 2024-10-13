@@ -14,6 +14,7 @@
       plugins = with pkgs.obs-studio-plugins; [
         obs-backgroundremoval
         input-overlay
+        obs-source-clone
       ];
     };
   };
