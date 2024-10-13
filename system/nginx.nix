@@ -11,6 +11,7 @@ with lib;
     virtualisation.oci-containers.containers.nginx = {
       image = "jc21/nginx-proxy-manager:latest";
       ports = [ "80:80" "443:443" "81:81" ];
+      extraOptions = ["--network=host"];
       volumes = [
         "/data/nginx-proxy-manager/data:/data"
         "/data/nginx-proxy-manager/letsencrypt:/etc/letsencrypt"
