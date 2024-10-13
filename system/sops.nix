@@ -41,6 +41,16 @@ with lib;
           path = "/home/${config.name}/.ssh/${config.name}.pub";
           owner = "${config.name}";
         } else { };
+      "wireguard-private/hs" =
+        if config.name == "hs" then {
+          path = "/etc/wireguard/wg-pub";
+          owne= "${config.name}";
+        } else { };
+        "wireguard-public/hs" =
+        if config.name == "hs" then {
+          path = "/etc/wireguard/wg";
+          owne= "${config.name}";
+        } else { };
     };
   };
 }

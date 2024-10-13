@@ -25,6 +25,7 @@ with lib;
       ./system/torrent.nix
       ./system/nginx.nix
       ./system/docker.nix
+      ./system/wireguard.nix
     ];
   options = {
     name = mkOption {
