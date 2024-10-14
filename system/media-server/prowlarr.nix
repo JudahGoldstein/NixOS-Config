@@ -6,11 +6,14 @@ with lib;
       enable = true;
       openFirewall = true;
     };
-    services.caddy.virtualHosts."prowlarr.janjuta.duckdns.org".extraConfig = ''
-      reverse_proxy http://127.0.0.1:9696
-      tls /var/lib/acme/janjuta.duckdns.org/cert.pem /var/lib/acme/janjuta.duckdns.org/key.pem {
-        protocols tls1.3
-      }
-    '';
+    services.caddy.virtualHosts."prowlarr.janjuta.duckdns.org" = {
+      useACMEHost = "janjuta.duckdns.org";
+      extraConfig = ''
+        reverse_proxy http://127.0.0.1:9696
+        tls /var/lib/acme/janjuta.duckdns.org/cert.pem /var/lib/acme/janjuta.duckdns.org/key.pem {
+          protocols tls1.3
+        }
+      '';
+    };
   };
 }

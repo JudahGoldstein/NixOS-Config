@@ -44,7 +44,7 @@ with lib;
       "duckdns-token" =
         if config.caddy.enable == true then {
           path = "/var/lib/secrets/duckdns-token";
-          owner = config.services.caddy.user;
+          mode = "0777";
         } else { };
     };
   };
