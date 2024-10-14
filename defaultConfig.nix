@@ -17,7 +17,6 @@ with lib;
       ./system/nvidia-prime.nix
       ./system/gaming.nix
       ./system/blocky/blocky.nix
-      ./system/arr.nix
       ./system/sops.nix
       ./system/user.nix
       ./system/nix-ld.nix
