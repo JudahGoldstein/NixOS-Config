@@ -34,25 +34,16 @@ with lib;
       enable = true;
       group = "caddy";
       user = "caddy";
-      virtualHosts."localhost".extraConfig = ''
-        respond "OK"
-      '';
       virtualHosts."janjuta.duckdns.org" = {
         useACMEHost = "janjuta.duckdns.org";
         extraConfig = ''
           respond "OK"
-          tls /var/lib/acme/janjuta.duckdns.org/cert.pem /var/lib/acme/janjuta.duckdns.org/key.pem {
-            protocols tls1.3
-          } 
         '';
       };
       virtualHosts."jantun.duckdns.org" = {
         useACMEHost = "jantun.duckdns.org";
         extraConfig = ''
           respond "OK"
-          tls /var/lib/acme/jantun.duckdns.org/cert.pem /var/lib/acme/jantun.duckdns.org/key.pem {
-            protocols tls1.3
-          }
         '';
       };
     };
