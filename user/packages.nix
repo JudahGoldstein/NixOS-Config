@@ -7,7 +7,7 @@
       # Communication
       zoom-us
       (pkgs.discord.override {
-        withOpenASAR = true;
+        # withOpenASAR = true; #causes error un updates
         withVencord = true;
       })
 
@@ -20,6 +20,8 @@
 
       # chrome for testing
       chromium
+
+      remmina
     ];
 
   #fix for application picker
