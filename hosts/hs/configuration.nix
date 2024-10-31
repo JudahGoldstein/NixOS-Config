@@ -7,6 +7,8 @@
       ./bootloader.nix
       ../../defaultConfig.nix
       ./disks.nix
+      ../../system/tor.nix
+
     ];
 
   name = "hs";
@@ -22,7 +24,7 @@
   
   wireguard.enable = true;
   
-  tor.enable = false;
+  tor.enable = true;
   
   fileSystems."/mnt/media" =
     {
