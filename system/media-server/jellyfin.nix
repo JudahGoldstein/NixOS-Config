@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 with lib;
 {
   config = mkIf config.media-server.enable {
@@ -29,6 +29,7 @@ with lib;
       cacheDir = "/var/cache/jellyfin";
       dataDir = "/var/lib/jellyfin";
       logDir = "/var/log/jellyfin";
+      package = pkgs.jellyfin;
     };
 
     services.caddy.virtualHosts."jellyfin.janjuta.duckdns.org" = {
