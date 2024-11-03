@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 with lib;
 {
   config = mkIf config.media-server.enable {
@@ -6,6 +6,7 @@ with lib;
       enable = true;
       openFirewall = true;
       dataDir = "/var/lib/readarr";
+      package = pkgs-unstable.readarr;
     };
     services.caddy.virtualHosts."readarr.janjuta.duckdns.org" = {
       useACMEHost = "janjuta.duckdns.org";
