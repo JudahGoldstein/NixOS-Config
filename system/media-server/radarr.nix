@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 with lib;
 {
   config = mkIf config.media-server.enable {
@@ -6,6 +6,7 @@ with lib;
       enable = true;
       openFirewall = true;
       dataDir = "/var/lib/radarr";
+      package = pkgs-unstable.radarr;
     };
     services.caddy.virtualHosts."radarr.janjuta.duckdns.org" = {
       useACMEHost = "janjuta.duckdns.org";
