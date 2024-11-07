@@ -19,18 +19,20 @@
   gnome.enable = true;
 
   steam.enable = true;
-  
+
   media-server.enable = true;
-  
+
   wireguard.enable = true;
-  
+
   tor.enable = true;
-  
+
+  ollama.enable = true;
+
   fileSystems."/mnt/media" =
     {
       device = "/dev/disk/by-uuid/2dfcbe87-8cbd-4363-bdb8-a4e24558e227";
       fsType = "ext4";
-      options= [ "nofail" ];
+      options = [ "nofail" ];
     };
 
   # SSD trimming
@@ -47,13 +49,12 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
-
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.11";
 }
