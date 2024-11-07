@@ -25,6 +25,7 @@ with lib;
       ./system/docker.nix
       ./system/wireguard.nix
       ./system/caddy.nix
+      ./system/ollama.nix
     ];
   options = {
     name = mkOption {
