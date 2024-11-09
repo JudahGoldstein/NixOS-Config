@@ -29,7 +29,7 @@ with lib;
       cacheDir = "/var/cache/jellyfin";
       dataDir = "/var/lib/jellyfin";
       logDir = "/var/log/jellyfin";
-      package = pkgs.jellyfin;
+      package = pkgs-unstable.jellyfin;
     };
 
     services.caddy.virtualHosts."jellyfin.janjuta.duckdns.org" = {
