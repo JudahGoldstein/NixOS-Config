@@ -26,7 +26,7 @@ with lib;
       settings = {
         "rpc-host-whitelist" = "*";
         "rpc-host-whitelist-enabled" = true;
-        "cache-size-mb" = 64;
+        "cache-size-mb" = 1024;
         "peer-limit-global" = 500;
         "peer-limit-per-torrent" = 100;
         "ratio-limit" = 1.1;
