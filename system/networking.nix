@@ -2,7 +2,11 @@
 {
   networking.hostName = config.name;
   networking.networkmanager.enable = true;
-  environment.systemPackages = with pkgs; [ ivpn ];
+  environment.systemPackages = with pkgs;
+    [
+      ivpn
+      dig
+    ];
   services.ivpn.enable = true;
   services.openssh.enable = true;
 
