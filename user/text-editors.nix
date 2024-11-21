@@ -27,6 +27,7 @@ with lib;
         (if config.obsidian.enable then pkgs.obsidian else null)
         (if config.libreoffice.enable then pkgs.libreoffice else null)
         (if config.qownnotes.enable then pkgs.qownnotes else null)
+        hunspell
       ];
   };
 }
