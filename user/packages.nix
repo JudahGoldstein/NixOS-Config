@@ -15,11 +15,13 @@
       # Misc
       plover.dev
       nerdfonts
+      remmina
 
       # chrome for testing
       chromium
 
-      remmina
+      #temporary, do not commit to git
+      shotcut
     ];
 
   #fix for application picker
