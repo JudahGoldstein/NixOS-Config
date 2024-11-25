@@ -3,7 +3,8 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.auto-optimise-store = true;
 
-  virtualisation.virtualbox.host.enable = true;
+  # TODO make a VirtualBox module
+  #virtualisation.virtualbox.host.enable = true;
 
   environment.systemPackages = with pkgs;
     [
