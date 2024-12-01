@@ -11,6 +11,8 @@
       device = "nodev";
       useOSProber = false;
       efiSupport = true;
+      copyKernels = true;
     };
   };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
