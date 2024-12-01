@@ -10,10 +10,10 @@ with lib;
   config = mkIf config.ollama.enable {
     services.ollama = {
       enable = true;
-      listenAddress = "127.0.0.1:11434";
-      sandbox = false;
+      host = "127.0.0.1";
+      port = 11434;
       acceleration = "cuda";
-      package = pkgs-unstable.ollama-cuda;
+      # package = pkgs.ollama-cuda;
     };
     services.open-webui = {
       enable = true;
