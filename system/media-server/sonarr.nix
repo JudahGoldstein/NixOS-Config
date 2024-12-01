@@ -3,10 +3,10 @@ with lib;
 {
   config = mkIf config.media-server.enable {
     services.sonarr = {
-      enable = true;
+      enable = false;
       openFirewall = true;
       dataDir = "/var/lib/sonarr";
-      # package = pkgs-unstable.sonarr;
+      package = pkgs-unstable.sonarr;
     };
     services.caddy.virtualHosts."sonarr.janjuta.duckdns.org" = {
       useACMEHost = "janjuta.duckdns.org";
