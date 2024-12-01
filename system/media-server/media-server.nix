@@ -2,13 +2,13 @@
 with lib;
 {
   imports =
-  [
-    ./sonarr.nix
-    ./radarr.nix
-    ./prowlarr.nix
-    ./jellyfin.nix
-    ./stash.nix
-  ];
+    [
+      ./sonarr.nix
+      ./radarr.nix
+      ./prowlarr.nix
+      ./jellyfin.nix
+      ./stash.nix
+    ];
   options = {
     media-server.enable = mkOption {
       default = false;
