@@ -1,14 +1,20 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+with lib;
 {
-  nixpkgs.config.allowUnfree = true;
+  options = {
+    keyboard.enable = mkOption {
+      default = false;
+      description = "Enable DIY keyboard service.";
+    };
+  };
+  config = mkIf config.keyboard.enable {
+    environment.systemPackages = with pkgs;
+      [
+        via
+        vial
+      ];
 
-  environment.systemPackages = with pkgs;
-    [
-      via
-      vial
-    ];
-
-  hardware.keyboard.qmk.enable = true;
-  services.udev.packages = [ pkgs.via ];
-
+    hardware.keyboard.qmk.enable = true;
+    services.udev.packages = [ pkgs.via ];
+  };
 }
