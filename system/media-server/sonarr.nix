@@ -6,7 +6,7 @@ with lib;
       enable = true;
       openFirewall = true;
       dataDir = "/var/lib/sonarr";
-      package = pkgs-unstable.sonarr;
+      # package = pkgs-unstable.sonarr;
     };
     services.caddy.virtualHosts."sonarr.janjuta.duckdns.org" = {
       useACMEHost = "janjuta.duckdns.org";
