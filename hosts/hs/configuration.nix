@@ -26,7 +26,7 @@
 
   tor.enable = true;
 
-  ollama.enable = true;
+  ollama.enable = false;
 
   fileSystems."/mnt/media" =
     {
@@ -40,7 +40,7 @@
 
   # Nvida drivers
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
