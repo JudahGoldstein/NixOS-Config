@@ -22,7 +22,7 @@
 
   wireguard.enable = true;
 
-  ollama.enable = false;
+  ollama.enable = true;
 
   fileSystems."/mnt/media" =
     {
