@@ -3,7 +3,7 @@ with lib;
 {
   imports =
     [
-      ./sonarr.nix
+      # ./sonarr.nix
       ./radarr.nix
       ./prowlarr.nix
       ./jellyfin.nix
