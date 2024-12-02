@@ -22,8 +22,6 @@
 
   wireguard.enable = true;
 
-  tor.enable = true;
-
   ollama.enable = false;
 
   fileSystems."/mnt/media" =
