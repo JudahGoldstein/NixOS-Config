@@ -35,11 +35,13 @@
       pkgs = import inputs.nixpkgs {
         system = "x86_64-linux";
         config.allowUnfree = true;
+        config.nix.channel.enable = false;
       };
 
       pkgs-unstable = import inputs.nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;
+        config.nix.channel.enable = false;
       };
     in
     {
