@@ -7,8 +7,6 @@
       ./bootloader.nix
       ../../defaultConfig.nix
       ./disks.nix
-      ../../system/tor.nix
-
     ];
 
   name = "hs";
