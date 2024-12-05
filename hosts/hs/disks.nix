@@ -20,7 +20,7 @@
             size = "100%";
             content = {
               type = "filesystem";
-              vg = "ext4";
+              format = "ext4";
               mountpoint = "/";
             };
           };
