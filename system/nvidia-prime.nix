@@ -21,6 +21,7 @@ with lib;
   config = lib.mkIf config.nvidia-prime.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia = {
+      open = false;
       modesetting.enable = true;
       prime = {
         sync = lib.mkIf config.nvidia-prime.sync {
