@@ -12,7 +12,7 @@ with lib.hm.gvariant;
   config = lib.mkIf config.gnome.enable {
     home.packages = with pkgs;
       [
-        gnome.gnome-tweaks
+        gnome-tweaks
         gnome-extension-manager
       ];
 
