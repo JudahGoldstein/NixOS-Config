@@ -9,7 +9,7 @@ with lib;
     ];
 
   sops = {
-    defaultSopsFile = /etc/nixos/secrets.yaml;
+    defaultSopsFile = "/etc/nixos/secrets.yaml";
     validateSopsFiles = false;
 
     age = {
