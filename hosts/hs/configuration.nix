@@ -14,7 +14,8 @@
 
   blocky.enable = true;
 
-  gnome.enable = true;
+  gnome.enable = false;
+  kde.enable = true;
 
   steam.enable = true;
 
