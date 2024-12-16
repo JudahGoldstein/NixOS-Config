@@ -42,6 +42,12 @@
         system = "x86_64-linux";
         config.allowUnfree = true;
         config.nix.channel.enable = false;
+        config.permittedInsecurePackages = [
+          "aspnetcore-runtime-wrapped-6.0.36" #sonarr
+          "aspnetcore-runtime-6.0.36"         #sonarr
+          "dotnet-sdk-wrapped-6.0.428"        #sonarr
+          "dotnet-sdk-6.0.428"                #sonarr
+        ];
       };
     in
     {
