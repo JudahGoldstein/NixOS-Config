@@ -18,5 +18,14 @@
         konsole
         elisa
       ];
+    environment.systemPackages = with pkgs.kdePackages;
+      [
+        ksshaskpass
+      ];
+    environment = {
+      sessionVariables = {
+        SSH_ASKPASS_REQUIRE = "prefer";
+      };
+    };
   };
 }
