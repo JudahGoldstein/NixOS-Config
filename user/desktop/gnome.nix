@@ -53,11 +53,6 @@ with lib.hm.gvariant;
           command = "kitty";
           name = "terminal";
         };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-          binding = "<Super>w";
-          command = "plover";
-          name = "plover";
-        };
         "org/gnome/mutter" = {
           dynamic-workspaces = true;
           edge-tiling = true;
