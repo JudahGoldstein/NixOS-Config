@@ -8,16 +8,27 @@
     };
   };
   config = lib.mkIf (config.kde.enable == true) {
-    services.displayManager.sddm.enable = true;
+    environment.systemPackages = with pkgs; [
+      numlockx
+      kdePackages.ksshaskpass
+    ];
+    services.xserver = {
+      displayManager = {
+        setupCommands = ''
+          ${pkgs.numlockx}/bin/numlockx on
+        '';
+        gdm = {
+          enable = true;
+          wayland = true;
+          autoSuspend = false;
+        };
+      };
+    };
     services.desktopManager.plasma6.enable = true;
     environment.plasma6.excludePackages = with pkgs.kdePackages;
       [
         konsole
         elisa
-      ];
-    environment.systemPackages = with pkgs.kdePackages;
-      [
-        ksshaskpass
       ];
     environment = {
       sessionVariables = {
