@@ -13,7 +13,6 @@
       bitwarden-desktop
 
       # Misc
-      plover.dev
       nerdfonts
       remmina
 
