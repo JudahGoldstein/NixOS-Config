@@ -10,6 +10,7 @@
 
   config = lib.mkIf (config.gnome.enable == true) {
     environment.systemPackages = with pkgs; [
+      numlockx
       gnome-tweaks
       gnome-extension-manager
     ];
