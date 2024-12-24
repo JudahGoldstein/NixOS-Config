@@ -12,7 +12,6 @@ with lib;
       ./user/cyber.nix
       ./user/ssh.nix
       ./user/kitty.nix
-      ./user/shell/zsh/zsh.nix
     ];
   options = {
     name = mkOption {
