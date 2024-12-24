@@ -16,16 +16,9 @@ let
 in
 {
   programs.bash.shellAliases = myAliases;
-
   programs.zsh = {
     enable = true;
     shellAliases = myAliases;
-    ohMyZsh = {
-      enable = true;
-      custom = "/etc/nixos/user/shell/custom";
-      theme = "gruvbox";
-      plugins = [ ];
-    };
   };
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
