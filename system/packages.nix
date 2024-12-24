@@ -19,6 +19,7 @@ with lib;
 
       # Misc I always want
       neofetch
+      numlockx
 
       # Communication
       zoom-us

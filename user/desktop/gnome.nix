@@ -10,17 +10,6 @@ with lib.hm.gvariant;
   };
 
   config = lib.mkIf config.gnome.enable {
-    home.packages = with pkgs;
-      [
-        gnome-tweaks
-        gnome-extension-manager
-      ];
-
-    #fix for application picker
-    programs.bash.enable = true;
-    targets.genericLinux.enable = true;
-    xdg.mime.enable = true;
-
     dconf = {
       enable = true;
       settings = {
