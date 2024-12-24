@@ -27,6 +27,7 @@ with lib;
       ./system/caddy.nix
       ./system/ollama.nix
       ./system/firefox.nix
+      ./system/terminal.nix
     ];
   options = {
     name = mkOption {
