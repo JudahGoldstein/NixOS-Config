@@ -26,6 +26,7 @@ with lib;
       ./system/wireguard.nix
       ./system/caddy.nix
       ./system/ollama.nix
+      ./system/firefox.nix
     ];
   options = {
     name = mkOption {
