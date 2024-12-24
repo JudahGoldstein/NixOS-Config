@@ -4,7 +4,6 @@ with lib;
   imports =
     [
       ./user/git.nix
-      ./user/shell/terminal/terminal.nix
       ./user/desktop/desktop.nix
       ./user/syncthing.nix
       ./user/obs.nix
@@ -14,6 +13,8 @@ with lib;
       ./user/audio-video.nix
       ./user/cyber.nix
       ./user/ssh.nix
+      ./user/kitty.nix
+      ./user/shell/zsh/zsh.nix
     ];
   options = {
     name = mkOption {
