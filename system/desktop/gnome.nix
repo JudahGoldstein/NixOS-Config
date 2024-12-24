@@ -9,7 +9,10 @@
   };
 
   config = lib.mkIf (config.gnome.enable == true) {
-    environment.systemPackages = with pkgs; [ numlockx ];
+    environment.systemPackages = with pkgs; [
+      gnome-tweaks
+      gnome-extension-manager
+    ];
     services.xserver = {
       displayManager = {
         setupCommands = ''
