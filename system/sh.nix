@@ -19,6 +19,12 @@ in
   programs.bash.shellAliases = myAliases;
   programs.zsh = {
     enable = true;
+    ohMyZsh = {
+      enable = true;
+      custom = "/etc/nixos/system/zsh-themes";
+      theme = "gruvbox";
+      plugins = [ ];
+    };
     shellAliases = myAliases;
   };
   environment.shells = with pkgs; [ zsh ];
