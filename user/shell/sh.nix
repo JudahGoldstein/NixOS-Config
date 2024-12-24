@@ -10,7 +10,7 @@ let
     "..." = "cd ../..";
     "lg" = "lazygit";
     "v" = "nvim";
-    "nix-update" = "cd /etc/nixos/ && nix flake update && git pull && nh os boot && nh home switch && nh clean all --keep 3 && git commit -m 'flake' flake.lock && git push";
+    "nix-update" = "cd /etc/nixos/ && git pull && nix flake update && nh os boot && nh home switch && nh clean all --keep 3 && git commit -m 'flake' flake.lock && git push";
     "ligma"="echo balls";
   };
 in
