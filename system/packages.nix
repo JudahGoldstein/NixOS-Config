@@ -18,7 +18,7 @@ with lib;
       git
 
       # Misc I always want
-      neofetch
+      nerdfetch
       numlockx
 
       # Communication
