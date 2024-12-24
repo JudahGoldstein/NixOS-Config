@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+with lib;
 {
   nixpkgs.config.allowUnfree = true;
   nix.settings.auto-optimise-store = true;
@@ -8,15 +9,35 @@
 
   environment.systemPackages = with pkgs;
     [
-      #editor
+      # Editor
       micro
 
-      #downloaders
+      # Downloaders
       wget
       curl
       git
 
-      #misc I always want
+      # Misc I always want
       neofetch
+
+      # Communication
+      zoom-us
+      (pkgs.discord.override {
+        # withOpenASAR = true; #causes error un updates
+        withVencord = true;
+      })
+
+      # Security
+      bitwarden-desktop
+
+      # Misc
+      nerdfonts
+      remmina
+
+      # chrome for testing
+      chromium
+
+      # Media
+      shotcut
     ];
 }
