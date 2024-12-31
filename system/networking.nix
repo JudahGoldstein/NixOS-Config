@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+with lib;
 {
   networking.hostName = config.name;
   networking.networkmanager.enable = true;
@@ -10,13 +11,14 @@
   services.ivpn.enable = true;
   services.openssh.enable = true;
   services.sshd.enable = true;
+  programs.ssh = mkIf config.kde.enable {
+    startAgent = true;
+    enableAskPassword = true;
+    askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/ksshaskpass";
+  };
 
-  # networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-  # services.resolved = {
-  #   enable = true;
-  #   dnssec = "true";
-  #   domains = [ "~." ];
-  #   fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-  #   dnsovertls = "true";
-  # };
+  environment.variables = mkIf config.kde.enable {
+    SSH_ASKPASS_REQUIRE = "prefer";
+  };
+
 }
