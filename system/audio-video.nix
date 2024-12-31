@@ -25,16 +25,23 @@ with lib;
       default = true;
       description = "Enable VLC";
     };
+
+    shotcut.enable = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Enable shotcut";
+    };
+
   };
 
   config = {
-    home.packages = with pkgs; lib.filter (pkg: pkg != null)
+    environment.systemPackages = with pkgs; lib.filter (pkg: pkg != null)
       [
-        (if config.easyeffects.enable then pkgs.easyeffects else null)
-        (if config.gimp.enable then pkgs.gimp else null)
-        (if config.audacity.enable then pkgs.audacity else null)
-        (if config.vlc.enable then pkgs.vlc else null)
-
+        (if config.easyeffects.enable then easyeffects else null)
+        (if config.gimp.enable then gimp else null)
+        (if config.audacity.enable then audacity else null)
+        (if config.vlc.enable then vlc else null)
+        (if config.shotcut.enable then shotcut else null)
       ];
   };
 }
