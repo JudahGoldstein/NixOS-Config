@@ -13,6 +13,7 @@ with lib;
       default = true;
       description = "Enable libreoffice suite";
     };
+    
     qownnotes.enable = mkOption {
       type = types.bool;
       default = false;
@@ -22,7 +23,7 @@ with lib;
   };
 
   config = {
-    home.packages = with pkgs; lib.filter (pkg: pkg != null)
+    environment.systemPackages = with pkgs; lib.filter (pkg: pkg != null)
       [
         (if config.obsidian.enable then pkgs.obsidian else null)
         (if config.libreoffice.enable then pkgs.libreoffice else null)
