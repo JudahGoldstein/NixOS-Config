@@ -29,6 +29,7 @@ with lib;
       ./system/firefox.nix
       ./system/terminal.nix
       ./system/vscode.nix
+      ./system/text-editors.nix
     ];
   options = {
     name = mkOption {
