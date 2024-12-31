@@ -9,9 +9,6 @@ with lib;
 
   environment.systemPackages = with pkgs;
     [
-      # Editor
-      micro
-
       # Downloaders
       wget
       curl
