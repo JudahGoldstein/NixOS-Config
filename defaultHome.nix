@@ -5,8 +5,6 @@ with lib;
     [
       ./user/git.nix
       ./user/desktop/desktop.nix
-      ./user/nixvim.nix
-      ./user/audio-video.nix
       ./user/ssh.nix
       ./user/kitty.nix
     ];
