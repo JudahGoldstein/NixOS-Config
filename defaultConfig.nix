@@ -30,7 +30,10 @@ with lib;
       ./system/terminal.nix
       ./system/vscode.nix
       ./system/text-editors.nix
+      ./system/audio-video.nix
+
     ];
+
   options = {
     name = mkOption {
       type = types.str;
