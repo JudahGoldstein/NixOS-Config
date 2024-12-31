@@ -28,6 +28,7 @@ with lib;
       ./system/ollama.nix
       ./system/firefox.nix
       ./system/terminal.nix
+      ./system/vscode.nix
     ];
   options = {
     name = mkOption {

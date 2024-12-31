@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }:
-
+with lib;
 {
   options = {
     vscode.enable = lib.mkOption {
@@ -9,8 +9,8 @@
     };
   };
 
-  config = {
-    home.packages = with pkgs;
+  config = mkIf config.vscode.enable {
+    environment.systemPackages = with pkgs;
       [
         vscode-fhs
 
@@ -29,7 +29,6 @@
 
         # for go development
         go
-        
       ];
 
     programs = {
