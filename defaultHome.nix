@@ -7,7 +7,6 @@ with lib;
       ./user/desktop/desktop.nix
       ./user/nixvim.nix
       ./user/audio-video.nix
-      ./user/cyber.nix
       ./user/ssh.nix
       ./user/kitty.nix
     ];
