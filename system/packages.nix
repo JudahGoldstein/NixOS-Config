@@ -34,8 +34,5 @@ with lib;
 
       # chrome for testing
       chromium
-
-      # Media
-      shotcut
     ];
 }
