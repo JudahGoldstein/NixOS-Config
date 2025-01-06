@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +21,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, disko, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, disko, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -109,7 +104,6 @@
           inherit pkgs;
           modules = [
             ./hosts/v14/home.nix
-            inputs.nixvim.homeManagerModules.nixvim
             sops-nix.homeManagerModules.sops
 
           ];
@@ -119,7 +113,6 @@
           inherit pkgs;
           modules = [
             ./hosts/p15/home.nix
-            inputs.nixvim.homeManagerModules.nixvim
             sops-nix.homeManagerModules.sops
 
           ];
@@ -130,7 +123,6 @@
           inherit pkgs;
           modules = [
             ./hosts/hs/home.nix
-            inputs.nixvim.homeManagerModules.nixvim
             sops-nix.homeManagerModules.sops
           ];
           extraSpecialArgs = { inherit pkgs-unstable; };
