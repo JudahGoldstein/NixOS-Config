@@ -21,6 +21,7 @@ with lib;
       enable = true;
       openFirewall = true;
       web.enable = true;
+      web.openFirewall = true;
       web.port = 8112;
     };
     services.transmission = mkIf config.transmission.enable {
