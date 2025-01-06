@@ -7,10 +7,23 @@ with lib;
       default = false;
       description = "Enable the torrent service.";
     };
+    transmission.enable = mkOption {
+      default = false;
+      description = "Enable the Transmission torrent client.";
+    };
+    deluge.enable = mkOption {
+      default = true;
+      description = "Enable the Deluge torrent client.";
+    };
   };
   config = mkIf config.torrent.enable {
-
-    services.transmission = {
+    services.deluge = mkIf config.deluge.enable {
+      enable = true;
+      openFirewall = true;
+      web.enable = true;
+      web.port = 8112;
+    };
+    services.transmission = mkIf config.transmission.enable {
       enable = true;
       openFirewall = true;
       openRPCPort = true;
@@ -38,11 +51,19 @@ with lib;
       credentialsFile = "/var/lib/secrets/transmission-credentials.json";
     };
 
-    services.caddy.virtualHosts."transmission.janjuta.duckdns.org" = {
-      useACMEHost = "janjuta.duckdns.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:9091
-      '';
+    services.caddy.virtualHosts = {
+      "transmission.janjuta.duckdns.org" = mkIf config.transmission.enable {
+        useACMEHost = "janjuta.duckdns.org";
+        extraConfig = ''
+          reverse_proxy http://127.0.0.1:9091
+        '';
+      };
+       "deluge.janjuta.duckdns.org" = mkIf config.deluge.enable {
+        useACMEHost = "janjuta.duckdns.org";
+        extraConfig = ''
+          reverse_proxy http://127.0.0.1:8112
+        '';
+      };
     };
   };
 }
