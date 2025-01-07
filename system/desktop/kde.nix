@@ -1,16 +1,18 @@
 { config, pkgs, lib, ... }:
+with lib;
 {
   options = {
-    kde.enable = lib.mkOption {
-      type = lib.types.bool;
+    kde.enable = mkOption {
+      type = types.bool;
       default = false;
       description = "Enable KDE Plasma Desktop Environment";
     };
   };
-  config = lib.mkIf (config.kde.enable == true) {
+  config = mkIf config.kde.enable {
     environment.systemPackages = with pkgs; [
       numlockx
       kdePackages.ksshaskpass
+      ocs-url
     ];
     services.xserver = {
       displayManager = {
