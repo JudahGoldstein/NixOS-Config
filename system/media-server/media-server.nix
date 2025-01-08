@@ -7,6 +7,7 @@ with lib;
       ./radarr.nix
       ./prowlarr.nix
       ./jellyfin.nix
+      ./stash.nix
     ];
   options = {
     media-server.enable = mkOption {
@@ -17,7 +18,6 @@ with lib;
 
   config = mkIf config.media-server.enable {
     torrent.enable = true;
-    docker.enable = true;
     caddy.enable = true;
   };
 }
