@@ -15,7 +15,7 @@ with lib;
       git
 
       # Misc I always want
-      nerdfetch
+      fastfetch
       numlockx
 
       # Communication
