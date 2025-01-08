@@ -16,7 +16,14 @@ with lib;
       description = "Enable the Deluge torrent client.";
     };
   };
+
   config = mkIf config.torrent.enable {
+    networking.firewall = #peer port
+      {
+        allowedTCPPorts = [ 32085 ];
+        allowedUDPPorts = [ 32085 ];
+      };
+
     services.deluge = mkIf config.deluge.enable {
       enable = true;
       openFirewall = true;
@@ -34,7 +41,7 @@ with lib;
         download-dir = "/mnt/media/Downloads";
         incomplete-dir-enabled = false;
         watch-dir-enabled = false;
-        peer-port = 50000;
+        peer-port = 32085;
         umask = 0;
       };
       settings = {
@@ -59,7 +66,7 @@ with lib;
           reverse_proxy http://127.0.0.1:9091
         '';
       };
-       "deluge.janjuta.duckdns.org" = mkIf config.deluge.enable {
+      "deluge.janjuta.duckdns.org" = mkIf config.deluge.enable {
         useACMEHost = "janjuta.duckdns.org";
         extraConfig = ''
           reverse_proxy http://127.0.0.1:8112
