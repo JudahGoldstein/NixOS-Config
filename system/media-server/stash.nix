@@ -2,7 +2,7 @@
 with lib;
 {
   config = mkIf config.media-server.enable {
-    environment.systemPackages = with pkgs; [ stash ];
+    environment.systemPackages = with pkgs-unstable; [ stash ];
     networking.firewall = #stash port
       {
         allowedTCPPorts = [ 9049 ];
@@ -15,8 +15,10 @@ with lib;
       unitConfig.type = "simple";
       path = [ "/mnt/media/Bulk/stash/" ];
       serviceConfig = {
-        ExecStart = "${pkgs.stash}/bin/stash --port 9049 -c /mnt/media/Bulk/stash/config.yml";
+        ExecStart = "${pkgs-unstable.stash}/bin/stash --port 9049 -c /mnt/media/Bulk/stash/config.yml";
         Restart = "always";
+        RestartSec = 30;
+        StartLimitBurst = 6;
       };
     };
     services.caddy.virtualHosts."stash.janjuta.duckdns.org" = {
