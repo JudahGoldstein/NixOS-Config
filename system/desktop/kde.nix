@@ -13,6 +13,7 @@ with lib;
       numlockx
       kdePackages.ksshaskpass
       ocs-url
+      ddcutil
     ];
     services.xserver = {
       displayManager = {
