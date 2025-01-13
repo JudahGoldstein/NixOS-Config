@@ -13,7 +13,7 @@ with lib;
     users.users.${config.name} = {
       isNormalUser = true;
       description = config.longName;
-      extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" "docker" ];
+      extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" "docker" "vboxusers" ];
       packages = with pkgs; [ ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
       openssh.authorizedKeys.keys = [
