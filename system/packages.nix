@@ -5,7 +5,7 @@ with lib;
   nix.settings.auto-optimise-store = true;
 
   # TODO make a VirtualBox module
-  #virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
   environment.systemPackages = with pkgs;
     [
