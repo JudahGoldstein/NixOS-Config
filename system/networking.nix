@@ -7,6 +7,7 @@ with lib;
     [
       ivpn
       dig
+      sshpass
     ];
   services.ivpn.enable = true;
   services.openssh.enable = true;
