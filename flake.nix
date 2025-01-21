@@ -36,7 +36,6 @@
         config.allowUnfree = true;
         config.nix.channel.enable = false;
       };
-
       pkgs-unstable = import inputs.nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;
@@ -92,6 +91,7 @@
           specialArgs = {
             inherit inputs;
             inherit pkgs-unstable;
+            inherit stable-diffusion-webui-nix;
           };
         };
 
