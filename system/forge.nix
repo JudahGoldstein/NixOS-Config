@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, stable-diffusion-webui-nix, ... }:
 with lib;
 {
   options = {
