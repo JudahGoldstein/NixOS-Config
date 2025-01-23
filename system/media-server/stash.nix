@@ -11,7 +11,7 @@ with lib;
     systemd.services.stash = {
       enable = true;
       description = "stash";
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = [ "default.target" ];
       unitConfig.type = "simple";
       path = [ "/mnt/media/Bulk/stash/" ];
       serviceConfig = {
