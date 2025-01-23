@@ -12,6 +12,7 @@ with lib;
       enable = true;
       description = "stash";
       wantedBy = [ "default.target" ];
+      after = [ "network.target" ];
       unitConfig.type = "simple";
       path = [ "/mnt/media/Bulk/stash/" ];
       serviceConfig = {
