@@ -29,6 +29,7 @@
   # SSD trimming
   services.fstrim.enable = true;
 
+  boot.kernelParams = [ "processor.max_cstate=5" ];
 
   # Nvida drivers
   services.xserver.videoDrivers = [ "nvidia" ];
