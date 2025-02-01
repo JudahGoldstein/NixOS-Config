@@ -13,14 +13,11 @@
   longName = "Judah (HS)";
 
   blocky.enable = true;
-
   gnome.enable = true;
-
   media-server.enable = true;
-
   wireguard.enable = true;
-
   ollama.enable = true;
+  forge.enable = true;
 
   fileSystems."/mnt/media" =
     {
@@ -32,7 +29,6 @@
   # SSD trimming
   services.fstrim.enable = true;
 
-  forge.enable = true;
 
   # Nvida drivers
   services.xserver.videoDrivers = [ "nvidia" ];
