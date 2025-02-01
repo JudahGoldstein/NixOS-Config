@@ -17,7 +17,11 @@ with lib;
   };
 
   config = mkIf config.media-server.enable {
-    environment.systemPackages = with pkgs; [ recyclarr ];
+    environment.systemPackages = with pkgs;
+      [
+        recyclarr
+        czkawka
+      ];
     torrent.enable = true;
     caddy.enable = true;
   };
