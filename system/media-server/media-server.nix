@@ -20,7 +20,7 @@ with lib;
     environment.systemPackages = with pkgs;
       [
         recyclarr
-        czkawka
+        czkawka-full
       ];
     torrent.enable = true;
     caddy.enable = true;
