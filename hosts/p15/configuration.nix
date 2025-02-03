@@ -9,7 +9,10 @@
 
   name = "p15";
   longName = "Judah (P15)";
-  
+
+  # TODO make a VirtualBox module
+  virtualisation.virtualbox.host.enable = true;
+
   services.fstrim.enable = true;
 
   fileSystems."/bulk" =
