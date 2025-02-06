@@ -14,19 +14,24 @@
       gnome-tweaks
       gnome-extension-manager
     ];
-    services.xserver = {
-      displayManager = {
-        setupCommands = ''
-          ${pkgs.numlockx}/bin/numlockx on
-        '';
-        gdm = {
-          enable = true;
-          wayland = true;
-        };
-      };
-      desktopManager.gnome.enable = true;
+    # services.xserver = {
+    #   displayManager = {
+    #     setupCommands = ''
+    #       ${pkgs.numlockx}/bin/numlockx on
+    #     '';
+    #     gdm = {
+    #       enable = true;
+    #       wayland = true;
+    #     };
+    #   };
+    #   desktopManager.gnome.enable = true;
+    # };
+    services.displayManager = { 
+      enable = true;
+      ly.enable = true;
+      preStart = "";
     };
-
+    services.xserver.desktopManager.gnome.enable = true;
     environment.gnome.excludePackages = with pkgs;
       [
         eog
