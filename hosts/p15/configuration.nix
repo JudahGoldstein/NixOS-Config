@@ -13,6 +13,8 @@
   # TODO make a VirtualBox module
   virtualisation.virtualbox.host.enable = true;
 
+  environment.systemPackages = with pkgs; [ eclipses.eclipse-jee ]; #just for 4413
+
   services.fstrim.enable = true;
 
   fileSystems."/bulk" =
