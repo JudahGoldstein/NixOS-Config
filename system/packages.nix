@@ -14,7 +14,6 @@ with lib;
       # Misc I always want
       fastfetch
       numlockx
-      lm_sensors
 
       # Communication
       zoom-us
