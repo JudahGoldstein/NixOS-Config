@@ -11,41 +11,27 @@ with lib;
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     security.acme = {
       acceptTerms = true;
-      defaults.email = "yehudah.lev@gmail.com";
-      certs."janjuta.duckdns.org" = {
+      defaults = {
+        email = "yehudah.lev@gmail.com";
+        dnsResolver = "1.1.1.1:53";
+        dnsProvider = "duckdns";
+        dnsPropagationCheck = true;
+        environmentFile = "/var/lib/secrets/duckdns-token";
         group = config.services.caddy.group;
+      };
+      certs."janjuta.duckdns.org" = {
         domain = "janjuta.duckdns.org";
         extraDomainNames = [ "*.janjuta.duckdns.org" ];
-        dnsProvider = "duckdns";
-        dnsResolver = "jantun.duckdns.org:53";
-        dnsPropagationCheck = true;
-        environmentFile = "/var/lib/secrets/duckdns-token";
       };
       certs."jantun.duckdns.org" = {
-        group = config.services.caddy.group;
         domain = "jantun.duckdns.org";
         extraDomainNames = [ "*.jantun.duckdns.org" ];
-        dnsProvider = "duckdns";
-        dnsPropagationCheck = true;
-        environmentFile = "/var/lib/secrets/duckdns-token";
       };
     };
     services.caddy = {
       enable = true;
       group = "caddy";
       user = "caddy";
-      virtualHosts."janjuta.duckdns.org" = {
-        useACMEHost = "janjuta.duckdns.org";
-        extraConfig = ''
-          respond "OK"
-        '';
-      };
-      virtualHosts."jantun.duckdns.org" = {
-        useACMEHost = "jantun.duckdns.org";
-        extraConfig = ''
-          respond "OK"
-        '';
-      };
     };
   };
 }
