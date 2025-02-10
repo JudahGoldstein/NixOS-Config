@@ -5,11 +5,9 @@ with lib;
   networking.networkmanager.enable = true;
   environment.systemPackages = with pkgs;
     [
-      ivpn
       dig
       sshpass
     ];
-  services.ivpn.enable = true;
   services.openssh.enable = true;
   services.sshd.enable = true;
   programs.ssh = mkIf config.kde.enable {
