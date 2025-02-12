@@ -27,6 +27,7 @@ in
     };
     shellAliases = myAliases;
   };
+  environment.systemPackages = with pkgs; [ tldr ];
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
 }
