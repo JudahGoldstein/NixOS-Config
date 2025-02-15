@@ -25,7 +25,7 @@ with lib;
         SCARF_NO_ANALYTICS = "True";
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
       };
-      package = pkgs.open-webui;
+      package = pkgs-unstable.open-webui;
     };
     services.caddy.virtualHosts."ollama.janjuta.duckdns.org" = mkIf config.caddy.enable {
       useACMEHost = "janjuta.duckdns.org";
