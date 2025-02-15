@@ -3,6 +3,7 @@ with lib;
 {
   networking.hostName = config.name;
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
   environment.systemPackages = with pkgs;
     [
       dig
