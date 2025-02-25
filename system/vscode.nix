@@ -29,6 +29,9 @@ with lib;
 
         # for go development
         go
+
+        # for SQL development
+        dbeaver-bin
       ];
 
     programs = {
