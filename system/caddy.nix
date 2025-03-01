@@ -32,6 +32,18 @@ with lib;
       enable = true;
       group = "caddy";
       user = "caddy";
+      virtualHosts."janjuta.duckdns.org" = {
+        useACMEHost = "janjuta.duckdns.org";
+        extraConfig = ''
+          respond "OK"
+        '';
+      };
+      virtualHosts."jantun.duckdns.org" = {
+        useACMEHost = "jantun.duckdns.org";
+        extraConfig = ''
+          respond "OK"
+        '';
+      };
     };
   };
 }
