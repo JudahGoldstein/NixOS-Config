@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }:
-with lib
+with lib;
 {
   options = {
     vscode.enable = lib.mkOption {
