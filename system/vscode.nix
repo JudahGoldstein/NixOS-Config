@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }:
-with lib;
+with lib
 {
   options = {
     vscode.enable = lib.mkOption {
@@ -32,6 +32,9 @@ with lib;
 
         # for SQL development
         dbeaver-bin
+
+        #make support
+        gnumake
       ];
 
     programs = {
