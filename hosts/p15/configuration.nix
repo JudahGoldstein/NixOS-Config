@@ -28,6 +28,15 @@
   nvidia-prime.enable = true;
   nvidia-prime.offload = true;
 
+  systemd.services.disableTouchscreen = {
+    description = "Disable touchscreen";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+    };
+    script = "echo 0018:2A94:D64D.0004 | tee /sys/bus/hid/drivers/hid-multitouch/unbind";
+  };
+
   gnome.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
