@@ -3,7 +3,11 @@ with lib;
 {
   networking.hostName = config.name;
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+
+  networking.nameservers =
+    if config.blocky.enable
+    then [ "127.0.0.1" ]
+    else [ "1.1.1.1" "1.0.0.1" ];
   environment.systemPackages = with pkgs;
     [
       dig
