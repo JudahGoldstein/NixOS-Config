@@ -17,8 +17,13 @@
   media-server.enable = true;
   ollama.enable = true;
   forge.enable = true;
-  tailscale.enable = true;
 
+  # Device specific Tailscale configuration
+  tailscale.enable = true;
+  services.tailscale = {
+    extraSetFlags = [ "--accept-dns=false" ];
+    useRoutingFeatures = "server";
+  };
   fileSystems."/mnt/media" =
     {
       device = "/dev/disk/by-uuid/2dfcbe87-8cbd-4363-bdb8-a4e24558e227";

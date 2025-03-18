@@ -13,8 +13,14 @@
   # TODO make a VirtualBox module
   virtualisation.virtualbox.host.enable = true;
 
-  tailscale.enable = true;
   blocky.enable = true;
+
+  # Device specific Tailscale configuration
+  tailscale.enable = true;
+  services.tailscale = {
+    useRoutingFeatures = "client";
+  };
+  
 
   environment.systemPackages = with pkgs; [ eclipses.eclipse-jee ]; #just for 4413
 
