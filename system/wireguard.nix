@@ -2,12 +2,18 @@
 with lib;
 {
   options = {
-    wireguard.enable = mkOption {
+    tailscale.enable = mkOption {
       default = false;
       description = "Enable wireguard host";
     };
   };
-  config = mkIf config.wireguard.enable {
-    # TODO: Add wireguard configuration
+  config = mkIf config.tailscale.enable {
+    services.tailscale = {
+      enable = true;
+      openFirewall = true;
+    };
+    environment.systemPackages = with pkgs; [
+      trayscale
+    ];
   };
 }
