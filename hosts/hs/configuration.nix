@@ -15,7 +15,6 @@
   blocky.enable = true;
   gnome.enable = true;
   media-server.enable = true;
-  wireguard.enable = true;
   ollama.enable = true;
   forge.enable = true;
   tailscale.enable = true;
