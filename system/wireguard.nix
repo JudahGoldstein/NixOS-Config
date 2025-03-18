@@ -12,8 +12,5 @@ with lib;
       enable = true;
       openFirewall = true;
     };
-    environment.systemPackages = with pkgs; [
-      trayscale
-    ];
   };
 }
