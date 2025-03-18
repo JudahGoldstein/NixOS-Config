@@ -18,6 +18,7 @@
   wireguard.enable = true;
   ollama.enable = true;
   forge.enable = true;
+  tailscale.enable = true;
 
   fileSystems."/mnt/media" =
     {
