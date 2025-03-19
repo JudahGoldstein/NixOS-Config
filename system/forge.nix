@@ -23,8 +23,8 @@ with lib;
         EnvironmentFile = "/home/${config.name}/env.env"; #printenv > ~/env.env
       };
     };
-    services.caddy.virtualHosts."forge.janjuta.duckdns.org" = mkIf config.caddy.enable {
-      useACMEHost = "janjuta.duckdns.org";
+    services.caddy.virtualHosts."forge.local.janjuta.org" = mkIf config.caddy.enable {
+      useACMEHost = "janjuta.org";
       extraConfig = ''
         reverse_proxy http://127.0.0.1:7860
       '';

@@ -60,14 +60,26 @@ with lib;
     };
 
     services.caddy.virtualHosts = {
-      "transmission.janjuta.duckdns.org" = mkIf config.transmission.enable {
-        useACMEHost = "janjuta.duckdns.org";
+      "transmission.lan.janjuta.org" = mkIf config.transmission.enable {
+        useACMEHost = "janjuta.org";
         extraConfig = ''
           reverse_proxy http://127.0.0.1:9091
         '';
       };
-      "deluge.janjuta.duckdns.org" = mkIf config.deluge.enable {
-        useACMEHost = "janjuta.duckdns.org";
+      "transmission.ts.janjuta.org" = mkIf config.transmission.enable {
+        useACMEHost = "janjuta.org";
+        extraConfig = ''
+          reverse_proxy http://127.0.0.1:9091
+        '';
+      };
+      "deluge.local.janjuta.org" = mkIf config.deluge.enable {
+        useACMEHost = "janjuta.org";
+        extraConfig = ''
+          reverse_proxy http://127.0.0.1:8112
+        '';
+      };
+      "deluge.ts.janjuta.org" = mkIf config.deluge.enable {
+        useACMEHost = "janjuta.org";
         extraConfig = ''
           reverse_proxy http://127.0.0.1:8112
         '';

@@ -27,14 +27,20 @@ with lib;
       };
       package = pkgs-unstable.open-webui;
     };
-    services.caddy.virtualHosts."ollama.janjuta.duckdns.org" = mkIf config.caddy.enable {
-      useACMEHost = "janjuta.duckdns.org";
+    services.caddy.virtualHosts."ollama.local.janjuta.org" = mkIf config.caddy.enable {
+      useACMEHost = "janjuta.org";
       extraConfig = ''
         reverse_proxy http://127.0.0.1:11435
       '';
     };
-    services.caddy.virtualHosts."ollama.jantun.duckdns.org" = mkIf config.caddy.enable {
-      useACMEHost = "jantun.duckdns.org";
+    services.caddy.virtualHosts."ollama.wan.janjuta.org" = mkIf config.caddy.enable {
+      useACMEHost = "janjuta.org";
+      extraConfig = ''
+        reverse_proxy http://127.0.0.1:11435
+      '';
+    };
+    services.caddy.virtualHosts."ollama.ts.janjuta.org" = mkIf config.caddy.enable {
+      useACMEHost = "janjuta.org";
       extraConfig = ''
         reverse_proxy http://127.0.0.1:11435
       '';
