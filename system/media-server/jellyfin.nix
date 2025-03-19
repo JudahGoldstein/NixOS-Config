@@ -11,15 +11,20 @@ with lib;
       logDir = "/var/log/jellyfin";
       package = pkgs.jellyfin;
     };
-
-    services.caddy.virtualHosts."jellyfin.janjuta.duckdns.org" = {
-      useACMEHost = "janjuta.duckdns.org";
+    services.caddy.virtualHosts."jellyfin.ts.janjuta.org" = {
+      useACMEHost = "janjuta.org";
       extraConfig = ''
         reverse_proxy http://127.0.0.1:8096
       '';
     };
-    services.caddy.virtualHosts."jellyfin.jantun.duckdns.org" = {
-      useACMEHost = "jantun.duckdns.org";
+    services.caddy.virtualHosts."jellyfin.wan.janjuta.org" = {
+      useACMEHost = "janjuta.org";
+      extraConfig = ''
+        reverse_proxy http://127.0.0.1:8096
+      '';
+    };
+    services.caddy.virtualHosts."jellyfin.local.janjuta.org" = {
+      useACMEHost = "janjuta.org";
       extraConfig = ''
         reverse_proxy http://127.0.0.1:8096
       '';

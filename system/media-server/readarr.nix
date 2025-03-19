@@ -8,8 +8,14 @@ with lib;
       dataDir = "/var/lib/readarr";
       package = pkgs-unstable.readarr;
     };
-    services.caddy.virtualHosts."readarr.janjuta.duckdns.org" = {
-      useACMEHost = "janjuta.duckdns.org";
+    services.caddy.virtualHosts."readarr.local.janjuta.org" = {
+      useACMEHost = "janjuta.org";
+      extraConfig = ''
+        reverse_proxy http://127.0.0.1:8787
+      '';
+    };
+    services.caddy.virtualHosts."readarr.ts.janjuta.org" = {
+      useACMEHost = "janjuta.org";
       extraConfig = ''
         reverse_proxy http://127.0.0.1:8787
       '';
