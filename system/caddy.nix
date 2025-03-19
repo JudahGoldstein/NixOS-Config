@@ -27,6 +27,12 @@ with lib;
         domain = "jantun.duckdns.org";
         extraDomainNames = [ "*.jantun.duckdns.org" ];
       };
+      certs."janjuta.org" = {
+        dnsProvider = "cloudflare";
+        environmentFile = "/var/lib/secrets/cloudflare-dns-api-key";
+        domain = "janjuta.org";
+        extraDomainNames = [ "*.janjuta.org" ];
+      };
     };
     services.caddy = {
       enable = true;
@@ -40,6 +46,12 @@ with lib;
       };
       virtualHosts."jantun.duckdns.org" = {
         useACMEHost = "jantun.duckdns.org";
+        extraConfig = ''
+          respond "OK"
+        '';
+      };
+      virtualHosts."janjuta.org" = {
+        useACMEHost = "janjuta.org";
         extraConfig = ''
           respond "OK"
         '';
