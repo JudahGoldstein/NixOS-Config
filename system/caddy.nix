@@ -14,22 +14,12 @@ with lib;
       defaults = {
         email = "yehudah.lev@gmail.com";
         dnsResolver = "1.1.1.1:53";
-        dnsProvider = "duckdns";
+        dnsProvider = "cloudflare";
         dnsPropagationCheck = true;
-        environmentFile = "/var/lib/secrets/duckdns-token";
+        environmentFile = "/var/lib/secrets/cloudflare-dns-api-key";
         group = config.services.caddy.group;
       };
-      certs."janjuta.duckdns.org" = {
-        domain = "janjuta.duckdns.org";
-        extraDomainNames = [ "*.janjuta.duckdns.org" ];
-      };
-      certs."jantun.duckdns.org" = {
-        domain = "jantun.duckdns.org";
-        extraDomainNames = [ "*.jantun.duckdns.org" ];
-      };
       certs."janjuta.org" = {
-        dnsProvider = "cloudflare";
-        environmentFile = "/var/lib/secrets/cloudflare-dns-api-key";
         domain = "janjuta.org";
         extraDomainNames = [
           "local.janjuta.org"
@@ -45,18 +35,6 @@ with lib;
       enable = true;
       group = "caddy";
       user = "caddy";
-      virtualHosts."janjuta.duckdns.org" = {
-        useACMEHost = "janjuta.duckdns.org";
-        extraConfig = ''
-          respond "OK"
-        '';
-      };
-      virtualHosts."jantun.duckdns.org" = {
-        useACMEHost = "jantun.duckdns.org";
-        extraConfig = ''
-          respond "OK"
-        '';
-      };
       virtualHosts."janjuta.org" = {
         useACMEHost = "janjuta.org";
         extraConfig = ''

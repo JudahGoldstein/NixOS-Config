@@ -8,8 +8,14 @@ with lib;
       dataDir = "/var/lib/radarr";
       package = pkgs-unstable.radarr;
     };
-    services.caddy.virtualHosts."radarr.janjuta.duckdns.org" = {
-      useACMEHost = "janjuta.duckdns.org";
+    services.caddy.virtualHosts."radarr.local.janjuta.org" = {
+      useACMEHost = "janjuta.org";
+      extraConfig = ''
+        reverse_proxy http://127.0.0.1:7878
+      '';
+    };
+    services.caddy.virtualHosts."radarr.ts.janjuta.org" = {
+      useACMEHost = "janjuta.org";
       extraConfig = ''
         reverse_proxy http://127.0.0.1:7878
       '';
