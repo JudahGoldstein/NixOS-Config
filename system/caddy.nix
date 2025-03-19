@@ -31,7 +31,14 @@ with lib;
         dnsProvider = "cloudflare";
         environmentFile = "/var/lib/secrets/cloudflare-dns-api-key";
         domain = "janjuta.org";
-        extraDomainNames = [ "*.janjuta.org" ];
+        extraDomainNames = [
+          "local.janjuta.org"
+          "wan.janjuta.org"
+          "ts.janjuta.org"
+          "*.local.janjuta.org"
+          "*.wan.janjuta.org"
+          "*.ts.janjuta.org"
+        ];
       };
     };
     services.caddy = {
@@ -51,6 +58,18 @@ with lib;
         '';
       };
       virtualHosts."janjuta.org" = {
+        useACMEHost = "janjuta.org";
+        extraConfig = ''
+          respond "OK"
+        '';
+      };
+      virtualHosts."ts.janjuta.org" = {
+        useACMEHost = "janjuta.org";
+        extraConfig = ''
+          respond "OK"
+        '';
+      };
+      virtualHosts."local.janjuta.org" = {
         useACMEHost = "janjuta.org";
         extraConfig = ''
           respond "OK"
