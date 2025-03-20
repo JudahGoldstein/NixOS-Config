@@ -21,7 +21,7 @@
   # Device specific Tailscale configuration
   tailscale.enable = true;
   services.tailscale = {
-    extraSetFlags = [ "--accept-dns=false" ];
+    extraSetFlags = [ "--advertise-exit-node" "--accept-dns=false" ];
     useRoutingFeatures = "server";
   };
   fileSystems."/mnt/media" =
