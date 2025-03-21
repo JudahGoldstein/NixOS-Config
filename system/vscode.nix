@@ -30,6 +30,11 @@ with lib;
         # for go development
         go
 
+        # for c/c++ development
+        gcc
+        cmake
+        clang
+
         # for SQL development
         dbeaver-bin
 
