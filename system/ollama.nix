@@ -13,7 +13,7 @@ with lib;
       host = "127.0.0.1";
       port = 11434;
       acceleration = "cuda";
-      package = pkgs-unstable.ollama;
+      package = pkgs.ollama;
     };
     services.open-webui = {
       enable = true;
