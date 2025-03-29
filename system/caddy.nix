@@ -28,6 +28,7 @@ with lib;
           "*.local.janjuta.org"
           "*.wan.janjuta.org"
           "*.ts.janjuta.org"
+          "4413.janjuta.org"
         ];
       };
     };
@@ -51,6 +52,12 @@ with lib;
         useACMEHost = "janjuta.org";
         extraConfig = ''
           respond "OK"
+        '';
+      };
+      virtualHosts."4413.janjuta.org" = {
+        useACMEHost = "janjuta.org";
+        extraConfig = ''
+          reverse_proxy http://44.201.89.33
         '';
       };
     };
