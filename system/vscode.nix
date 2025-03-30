@@ -40,6 +40,9 @@ with lib;
 
         #make support
         gnumake
+
+        #for polyglot 
+        dotnet-sdk_9
       ];
 
     programs = {
