@@ -37,14 +37,10 @@
   nvidia-prime.enable = true;
   nvidia-prime.offload = true;
 
-  systemd.services.disableTouchscreen = {
-    description = "Disable touchscreen";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-    };
-    script = "echo 0018:2A94:D64D.0004 | tee /sys/bus/hid/drivers/hid-multitouch/unbind";
-  };
+  #udev rule for disabling touchscreen
+  services.udev.extraRules = ''
+  ACTION!="remove", KERNEL=="event[0-9]*", ENV{ID_VENDOR_ID}=="2A94", ENV{ID_MODEL_ID}=="D64D", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+  '';
 
   gnome.enable = true;
 
