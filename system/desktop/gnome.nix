@@ -14,18 +14,7 @@
       gnome-tweaks
       gnome-extension-manager
     ];
-    # services.xserver = {
-    #   displayManager = {
-    #     setupCommands = ''
-    #       ${pkgs.numlockx}/bin/numlockx on
-    #     '';
-    #     gdm = {
-    #       enable = true;
-    #       wayland = true;
-    #     };
-    #   };
-    #   desktopManager.gnome.enable = true;
-    # };
+    services.libinput.enable = true;
     services.displayManager = { 
       enable = true;
       ly.enable = true;
