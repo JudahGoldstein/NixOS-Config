@@ -7,6 +7,7 @@ with lib;
       ./radarr.nix
       ./prowlarr.nix
       ./jellyfin.nix
+      ./priv.nix
     ];
   options = {
     media-server.enable = mkOption {
