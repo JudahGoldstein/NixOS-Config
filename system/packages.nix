@@ -15,6 +15,7 @@ with lib;
       # Misc I always want
       fastfetch
       numlockx
+      phoronix-test-suite
 
       # Communication
       zoom-us
