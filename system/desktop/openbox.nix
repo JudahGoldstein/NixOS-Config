@@ -8,7 +8,11 @@
     };
   };
   config = lib.mkIf (config.openbox.enable == true) {
-    services.displayManager.sddm.enable = true;
+    services.displayManager = {
+      enable = true;
+      ly.enable = true;
+      preStart = "";
+    };
     services.xserver.windowManager.openbox.enable = true;
   };
 }
