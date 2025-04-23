@@ -53,6 +53,12 @@ with lib;
           owner = config.services.caddy.user;
           group = config.services.caddy.group;
         } else { };
+      "couchdb-password" =
+        if config.services.couchdb.enable == true then {
+          path = "/var/lib/secrets/couchdb-password";
+          owner = config.services.couchdb.user;
+          group = config.services.couchdb.group;
+        } else { };
     };
   };
 }
