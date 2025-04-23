@@ -8,7 +8,11 @@
     };
   };
   config = lib.mkIf (config.xfce.enable == true) {
-    services.displayManager.sddm.enable = true;
+    services.displayManager = {
+      enable = true;
+      ly.enable = true;
+      preStart = "";
+    };
     services.xserver.desktopManager.xfce.enable = true;
   };
 }
