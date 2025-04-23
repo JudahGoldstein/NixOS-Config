@@ -44,12 +44,14 @@ with lib;
       "duckdns-token" =
         if config.caddy.enable == true then {
           path = "/var/lib/secrets/duckdns-token";
-          mode = "0777";
+          owner = config.services.caddy.user;
+          group = config.services.caddy.group;
         } else { };
       "cloudflare-dns-api-key" =
         if config.caddy.enable == true then {
           path = "/var/lib/secrets/cloudflare-dns-api-key";
-          mode = "0777";
+          owner = config.services.caddy.user;
+          group = config.services.caddy.group;
         } else { };
     };
   };
