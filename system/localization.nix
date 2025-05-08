@@ -8,4 +8,5 @@
     variant = "colemak";
   };
   console.useXkbConfig = true;
+  fonts.enableDefaultPackages = true;
 }
