@@ -16,7 +16,6 @@
   gnome.enable = true;
   media-server.enable = true;
   ollama.enable = true;
-  forge.enable = true;
 
   # Device specific Tailscale configuration
   tailscale.enable = true;
