@@ -1,4 +1,7 @@
 { config, pkgs, lib, ... }:
+let
+  virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
+in
 with lib;
 {
   options = {
@@ -25,23 +28,6 @@ with lib;
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
       };
     };
-    services.caddy.virtualHosts."ollama.local.janjuta.org" = mkIf config.caddy.enable {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:11435
-      '';
-    };
-    services.caddy.virtualHosts."ollama.wan.janjuta.org" = mkIf config.caddy.enable {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:11435
-      '';
-    };
-    services.caddy.virtualHosts."ollama.ts.janjuta.org" = mkIf config.caddy.enable {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:11435
-      '';
-    };
+    services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "ollama" 11435);
   };
 }
