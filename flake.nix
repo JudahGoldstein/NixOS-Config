@@ -47,7 +47,12 @@
           modules =
             [
               ./hosts/v14/configuration.nix
-              inputs.home-manager.nixosModules.default
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.v14 = ./hosts/v14/home.nix;
+              }
               sops-nix.nixosModules.sops
             ];
           specialArgs = {
@@ -60,7 +65,12 @@
           modules =
             [
               ./hosts/p15/configuration.nix
-              inputs.home-manager.nixosModules.default
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.p15 = ./hosts/p15/home.nix;
+              }
               sops-nix.nixosModules.sops
             ];
           specialArgs = {
@@ -73,13 +83,17 @@
           modules =
             [
               ./hosts/hs/configuration.nix
-              inputs.home-manager.nixosModules.default
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.hs = ./hosts/hs/home.nix;
+              }
               sops-nix.nixosModules.sops
               disko.nixosModules.disko
             ];
           specialArgs = {
             inherit inputs;
-            inherit stable-diffusion-webui-nix;
           };
         };
 
@@ -92,35 +106,6 @@
           specialArgs = {
             inherit inputs;
           };
-        };
-      };
-
-      homeConfigurations = {
-        v14 = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules =
-            [
-              ./hosts/v14/home.nix
-              sops-nix.homeManagerModules.sops
-            ];
-        };
-
-        p15 = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules =
-            [
-              ./hosts/p15/home.nix
-              sops-nix.homeManagerModules.sops
-            ];
-        };
-
-        hs = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules =
-            [
-              ./hosts/hs/home.nix
-              sops-nix.homeManagerModules.sops
-            ];
         };
       };
     };
