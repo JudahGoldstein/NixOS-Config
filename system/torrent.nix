@@ -1,7 +1,9 @@
 { config, pkgs, lib, ... }:
+let
+  virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
+in
 with lib;
 {
-
   options = {
     torrent.enable = mkOption {
       default = false;
@@ -58,32 +60,8 @@ with lib;
       };
       credentialsFile = "/var/lib/secrets/transmission-credentials.json";
     };
-
-    services.caddy.virtualHosts = {
-      "transmission.lan.janjuta.org" = mkIf config.transmission.enable {
-        useACMEHost = "janjuta.org";
-        extraConfig = ''
-          reverse_proxy http://127.0.0.1:9091
-        '';
-      };
-      "transmission.ts.janjuta.org" = mkIf config.transmission.enable {
-        useACMEHost = "janjuta.org";
-        extraConfig = ''
-          reverse_proxy http://127.0.0.1:9091
-        '';
-      };
-      "deluge.local.janjuta.org" = mkIf config.deluge.enable {
-        useACMEHost = "janjuta.org";
-        extraConfig = ''
-          reverse_proxy http://127.0.0.1:8112
-        '';
-      };
-      "deluge.ts.janjuta.org" = mkIf config.deluge.enable {
-        useACMEHost = "janjuta.org";
-        extraConfig = ''
-          reverse_proxy http://127.0.0.1:8112
-        '';
-      };
-    };
+    services.caddy.virtualHosts =
+      (virtualHosts.mkLocalVirtualHost "transmission" 9091) //
+      (virtualHosts.mkLocalVirtualHost "deluge" 8112);
   };
 }

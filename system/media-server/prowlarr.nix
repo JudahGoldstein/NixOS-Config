@@ -1,4 +1,7 @@
 { config, pkgs, lib, ... }:
+let
+  virtualHosts = import ../caddy/virtualHosts.nix { inherit lib; };
+in
 with lib;
 {
   config = mkIf config.media-server.enable {
@@ -6,17 +9,6 @@ with lib;
       enable = true;
       openFirewall = true;
     };
-    services.caddy.virtualHosts."prowlarr.local.janjuta.org" = {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:9696
-      '';
-    };
-    services.caddy.virtualHosts."prowlarr.ts.janjuta.org" = {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:9696
-      '';
-    };
+    services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "prowlarr" 9696);
   };
 }
