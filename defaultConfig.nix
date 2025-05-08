@@ -32,8 +32,6 @@ with lib;
       ./system/vscode.nix
       ./system/text-editors.nix
       ./system/audio-video.nix
-      ./system/forge.nix
-
     ];
 
   options = {
