@@ -18,10 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stable-diffusion-webui-nix = {
-      url = "github:Janrupf/stable-diffusion-webui-nix/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, disko, sops-nix, stable-diffusion-webui-nix, ... }@inputs:
