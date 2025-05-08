@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{ config, pkgs, lib, ... }:
 with lib;
 {
   options = {
@@ -13,7 +13,6 @@ with lib;
       host = "127.0.0.1";
       port = 11434;
       acceleration = "cuda";
-      package = pkgs-unstable.ollama;
     };
     services.open-webui = {
       enable = true;
@@ -25,7 +24,6 @@ with lib;
         SCARF_NO_ANALYTICS = "True";
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
       };
-      package = pkgs-unstable.open-webui;
     };
     services.caddy.virtualHosts."ollama.local.janjuta.org" = mkIf config.caddy.enable {
       useACMEHost = "janjuta.org";

@@ -1,8 +1,7 @@
 {
   description = "package updates";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -25,18 +24,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, disko, sops-nix, stable-diffusion-webui-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, disko, sops-nix, stable-diffusion-webui-nix, ... }@inputs:
     let
       system = "x86_64-linux";
 
       lib = nixpkgs.lib;
 
       pkgs = import inputs.nixpkgs {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-        config.nix.channel.enable = false;
-      };
-      pkgs-unstable = import inputs.nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;
         config.nix.channel.enable = false;
@@ -61,7 +55,6 @@
             ];
           specialArgs = {
             inherit inputs;
-            inherit pkgs-unstable;
           };
         };
 
@@ -75,7 +68,6 @@
             ];
           specialArgs = {
             inherit inputs;
-            inherit pkgs-unstable;
           };
         };
 
@@ -90,7 +82,6 @@
             ];
           specialArgs = {
             inherit inputs;
-            inherit pkgs-unstable;
             inherit stable-diffusion-webui-nix;
           };
         };
@@ -103,7 +94,6 @@
             ];
           specialArgs = {
             inherit inputs;
-            inherit pkgs-unstable;
           };
         };
       };
@@ -125,7 +115,6 @@
               ./hosts/p15/home.nix
               sops-nix.homeManagerModules.sops
             ];
-          extraSpecialArgs = { inherit pkgs-unstable; };
         };
 
         hs = home-manager.lib.homeManagerConfiguration {
@@ -135,7 +124,6 @@
               ./hosts/hs/home.nix
               sops-nix.homeManagerModules.sops
             ];
-          extraSpecialArgs = { inherit pkgs-unstable; };
         };
       };
     };
