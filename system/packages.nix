@@ -28,7 +28,7 @@ with lib;
       bitwarden-desktop
 
       # Misc
-      nerdfonts
+      # nerdfonts
       remmina
 
       # chrome for testing
