@@ -1,4 +1,7 @@
 { config, pkgs, lib, ... }:
+let
+  virtualHosts = import ../caddy/virtualHosts.nix { inherit lib; };
+in
 with lib;
 {
   config = mkIf config.media-server.enable {
@@ -8,23 +11,6 @@ with lib;
       adminUser = "admin";
       # Set adminPassword manually in `/var/lib/couchdb/local.ini` until i can figure out how to use sops for it 
     };
-    services.caddy.virtualHosts."couchdb.ts.janjuta.org" = {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:5984
-      '';
-    };
-    services.caddy.virtualHosts."couchdb.wan.janjuta.org" = {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:5984
-      '';
-    };
-    services.caddy.virtualHosts."couchdb.local.janjuta.org" = {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:5984
-      '';
-    };
+    services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "couchdb" 5984);
   };
 }

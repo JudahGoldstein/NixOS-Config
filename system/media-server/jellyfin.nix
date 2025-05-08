@@ -1,4 +1,7 @@
 { config, pkgs, lib, ... }:
+let
+  virtualHosts = import ../caddy/virtualHosts.nix { inherit lib; };
+in
 with lib;
 {
   config = mkIf config.media-server.enable {
@@ -11,23 +14,6 @@ with lib;
       logDir = "/var/log/jellyfin";
       package = pkgs.jellyfin;
     };
-    services.caddy.virtualHosts."jellyfin.ts.janjuta.org" = {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:8096
-      '';
-    };
-    services.caddy.virtualHosts."jellyfin.wan.janjuta.org" = {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:8096
-      '';
-    };
-    services.caddy.virtualHosts."jellyfin.local.janjuta.org" = {
-      useACMEHost = "janjuta.org";
-      extraConfig = ''
-        reverse_proxy http://127.0.0.1:8096
-      '';
-    };
+    services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "jellyfin" 8096);
   };
 }
