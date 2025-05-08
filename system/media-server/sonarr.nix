@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{ config, pkgs, lib, ... }:
 with lib;
 {
   config = mkIf config.media-server.enable {
@@ -6,7 +6,6 @@ with lib;
       enable = true;
       openFirewall = true;
       dataDir = "/var/lib/sonarr";
-      package = pkgs-unstable.sonarr;
     };
     services.caddy.virtualHosts."sonarr.local.janjuta.org" = {
       useACMEHost = "janjuta.org";
