@@ -21,7 +21,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, disko, sops-nix, stable-diffusion-webui-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, disko, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
 
