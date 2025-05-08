@@ -25,7 +25,7 @@ with lib;
       ./system/torrent.nix
       ./system/docker.nix
       ./system/wireguard.nix
-      ./system/caddy.nix
+      ./system/caddy/caddy.nix
       ./system/ollama.nix
       ./system/firefox.nix
       ./system/terminal.nix
