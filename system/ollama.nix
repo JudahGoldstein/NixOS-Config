@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-open-webui-pin, lib, ... }:
 let
   virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
 in
@@ -27,6 +27,7 @@ with lib;
         SCARF_NO_ANALYTICS = "True";
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
       };
+      package = pkgs-open-webui-pin.open-webui;
     };
     services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "ollama" 11435);
   };
