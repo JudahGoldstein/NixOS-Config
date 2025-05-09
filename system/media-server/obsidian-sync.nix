@@ -8,8 +8,27 @@ with lib;
     services.couchdb = {
       enable = true;
       port = 5984;
-      adminUser = "admin";
-      # Set adminPassword manually in `/var/lib/couchdb/local.ini` until i can figure out how to use sops for it 
+      extraConfigFiles = [ "/var/lib/secrets/couchdb-creds" ];
+      extraConfig = {
+        couchdb = {
+          max_document_size = 50000000;
+        };
+        chttpd = {
+          require_valid_user = "true";
+          max_http_request_size = 4294967296;
+        };
+        chttpd_auth = {
+          require_valid_user = "true";
+        };
+        httpd = {
+          WWW-Authenticate = "Basic realm=\"couchdb\"";
+          enable_cors = "true";
+        };
+        cors = {
+          credentials = "true";
+          origins = "app://obsidian.md,capacitor://localhost,http://localhost";
+        };
+      };
     };
     services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "couchdb" 5984);
   };

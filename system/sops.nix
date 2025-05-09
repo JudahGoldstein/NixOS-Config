@@ -8,6 +8,9 @@ with lib;
       ssh-to-age
     ];
 
+  environment.variables = {
+    SOPS_EDITOR = "micro";
+  };
   sops = {
     defaultSopsFile = "/etc/nixos/secrets.yaml";
     validateSopsFiles = false;
@@ -53,9 +56,9 @@ with lib;
           owner = config.services.caddy.user;
           group = config.services.caddy.group;
         } else { };
-      "couchdb-password" =
+      "couchdb-creds" =
         if config.services.couchdb.enable == true then {
-          path = "/var/lib/secrets/couchdb-password";
+          path = "/var/lib/secrets/couchdb-creds";
           owner = config.services.couchdb.user;
           group = config.services.couchdb.group;
         } else { };

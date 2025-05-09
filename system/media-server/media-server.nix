@@ -7,7 +7,7 @@ with lib;
       ./radarr.nix
       ./prowlarr.nix
       ./jellyfin.nix
-      # ./obsidian-sync.nix #not working atm
+      ./obsidian-sync.nix
     ];
   options = {
     media-server.enable = mkOption {
