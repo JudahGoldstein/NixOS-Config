@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
-
+    nixpkgs-open-webui-pin.url = "github:nixos/nixpkgs/3730d8a308f94996a9ba7c7138ede69c1b9ac4ae";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +21,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, disko, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, disko, sops-nix, nixpkgs-open-webui-pin, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -94,6 +94,10 @@
             ];
           specialArgs = {
             inherit inputs;
+            pkgs-open-webui-pin = import nixpkgs-open-webui-pin {
+              inherit system;
+              config.allowUnfree = true;
+            };
           };
         };
 
