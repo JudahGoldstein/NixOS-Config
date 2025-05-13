@@ -8,6 +8,7 @@ with lib;
       ./prowlarr.nix
       ./jellyfin.nix
       ./obsidian-sync.nix
+      ./recipes.nix
     ];
   options = {
     media-server.enable = mkOption {
