@@ -10,6 +10,6 @@ with lib;
       port = 41026;
     };
     
-    services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "mealie" 41026 );
+    services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "mealie" 41026 );
   };
 }
