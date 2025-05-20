@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
-    nixpkgs-open-webui-pin.url = "github:nixos/nixpkgs/3730d8a308f94996a9ba7c7138ede69c1b9ac4ae";
+    nixpkgs-open-webui-pin.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
