@@ -19,15 +19,27 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-  };
+}; 
 
-  outputs = { self, nixpkgs, home-manager, disko, sops-nix, nixpkgs-open-webui-pin, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, sops-nix, nixpkgs-open-webui-pin, ... }@inputs:
     let
       system = "x86_64-linux";
 
       lib = nixpkgs.lib;
 
       pkgs = import inputs.nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+        config.nix.channel.enable = false;
+        config.permittedInsecurePackages =
+          [
+            "aspnetcore-runtime-wrapped-6.0.36" #sonarr
+            "aspnetcore-runtime-6.0.36" #sonarr
+            "dotnet-sdk-wrapped-6.0.428" #sonarr
+            "dotnet-sdk-6.0.428" #sonarr
+          ];
+      };
+      pkgs-stable = import inputs.nixpkgs-stable {
         system = "x86_64-linux";
         config.allowUnfree = true;
         config.nix.channel.enable = false;
@@ -98,6 +110,7 @@
               inherit system;
               config.allowUnfree = true;
             };
+            inherit pkgs-stable;
           };
         };
 
