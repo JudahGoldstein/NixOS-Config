@@ -8,7 +8,8 @@ with lib;
     services.prowlarr = {
       enable = true;
       openFirewall = true;
-      package = pkgs-stable.prowlarr;
+      dataDir = "/var/lib/prowlarr";
+      package = pkgs.prowlarr;
     };
     services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "prowlarr" 9696);
   };
