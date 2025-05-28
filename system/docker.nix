@@ -9,6 +9,7 @@ with lib;
   };
   config = mkIf config.docker.enable {
     virtualisation.docker.enable = true;
+    virtualisation.oci-containers.backend = "docker";
     hardware.nvidia-container-toolkit.enable = true;
   };
 }
