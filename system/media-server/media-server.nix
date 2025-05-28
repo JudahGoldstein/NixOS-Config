@@ -10,6 +10,7 @@ with lib;
       ./obsidian-sync.nix
       ./recipes.nix
       ./lidarr.nix
+      ./deemix.nix
     ];
   options = {
     media-server.enable = mkOption {
