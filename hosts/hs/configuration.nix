@@ -20,9 +20,9 @@
   # Device specific Tailscale configuration
   tailscale.enable = true;
   services.tailscale = {
-    extraSetFlags = [ "--advertise-exit-node" "--accept-dns=false" ];
-    useRoutingFeatures = "server";
+    useRoutingFeatures = "client";
   };
+
   fileSystems."/mnt/media" =
     {
       device = "/dev/disk/by-uuid/2dfcbe87-8cbd-4363-bdb8-a4e24558e227";
