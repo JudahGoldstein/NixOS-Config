@@ -11,7 +11,6 @@ with lib;
     services.tailscale = {
       enable = true;
       openFirewall = true;
-      extraSetFlags = [ "--advertise-exit-node" ];
     };
   };
 }
