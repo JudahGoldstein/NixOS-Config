@@ -10,9 +10,6 @@
   name = "p15";
   longName = "Judah (P15)";
 
-  # TODO make a VirtualBox module
-  virtualisation.virtualbox.host.enable = true;
-
   blocky.enable = true;
 
   # Device specific Tailscale configuration
