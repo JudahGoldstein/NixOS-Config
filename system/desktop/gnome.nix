@@ -13,9 +13,13 @@
       numlockx
       gnome-tweaks
       gnome-extension-manager
+      gnomeExtensions.gsconnect
+      gnomeExtensions.appindicator
+      gnomeExtensions.caffeine
+      gnomeExtensions.pip-on-top
     ];
     services.libinput.enable = true;
-    services.displayManager = { 
+    services.displayManager = {
       enable = true;
       ly.enable = true;
       preStart = "";
