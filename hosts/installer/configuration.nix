@@ -10,11 +10,13 @@ in
     [
       "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
       "${modulesPath}/installer/cd-dvd/channel.nix"
+      ../../system/desktop/gnome.nix
     ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
   services.openssh.enable = true;
+  gnome.enable = true;
 
   users.users.nixos = {
     password = "arst";
