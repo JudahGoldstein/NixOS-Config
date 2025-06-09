@@ -17,6 +17,8 @@ in
 
   services.openssh.enable = true;
   gnome.enable = true;
+  networking.networkmanager.enable = true;
+  networking.wireless.enable = false;
 
   users.users.nixos = {
     password = "arst";
