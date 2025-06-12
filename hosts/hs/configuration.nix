@@ -16,12 +16,8 @@
   gnome.enable = true;
   media-server.enable = true;
   ollama.enable = true;
-
-  # Device specific Tailscale configuration
   tailscale.enable = true;
-  services.tailscale = {
-    useRoutingFeatures = "client";
-  };
+
 
   fileSystems."/mnt/media" =
     {

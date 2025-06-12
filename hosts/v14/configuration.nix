@@ -12,6 +12,9 @@
 
   networking.hostName = "v14";
 
+  blocky.enable = true;
+  tailscale.enable = true;
+
   #SSD trimming
   services.fstrim.enable = true;
 
