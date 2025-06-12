@@ -11,12 +11,7 @@
   longName = "Judah (P15)";
 
   blocky.enable = true;
-
-  # Device specific Tailscale configuration
   tailscale.enable = true;
-  services.tailscale = {
-    useRoutingFeatures = "client";
-  };
 
   services.fstrim.enable = true;
 

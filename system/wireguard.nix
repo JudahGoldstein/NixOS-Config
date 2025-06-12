@@ -11,6 +11,11 @@ with lib;
     services.tailscale = {
       enable = true;
       openFirewall = true;
+      disableTaildrop = true;
+      extraSetFlags = [
+        "--accept-routes"
+        "--advertise-exit-node=false"      
+        ];
     };
   };
 }
