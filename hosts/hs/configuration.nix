@@ -17,7 +17,7 @@
   media-server.enable = true;
   ollama.enable = true;
   tailscale.enable = true;
-
+  sd-webui-forge.enable = true;
 
   fileSystems."/mnt/media" =
     {
