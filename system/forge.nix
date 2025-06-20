@@ -11,7 +11,7 @@ with lib;
       description = "Enable the Stable Diffusion WebUI Forge service.";
     };
   };
-  config = {
+  config = lib.mkIf config.services.sd-webui-forge.enable {
     services.sd-webui-forge = {
       enable = true;
       user = "sd-webui-forge";
