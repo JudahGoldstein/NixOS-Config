@@ -1,28 +1,21 @@
-{ config, pkgs, stable-diffusion-webui-nix, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 let
   virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
 in
 with lib;
 {
   options = {
-    services.sd-webui-forge.enable = mkOption {
+    sd-webui-forge.enable = mkOption {
       type = types.bool;
       default = false;
-      description = "Enable the Stable Diffusion WebUI Forge service.";
+      description = "Enable the Stable Diffusion WebUI Forge.";
     };
   };
-  config = lib.mkIf config.services.sd-webui-forge.enable {
-    services.sd-webui-forge = {
-      enable = true;
-      user = "sd-webui-forge";
-      group = "sd-webui-forge";
-      dataDir = "/var/lib/sd-webui-forge";
-      package = pkgs.stable-diffusion-webui.forge.cuda;
-      listen = true;
-      port = 7860;
-      extraArgs = "--cuda-malloc";
-    };
-
-    services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "forge" 7860);
+  config = lib.mkIf (config.sd-webui-forge.enable == true) {
+    nixpkgs.overlays = [ inputs.stable-diffusion-webui-nix.overlays.default ];
+    environment.systemPackages = with pkgs; [
+      stable-diffusion-webui.forge.cuda 
+    ];
+      services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "forge" 7860);
   };
 }
