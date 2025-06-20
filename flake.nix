@@ -116,7 +116,6 @@
               inherit system;
               config.allowUnfree = true;
             };
-            nixpkgs.overlays = [ stable-diffusion-webui-nix.overlays.default ];
             inherit pkgs-stable;
           };
         };
