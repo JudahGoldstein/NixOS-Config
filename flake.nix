@@ -20,9 +20,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-}; 
+    stable-diffusion-webui-nix = {
+      url = "github:Janrupf/stable-diffusion-webui-nix/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, sops-nix, nixpkgs-open-webui-pin, ... }@inputs:
+  };
+
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, sops-nix, nixpkgs-open-webui-pin, stable-diffusion-webui-nix, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -111,6 +116,7 @@
               inherit system;
               config.allowUnfree = true;
             };
+            nixpkgs.overlays = [ stable-diffusion-webui-nix.overlays.default ];
             inherit pkgs-stable;
           };
         };
