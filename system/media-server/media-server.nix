@@ -7,7 +7,7 @@ with lib;
       ./radarr.nix
       ./prowlarr.nix
       ./jellyfin.nix
-      ./obsidian-sync.nix
+      # ./obsidian-sync.nix # not currently using, but dont want to delete for future use
       ./recipes.nix
     ];
   options = {
