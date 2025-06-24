@@ -23,6 +23,7 @@ with lib;
         # withOpenASAR = true; #causes error un updates
         withVencord = true;
       })
+      thunderbird
 
       # Security
       bitwarden-desktop
