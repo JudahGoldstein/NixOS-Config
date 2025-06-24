@@ -18,7 +18,6 @@ with lib;
       phoronix-test-suite
 
       # Communication
-      zoom-us
       (pkgs.discord.override {
         # withOpenASAR = true; #causes error un updates
         withVencord = true;
