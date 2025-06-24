@@ -35,6 +35,7 @@ with lib;
         (if config.qownnotes.enable then qownnotes else null)
         (if config.micro.enable then micro else null)
         hunspell
+        pdftk
       ];
   };
 }
