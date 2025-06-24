@@ -12,7 +12,6 @@
     environment.systemPackages = with pkgs; [
       gnome-tweaks
       gnome-extension-manager
-      gnomeExtensions.gsconnect
       gnomeExtensions.appindicator
       gnomeExtensions.caffeine
       gnomeExtensions.pip-on-top
