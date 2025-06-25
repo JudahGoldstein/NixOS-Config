@@ -15,7 +15,6 @@ with lib;
       ./system/nh.nix
       ./system/logitech.nix
       ./system/keyboard.nix
-      ./system/nvidia-prime.nix
       ./system/gaming.nix
       ./system/blocky.nix
       ./system/sops.nix
