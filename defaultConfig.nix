@@ -17,7 +17,7 @@ with lib;
       ./system/keyboard.nix
       ./system/nvidia-prime.nix
       ./system/gaming.nix
-      ./system/blocky/blocky.nix
+      ./system/blocky.nix
       ./system/sops.nix
       ./system/user.nix
       ./system/nix-ld.nix
