@@ -3,6 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./nvidia-prime.nix
       ./bootloader.nix
       ../../defaultConfig.nix
     ];
