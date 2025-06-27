@@ -36,6 +36,9 @@ with lib;
       mutableSettings = true;
       settings = {
         port = 58443;
+        stash.dumps = {
+          path = "/mnt/media/Bulk/Dumps";
+        };
       };
     };
     services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "stash" 58443);
