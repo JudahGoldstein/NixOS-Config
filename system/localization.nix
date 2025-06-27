@@ -7,6 +7,6 @@
     layout = "us";
     variant = "colemak";
   };
-  console.useXkbConfig = true;
+  console.useXkbConfig = false;
   fonts.enableDefaultPackages = true;
 }
