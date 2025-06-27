@@ -1,4 +1,7 @@
 { config, pkgs, lib, ... }:
+let
+  virtualHosts = import ../caddy/virtualHosts.nix { inherit lib; };
+in
 with lib;
 {
   imports =
