@@ -28,6 +28,8 @@
 
   gnome.enable = true;
 
+  softColemak.enable = true;
+
   services.fprintd.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
