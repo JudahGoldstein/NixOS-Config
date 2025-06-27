@@ -34,11 +34,15 @@ with lib;
       mutablePlugins = true;
       mutableScrapers = true;
       mutableSettings = true;
+      username = "judah";
+      passwordFile = "/var/lib/stash/password";
+      jwtSecretKeyFile = "/var/lib/stash/jwt-secret";
+      sessionStoreKeyFile = "/var/lib/stash/session-secret";
       settings = {
         port = 58443;
-        stash.dumps = {
+        stash = [{
           path = "/mnt/media/Bulk/Dumps";
-        };
+        }];
       };
     };
     services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "stash" 58443);
