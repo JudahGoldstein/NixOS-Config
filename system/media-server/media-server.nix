@@ -25,5 +25,16 @@ with lib;
       ];
     torrent.enable = true;
     caddy.enable = true;
+    services.stash = {
+      enable = true;
+      openFirewall = true;
+      mutablePlugins = true;
+      mutableScrapers = true;
+      mutableSettings = true;
+      settings = {
+        port = 58443;
+      };
+    };
+    services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "stash" 58443);
   };
 }
