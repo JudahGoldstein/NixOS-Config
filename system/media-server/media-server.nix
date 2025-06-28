@@ -1,7 +1,4 @@
 { config, pkgs, lib, ... }:
-let
-  virtualHosts = import ../caddy/virtualHosts.nix { inherit lib; };
-in
 with lib;
 {
   imports =
@@ -28,23 +25,5 @@ with lib;
       ];
     torrent.enable = true;
     caddy.enable = true;
-    services.stash = {
-      enable = true;
-      openFirewall = true;
-      mutablePlugins = true;
-      mutableScrapers = true;
-      mutableSettings = true;
-      username = "judah";
-      passwordFile = "/var/lib/stash/password";
-      jwtSecretKeyFile = "/var/lib/stash/jwt-secret";
-      sessionStoreKeyFile = "/var/lib/stash/session-secret";
-      settings = {
-        port = 58443;
-        stash = [{
-          path = "/mnt/media/Bulk/Dumps";
-        }];
-      };
-    };
-    services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "stash" 58443);
   };
 }
