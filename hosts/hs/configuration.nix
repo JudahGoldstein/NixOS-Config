@@ -18,6 +18,9 @@
   ollama.enable = true;
   tailscale.enable = true;
   sd-webui-forge.enable = false;
+  gimp.enable = false;
+  audacity.enable = false;
+  
 
   fileSystems."/mnt/media" =
     {
