@@ -19,5 +19,9 @@ with lib;
         (if config.terminal-recording.enable then asciinema-agg else null)
         (if config.terminal-recording.enable then termshot else null)
       ];
+    programs.starship = {
+      enable = true;
+      presets = [ "gruvbox-rainbow" ];
+    };
   };
 }
