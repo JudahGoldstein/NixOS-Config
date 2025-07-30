@@ -19,5 +19,6 @@ with lib;
     };
     console.useXkbConfig = config.softColemak.enable;
     fonts.enableDefaultPackages = true;
+    fonts.packages = [ pkgs.nerd-fonts.fira-code];
   };
 }
