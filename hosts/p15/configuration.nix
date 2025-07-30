@@ -32,7 +32,8 @@
 
   services.fprintd.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.trusted-users = [ "root" config.name ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "23.11";
 }
