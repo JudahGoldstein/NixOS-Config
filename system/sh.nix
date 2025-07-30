@@ -13,7 +13,6 @@ let
     "neofetch" = "fastfetch";
     "nix-update" = "cd /etc/nixos/ && git pull && nix flake update && nh os boot && nh clean all --keep 3 && git commit -m 'flake' flake.lock && git push";
     "ligma" = "echo balls";
-    "nix-shell -p" = "nix-shell -p --command 'zsh'";
   };
 in
 {
