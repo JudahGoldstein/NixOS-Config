@@ -14,35 +14,16 @@ with lib;
       [
         vscode-fhs
 
-        # for python coding
-        python3Full
-
-        # for nix coding
         nil
         nixpkgs-fmt
 
-        # for android development
-        android-tools
-
-        # for ardunio development
-        arduino
-
-        # for go development
-        go
-
-        # for c/c++ development
-        gcc
-        cmake
-        clang
-
-        # for SQL development
         dbeaver-bin
-
-        #make support
-        gnumake
 
         #for polyglot 
         dotnet-sdk_9
+
+        #devenv for directory based development environments
+        devenv
       ];
 
     programs = {
