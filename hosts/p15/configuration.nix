@@ -22,6 +22,12 @@
       fsType = "ext4";
     };
 
+  programs.captive-browser = {
+    enable = true;
+    interface = "wlp0s20f3";
+    
+  };
+
   # Prime for Nvidia Optimus
   nvidia-prime.enable = true;
   nvidia-prime.offload = true;
