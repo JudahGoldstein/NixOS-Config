@@ -29,5 +29,6 @@ with lib;
     programs = {
       direnv.enable = true;
     };
+    nix.settings.trusted-users = [ "root" config.name ];
   };
 }
