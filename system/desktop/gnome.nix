@@ -45,5 +45,9 @@
         gnome-weather
         gnome-tour
       ];
+    programs.nautilus-open-any-terminal = lib.mkIf (config.kitty.enable == true) {
+      enable = true;
+      terminal = "kitty";
+    };
   };
 }
