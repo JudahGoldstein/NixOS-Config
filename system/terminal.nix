@@ -21,7 +21,7 @@ with lib;
       ];
     programs.starship = {
       enable = true;
-      presets = [ "gruvbox-rainbow" ];
+      presets = [ "no-runtime-versions" ];
     };
   };
 }
