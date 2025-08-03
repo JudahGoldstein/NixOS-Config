@@ -8,7 +8,7 @@ with lib;
     services.mealie = {
       enable = true;
       port = 41026;
-      package = pkgs-pin.mealie;
+      package = pkgs.mealie;
     };
     
     services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "mealie" 41026 );
