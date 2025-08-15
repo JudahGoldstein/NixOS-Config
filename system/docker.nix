@@ -8,7 +8,14 @@ with lib;
     };
   };
   config = mkIf config.docker.enable {
-    virtualisation.docker.enable = true;
+    virtualisation.docker = {
+      enable = true;
+      autoPrune.enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
     virtualisation.oci-containers.backend = "docker";
     hardware.nvidia-container-toolkit.enable = true;
   };
