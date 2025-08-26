@@ -3,7 +3,7 @@
   options = {
     obs.enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = false;
       description = "Enable the OBS Studio.";
     };
   };
