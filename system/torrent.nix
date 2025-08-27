@@ -38,7 +38,7 @@ with lib;
       openFirewall = true;
       openRPCPort = true;
       openPeerPorts = true;
-      downloadDirPermissions = "777";
+      downloadDirPermissions = "775";
       settings = {
         download-dir = "/mnt/media/Downloads";
         incomplete-dir-enabled = false;
