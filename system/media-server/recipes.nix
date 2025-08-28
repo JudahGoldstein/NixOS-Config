@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-pin, lib, ... }:
+{ config, pkgs, pkgs-stable, lib, ... }:
 let
   virtualHosts = import ../caddy/virtualHosts.nix { inherit lib; };
 in
@@ -8,7 +8,7 @@ with lib;
     services.mealie = {
       enable = true;
       port = 41026;
-      package = pkgs-pin.mealie;
+      package = pkgs-stable.mealie;
     };
     
     services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "mealie" 41026 );
