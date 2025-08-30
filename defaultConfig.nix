@@ -4,6 +4,7 @@ with lib;
   imports =
     [
       ./system/networking.nix
+      ./system/ssh.nix
       ./system/localization.nix
       ./system/io.nix
       ./system/sh.nix

@@ -13,7 +13,4 @@ with lib;
       dig
       sshpass
     ];
-  services.openssh.enable = true;
-  services.sshd.enable = true;
-
 }
