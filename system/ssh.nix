@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    ssh-agents
+  ];
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
