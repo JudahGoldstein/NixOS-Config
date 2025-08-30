@@ -17,11 +17,6 @@ with lib;
       numlockx
       phoronix-test-suite
 
-      # Communication
-      (pkgs.discord.override {
-        # withOpenASAR = true; #causes error un updates
-        withVencord = true;
-      })
       thunderbird
 
       # Security
