@@ -19,7 +19,15 @@
     services.libinput.enable = true;
     services.displayManager = {
       enable = true;
-      ly.enable = true;
+      ly = {
+        enable = true;
+        settings = {
+          allow_empty_password = false;
+          clear_password = true;
+          hide_version_string = true;
+          numlock = true;
+        };
+      };
       preStart = "";
     };
     services.desktopManager.gnome.enable = true;
