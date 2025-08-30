@@ -4,9 +4,4 @@
     [
       ./gnome.nix
     ];
-
-  services.xserver = {
-    enable = true;
-    excludePackages = [ ];
-  };
 }
