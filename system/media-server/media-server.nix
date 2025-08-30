@@ -9,7 +9,6 @@ with lib;
       ./jellyfin.nix
       ./immich.nix
       # ./obsidian-sync.nix # not currently using, but dont want to delete for future use
-      ./recipes.nix
     ];
   options = {
     media-server.enable = mkOption {
