@@ -2,14 +2,14 @@
 with lib;
 {
   options = {
-    vscode.enable = lib.mkOption {
+    dev.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
-      description = "Enable Visual Studio Code";
+      description = "Enable Development Tools";
     };
   };
 
-  config = mkIf config.vscode.enable {
+  config = mkIf config.dev.enable {
     environment.systemPackages = with pkgs;
       [
         vscode-fhs
