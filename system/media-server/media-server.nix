@@ -8,7 +8,7 @@ with lib;
       ./prowlarr.nix
       ./jellyfin.nix
       ./immich.nix
-      # ./obsidian-sync.nix # not currently using, but dont want to delete for future use
+      ./obsidian-sync.nix
     ];
   options = {
     media-server.enable = mkOption {
