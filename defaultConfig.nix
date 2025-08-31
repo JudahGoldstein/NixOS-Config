@@ -29,7 +29,7 @@ with lib;
       ./system/ollama.nix
       ./system/firefox.nix
       ./system/terminal.nix
-      ./system/vscode.nix
+      ./system/dev.nix
       ./system/text-editors.nix
       ./system/audio-video.nix
       ./system/forge.nix
