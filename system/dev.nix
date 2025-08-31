@@ -19,11 +19,11 @@ with lib;
 
         dbeaver-bin
 
-        #for polyglot 
-        dotnet-sdk_9
+        dotnet-sdk_9 #for polyglot 
 
-        #devenv for directory based development environments
         devenv
+
+        nix-init
       ];
 
     programs = {
