@@ -10,7 +10,12 @@ with lib;
   };
 
   config = {
-    environment.systemPackages = [ pkgs.glibcLocales ];
+    environment.systemPackages = with pkgs;
+      [
+        glibcLocales
+        hunspell
+        hunspellDicts.en_CA-large
+      ];
     time.timeZone = "America/Toronto";
     i18n.defaultLocale = "en_CA.UTF-8";
     services.xserver.xkb = {
@@ -19,6 +24,6 @@ with lib;
     };
     console.useXkbConfig = config.softColemak.enable;
     fonts.enableDefaultPackages = true;
-    fonts.packages = [ pkgs.nerd-fonts.fira-code];
+    fonts.packages = [ pkgs.nerd-fonts.fira-code ];
   };
 }
