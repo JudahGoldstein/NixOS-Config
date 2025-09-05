@@ -26,7 +26,7 @@ with lib;
         };
         cors = {
           credentials = "true";
-          origins = "app://obsidian.md,capacitor://0.0.0.0,http://0.0.0.0";
+          origins = "app://obsidian.md,capacitor://localhost,http://localhost";
         };
       };
     };
