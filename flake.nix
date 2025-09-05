@@ -3,8 +3,8 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
-    nixpkgs-pin.url = "github:nixos/nixpkgs/20075955deac2583bb12f07151c2df830ef346b4";
-    # nixpkgs-pin.url = "nixpkgs/nixos-unstable";
+    # nixpkgs-openwebui.url = "github:nixos/nixpkgs/20075955deac2583bb12f07151c2df830ef346b4";
+    nixpkgs-openwebui.url = "nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +27,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, sops-nix, nixpkgs-pin, stable-diffusion-webui-nix, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, sops-nix, nixpkgs-openwebui, stable-diffusion-webui-nix, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -112,7 +112,7 @@
             ];
           specialArgs = {
             inherit inputs;
-            pkgs-pin = import nixpkgs-pin {
+            pkgs-openwebui = import nixpkgs-openwebui {
               inherit system;
               config.allowUnfree = true;
             };
