@@ -74,20 +74,19 @@
         "type": "indirect"
       }
     },
-    "nixpkgs-pin": {
+    "nixpkgs-openwebui": {
       "locked": {
-        "lastModified": 1755615617,
-        "narHash": "sha256-HMwfAJBdrr8wXAkbGhtcby1zGFvs+StOp19xNsbqdOg=",
-        "owner": "nixos",
+        "lastModified": 1757094609,
+        "narHash": "sha256-3i+emQJ8sV5z1/BBqreIBOBH9MTPnpjt78wwr0fKr/E=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "20075955deac2583bb12f07151c2df830ef346b4",
+        "rev": "610eccade10bb2411a94ebdce09bf355a4488206",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "20075955deac2583bb12f07151c2df830ef346b4",
-        "type": "github"
+        "id": "nixpkgs",
+        "ref": "master",
+        "type": "indirect"
       }
     },
     "nixpkgs-stable": {
@@ -135,7 +134,7 @@
         "disko": "disko",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-pin": "nixpkgs-pin",
+        "nixpkgs-openwebui": "nixpkgs-openwebui",
         "nixpkgs-stable": "nixpkgs-stable",
         "sops-nix": "sops-nix",
         "stable-diffusion-webui-nix": "stable-diffusion-webui-nix"
