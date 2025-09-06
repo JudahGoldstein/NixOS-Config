@@ -76,11 +76,11 @@
     },
     "nixpkgs-openwebui": {
       "locked": {
-        "lastModified": 1757110289,
-        "narHash": "sha256-4b2D4eoqqfA4/y6/WhJ0aXQt8EwWK0FgPFPDhu+gGzA=",
+        "lastModified": 1757184060,
+        "narHash": "sha256-vscdzPsk6kNDu6P9twoSN72qhvG0xcbw1NH33ZfuO9M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5f420f127f1fdeddf478e5212a2a8db692513965",
+        "rev": "5203378d1dbf394970184006df4d6111065601a4",
         "type": "github"
       },
       "original": {
