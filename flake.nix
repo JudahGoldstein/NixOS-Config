@@ -4,7 +4,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
     # nixpkgs-openwebui.url = "github:nixos/nixpkgs/20075955deac2583bb12f07151c2df830ef346b4";
-    nixpkgs-openwebui.url = "nixpkgs/master";
+    nixpkgs-openwebui.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
