@@ -24,7 +24,6 @@ with lib;
 
       # Misc
       remmina
-      parsec-bin
 
       # chrome for testing
       chromium
