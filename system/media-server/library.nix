@@ -5,6 +5,7 @@ in
 with lib;
 {
   config = mkIf config.media-server.enable {
+    environment.systemPackages = with pkgs; [ calibre ];
     services.calibre-web = {
       enable = true;
       openFirewall = true;
