@@ -6,6 +6,11 @@
       default = false;
       description = "Enable GNOME desktop environment.";
     };
+    gnome.remote = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable remote access feature for GNOME.";
+    };
   };
 
   config = lib.mkIf (config.gnome.enable == true) {
@@ -57,5 +62,11 @@
       enable = true;
       terminal = "kitty";
     };
+    services.gnome.gnome-remote-desktop.enable = true;
+
+    systemd.services.gnome-remote-desktop = {
+      wantedBy = [ "graphical.target" ];
+    };
+    networking.firewall.allowedTCPPorts = [ 3389 ];
   };
 }
