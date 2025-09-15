@@ -7,7 +7,6 @@
       ../../defaultConfig.nix
     ];
 
-  name = "v14";
   longName = "Judah (v14)";
 
   networking.hostName = "v14";

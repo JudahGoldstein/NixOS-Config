@@ -8,7 +8,6 @@
       ../../defaultConfig.nix
     ];
 
-  name = "p15";
   longName = "Judah (P15)";
 
   blocky.enable = true;
