@@ -3,14 +3,14 @@ with lib;
 {
   options =
     {
-      battery.enable = {
+      battery.enable = mkOption{
         type = types.bool;
         default = true;
         description = "Enable TLP power management";
       };
     };
 
-  config = lib.mkIf (config.battery.enable == true) {
+  config = lib.mkIf config.battery.enable  {
     powerManagement.enable = true;
     services.tlp = {
       enable = true;
