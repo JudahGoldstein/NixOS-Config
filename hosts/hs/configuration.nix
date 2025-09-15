@@ -11,11 +11,9 @@
 
   longName = "Judah (HS)";
 
-  blocky.enable = true;
   gnome.enable = true;
   media-server.enable = true;
   ollama.enable = true;
-  tailscale.enable = true;
   sd-webui-forge.enable = false;
   audacity.enable = false;
   
@@ -27,10 +25,7 @@
       options = [ "defaults" "nodiscard" ];
     };
 
-  # SSD trimming
-  services.fstrim.enable = true;
-
-  # Nvida drivers
+  # Nvidia drivers
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
   hardware.nvidia = {
@@ -41,13 +36,4 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-  ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "23.11";
 }
