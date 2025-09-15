@@ -25,7 +25,6 @@
   nvidia-prime.enable = true;
   nvidia-prime.offload = true;
 
-  gnome.enable = true;
   softColemak.enable = true;
 
   services.fprintd.enable = true;

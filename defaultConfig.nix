@@ -54,5 +54,6 @@ with lib;
       # here, NOT in environment.systemPackages
     ];
     system.stateVersion = "23.11";
+    gnome.enable = lib.mkDefault true;
   };
 }

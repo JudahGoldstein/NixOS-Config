@@ -11,6 +11,5 @@
 
   networking.hostName = "v14";
 
-  gnome.enable = true;
   softColemak.enable = true;
 }

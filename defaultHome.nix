@@ -30,6 +30,6 @@ with lib;
     };
 
     programs.home-manager.enable = true;
-
+    gnome.enable = lib.mkDefault true;
   };
 }
