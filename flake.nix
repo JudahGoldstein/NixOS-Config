@@ -2,45 +2,34 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
-    # nixpkgs-openwebui.url = "github:nixos/nixpkgs/20075955deac2583bb12f07151c2df830ef346b4";
-    nixpkgs-openwebui.url = "nixpkgs/nixos-unstable";
-
+    nixpkgs-openwebui.url = "github:numtide/nixpkgs-unfree?ref=nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     stable-diffusion-webui-nix = {
       url = "github:Janrupf/stable-diffusion-webui-nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, ...}@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
 
-      commonPkgConfig = {
-        inherit system;
-        config.allowUnfree = true;
-        config.nix.channel.enable = false;
-      };
-
-      pkgs = import inputs.nixpkgs commonPkgConfig;
-      pkgs-stable = import inputs.nixpkgs-stable commonPkgConfig;
-      pkgs-openwebui = import inputs.nixpkgs-openwebui commonPkgConfig;
+      # Use legacyPackages for better flake evaluation caching
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
+      pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+      pkgs-openwebui = inputs.nixpkgs-openwebui.legacyPackages.${system};
 
       # Helper function to create nixosSystem configurations
       mkHost = { hostname, extraModules ? [ ], extraSpecialArgs ? { } }:
@@ -62,7 +51,7 @@
             inputs.disko.nixosModules.disko
           ] ++ extraModules;
           specialArgs = {
-            inherit inputs pkgs-openwebui pkgs-stable;
+            inherit inputs;
           } // extraSpecialArgs;
         };
     in
@@ -75,6 +64,7 @@
         hs = mkHost { hostname = "hs"; };
 
         installer = lib.nixosSystem {
+          inherit system;
           modules = [
             ./hosts/installer/configuration.nix
             inputs.sops-nix.nixosModules.sops
