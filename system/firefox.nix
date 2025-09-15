@@ -7,7 +7,7 @@
         description = "Enable Firefox";
       };
     };
-    
+
   config = lib.mkIf (config.firefox.enable == true) {
     programs.firefox = {
       enable = true;

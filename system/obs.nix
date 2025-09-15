@@ -8,7 +8,7 @@
     };
   };
 
-  config = lib.mkIf config.obs.enable{
+  config = lib.mkIf config.obs.enable {
     boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
     boot.kernelModules = [
       "v4l2loopback"
