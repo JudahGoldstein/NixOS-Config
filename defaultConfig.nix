@@ -11,7 +11,6 @@ with lib;
       ./system/packages.nix
       ./system/antivirus.nix
       ./system/desktop/desktop.nix
-      ./system/battery.nix
       ./system/obs.nix
       ./system/nh.nix
       ./system/logitech.nix
