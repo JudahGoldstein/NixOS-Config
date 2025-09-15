@@ -4,7 +4,7 @@ with lib;
   options = {
     blocky.enable = mkOption {
       type = types.bool;
-      default = false;
+      default = true;
       description = "Enable blocky";
     };
   };

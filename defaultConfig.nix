@@ -42,4 +42,17 @@ with lib;
     };
   };
 
+  config = {
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    services.fstrim.enable = true;
+    nixpkgs.config.allowUnfree = true;
+
+    # Common nix-ld configuration for unpackaged programs
+    programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = with pkgs; [
+      # Add any missing dynamic libraries for unpackaged programs
+      # here, NOT in environment.systemPackages
+    ];
+    system.stateVersion = "23.11";
+  };
 }
