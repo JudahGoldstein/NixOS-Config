@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, pkgs-openwebui, lib, ... }:
 let
   virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
 in
@@ -27,7 +27,7 @@ with lib;
         SCARF_NO_ANALYTICS = "True";
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
       };
-      package = inputs.nixpkgs-openwebui.legacyPackages.${pkgs.stdenv.hostPlatform.system}.open-webui;
+      package = pkgs-openwebui.open-webui;
     };
     services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "ollama" 11435);
   };
