@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     # nixpkgs-openwebui.url = "github:nixos/nixpkgs/20075955deac2583bb12f07151c2df830ef346b4";
     nixpkgs-openwebui.url = "nixpkgs/nixos-unstable";
 
@@ -27,7 +27,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, sops-nix, nixpkgs-openwebui, stable-diffusion-webui-nix, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -49,7 +49,7 @@
           modules = [
             ./hosts/${hostname}/configuration.nix
             { name = hostname; }
-            home-manager.nixosModules.home-manager
+            inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -58,8 +58,8 @@
                 name = hostname;
               };
             }
-            sops-nix.nixosModules.sops
-            disko.nixosModules.disko
+            inputs.sops-nix.nixosModules.sops
+            inputs.disko.nixosModules.disko
           ] ++ extraModules;
           specialArgs = {
             inherit inputs pkgs-openwebui pkgs-stable;
@@ -77,7 +77,7 @@
         installer = lib.nixosSystem {
           modules = [
             ./hosts/installer/configuration.nix
-            sops-nix.nixosModules.sops
+            inputs.sops-nix.nixosModules.sops
           ];
           specialArgs = {
             inherit inputs;
