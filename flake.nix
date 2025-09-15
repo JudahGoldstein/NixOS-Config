@@ -40,10 +40,7 @@
 
       pkgs = import inputs.nixpkgs commonPkgConfig;
       pkgs-stable = import inputs.nixpkgs-stable commonPkgConfig;
-      pkgs-openwebui = import inputs.nixpkgs-openwebui {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      pkgs-openwebui = import inputs.nixpkgs-openwebui commonPkgConfig;
 
       # Helper function to create nixosSystem configurations
       mkHost = { hostname, extraModules ? [ ], extraSpecialArgs ? { } }:
