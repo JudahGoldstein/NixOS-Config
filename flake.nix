@@ -1,10 +1,10 @@
 {
-  description = "package updates";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
     # nixpkgs-openwebui.url = "github:nixos/nixpkgs/20075955deac2583bb12f07151c2df830ef346b4";
     nixpkgs-openwebui.url = "nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,102 +30,60 @@
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, disko, sops-nix, nixpkgs-openwebui, stable-diffusion-webui-nix, ... }@inputs:
     let
       system = "x86_64-linux";
-
       lib = nixpkgs.lib;
 
-      pkgs = import inputs.nixpkgs {
-        system = "x86_64-linux";
+      commonPkgConfig = {
+        inherit system;
         config.allowUnfree = true;
         config.nix.channel.enable = false;
-        config.permittedInsecurePackages =
-          [
-            "aspnetcore-runtime-wrapped-6.0.36" #sonarr
-            "aspnetcore-runtime-6.0.36" #sonarr
-            "dotnet-sdk-wrapped-6.0.428" #sonarr
-            "dotnet-sdk-6.0.428" #sonarr
-          ];
+        config.permittedInsecurePackages = [
+          "aspnetcore-runtime-wrapped-6.0.36" # sonarr
+          "aspnetcore-runtime-6.0.36" # sonarr
+          "dotnet-sdk-wrapped-6.0.428" # sonarr
+          "dotnet-sdk-6.0.428" # sonarr
+        ];
       };
-      pkgs-stable = import inputs.nixpkgs-stable {
-        system = "x86_64-linux";
+
+      pkgs = import inputs.nixpkgs commonPkgConfig;
+      pkgs-stable = import inputs.nixpkgs-stable commonPkgConfig;
+      pkgs-openwebui = import inputs.nixpkgs-openwebui {
+        inherit system;
         config.allowUnfree = true;
-        config.nix.channel.enable = false;
-        config.permittedInsecurePackages =
-          [
-            "aspnetcore-runtime-wrapped-6.0.36" #sonarr
-            "aspnetcore-runtime-6.0.36" #sonarr
-            "dotnet-sdk-wrapped-6.0.428" #sonarr
-            "dotnet-sdk-6.0.428" #sonarr
-          ];
       };
+
+      # Helper function to create nixosSystem configurations
+      mkHost = { hostname, extraModules ? [ ], extraSpecialArgs ? { } }:
+        lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.${hostname} = ./hosts/${hostname}/home.nix;
+            }
+            sops-nix.nixosModules.sops
+            disko.nixosModules.disko
+          ] ++ extraModules;
+          specialArgs = {
+            inherit inputs pkgs-openwebui pkgs-stable;
+          } // extraSpecialArgs;
+        };
     in
     {
       nixosConfigurations = {
-        v14 = lib.nixosSystem {
-          inherit system;
-          modules =
-            [
-              ./hosts/v14/configuration.nix
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.v14 = ./hosts/v14/home.nix;
-              }
-              sops-nix.nixosModules.sops
-            ];
-          specialArgs = {
-            inherit inputs;
-          };
-        };
+        v14 = mkHost { hostname = "v14"; };
 
-        p15 = lib.nixosSystem {
-          inherit system;
-          modules =
-            [
-              ./hosts/p15/configuration.nix
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.p15 = ./hosts/p15/home.nix;
-              }
-              sops-nix.nixosModules.sops
-            ];
-          specialArgs = {
-            inherit inputs;
-          };
-        };
+        p15 = mkHost { hostname = "p15"; };
 
-        hs = lib.nixosSystem {
-          inherit system;
-          modules =
-            [
-              ./hosts/hs/configuration.nix
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.hs = ./hosts/hs/home.nix;
-              }
-              sops-nix.nixosModules.sops
-              disko.nixosModules.disko
-            ];
-          specialArgs = {
-            inherit inputs;
-            pkgs-openwebui = import nixpkgs-openwebui {
-              inherit system;
-              config.allowUnfree = true;
-            };
-            inherit pkgs-stable;
-          };
-        };
+        hs = mkHost { hostname = "hs"; };
 
         installer = lib.nixosSystem {
-          modules =
-            [
-              ./hosts/installer/configuration.nix
-              sops-nix.nixosModules.sops
-            ];
+          modules = [
+            ./hosts/installer/configuration.nix
+            sops-nix.nixosModules.sops
+          ];
           specialArgs = {
             inherit inputs;
           };
