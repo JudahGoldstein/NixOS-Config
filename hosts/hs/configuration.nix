@@ -11,7 +11,6 @@
 
   longName = "Judah (HS)";
 
-  gnome.enable = true;
   media-server.enable = true;
   ollama.enable = true;
   sd-webui-forge.enable = false;
