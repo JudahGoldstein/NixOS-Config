@@ -15,4 +15,21 @@ with lib;
       description = "The hostname/username for this configuration";
     };
   };
+
+  config = {
+    home.username = config.name;
+    home.homeDirectory = "/home/${config.name}";
+    home.file = { };
+    home.stateVersion = "23.11";
+
+    home.sessionVariables = {
+      EDITOR = "micro";
+      BROWSER = "firefox";
+      TERMINAL = "kitty";
+      TERM = "kitty";
+    };
+
+    programs.home-manager.enable = true;
+
+  };
 }
