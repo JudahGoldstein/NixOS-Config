@@ -15,7 +15,6 @@
   ollama.enable = true;
   sd-webui-forge.enable = false;
   audacity.enable = false;
-  
 
   fileSystems."/mnt/media" =
     {
@@ -24,7 +23,6 @@
       options = [ "defaults" "nodiscard" ];
     };
 
-  # Nvidia drivers
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
   hardware.nvidia = {

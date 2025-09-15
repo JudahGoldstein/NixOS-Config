@@ -14,8 +14,8 @@ with lib;
   config = lib.mkIf (config.sd-webui-forge.enable == true) {
     nixpkgs.overlays = [ inputs.stable-diffusion-webui-nix.overlays.default ];
     environment.systemPackages = with pkgs; [
-      stable-diffusion-webui.forge.cuda 
+      stable-diffusion-webui.forge.cuda
     ];
-      services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "forge" 7860);
+    services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "forge" 7860);
   };
 }
