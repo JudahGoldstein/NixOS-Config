@@ -48,11 +48,15 @@
           inherit system;
           modules = [
             ./hosts/${hostname}/configuration.nix
+            { name = hostname; }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.${hostname} = ./hosts/${hostname}/home.nix;
+              home-manager.users.${hostname} = {
+                imports = [ ./hosts/${hostname}/home.nix ];
+                name = hostname;
+              };
             }
             sops-nix.nixosModules.sops
             disko.nixosModules.disko

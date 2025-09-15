@@ -38,7 +38,7 @@ with lib;
   options = {
     name = mkOption {
       type = types.str;
-      default = "";
+      description = "The hostname for this configuration";
     };
   };
 

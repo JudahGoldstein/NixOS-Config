@@ -9,7 +9,6 @@
       ./disks.nix
     ];
 
-  name = "hs";
   longName = "Judah (HS)";
 
   blocky.enable = true;

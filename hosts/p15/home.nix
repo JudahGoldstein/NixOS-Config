@@ -5,8 +5,6 @@
       ../../defaultHome.nix
     ];
 
-  name = "p15";
-
   home.username = config.name;
   home.homeDirectory = "/home/${config.name}";
 
