@@ -14,9 +14,9 @@ with lib;
       disableTaildrop = true;
       extraSetFlags = [
         "--accept-routes"
-        "--advertise-exit-node=false" 
-        "--accept-dns=false"     
-        ];
+        "--advertise-exit-node=false"
+        "--accept-dns=false"
+      ];
     };
   };
 }

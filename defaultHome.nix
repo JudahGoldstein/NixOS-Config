@@ -9,6 +9,7 @@ with lib;
       ./user/ssh.nix
       ./user/kitty.nix
     ];
+
   options = {
     name = mkOption {
       type = types.str;
