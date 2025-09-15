@@ -4,7 +4,7 @@ with lib.hm.gvariant;
   options = {
     gnome.enable = lib.mkOption {
       type = lib.types.bool;
-      default = false;
+      default = true;
       description = "Enable GNOME desktop environment.";
     };
   };
