@@ -9,7 +9,5 @@
 
   longName = "Judah (v14)";
 
-  networking.hostName = "v14";
-
   softColemak.enable = true;
 }
