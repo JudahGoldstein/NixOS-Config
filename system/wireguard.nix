@@ -3,7 +3,7 @@ with lib;
 {
   options = {
     tailscale.enable = mkOption {
-      default = false;
+      default = true;
       description = "Enable wireguard host";
     };
   };
