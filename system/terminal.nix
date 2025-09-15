@@ -23,5 +23,9 @@ with lib;
       enable = true;
       presets = [ "no-runtime-versions" ];
     };
+    programs.nautilus-open-any-terminal = lib.mkIf config.gnome.enable {
+      enable = true;
+      terminal = "kitty";
+    };
   };
 }
