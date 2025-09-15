@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
-    nixpkgs-openwebui.url = "github:numtide/nixpkgs-unfree?ref=nixos-unstable";
+    nixpkgs-openwebui.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +29,10 @@
       # Use legacyPackages for better flake evaluation caching
       pkgs = inputs.nixpkgs.legacyPackages.${system};
       pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
-      pkgs-openwebui = inputs.nixpkgs-openwebui.legacyPackages.${system};
+      pkgs-openwebui = import inputs.nixpkgs-openwebui {
+        system = system;
+        config.allowUnfree = true;
+      };
 
       # Helper function to create nixosSystem configurations
       mkHost = { hostname, extraModules ? [ ], extraSpecialArgs ? { } }:
@@ -51,7 +54,7 @@
             inputs.disko.nixosModules.disko
           ] ++ extraModules;
           specialArgs = {
-            inherit inputs;
+            inherit inputs pkgs-openwebui pkgs-stable;
           } // extraSpecialArgs;
         };
     in
