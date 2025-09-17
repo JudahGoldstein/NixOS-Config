@@ -10,6 +10,7 @@ with lib;
       settings = {
         i = "0.0.0.0";
         p = 3923;
+        rproxy = 1;
       };
       accounts = { admin.passwordFile = config.sops.secrets."copyparty-password".path; };
       volumes = { };
