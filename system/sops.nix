@@ -54,6 +54,11 @@ with lib;
               owner = config.services.couchdb.user;
               group = config.services.couchdb.group;
             } else { };
+          "copyparty-password" = {
+            path = "/var/lib/secrets/copyparty-password";
+            owner = "copyparty";
+            group = "copyparty";
+          };
         })
         ({
           # authorized keys
