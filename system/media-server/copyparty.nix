@@ -11,7 +11,7 @@ with lib;
         i = "0.0.0.0";
         p = 3923;
       };
-      accounts = { test.passwordFile = "/etc/nixos/hosts/p15/test"; };
+      accounts = { admin.passwordFile = config.sops.secrets."copyparty-password".path; };
       volumes = { };
       package = (pkgs.copyparty.override {
         withThumbnails = true;
