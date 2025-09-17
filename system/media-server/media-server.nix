@@ -10,6 +10,7 @@ with lib;
       ./immich.nix
       ./library.nix
       ./obsidian-sync.nix
+      ./copyparty.nix
     ];
   options = {
     media-server.enable = mkOption {

@@ -19,6 +19,11 @@
       url = "github:Janrupf/stable-diffusion-webui-nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    copyparty = {
+      url = "github:9001/copyparty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -60,7 +65,15 @@
     in
     {
       nixosConfigurations = {
-        v14 = mkHost { hostname = "v14"; };
+        v14 = mkHost {
+          hostname = "v14";
+          extraModules = [
+            inputs.copyparty.nixosModules.default
+            ({
+              nixpkgs.overlays = [ inputs.copyparty.overlays.default ];
+            })
+          ];
+        };
 
         p15 = mkHost { hostname = "p15"; };
 
