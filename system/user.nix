@@ -14,12 +14,7 @@ with lib;
       isNormalUser = true;
       description = config.longName;
       extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" "docker" "vboxusers" ];
-      packages = with pkgs; [ ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
-      openssh.authorizedKeys.keys = [
-        config.sops.secrets."public-keys/p15".path
-        config.sops.secrets."public-keys/hs".path
-      ];
     };
     services.displayManager.autoLogin = {
       enable = false;
