@@ -13,7 +13,14 @@ with lib;
         rproxy = 1;
       };
       accounts = { admin.passwordFile = config.sops.secrets."copyparty-password".path; };
-      volumes = { };
+      volumes = {
+        "/" = {
+          path = "/mnt/media/library";
+          access = {
+            A = [ "admin" ];
+          };
+        };
+      };
       package = (pkgs.copyparty.override {
         withThumbnails = true;
         withFastThumbnails = true;
