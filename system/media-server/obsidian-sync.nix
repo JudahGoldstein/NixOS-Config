@@ -8,7 +8,7 @@ with lib;
     services.couchdb = {
       enable = true;
       port = 5984;
-      extraConfigFiles = [ "/var/lib/secrets/couchdb-creds" ];
+      extraConfigFiles = [ config.sops.secrets."couchdb-creds".path ];
       extraConfig = {
         couchdb = {
           max_document_size = 50000000;
