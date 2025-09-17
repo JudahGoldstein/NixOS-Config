@@ -14,11 +14,8 @@ with lib;
       accounts = { test.passwordFile = "/etc/nixos/hosts/p15/test"; };
       volumes = { };
       package = (pkgs.copyparty.override {
-        withCertgen = true;
         withThumbnails = true;
         withFastThumbnails = true;
-        withMediaProcessing = true;
-        withHashedPasswords = true;
       });
     };
     services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "copyparty" 3923);
