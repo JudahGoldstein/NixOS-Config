@@ -8,7 +8,6 @@ with lib;
       ./prowlarr.nix
       ./jellyfin.nix
       ./immich.nix
-      ./library.nix
       ./obsidian-sync.nix
       ./copyparty.nix
     ];
