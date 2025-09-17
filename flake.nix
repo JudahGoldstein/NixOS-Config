@@ -57,6 +57,8 @@
             }
             inputs.sops-nix.nixosModules.sops
             inputs.disko.nixosModules.disko
+            inputs.copyparty.nixosModules.default
+            ({ nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; })
           ] ++ extraModules;
           specialArgs = {
             inherit inputs pkgs-openwebui pkgs-stable;
@@ -65,15 +67,7 @@
     in
     {
       nixosConfigurations = {
-        v14 = mkHost {
-          hostname = "v14";
-          extraModules = [
-            inputs.copyparty.nixosModules.default
-            ({
-              nixpkgs.overlays = [ inputs.copyparty.overlays.default ];
-            })
-          ];
-        };
+        v14 = mkHost { hostname = "v14"; };
 
         p15 = mkHost { hostname = "p15"; };
 
