@@ -31,6 +31,7 @@
       preStart = "";
     };
     services.desktopManager.gnome.enable = true;
+    programs.evince.enable = true;
     environment.gnome.excludePackages = with pkgs;
       [
         eog
