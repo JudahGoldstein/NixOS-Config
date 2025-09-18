@@ -7,7 +7,6 @@ with lib;
       age
       ssh-to-age
     ];
-
   environment.variables = {
     SOPS_EDITOR = "micro";
   };
@@ -42,22 +41,20 @@ with lib;
             owner = "${config.name}";
           };
           # api keys and tokens
-          "cloudflare-dns-api-key" =
-            if config.caddy.enable == true then {
-              path = "/var/lib/secrets/cloudflare-dns-api-key";
-              owner = config.services.caddy.user;
-              group = config.services.caddy.group;
-            } else { };
-          "couchdb-creds" =
-            if config.services.couchdb.enable == true then {
-              path = "/var/lib/secrets/couchdb-creds";
-              owner = config.services.couchdb.user;
-              group = config.services.couchdb.group;
-            } else { };
-          "copyparty-password" = {
+          "cloudflare-dns-api-key" = mkIf (config.services.caddy.enable) {
+            path = "/var/lib/secrets/cloudflare-dns-api-key";
+            owner = config.services.caddy.user;
+            group = config.services.caddy.group;
+          };
+          "couchdb-creds" = mkIf (config.services.couchdb.enable) {
+            path = "/var/lib/secrets/couchdb-creds";
+            owner = config.services.couchdb.user;
+            group = config.services.couchdb.group;
+          };
+          "copyparty-password" = mkIf (config.services.copyparty.enable) {
             path = "/var/lib/secrets/copyparty-password";
-            owner = "copyparty";
-            group = "copyparty";
+            owner = config.services.copyparty.user;
+            group = config.services.copyparty.group;
           };
         })
         ({
