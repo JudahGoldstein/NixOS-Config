@@ -16,6 +16,7 @@
   sd-webui-forge.enable = false;
   audacity.enable = false;
 
+  environment.systemPackages = with pkgs; [ nut ];
   fileSystems."/mnt/media" =
     {
       device = "/dev/disk/by-uuid/2dfcbe87-8cbd-4363-bdb8-a4e24558e227";
