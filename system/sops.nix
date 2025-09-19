@@ -56,6 +56,11 @@ with lib;
             owner = config.services.copyparty.user;
             group = config.services.copyparty.group;
           };
+          "nutmon-password" = mkIf config.power.ups.enable {
+            path = "/var/lib/secrets/nutmon-password";
+            owner = "nutmon";
+            group = "nutmon";
+          };
         })
         ({
           # authorized keys
