@@ -23,7 +23,7 @@
       driver = "usbhid-ups";
       port = "auto";
     };
-    users.nutmon = { 
+    users.nutmon = {
       passwordFile = config.sops.secrets."nutmon-password".path;
       upsmon = "primary";
     };
