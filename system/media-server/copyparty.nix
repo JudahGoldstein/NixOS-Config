@@ -26,6 +26,7 @@ with lib;
         withFastThumbnails = true;
       });
     };
+    environment.systemPackages = [ pkgs.copyparty ];
     services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "copyparty" 3923);
   };
 }
