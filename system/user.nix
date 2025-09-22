@@ -13,7 +13,7 @@ with lib;
     users.users.${config.name} = {
       isNormalUser = true;
       description = config.longName;
-      extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" "docker" "vboxusers" ];
+      extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
     services.displayManager.autoLogin = {

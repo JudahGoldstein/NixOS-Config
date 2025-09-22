@@ -17,6 +17,7 @@ with lib;
       };
     };
     virtualisation.oci-containers.backend = "docker";
+    users.users.${config.name}.extraGroups = [ "docker" ];
     hardware.nvidia-container-toolkit.enable = true;
   };
 }
