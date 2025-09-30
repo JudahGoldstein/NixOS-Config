@@ -27,9 +27,7 @@ with lib;
         SCARF_NO_ANALYTICS = "True";
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
       };
-      package = pkgs-openwebui.open-webui.overridePythonAttrs (old: {
-        dependencies = old.dependencies ++ [ pkgs.python3Packages.itsdangerous ];
-      });
+      package = pkgs-openwebui.open-webui;
     };
     services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "ollama" 11435);
   };
