@@ -6,6 +6,7 @@ with lib;
       ./sonarr.nix
       ./radarr.nix
       ./prowlarr.nix
+      ./flaresolverr.nix
       ./jellyfin.nix
       ./immich.nix
       ./obsidian-sync.nix
