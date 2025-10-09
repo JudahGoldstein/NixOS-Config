@@ -17,9 +17,11 @@ with lib;
   config = mkIf config.steam.enable {
     programs.steam = {
       enable = true;
-      remotePlay = mkIf config.steam.hosting { openFirewall = true; };
-      dedicatedServer = mkIf config.steam.hosting { openFirewall = true; };
-      localNetworkGameTransfers = mkIf config.steam.hosting { openFirewall = true; };
+      protontricks.enable = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+      remotePlay.openFirewall = config.steam.hosting;
+      dedicatedServer.openFirewall = config.steam.hosting;
+      localNetworkGameTransfers.openFirewall = config.steam.hosting;
     };
   };
 }
