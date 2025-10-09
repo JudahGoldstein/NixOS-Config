@@ -31,7 +31,7 @@ with lib;
     environment.systemPackages = with pkgs; lib.filter (pkg: pkg != null)
       [
         (if config.obsidian.enable then obsidian else null)
-        (if config.libreoffice.enable then libreoffice else null)
+        (if config.libreoffice.enable then libreoffice-fresh else null)
         (if config.qownnotes.enable then qownnotes else null)
         (if config.micro.enable then micro else null)
         hunspell
