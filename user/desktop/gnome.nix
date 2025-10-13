@@ -28,7 +28,10 @@
           move-to-workspace-right = [ "<Shift><Super>Right" ];
           switch-to-workspace-left = [ "<Super>Left" ];
           switch-to-workspace-right = [ "<Super>Right" ];
+          close = [ "<Alt>q" ];
+          maximize = [ "<Super>Up" ];
         };
+        
         "org/gnome/mutter/keybindings" = {
           toggle-tiled-left = [ ];
           toggle-tiled-right = [ ];
