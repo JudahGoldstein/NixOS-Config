@@ -14,8 +14,6 @@ with lib.hm.gvariant;
       enable = true;
       settings = {
         "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
-          gtk-theme = "Adwaita-dark";
           clock-show-seconds = true;
           clock-show-weekday = true;
           show-battery-percentage = true;
@@ -52,7 +50,6 @@ with lib.hm.gvariant;
         };
         "org/gtk/gtk4/settings/file-chooser".show-hidden = true;
         "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
-        "org/gnome/nautilus/compression".default-compression-format = "7z";
       };
     };
   };
