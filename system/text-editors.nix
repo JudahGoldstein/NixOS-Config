@@ -1,27 +1,26 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    obsidian.enable = mkOption {
-      type = types.bool;
+    obsidian.enable = lib.mkOption {
+      type = lib.types.bool;
       default = true;
       description = "Enable obsidian";
     };
 
-    libreoffice.enable = mkOption {
-      type = types.bool;
+    libreoffice.enable = lib.mkOption {
+      type = lib.types.bool;
       default = true;
       description = "Enable libreoffice suite";
     };
 
-    qownnotes.enable = mkOption {
-      type = types.bool;
+    qownnotes.enable = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable qownnotes";
     };
 
-    micro.enable = mkOption {
-      type = types.bool;
+    micro.enable = lib.mkOption {
+      type = lib.types.bool;
       default = true;
       description = "Enable micro";
     };

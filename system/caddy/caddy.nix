@@ -1,13 +1,12 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    caddy.enable = mkOption {
+    caddy.enable = lib.mkOption {
       default = false;
       description = "Enable the caddy web server.";
     };
   };
-  config = mkIf config.caddy.enable {
+  config = lib.mkIf config.caddy.enable {
     networking.firewall.allowedTCPPorts = [ 80 443 ];
     security.acme = {
       acceptTerms = true;

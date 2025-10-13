@@ -1,33 +1,32 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    easyeffects.enable = mkOption {
-      type = types.bool;
+    easyeffects.enable = lib.mkOption {
+      type = lib.types.bool;
       default = true;
       description = "Enable easyeffects";
     };
 
-    audacity.enable = mkOption {
-      type = types.bool;
+    audacity.enable = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable audacity";
     };
 
-    vlc.enable = mkOption {
-      type = types.bool;
+    vlc.enable = lib.mkOption {
+      type = lib.types.bool;
       default = true;
       description = "Enable VLC";
     };
 
-    shotcut.enable = mkOption {
-      type = types.bool;
+    shotcut.enable = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable shotcut";
     };
 
-    ffmpeg.enable = mkOption {
-      type = types.bool;
+    ffmpeg.enable = lib.mkOption {
+      type = lib.types.bool;
       default = true;
       description = "Enable ffmpeg";
     };
