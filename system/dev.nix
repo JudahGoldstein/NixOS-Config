@@ -1,5 +1,4 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
     dev.enable = lib.mkOption {
@@ -9,7 +8,7 @@ with lib;
     };
   };
 
-  config = mkIf config.dev.enable {
+  config = lib.mkIf config.dev.enable {
     environment.systemPackages = with pkgs;
       [
         vscode-fhs

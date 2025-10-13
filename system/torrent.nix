@@ -2,38 +2,37 @@
 let
   virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
 in
-with lib;
 {
   options = {
-    torrent.enable = mkOption {
+    torrent.enable = lib.mkOption {
       default = false;
       description = "Enable the torrent service.";
     };
-    transmission.enable = mkOption {
+    transmission.enable = lib.mkOption {
       default = false;
       description = "Enable the Transmission torrent client.";
     };
-    deluge.enable = mkOption {
+    deluge.enable = lib.mkOption {
       default = true;
       description = "Enable the Deluge torrent client.";
     };
   };
 
-  config = mkIf config.torrent.enable {
+  config = lib.mkIf config.torrent.enable {
     networking.firewall = #peer port
       {
         allowedTCPPorts = [ 32085 ];
         allowedUDPPorts = [ 32085 ];
       };
 
-    services.deluge = mkIf config.deluge.enable {
+    services.deluge = lib.mkIf config.deluge.enable {
       enable = true;
       openFirewall = true;
       web.enable = true;
       web.openFirewall = true;
       web.port = 8112;
     };
-    services.transmission = mkIf config.transmission.enable {
+    services.transmission = lib.mkIf config.transmission.enable {
       enable = true;
       openFirewall = true;
       openRPCPort = true;

@@ -1,19 +1,18 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    nvidia-prime.enable = mkOption {
-      type = types.bool;
+    nvidia-prime.enable = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable nvidia";
     };
-    nvidia-prime.sync = mkOption {
-      type = types.bool;
+    nvidia-prime.sync = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable nvidia sync mode";
     };
-    nvidia-prime.offload = mkOption {
-      type = types.bool;
+    nvidia-prime.offload = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable nvidia offload mode";
     };

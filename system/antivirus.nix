@@ -1,15 +1,14 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    clamav.enable = mkOption {
-      type = types.bool;
+    clamav.enable = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable Clam Antivirus";
     };
   };
   config = {
-    services.clamav = mkIf config.clamav.enable {
+    services.clamav = lib.mkIf config.clamav.enable {
       daemon.enable = true;
       fangfrisch.enable = true;
       updater.enable = true;

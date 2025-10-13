@@ -1,13 +1,12 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    keyboard.enable = mkOption {
+    keyboard.enable = lib.mkOption {
       default = false;
       description = "Enable DIY keyboard service.";
     };
   };
-  config = mkIf config.keyboard.enable {
+  config = lib.mkIf config.keyboard.enable {
     environment.systemPackages = with pkgs;
       [
         via

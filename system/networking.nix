@@ -1,5 +1,4 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   networking.hostName = config.name;
   networking.networkmanager.enable = true;

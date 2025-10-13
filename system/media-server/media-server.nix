@@ -1,5 +1,4 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   imports =
     [
@@ -13,13 +12,13 @@ with lib;
       ./copyparty.nix
     ];
   options = {
-    media-server.enable = mkOption {
+    media-server.enable = lib.mkOption {
       default = false;
       description = "Enable the media server services";
     };
   };
 
-  config = mkIf config.media-server.enable {
+  config = lib.mkIf config.media-server.enable {
     environment.systemPackages = with pkgs;
       [
         recyclarr

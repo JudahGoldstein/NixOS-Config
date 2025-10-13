@@ -1,5 +1,4 @@
 { config, pkgs, lib, ... }:
-with lib.hm.gvariant;
 {
   options = {
     gnome.enable = lib.mkOption {

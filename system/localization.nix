@@ -1,9 +1,8 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    softColemak.enable = mkOption {
-      type = types.bool;
+    softColemak.enable = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable soft Colemak layout for console. use for laptops with sticker keycaps.";
     };

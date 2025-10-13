@@ -1,9 +1,8 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    longName = mkOption {
-      type = types.str;
+    longName = lib.mkOption {
+      type = lib.types.str;
       default = "";
     };
   };

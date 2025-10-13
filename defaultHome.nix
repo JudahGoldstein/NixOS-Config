@@ -1,5 +1,4 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   imports =
     [
@@ -11,8 +10,8 @@ with lib;
     ];
 
   options = {
-    name = mkOption {
-      type = types.str;
+    name = lib.mkOption {
+      type = lib.types.str;
       description = "The hostname/username for this configuration";
     };
   };

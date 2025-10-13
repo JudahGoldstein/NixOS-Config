@@ -2,9 +2,8 @@
 let
   virtualHosts = import ../caddy/virtualHosts.nix { inherit lib; };
 in
-with lib;
 {
-  config = mkIf config.media-server.enable {
+  config = lib.mkIf config.media-server.enable {
     services.immich = {
       enable = true;
       port = 58278;

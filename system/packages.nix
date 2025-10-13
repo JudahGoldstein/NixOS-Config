@@ -1,5 +1,4 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   nixpkgs.config.allowUnfree = true;
   nix.settings.auto-optimise-store = true;

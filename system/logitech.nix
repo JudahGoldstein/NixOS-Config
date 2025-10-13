@@ -1,5 +1,4 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
     logitech.enable = lib.mkOption {

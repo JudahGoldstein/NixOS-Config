@@ -1,13 +1,12 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    docker.enable = mkOption {
+    docker.enable = lib.mkOption {
       default = false;
       description = "Enable docker.";
     };
   };
-  config = mkIf config.docker.enable {
+  config = lib.mkIf config.docker.enable {
     virtualisation.docker = {
       enable = true;
       autoPrune.enable = true;
