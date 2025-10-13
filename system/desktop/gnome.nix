@@ -6,8 +6,8 @@
       default = false;
       description = "Enable GNOME desktop environment.";
     };
-  };
 
+  };
   config = lib.mkIf (config.gnome.enable == true) {
     environment.systemPackages = with pkgs; [
       gnome-tweaks
@@ -15,6 +15,7 @@
       gnomeExtensions.appindicator
       gnomeExtensions.caffeine
       gnomeExtensions.pip-on-top
+      gnomeExtensions.tiling-shell
     ];
     services.libinput.enable = true;
     services.displayManager = {
