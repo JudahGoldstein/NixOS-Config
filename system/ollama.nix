@@ -2,15 +2,14 @@
 let
   virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
 in
-with lib;
 {
   options = {
-    ollama.enable = mkOption {
+    ollama.enable = lib.mkOption {
       default = false;
       description = "Enable ollama with webui.";
     };
   };
-  config = mkIf config.ollama.enable {
+  config = lib.mkIf config.ollama.enable {
     services.ollama = {
       enable = true;
       host = "127.0.0.1";

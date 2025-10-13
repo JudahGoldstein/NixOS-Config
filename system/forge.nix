@@ -2,11 +2,10 @@
 let
   virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
 in
-with lib;
 {
   options = {
-    sd-webui-forge.enable = mkOption {
-      type = types.bool;
+    sd-webui-forge.enable = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable the Stable Diffusion WebUI Forge.";
     };

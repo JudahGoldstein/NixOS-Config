@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    steam.enable = mkOption {
-      type = types.bool;
+    steam.enable = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Enable steam";
     };
-    steam.hosting = mkOption {
-      type = types.bool;
+    steam.hosting = lib.mkOption {
+      type = lib.types.bool;
       default = false;
       description = "Open ports in the firewall for steam";
     };
   };
 
-  config = mkIf config.steam.enable {
+  config = lib.mkIf config.steam.enable {
     programs.steam = {
       enable = true;
       protontricks.enable = true;

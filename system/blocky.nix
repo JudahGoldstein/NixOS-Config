@@ -1,9 +1,8 @@
 { config, pkgs, lib, ... }:
-with lib;
 {
   options = {
-    blocky.enable = mkOption {
-      type = types.bool;
+    blocky.enable = lib.mkOption {
+      type = lib.types.bool;
       default = true;
       description = "Enable blocky";
     };
