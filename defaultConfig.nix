@@ -41,7 +41,6 @@
   };
 
   config = {
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
     services.fstrim.enable = true;
 
     system.stateVersion = "23.11";
