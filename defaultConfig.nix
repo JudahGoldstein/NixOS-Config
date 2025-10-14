@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   imports =
     [
@@ -34,8 +34,8 @@
     ];
 
   options = {
-    name = lib.mkOption {
-      type = lib.types.str;
+    name = inputs.lib.mkOption {
+      type = inputs.lib.types.str;
       description = "The hostname for this configuration";
     };
   };
@@ -45,6 +45,6 @@
     services.fstrim.enable = true;
 
     system.stateVersion = "23.11";
-    gnome.enable = lib.mkDefault true;
+    gnome.enable = inputs.lib.mkDefault true;
   };
 }

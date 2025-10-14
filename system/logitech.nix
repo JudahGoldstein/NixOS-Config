@@ -1,14 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    logitech.enable = lib.mkOption {
-      type = lib.types.bool;
+    logitech.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable logitech wireless customization/support";
     };
   };
 
-  config = lib.mkIf config.logitech.enable {
+  config = inputs.lib.mkIf config.logitech.enable {
     hardware.logitech.wireless = {
       enable = true;
       enableGraphical = true;

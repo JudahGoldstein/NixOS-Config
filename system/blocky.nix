@@ -1,13 +1,13 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    blocky.enable = lib.mkOption {
-      type = lib.types.bool;
+    blocky.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable blocky";
     };
   };
-  config = lib.mkIf config.blocky.enable {
+  config = inputs.lib.mkIf config.blocky.enable {
     services.blocky = {
       enable = true;
       settings = {

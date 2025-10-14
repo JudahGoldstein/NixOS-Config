@@ -1,14 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    obs.enable = lib.mkOption {
-      type = lib.types.bool;
+    obs.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = false;
       description = "Enable the OBS Studio.";
     };
   };
 
-  config = lib.mkIf config.obs.enable {
+  config = inputs.lib.mkIf config.obs.enable {
     boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
     boot.kernelModules = [
       "v4l2loopback"

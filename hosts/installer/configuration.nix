@@ -1,4 +1,4 @@
-{ config, pkgs, modulesPath, lib, ... }:
+{ config, pkgs, ... }@inputs:
 let
   aliases = {
     "gethw" = "sudo nixos-generate-config --no-filesystems --dir /mnt && sudo cat /mnt/hardware-configuration.nix";
@@ -8,8 +8,8 @@ in
 {
   imports =
     [
-      "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
-      "${modulesPath}/installer/cd-dvd/channel.nix"
+      "${inputs.modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+      "${inputs.modulesPath}/installer/cd-dvd/channel.nix"
       ../../system/desktop/gnome.nix
     ];
 
@@ -22,10 +22,10 @@ in
 
   users.users.nixos = {
     password = "arst";
-    hashedPassword = lib.mkForce null;
-    hashedPasswordFile = lib.mkForce null;
-    initialPassword = lib.mkForce null;
-    initialHashedPassword = lib.mkForce null;
+    hashedPassword = inputs.lib.mkForce null;
+    hashedPasswordFile = inputs.lib.mkForce null;
+    initialPassword = inputs.lib.mkForce null;
+    initialHashedPassword = inputs.lib.mkForce null;
   };
 
   time.timeZone = "America/Toronto";

@@ -61,7 +61,7 @@
             ({ nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; })
           ] ++ extraModules;
           specialArgs = {
-            inherit inputs pkgs-openwebui pkgs-stable;
+            inherit inputs pkgs-openwebui pkgs-stable lib;
           } // extraSpecialArgs;
         };
     in

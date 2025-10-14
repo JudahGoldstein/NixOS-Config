@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   environment.systemPackages = with pkgs;
     [
@@ -20,7 +20,7 @@
         generateKey = true;
       };
 
-      secrets = lib.mkMerge [
+      secrets = inputs.lib.mkMerge [
         ({
           # keypairs
           "private-keys/github" = {
@@ -35,27 +35,27 @@
             path = "/home/${config.name}/.ssh/${config.name}";
             owner = "${config.name}";
           };
-          "public-keys/${config.name}" = lib.mkForce {
+          "public-keys/${config.name}" = inputs.lib.mkForce {
             path = "/home/${config.name}/.ssh/${config.name}.pub";
             owner = "${config.name}";
           };
           # api keys and tokens
-          "cloudflare-dns-api-key" = lib.mkIf (config.services.caddy.enable) {
+          "cloudflare-dns-api-key" = inputs.lib.mkIf (config.services.caddy.enable) {
             path = "/var/lib/secrets/cloudflare-dns-api-key";
             owner = config.services.caddy.user;
             group = config.services.caddy.group;
           };
-          "couchdb-creds" = lib.mkIf (config.services.couchdb.enable) {
+          "couchdb-creds" = inputs.lib.mkIf (config.services.couchdb.enable) {
             path = "/var/lib/secrets/couchdb-creds";
             owner = config.services.couchdb.user;
             group = config.services.couchdb.group;
           };
-          "copyparty-password" = lib.mkIf (config.services.copyparty.enable) {
+          "copyparty-password" = inputs.lib.mkIf (config.services.copyparty.enable) {
             path = "/var/lib/secrets/copyparty-password";
             owner = config.services.copyparty.user;
             group = config.services.copyparty.group;
           };
-          "nutmon-password" = lib.mkIf config.power.ups.enable {
+          "nutmon-password" = inputs.lib.mkIf config.power.ups.enable {
             path = "/var/lib/secrets/nutmon-password";
             owner = "nutmon";
             group = "nutmon";

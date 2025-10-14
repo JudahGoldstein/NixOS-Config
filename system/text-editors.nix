@@ -1,33 +1,33 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    obsidian.enable = lib.mkOption {
-      type = lib.types.bool;
+    obsidian.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable obsidian";
     };
 
-    libreoffice.enable = lib.mkOption {
-      type = lib.types.bool;
+    libreoffice.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable libreoffice suite";
     };
 
-    qownnotes.enable = lib.mkOption {
-      type = lib.types.bool;
+    qownnotes.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = false;
       description = "Enable qownnotes";
     };
 
-    micro.enable = lib.mkOption {
-      type = lib.types.bool;
+    micro.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable micro";
     };
   };
 
   config = {
-    environment.systemPackages = with pkgs; lib.filter (pkg: pkg != null)
+    environment.systemPackages = with pkgs; inputs.lib.filter (pkg: pkg != null)
       [
         (if config.obsidian.enable then obsidian else null)
         (if config.libreoffice.enable then libreoffice-fresh else null)

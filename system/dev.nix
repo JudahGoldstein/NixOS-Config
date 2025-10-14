@@ -1,14 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    dev.enable = lib.mkOption {
-      type = lib.types.bool;
+    dev.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable Development Tools";
     };
   };
 
-  config = lib.mkIf config.dev.enable {
+  config = inputs.lib.mkIf config.dev.enable {
     environment.systemPackages = with pkgs;
       [
         vscode-fhs
