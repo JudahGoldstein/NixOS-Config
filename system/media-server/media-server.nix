@@ -7,7 +7,6 @@
       ./prowlarr.nix
       ./flaresolverr.nix
       ./jellyfin.nix
-      ./immich.nix
       ./obsidian-sync.nix
       ./copyparty.nix
     ];
