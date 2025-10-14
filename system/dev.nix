@@ -28,6 +28,6 @@
     programs = {
       direnv.enable = true;
     };
-    nix.settings.trusted-users = [ "root" config.name ];
+    nix.settings.trusted-users = [ config.name ];
   };
 }
