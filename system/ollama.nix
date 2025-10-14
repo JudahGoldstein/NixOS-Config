@@ -1,15 +1,15 @@
-{ config, pkgs, pkgs-openwebui, lib, ... }:
+{ config, pkgs, ... }@inputs:
 let
-  virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
+  virtualHosts = import ./caddy/virtualHosts.nix inputs;
 in
 {
   options = {
-    ollama.enable = lib.mkOption {
+    ollama.enable = inputs.lib.mkOption {
       default = false;
       description = "Enable ollama with webui.";
     };
   };
-  config = lib.mkIf config.ollama.enable {
+  config = inputs.lib.mkIf config.ollama.enable {
     services.ollama = {
       enable = true;
       host = "127.0.0.1";
@@ -26,7 +26,7 @@ in
         SCARF_NO_ANALYTICS = "True";
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
       };
-      package = pkgs-openwebui.open-webui;
+      package = inputs.pkgs-openwebui.open-webui;
     };
     services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "ollama" 11435);
   };

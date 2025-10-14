@@ -1,8 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    longName = lib.mkOption {
-      type = lib.types.str;
+    longName = inputs.lib.mkOption {
+      type = inputs.lib.types.str;
       default = "";
     };
   };

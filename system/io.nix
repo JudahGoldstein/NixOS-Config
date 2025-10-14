@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }@inputs:
 {
   services.printing.enable = true;
   services.pulseaudio.enable = false;

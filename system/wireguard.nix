@@ -1,12 +1,12 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    tailscale.enable = lib.mkOption {
+    tailscale.enable = inputs.lib.mkOption {
       default = true;
       description = "Enable wireguard host";
     };
   };
-  config = lib.mkIf config.tailscale.enable {
+  config = inputs.lib.mkIf config.tailscale.enable {
     services.tailscale = {
       enable = true;
       openFirewall = true;

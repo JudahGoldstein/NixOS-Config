@@ -1,16 +1,16 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, ... }@inputs:
 let
-  virtualHosts = import ./caddy/virtualHosts.nix { inherit lib; };
+  virtualHosts = import ./caddy/virtualHosts.nix inputs;
 in
 {
   options = {
-    sd-webui-forge.enable = lib.mkOption {
-      type = lib.types.bool;
+    sd-webui-forge.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = false;
       description = "Enable the Stable Diffusion WebUI Forge.";
     };
   };
-  config = lib.mkIf (config.sd-webui-forge.enable == true) {
+  config = inputs.lib.mkIf (config.sd-webui-forge.enable == true) {
     nixpkgs.overlays = [ inputs.stable-diffusion-webui-nix.overlays.default ];
     environment.systemPackages = with pkgs; [
       stable-diffusion-webui.forge.cuda

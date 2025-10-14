@@ -1,39 +1,39 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    easyeffects.enable = lib.mkOption {
-      type = lib.types.bool;
+    easyeffects.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable easyeffects";
     };
 
-    audacity.enable = lib.mkOption {
-      type = lib.types.bool;
+    audacity.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = false;
       description = "Enable audacity";
     };
 
-    vlc.enable = lib.mkOption {
-      type = lib.types.bool;
+    vlc.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable VLC";
     };
 
-    shotcut.enable = lib.mkOption {
-      type = lib.types.bool;
+    shotcut.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = false;
       description = "Enable shotcut";
     };
 
-    ffmpeg.enable = lib.mkOption {
-      type = lib.types.bool;
+    ffmpeg.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable ffmpeg";
     };
   };
 
   config = {
-    environment.systemPackages = with pkgs; lib.filter (pkg: pkg != null)
+    environment.systemPackages = with pkgs; inputs.lib.filter (pkg: pkg != null)
       [
         (if config.easyeffects.enable then easyeffects else null)
         (if config.audacity.enable then audacity else null)

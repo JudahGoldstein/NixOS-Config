@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   imports =
     [
@@ -10,8 +10,8 @@
     ];
 
   options = {
-    name = lib.mkOption {
-      type = lib.types.str;
+    name = inputs.lib.mkOption {
+      type = inputs.lib.types.str;
       description = "The hostname/username for this configuration";
     };
   };
@@ -30,6 +30,6 @@
     };
 
     programs.home-manager.enable = true;
-    gnome.enable = lib.mkDefault true;
+    gnome.enable = inputs.lib.mkDefault true;
   };
 }
