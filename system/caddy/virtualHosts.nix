@@ -1,6 +1,7 @@
-{ lib, ... }:
+inputs:
 
 let
+  inherit (inputs) lib;
   mkLocalVirtualHost = name: port: {
     "${name}.local.janjuta.org" = {
       useACMEHost = "janjuta.org";

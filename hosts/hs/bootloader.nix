@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }@inputs:
 {
   boot.loader = {
     systemd-boot.enable = false;

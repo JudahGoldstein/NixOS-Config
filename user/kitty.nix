@@ -1,12 +1,12 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    kitty.enable = lib.mkOption {
-      type = lib.types.bool;
+    kitty.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
     };
   };
-  config = lib.mkIf config.kitty.enable {
+  config = inputs.lib.mkIf config.kitty.enable {
     programs.kitty = {
       enable = true;
       themeFile = "GruvboxMaterialDarkHard";

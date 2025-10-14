@@ -1,14 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    gnome.enable = lib.mkOption {
-      type = lib.types.bool;
+    gnome.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = true;
       description = "Enable GNOME desktop environment.";
     };
   };
 
-  config = lib.mkIf config.gnome.enable {
+  config = inputs.lib.mkIf config.gnome.enable {
     dconf = {
       enable = true;
       settings = {
@@ -31,7 +31,7 @@
           close = [ "<Alt>q" ];
           maximize = [ "<Super>Up" ];
         };
-        
+
         "org/gnome/mutter/keybindings" = {
           toggle-tiled-left = [ ];
           toggle-tiled-right = [ ];

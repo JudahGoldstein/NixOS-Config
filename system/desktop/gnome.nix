@@ -1,14 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   options = {
-    gnome.enable = lib.mkOption {
-      type = lib.types.bool;
+    gnome.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
       default = false;
       description = "Enable GNOME desktop environment.";
     };
 
   };
-  config = lib.mkIf (config.gnome.enable == true) {
+  config = inputs.lib.mkIf (config.gnome.enable == true) {
     environment.systemPackages = with pkgs; [
       gnome-tweaks
       gnome-extension-manager

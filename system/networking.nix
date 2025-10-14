@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 {
   networking.hostName = config.name;
   networking.networkmanager.enable = true;

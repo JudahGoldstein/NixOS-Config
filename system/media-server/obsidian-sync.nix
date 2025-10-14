@@ -1,9 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }@inputs:
 let
-  virtualHosts = import ../caddy/virtualHosts.nix { inherit lib; };
+  virtualHosts = import ../caddy/virtualHosts.nix inputs;
 in
 {
-  config = lib.mkIf config.media-server.enable {
+  config = inputs.lib.mkIf config.media-server.enable {
     services.couchdb = {
       enable = true;
       port = 5984;
