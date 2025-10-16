@@ -18,10 +18,6 @@
       fsType = "ext4";
     };
 
-  # Prime for Nvidia Optimus
-  nvidia-prime.enable = true;
-  nvidia-prime.offload = true;
-
   softColemak.enable = true;
 
   services.fprintd.enable = true;
