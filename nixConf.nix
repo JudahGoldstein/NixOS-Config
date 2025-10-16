@@ -11,6 +11,7 @@
       ];
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
+    download-buffer-size = 536870912; # 512MiB
   };
 
 }
