@@ -43,6 +43,8 @@
       options = [ "defaults" "nodiscard" ];
     };
 
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-server;
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
   hardware.nvidia = {
