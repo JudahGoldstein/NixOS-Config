@@ -18,6 +18,8 @@
       fsType = "ext4";
     };
 
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  
   softColemak.enable = true;
 
   services.fprintd.enable = true;
