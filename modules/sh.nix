@@ -20,7 +20,7 @@ in
     enable = true;
     ohMyZsh = {
       enable = true;
-      custom = "/etc/nixos/system/zsh-themes";
+      custom = "/etc/nixos/modules/zsh-themes";
       theme = "gruvbox";
       plugins = [ ];
     };
