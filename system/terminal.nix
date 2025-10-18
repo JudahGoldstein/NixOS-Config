@@ -11,12 +11,11 @@
     };
   };
   config = {
-    environment.systemPackages = with pkgs; inputs.lib.filter (pkg: pkg != null)
+    environment.systemPackages = with pkgs; inputs.lib.mkIf config.terminal-recording.enable
       [
-        (if config.kitty.enable then kitty else null)
-        (if config.terminal-recording.enable then asciinema else null)
-        (if config.terminal-recording.enable then asciinema-agg else null)
-        (if config.terminal-recording.enable then termshot else null)
+        asciinema
+        asciinema-agg
+        termshot
       ];
     programs.starship = {
       enable = true;
@@ -25,6 +24,10 @@
     programs.nautilus-open-any-terminal = inputs.lib.mkIf config.gnome.enable {
       enable = true;
       terminal = "kitty";
+    };
+    hm.programs.kitty = {
+      enable = config.kitty.enable;
+      themeFile = "GruvboxMaterialDarkHard";
     };
   };
 }

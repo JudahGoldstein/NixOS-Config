@@ -3,7 +3,6 @@
   imports =
     [
       ./user/git.nix
-      ./user/kitty.nix
     ];
 
   options = {
