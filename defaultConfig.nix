@@ -31,6 +31,7 @@
       ./system/text-editors.nix
       ./system/audio-video.nix
       ./system/forge.nix
+      ./system/discord.nix
     ];
 
   options = {
