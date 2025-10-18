@@ -18,7 +18,7 @@
       steam = {
         enable = true;
         protontricks.enable = true;
-        extraCompatPackages = [ pkgs.proton-ge-bin ];
+        extraCompatPackages = [ pkgs.proton-ge-custom ];
         remotePlay.openFirewall = config.steam.hosting;
         dedicatedServer.openFirewall = config.steam.hosting;
         localNetworkGameTransfers.openFirewall = config.steam.hosting;
