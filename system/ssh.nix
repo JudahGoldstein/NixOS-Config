@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     ssh-agents
   ];
+  hm.services.ssh-agent.enable = true;
   services.openssh = {
     enable = true;
     settings = {
