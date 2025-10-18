@@ -2,7 +2,6 @@
 {
   imports =
     [
-      ./user/git.nix
     ];
 
   options = {

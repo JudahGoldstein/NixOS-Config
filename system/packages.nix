@@ -7,7 +7,6 @@
       # Downloaders
       wget
       curl
-      git
       p7zip
 
       # Misc I always want
