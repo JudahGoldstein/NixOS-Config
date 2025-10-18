@@ -65,10 +65,6 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.${hostname} = {
-                imports = [ ./hosts/${hostname}/home.nix ];
-                name = hostname;
-              };
             }
             (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "${hostname}" ])
             inputs.sops-nix.nixosModules.sops
