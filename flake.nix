@@ -70,6 +70,7 @@
                 name = hostname;
               };
             }
+            (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "${hostname}" ])
             inputs.sops-nix.nixosModules.sops
             inputs.disko.nixosModules.disko
             inputs.copyparty.nixosModules.default
