@@ -32,6 +32,7 @@
       ./system/audio-video.nix
       ./system/forge.nix
       ./system/discord.nix
+      ./system/git.nix
     ];
 
   options = {
