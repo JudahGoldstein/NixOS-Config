@@ -1,6 +1,6 @@
 { config, pkgs, ... }@inputs:
 {
-  programs.vesktop = {
+  hm.programs.vesktop = {
     enable = true;
   };
 }
