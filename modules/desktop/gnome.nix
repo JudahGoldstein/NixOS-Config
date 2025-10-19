@@ -28,6 +28,7 @@
           hide_version_string = true;
           numlock = true;
         };
+        x11Support = false;
       };
       preStart = "";
     };
