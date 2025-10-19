@@ -20,9 +20,5 @@
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
-    services.displayManager.autoLogin = {
-      enable = false;
-      user = config.name;
-    };
   };
 }
