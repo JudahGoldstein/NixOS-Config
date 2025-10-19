@@ -9,25 +9,28 @@
   };
 
   config = inputs.lib.mkIf config.dev.enable {
-    environment.systemPackages = with pkgs;
-      [
-        vscode-fhs
+    environment.systemPackages = with pkgs; [
+      nil
+      nixfmt
 
-        nil
-        nixpkgs-fmt
+      dbeaver-bin
 
-        dbeaver-bin
+      dotnet-sdk_9 # for polyglot
 
-        dotnet-sdk_9 #for polyglot 
+      devenv
 
-        devenv
+      nix-init
+    ];
 
-        nix-init
-      ];
+    hm.programs.vscode = {
+      enable = true;
+      mutableExtensionsDir = true;
+    };
 
     programs = {
       direnv.enable = true;
     };
+
     nix.settings.trusted-users = [ config.name ];
   };
 }
