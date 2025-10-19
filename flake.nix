@@ -1,6 +1,9 @@
 {
   nixConfig = {
-    extra-experimental-features = [ "nix-command" "flakes" ];
+    extra-experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     download-buffer-size = 536870912; # 512MiB
     auto-optimise-store = true;
     extra-substituters = [
@@ -38,9 +41,14 @@
       url = "github:9001/copyparty";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs =
+    { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -54,7 +62,12 @@
       };
 
       # Helper function to create nixosSystem configurations
-      mkHost = { hostname, extraModules ? [ ], extraSpecialArgs ? { } }:
+      mkHost =
+        {
+          hostname,
+          extraModules ? [ ],
+          extraSpecialArgs ? { },
+        }:
         lib.nixosSystem {
           inherit system;
           modules = [
@@ -65,17 +78,26 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = ".nixbak";
             }
             (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "${hostname}" ])
             inputs.sops-nix.nixosModules.sops
             inputs.disko.nixosModules.disko
             inputs.copyparty.nixosModules.default
             inputs.chaotic.nixosModules.default
+            inputs.stylix.nixosModules.stylix
             ({ nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; })
-          ] ++ extraModules;
+          ]
+          ++ extraModules;
           specialArgs = {
-            inherit inputs pkgs-openwebui pkgs-stable lib;
-          } // extraSpecialArgs;
+            inherit
+              inputs
+              pkgs-openwebui
+              pkgs-stable
+              lib
+              ;
+          }
+          // extraSpecialArgs;
         };
     in
     {
