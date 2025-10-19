@@ -20,8 +20,6 @@ in
     enable = true;
     ohMyZsh = {
       enable = true;
-      custom = "/etc/nixos/modules/zsh-themes";
-      theme = "gruvbox";
       plugins = [ ];
     };
     interactiveShellInit = "source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh";

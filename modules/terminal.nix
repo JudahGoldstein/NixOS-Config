@@ -11,8 +11,9 @@
     };
   };
   config = {
-    environment.systemPackages = with pkgs; inputs.lib.mkIf config.terminal-recording.enable
-      [
+    environment.systemPackages =
+      with pkgs;
+      inputs.lib.mkIf config.terminal-recording.enable [
         asciinema
         asciinema-agg
         termshot
@@ -27,7 +28,6 @@
     };
     hm.programs.kitty = {
       enable = config.kitty.enable;
-      themeFile = "GruvboxMaterialDarkHard";
     };
   };
 }
