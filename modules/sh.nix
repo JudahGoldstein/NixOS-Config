@@ -11,7 +11,8 @@ let
     "lg" = "lazygit";
     "v" = "nvim";
     "neofetch" = "fastfetch";
-    "nix-update" = "cd /etc/nixos/ && git pull && nix flake update && nh os boot && nh clean all --keep 3 && git commit -m 'flake' flake.lock && git push && cd -";
+    "nix-update" =
+      "cd /etc/nixos/ && git pull && nix flake update && nh os boot && nh clean all --keep 3 && git commit -m 'flake' flake.lock && git push && cd -";
   };
 in
 {
@@ -25,11 +26,10 @@ in
     interactiveShellInit = "source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh";
     shellAliases = myAliases;
   };
-  environment.systemPackages = with pkgs;
-    [
-      tldr
-      zsh-nix-shell
-    ];
+  environment.systemPackages = with pkgs; [
+    tldr
+    zsh-nix-shell
+  ];
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
 }

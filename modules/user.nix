@@ -12,7 +12,12 @@
     users.users.${config.name} = {
       isNormalUser = true;
       description = config.longName;
-      extraGroups = [ "networkmanager" "wheel" "dialout" "uucp" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "dialout"
+        "uucp"
+      ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
     services.displayManager.autoLogin = {

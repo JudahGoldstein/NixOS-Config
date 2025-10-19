@@ -1,11 +1,10 @@
 { config, pkgs, ... }@inputs:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./bootloader.nix
-      ../../defaultConfig.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./bootloader.nix
+    ../../defaultConfig.nix
+  ];
 
   longName = "Judah (v14)";
 

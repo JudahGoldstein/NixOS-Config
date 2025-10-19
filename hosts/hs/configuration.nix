@@ -1,12 +1,11 @@
 { config, pkgs, ... }@inputs:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./bootloader.nix
-      ../../defaultConfig.nix
-      ./disks.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./bootloader.nix
+    ../../defaultConfig.nix
+    ./disks.nix
+  ];
 
   longName = "Judah (HS)";
 
@@ -36,12 +35,14 @@
     };
   };
 
-  fileSystems."/mnt/media" =
-    {
-      device = "/dev/disk/by-uuid/2dfcbe87-8cbd-4363-bdb8-a4e24558e227";
-      fsType = "ext4";
-      options = [ "defaults" "nodiscard" ];
-    };
+  fileSystems."/mnt/media" = {
+    device = "/dev/disk/by-uuid/2dfcbe87-8cbd-4363-bdb8-a4e24558e227";
+    fsType = "ext4";
+    options = [
+      "defaults"
+      "nodiscard"
+    ];
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos-server;
 

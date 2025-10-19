@@ -14,15 +14,14 @@
       updater.enable = true;
       scanner.enable = true;
       scanner.interval = "*-*-* 06:00:00";
-      scanner.scanDirectories =
-        [
-          "/home"
-          "/var/lib"
-          "/tmp"
-          "/etc"
-          "/var/tmp"
-          "/mnt/"
-        ];
+      scanner.scanDirectories = [
+        "/home"
+        "/var/lib"
+        "/tmp"
+        "/etc"
+        "/var/tmp"
+        "/mnt/"
+      ];
     };
   };
 }
