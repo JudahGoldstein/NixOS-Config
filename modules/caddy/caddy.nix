@@ -7,7 +7,10 @@
     };
   };
   config = inputs.lib.mkIf config.caddy.enable {
-    networking.firewall.allowedTCPPorts = [ 80 443 ];
+    networking.firewall.allowedTCPPorts = [
+      80
+      443
+    ];
     security.acme = {
       acceptTerms = true;
       defaults = {

@@ -33,8 +33,9 @@
   };
 
   config = {
-    environment.systemPackages = with pkgs; inputs.lib.filter (pkg: pkg != null)
-      [
+    environment.systemPackages =
+      with pkgs;
+      inputs.lib.filter (pkg: pkg != null) [
         (if config.easyeffects.enable then easyeffects else null)
         (if config.audacity.enable then audacity else null)
         (if config.vlc.enable then vlc else null)

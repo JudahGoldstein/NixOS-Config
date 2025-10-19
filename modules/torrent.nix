@@ -19,7 +19,7 @@ in
   };
 
   config = inputs.lib.mkIf config.torrent.enable {
-    networking.firewall = #peer port
+    networking.firewall = # peer port
       {
         allowedTCPPorts = [ 32085 ];
         allowedUDPPorts = [ 32085 ];
@@ -60,7 +60,7 @@ in
       credentialsFile = "/var/lib/secrets/transmission-credentials.json";
     };
     services.caddy.virtualHosts =
-      (virtualHosts.mkLocalVirtualHost "transmission" 9091) //
-      (virtualHosts.mkLocalVirtualHost "deluge" 8112);
+      (virtualHosts.mkLocalVirtualHost "transmission" 9091)
+      // (virtualHosts.mkLocalVirtualHost "deluge" 8112);
   };
 }

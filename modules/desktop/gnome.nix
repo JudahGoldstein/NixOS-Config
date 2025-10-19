@@ -33,28 +33,27 @@
     };
     services.desktopManager.gnome.enable = true;
     programs.evince.enable = true;
-    environment.gnome.excludePackages = with pkgs;
-      [
-        eog
-        epiphany
-        gedit
-        simple-scan
-        totem
-        yelp
-        evince
-        file-roller
-        geary
-        seahorse
-        gnome-calculator
-        gnome-clocks
-        gnome-contacts
-        gnome-font-viewer
-        gnome-logs
-        gnome-maps
-        gnome-music
-        gnome-weather
-        gnome-tour
-      ];
+    environment.gnome.excludePackages = with pkgs; [
+      eog
+      epiphany
+      gedit
+      simple-scan
+      totem
+      yelp
+      evince
+      file-roller
+      geary
+      seahorse
+      gnome-calculator
+      gnome-clocks
+      gnome-contacts
+      gnome-font-viewer
+      gnome-logs
+      gnome-maps
+      gnome-music
+      gnome-weather
+      gnome-tour
+    ];
     hm.dconf = {
       enable = true;
       settings = {
@@ -82,7 +81,10 @@
           toggle-tiled-left = [ ];
           toggle-tiled-right = [ ];
         };
-        "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" ];
+        "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        ];
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
           binding = "<Super>Return";
           command = "kitty";

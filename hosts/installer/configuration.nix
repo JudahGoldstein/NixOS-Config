@@ -1,17 +1,17 @@
 { config, pkgs, ... }@inputs:
 let
   aliases = {
-    "gethw" = "sudo nixos-generate-config --no-filesystems --dir /mnt && sudo cat /mnt/hardware-configuration.nix";
+    "gethw" =
+      "sudo nixos-generate-config --no-filesystems --dir /mnt && sudo cat /mnt/hardware-configuration.nix";
     "getage" = "cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age";
   };
 in
 {
-  imports =
-    [
-      "${inputs.modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
-      "${inputs.modulesPath}/installer/cd-dvd/channel.nix"
-      ../../modules/desktop/gnome.nix
-    ];
+  imports = [
+    "${inputs.modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+    "${inputs.modulesPath}/installer/cd-dvd/channel.nix"
+    ../../modules/desktop/gnome.nix
+  ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
@@ -40,14 +40,13 @@ in
     shellAliases = aliases;
   };
 
-  environment.systemPackages = with pkgs;
-    [
-      git
-      micro
-      sops
-      age
-      ssh-to-age
-    ];
+  environment.systemPackages = with pkgs; [
+    git
+    micro
+    sops
+    age
+    ssh-to-age
+  ];
 
   hardware.graphics = {
     enable = true;

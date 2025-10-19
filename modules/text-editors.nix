@@ -27,8 +27,9 @@
   };
 
   config = {
-    environment.systemPackages = with pkgs; inputs.lib.filter (pkg: pkg != null)
-      [
+    environment.systemPackages =
+      with pkgs;
+      inputs.lib.filter (pkg: pkg != null) [
         (if config.obsidian.enable then obsidian else null)
         (if config.libreoffice.enable then libreoffice-fresh else null)
         (if config.qownnotes.enable then qownnotes else null)
@@ -38,4 +39,3 @@
       ];
   };
 }
-

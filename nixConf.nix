@@ -2,7 +2,10 @@
 {
   nix.settings = {
     accept-flake-config = true;
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     download-buffer-size = 536870912; # 512MiB
     auto-optimise-store = true;
     substituters = [
