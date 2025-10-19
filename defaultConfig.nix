@@ -48,6 +48,11 @@
     system.stateVersion = "23.11";
     gnome.enable = inputs.lib.mkDefault true;
 
+    stylix.enable = true;
+    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
+    stylix.polarity = "dark";
+    hm.stylix.targets.firefox.profileNames = [ "default" ];
+
     hm = {
       home.username = config.name;
       home.homeDirectory = "/home/${config.name}";
