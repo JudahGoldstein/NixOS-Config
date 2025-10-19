@@ -7,11 +7,10 @@
     };
   };
   config = inputs.lib.mkIf config.keyboard.enable {
-    environment.systemPackages = with pkgs;
-      [
-        via
-        vial
-      ];
+    environment.systemPackages = with pkgs; [
+      via
+      vial
+    ];
 
     hardware.keyboard.qmk.enable = true;
     services.udev.packages = [ pkgs.via ];

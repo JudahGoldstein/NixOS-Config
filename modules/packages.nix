@@ -2,27 +2,26 @@
 {
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs;
-    [
-      # Downloaders
-      wget
-      curl
-      p7zip
+  environment.systemPackages = with pkgs; [
+    # Downloaders
+    wget
+    curl
+    p7zip
 
-      # Misc I always want
-      fastfetch
-      numlockx
-      phoronix-test-suite
+    # Misc I always want
+    fastfetch
+    numlockx
+    phoronix-test-suite
 
-      thunderbird
+    thunderbird
 
-      # Security
-      bitwarden-desktop
+    # Security
+    bitwarden-desktop
 
-      # Misc
-      remmina
+    # Misc
+    remmina
 
-      # chrome for testing
-      chromium
-    ];
+    # chrome for testing
+    chromium
+  ];
 }

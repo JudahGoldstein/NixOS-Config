@@ -1,7 +1,6 @@
 { config, pkgs, ... }@inputs:
 {
-  imports =
-    [
-      ./gnome.nix
-    ];
+  imports = [
+    ./gnome.nix
+  ];
 }

@@ -10,13 +10,15 @@ in
         i = "0.0.0.0";
         p = 3923;
         rproxy = 1;
-        j = 0; #number of cores to use (0 = all)
+        j = 0; # number of cores to use (0 = all)
         no-crt = true;
-        e2dsa = true; #search
-        e2ts = true; #metadata search
-        th-r-vips = "avif,exr,fit,fits,fts,gif,hdr,heic,heics,heif,heifs,jp2,jpeg,jpg,jpx,jxl,nii,pfm,pgm,png,ppm,svg,tif,tiff,webp,pdf"; #thumbnailing with vips
+        e2dsa = true; # search
+        e2ts = true; # metadata search
+        th-r-vips = "avif,exr,fit,fits,fts,gif,hdr,heic,heics,heif,heifs,jp2,jpeg,jpg,jpx,jxl,nii,pfm,pgm,png,ppm,svg,tif,tiff,webp,pdf"; # thumbnailing with vips
       };
-      accounts = { admin.passwordFile = config.sops.secrets."copyparty-password".path; };
+      accounts = {
+        admin.passwordFile = config.sops.secrets."copyparty-password".path;
+      };
       volumes = {
         "/" = {
           path = "/mnt/media/library";
@@ -25,11 +27,13 @@ in
           };
         };
       };
-      package = (pkgs.copyparty.override {
-        withThumbnails = true;
-        withFastThumbnails = true;
-        withFTP = false;
-      });
+      package = (
+        pkgs.copyparty.override {
+          withThumbnails = true;
+          withFastThumbnails = true;
+          withFTP = false;
+        }
+      );
     };
     environment.systemPackages = [ pkgs.copyparty ];
     users.users.${config.name}.extraGroups = [ "copyparty" ];

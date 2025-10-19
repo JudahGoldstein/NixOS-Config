@@ -1,39 +1,38 @@
 { config, pkgs, ... }@inputs:
 {
-  imports =
-    [
-      ./modules/networking.nix
-      ./modules/ssh.nix
-      ./modules/localization.nix
-      ./modules/io.nix
-      ./modules/sh.nix
-      ./modules/packages.nix
-      ./modules/antivirus.nix
-      ./modules/desktop/desktop.nix
-      ./modules/obs.nix
-      ./modules/nh.nix
-      ./modules/logitech.nix
-      ./modules/keyboard.nix
-      ./modules/gaming.nix
-      ./modules/blocky.nix
-      ./modules/sops.nix
-      ./modules/user.nix
-      ./modules/nix-ld.nix
-      ./modules/media-server/media-server.nix
-      ./modules/torrent.nix
-      ./modules/docker.nix
-      ./modules/wireguard.nix
-      ./modules/caddy/caddy.nix
-      ./modules/ollama.nix
-      ./modules/firefox.nix
-      ./modules/terminal.nix
-      ./modules/dev.nix
-      ./modules/text-editors.nix
-      ./modules/audio-video.nix
-      ./modules/forge.nix
-      ./modules/discord.nix
-      ./modules/git.nix
-    ];
+  imports = [
+    ./modules/networking.nix
+    ./modules/ssh.nix
+    ./modules/localization.nix
+    ./modules/io.nix
+    ./modules/sh.nix
+    ./modules/packages.nix
+    ./modules/antivirus.nix
+    ./modules/desktop/desktop.nix
+    ./modules/obs.nix
+    ./modules/nh.nix
+    ./modules/logitech.nix
+    ./modules/keyboard.nix
+    ./modules/gaming.nix
+    ./modules/blocky.nix
+    ./modules/sops.nix
+    ./modules/user.nix
+    ./modules/nix-ld.nix
+    ./modules/media-server/media-server.nix
+    ./modules/torrent.nix
+    ./modules/docker.nix
+    ./modules/wireguard.nix
+    ./modules/caddy/caddy.nix
+    ./modules/ollama.nix
+    ./modules/firefox.nix
+    ./modules/terminal.nix
+    ./modules/dev.nix
+    ./modules/text-editors.nix
+    ./modules/audio-video.nix
+    ./modules/forge.nix
+    ./modules/discord.nix
+    ./modules/git.nix
+  ];
 
   options = {
     name = inputs.lib.mkOption {
