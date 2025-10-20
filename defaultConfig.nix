@@ -47,6 +47,9 @@
     system.stateVersion = "23.11";
     gnome.enable = inputs.lib.mkDefault true;
 
+    environment.systemPackages = with pkgs; [
+      base16-schemes
+    ];
     stylix.enable = true;
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/chalk.yaml";
     stylix.polarity = "dark";
