@@ -24,6 +24,11 @@
       default = true;
       description = "Enable micro";
     };
+    apostrophe.enable = inputs.lib.mkOption {
+      type = inputs.lib.types.bool;
+      default = true;
+      description = "Enable apostrophe markdown editor";
+    };
   };
 
   config = {
@@ -34,6 +39,7 @@
         (if config.libreoffice.enable then libreoffice-fresh else null)
         (if config.qownnotes.enable then qownnotes else null)
         (if config.micro.enable then micro else null)
+        (if config.apostrophe.enable then apostrophe else null)
         hunspell
         pdftk
       ];
