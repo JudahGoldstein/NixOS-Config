@@ -12,7 +12,7 @@ let
     "v" = "nvim";
     "neofetch" = "fastfetch";
     "nix-update" =
-      "cd /etc/nixos/ && eval \"\$(ssh-agents)\" && git pull && nh os boot --update && nh clean all --keep 3 && git commit -m 'flake' flake.lock || git push || cd -";
+      "cd /etc/nixos/ ; eval \"\$(ssh-agents)\" && git pull && nh os boot --update && nh clean all --keep 3 && git commit -m 'flake' flake.lock ; git push ; cd -";
   };
 in
 {
