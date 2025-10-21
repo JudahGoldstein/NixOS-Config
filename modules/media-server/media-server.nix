@@ -8,7 +8,6 @@
     ./jellyfin.nix
     ./obsidian-sync.nix
     ./copyparty.nix
-    ./pastebin.nix
   ];
   options = {
     media-server.enable = inputs.lib.mkOption {
