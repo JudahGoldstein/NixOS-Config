@@ -3,9 +3,9 @@
   hm = {
     programs.git = {
       enable = true;
-      userName = "Judah Goldstein";
-      userEmail = "yehudah.lev+github@gmail.com";
-      extraConfig = {
+      settings = {
+        user.name = "Judah Goldstein";
+        user.email = "yehudah.lev+github@gmail.com";
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
         safe.directory = "*";
