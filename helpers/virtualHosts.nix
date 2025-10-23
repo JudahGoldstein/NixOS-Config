@@ -1,5 +1,4 @@
 inputs:
-
 let
   inherit (inputs) lib;
   mkLocalVirtualHost = name: port: {

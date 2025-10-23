@@ -1,6 +1,6 @@
 { config, pkgs, ... }@inputs:
 let
-  virtualHosts = import ../caddy/virtualHosts.nix inputs;
+  virtualHosts = import ../../helpers/virtualHosts.nix inputs;
 in
 {
   config = inputs.lib.mkIf config.media-server.enable {
