@@ -61,6 +61,9 @@
         config.allowUnfree = true;
       };
 
+      # Helper function to recursively import NixOS modules from a list of paths
+      recursivelyImport = import ./recursivelyImport.nix { inherit lib; };
+
       # Helper function to create nixosSystem configurations
       mkHost =
         {
@@ -71,7 +74,6 @@
         lib.nixosSystem {
           inherit system;
           modules = [
-            ./nixConf.nix
             ./hosts/${hostname}/configuration.nix
             { name = hostname; }
             inputs.home-manager.nixosModules.home-manager
@@ -88,7 +90,8 @@
             inputs.stylix.nixosModules.stylix
             ({ nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; })
           ]
-          ++ extraModules;
+          ++ extraModules
+          ++ recursivelyImport [ ./modules ];
           specialArgs = {
             inherit
               inputs
