@@ -1,6 +1,6 @@
 { config, pkgs, ... }@inputs:
 let
-  virtualHosts = import ./caddy/virtualHosts.nix inputs;
+  virtualHosts = import ../helpers/virtualHosts.nix inputs;
 in
 {
   options = {
