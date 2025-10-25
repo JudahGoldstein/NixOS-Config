@@ -17,6 +17,7 @@
         "wheel"
         "dialout"
         "uucp"
+        "input"
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
