@@ -37,6 +37,12 @@
       with pkgs;
       inputs.lib.filter (pkg: pkg != null) [
         (if config.easyeffects.enable then easyeffects else null)
+        (
+          if config.easyeffects.enable then
+            if config.gnome.enable then gnomeExtensions.easyeffects-preset-selector else null
+          else
+            null
+        )
         (if config.audacity.enable then audacity else null)
         (if config.vlc.enable then vlc else null)
         (if config.shotcut.enable then shotcut else null)
