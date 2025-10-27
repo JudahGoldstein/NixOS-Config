@@ -21,6 +21,10 @@
       variant = "colemak";
     };
     console.useXkbConfig = config.softColemak.enable;
+    programs.ydotool = {
+      enable = true;
+      group = "input";
+    };
     fonts.enableDefaultPackages = true;
     fonts.packages = [ pkgs.nerd-fonts.fira-code ];
   };
