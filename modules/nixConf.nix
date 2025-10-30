@@ -1,5 +1,10 @@
 { config, pkgs, ... }@inputs:
 {
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = true;
+  };
+
   nix.settings = {
     accept-flake-config = true;
     experimental-features = [
