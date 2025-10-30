@@ -13,6 +13,7 @@
       glibcLocales
       hunspell
       hunspellDicts.en_CA-large
+      texliveMedium
     ];
     time.timeZone = "America/Toronto";
     i18n.defaultLocale = "en_CA.UTF-8";
