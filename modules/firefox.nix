@@ -1,15 +1,9 @@
 { config, pkgs, ... }@inputs:
 {
-  options = {
-    firefox.enable = inputs.lib.mkOption {
-      default = true;
-      description = "Enable Firefox";
-    };
-  };
-
-  config = inputs.lib.mkIf (config.firefox.enable == true) {
+  config = {
     programs.firefox = {
       enable = true;
+      package = inputs.pkgs-stable.firefox;
     };
   };
 }
