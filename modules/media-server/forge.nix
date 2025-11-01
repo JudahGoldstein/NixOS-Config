@@ -6,7 +6,7 @@ in
   config = inputs.lib.mkIf config.media-server.enable {
     services.sd-webui-forge = {
       enable = true;
-      dataDir = "/var/lib/sd-webui-forge";
+      dataDir = "/var/lib/sd-webui";
       package = pkgs.stable-diffusion-webui.forge.cuda;
       port = 7860;
       user = "sd-webui-forge";
