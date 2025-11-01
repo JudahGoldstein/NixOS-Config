@@ -10,9 +10,6 @@
   longName = "Judah (HS)";
 
   media-server.enable = true;
-  ollama.enable = true;
-  sd-webui-forge.enable = false;
-  audacity.enable = false;
 
   power.ups = {
     enable = true;
