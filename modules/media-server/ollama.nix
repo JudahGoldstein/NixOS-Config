@@ -1,15 +1,9 @@
 { config, pkgs, ... }@inputs:
 let
-  virtualHosts = import ../helpers/virtualHosts.nix inputs;
+  virtualHosts = import ../../helpers/virtualHosts.nix inputs;
 in
 {
-  options = {
-    ollama.enable = inputs.lib.mkOption {
-      default = false;
-      description = "Enable ollama with webui.";
-    };
-  };
-  config = inputs.lib.mkIf config.ollama.enable {
+  config = inputs.lib.mkIf config.media-server.enable {
     services.ollama = {
       enable = true;
       host = "127.0.0.1";

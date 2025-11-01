@@ -88,6 +88,7 @@
             inputs.copyparty.nixosModules.default
             inputs.chaotic.nixosModules.default
             inputs.stylix.nixosModules.stylix
+            inputs.stable-diffusion-webui-nix.nixosModules.default
             ({ nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; })
           ]
           ++ extraModules
