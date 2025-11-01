@@ -22,5 +22,6 @@
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
+    environment.extraInit = "umask 002";
   };
 }
