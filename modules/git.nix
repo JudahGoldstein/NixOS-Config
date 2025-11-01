@@ -1,5 +1,6 @@
 { config, pkgs, ... }@inputs:
 {
+  environment.systemPackages = with pkgs; [ git-lfs ];
   hm = {
     programs.git = {
       enable = true;
