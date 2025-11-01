@@ -18,6 +18,7 @@
         "dialout"
         "uucp"
         "input"
+        "users"
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
