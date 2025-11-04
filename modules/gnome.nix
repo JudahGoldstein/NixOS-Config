@@ -15,7 +15,8 @@
       gnomeExtensions.appindicator
       gnomeExtensions.caffeine
       gnomeExtensions.pip-on-top
-      gnomeExtensions.tiling-shell
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.clipboard-indicator
     ];
     services.libinput.enable = true;
     services.displayManager = {
