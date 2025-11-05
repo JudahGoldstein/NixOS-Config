@@ -17,6 +17,8 @@
       gnomeExtensions.pip-on-top
       gnomeExtensions.blur-my-shell
       gnomeExtensions.clipboard-indicator
+      gnomeExtensions.bing-wallpaper-changer
+      gnomeExtensions.hide-top-bar
     ];
     services.libinput.enable = true;
     services.displayManager = {
