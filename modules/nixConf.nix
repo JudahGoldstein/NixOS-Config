@@ -7,6 +7,7 @@
 
   nix.settings = {
     accept-flake-config = true;
+    access-tokens = "$(cat ${config.sops.secrets.github-token.path})";
     experimental-features = [
       "nix-command"
       "flakes"
