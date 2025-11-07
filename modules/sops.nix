@@ -43,6 +43,10 @@
           owner = config.services.caddy.user;
           group = config.services.caddy.group;
         };
+        "github-token" = {
+          path = "/var/lib/secrets/github-token";
+          owner = "${config.name}";
+        };
         "couchdb-creds" = inputs.lib.mkIf (config.services.couchdb.enable) {
           path = "/var/lib/secrets/couchdb-creds";
           owner = config.services.couchdb.user;
