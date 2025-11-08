@@ -26,6 +26,12 @@ in
             A = [ "admin" ];
           };
         };
+        "/forge/" = {
+          path = "/var/lib/sd-webui/outputs";
+          access = {
+            A = [ "admin" ];
+          };
+        };
       };
       package = (
         pkgs.copyparty.override {
