@@ -511,11 +511,11 @@
         "python-flexseal": "python-flexseal"
       },
       "locked": {
-        "lastModified": 1762632987,
-        "narHash": "sha256-uSMLsYHmT2Ioqa7d5WNZtF0pDDrfKttF9xLHgeDf4Pc=",
+        "lastModified": 1762635238,
+        "narHash": "sha256-thhDK8I1q7zBhqSKMGN9R448AaG9Z/EaqYlpjgbO6OI=",
         "owner": "JudahGoldstein",
         "repo": "stable-diffusion-webui-nix",
-        "rev": "9d1cd222ed9c808533e6733e940b89377242540a",
+        "rev": "56a87bfa88ed048b477dc6b1910ac96500ef4da5",
         "type": "github"
       },
       "original": {
