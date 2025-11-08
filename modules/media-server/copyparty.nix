@@ -29,7 +29,7 @@ in
           };
         };
         "/Forge/" = {
-          path = "/var/lib/sd-webui/outputs";
+          path = "${config.services.sd-webui-forge.dataDir}/log/images/";
           access = {
             A = [ "admin" ];
           };
