@@ -7,7 +7,7 @@ in
     services.radarr = {
       enable = true;
       openFirewall = true;
-      group = "users";
+      group = "media";
       dataDir = "/var/lib/radarr";
     };
     services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "radarr" 7878);
