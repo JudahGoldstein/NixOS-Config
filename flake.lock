@@ -513,13 +513,13 @@
       "locked": {
         "lastModified": 1762098960,
         "narHash": "sha256-MDx7r+29SQxuPMjCvRXmst/A4dMCJvsWJToWbFvaIPs=",
-        "owner": "Janrupf",
+        "owner": "JudahGoldstein",
         "repo": "stable-diffusion-webui-nix",
         "rev": "58f2bd536e9d4f09351f3a9cb791ee3c4013ea92",
         "type": "github"
       },
       "original": {
-        "owner": "Janrupf",
+        "owner": "JudahGoldstein",
         "ref": "main",
         "repo": "stable-diffusion-webui-nix",
         "type": "github"
