@@ -6,6 +6,7 @@ in
   config = inputs.lib.mkIf config.media-server.enable {
     services.copyparty = {
       enable = true;
+      group = "media";
       settings = {
         i = "0.0.0.0";
         p = 3923;
@@ -43,7 +44,6 @@ in
       );
     };
     environment.systemPackages = [ pkgs.copyparty ];
-    users.users.${config.name}.extraGroups = [ "copyparty" ];
     services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "copyparty" 3923);
   };
 }
