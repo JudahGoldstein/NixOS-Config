@@ -19,9 +19,11 @@
         "uucp"
         "input"
         "users"
+        "media"
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
+    users.groups.media = {}; # custom group for anything that touches media
     environment.extraInit = "umask 002";
   };
 }

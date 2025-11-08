@@ -8,7 +8,6 @@
   };
 
   config = inputs.lib.mkIf config.media-server.enable {
-    users.groups.media = {};
     environment.systemPackages = with pkgs; [
       recyclarr
       czkawka-full
