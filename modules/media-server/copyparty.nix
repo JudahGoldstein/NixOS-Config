@@ -20,13 +20,14 @@ in
         admin.passwordFile = config.sops.secrets."copyparty-password".path;
       };
       volumes = {
-        "/" = {
+        "/TTRPGs/" = {
           path = "/mnt/media/library";
           access = {
             A = [ "admin" ];
+            r = [ "*" ];
           };
         };
-        "/forge/" = {
+        "/Forge/" = {
           path = "/var/lib/sd-webui/outputs";
           access = {
             A = [ "admin" ];
