@@ -7,7 +7,7 @@ in
     services.sonarr = {
       enable = true;
       openFirewall = true;
-      group = "users";
+      group = "media";
       dataDir = "/var/lib/sonarr";
     };
     services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "sonarr" 8989);
