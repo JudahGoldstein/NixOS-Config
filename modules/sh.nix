@@ -29,6 +29,7 @@ in
   environment.systemPackages = with pkgs; [
     tldr
     zsh-nix-shell
+    parallel
   ];
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
