@@ -20,6 +20,7 @@
       gnomeExtensions.bing-wallpaper-changer
       gnomeExtensions.hide-top-bar
       gnomeExtensions.gsconnect
+      gnomeExtensions.top-bar-organizer
     ];
     services.libinput.enable = true;
     services.displayManager = {
