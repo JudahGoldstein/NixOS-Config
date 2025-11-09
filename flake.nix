@@ -36,7 +36,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stable-diffusion-webui-nix = {
-      url = "github:JudahGoldstein/stable-diffusion-webui-nix/main";
+      url = "github:Janrupf/stable-diffusion-webui-nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     copyparty = {
