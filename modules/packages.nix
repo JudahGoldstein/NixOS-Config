@@ -12,6 +12,8 @@
     numlockx
     phoronix-test-suite
 
+    # Communication
+    packet
     thunderbird
 
     # Security
