@@ -8,7 +8,7 @@
     };
   };
 
-  config = inputs.lib.mkIf (config.gnome.enable == true) {
+  config = inputs.lib.mkIf config.gnome.enable{
     environment.systemPackages = with pkgs; [
       gnome-tweaks
       gnome-extension-manager
@@ -19,6 +19,7 @@
       gnomeExtensions.clipboard-indicator
       gnomeExtensions.bing-wallpaper-changer
       gnomeExtensions.hide-top-bar
+      gnomeExtensions.gsconnect
     ];
     services.libinput.enable = true;
     services.displayManager = {
