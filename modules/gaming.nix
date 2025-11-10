@@ -26,6 +26,7 @@
       };
       gamemode.enable = true;
     };
+    users.users.${config.name}.extraGroups = [ "gamemode" ];
     environment.systemPackages = with pkgs; [ mangohud ];
   };
 }
