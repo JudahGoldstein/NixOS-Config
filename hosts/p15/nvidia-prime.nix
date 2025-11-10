@@ -14,14 +14,5 @@
         intelBusId = "PCI:00:02:0";
       };
     };
-    specialisation.gaming.configuration = {
-      hardware.nvidia.prime = {
-        offload = {
-          enable = inputs.lib.mkForce false;
-          enableOffloadCmd = inputs.lib.mkForce false;
-        };
-        sync.enable = inputs.lib.mkForce true;
-      };
-    };
   };
 }
