@@ -14,7 +14,7 @@
 
     # Communication
     packet
-    thunderbird
+    #thunderbird
 
     # Security
     bitwarden-desktop
