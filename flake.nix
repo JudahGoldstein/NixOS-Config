@@ -21,6 +21,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -57,6 +58,10 @@
       # Use legacyPackages for better flake evaluation caching
       pkgs = inputs.nixpkgs.legacyPackages.${system};
       pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+      pkgs-unstable = import inputs.nixpkgs-unstable {
+        system = system;
+        config.allowUnfree = true;
+      };
 
       # Helper function to recursively import NixOS modules from a list of paths
       recursivelyImport = import ./helpers/recursivelyImport.nix { inherit lib; };
@@ -94,7 +99,7 @@
             ./hosts/${hostname}
           ];
           specialArgs = {
-            inherit inputs pkgs-stable;
+            inherit inputs pkgs-stable pkgs-unstable;
           }
           // extraSpecialArgs;
         };
