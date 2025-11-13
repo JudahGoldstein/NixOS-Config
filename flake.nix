@@ -21,7 +21,6 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
-    nixpkgs-openwebui.url = "nixpkgs/nixpkgs-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -58,10 +57,6 @@
       # Use legacyPackages for better flake evaluation caching
       pkgs = inputs.nixpkgs.legacyPackages.${system};
       pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
-      pkgs-openwebui = import inputs.nixpkgs-openwebui {
-        system = system;
-        config.allowUnfree = true;
-      };
 
       # Helper function to recursively import NixOS modules from a list of paths
       recursivelyImport = import ./helpers/recursivelyImport.nix { inherit lib; };
@@ -76,7 +71,6 @@
         lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/${hostname}/configuration.nix
             { name = hostname; }
             inputs.home-manager.nixosModules.home-manager
             {
@@ -92,16 +86,15 @@
             inputs.stylix.nixosModules.stylix
             inputs.stable-diffusion-webui-nix.nixosModules.default
             ({ nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; })
+            ./defaultConfig.nix
           ]
           ++ extraModules
-          ++ recursivelyImport [ ./modules ];
+          ++ recursivelyImport [
+            ./modules
+            ./hosts/${hostname}
+          ];
           specialArgs = {
-            inherit
-              inputs
-              pkgs-openwebui
-              pkgs-stable
-              lib
-              ;
+            inherit inputs pkgs-stable;
           }
           // extraSpecialArgs;
         };
