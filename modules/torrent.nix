@@ -25,7 +25,5 @@ in
       web.openFirewall = true;
       web.port = 8112;
     };
-
-    services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "deluge" 8112);
   };
 }

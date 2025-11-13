@@ -1,9 +1,9 @@
 { config, pkgs, ... }@inputs:
 let
-  virtualHosts = import ../../helpers/virtualHosts.nix inputs;
+  virtualHosts = import ../../../helpers/virtualHosts.nix inputs;
 in
 {
-  config = inputs.lib.mkIf config.media-server.enable {
+  config = {
     services.couchdb = {
       enable = true;
       port = 5984;
