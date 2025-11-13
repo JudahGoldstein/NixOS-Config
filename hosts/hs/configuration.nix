@@ -9,8 +9,6 @@
 
   longName = "Judah (HS)";
 
-  media-server.enable = true;
-
   power.ups = {
     enable = true;
     mode = "standalone";
