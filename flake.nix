@@ -64,7 +64,7 @@
       };
 
       # Helper function to recursively import NixOS modules from a list of paths
-      recursivelyImport = import ./recursivelyImport.nix { inherit lib; };
+      recursivelyImport = import ./helpers/recursivelyImport.nix { inherit lib; };
 
       # Helper function to create nixosSystem configurations
       mkHost =
