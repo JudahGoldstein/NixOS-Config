@@ -1,9 +1,9 @@
 { config, pkgs, ... }@inputs:
 let
-  virtualHosts = import ../../helpers/virtualHosts.nix inputs;
+  virtualHosts = import ../../../helpers/virtualHosts.nix inputs;
 in
 {
-  config = inputs.lib.mkIf config.media-server.enable {
+  config = {
     services.ollama = {
       enable = true;
       host = "127.0.0.1";
@@ -20,7 +20,7 @@ in
         SCARF_NO_ANALYTICS = "True";
         OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
       };
-      package = inputs.pkgs-openwebui.open-webui;
+      package = pkgs.open-webui;
     };
     services.caddy.virtualHosts = (virtualHosts.mkPublicVirtualHost "ollama" 11435);
   };
