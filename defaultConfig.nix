@@ -11,23 +11,21 @@
   config = {
     services.fstrim.enable = true;
 
-    system.stateVersion = "23.11";
     gnome.enable = inputs.lib.mkDefault true;
 
     hm = {
+      programs.home-manager.enable = true;
       home.username = config.name;
       home.homeDirectory = "/home/${config.name}";
       home.file = { };
       home.stateVersion = "23.11";
-
       home.sessionVariables = {
         EDITOR = "micro";
         BROWSER = "firefox";
         TERMINAL = "kitty";
         TERM = "kitty";
       };
-
-      programs.home-manager.enable = true;
     };
+    system.stateVersion = "23.11";
   };
 }
