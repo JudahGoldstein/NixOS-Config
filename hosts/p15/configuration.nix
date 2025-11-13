@@ -1,12 +1,5 @@
 { config, pkgs, ... }@inputs:
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./nvidia-prime.nix
-    ./bootloader.nix
-    ../../defaultConfig.nix
-  ];
-
   longName = "Judah (P15)";
 
   steam.enable = true;
