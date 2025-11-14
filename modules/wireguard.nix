@@ -11,7 +11,7 @@
       enable = true;
       openFirewall = true;
       disableTaildrop = true;
-      extraSetFlags = [
+      extraSetFlags = inputs.lib.mkDefault [
         "--accept-routes"
         "--advertise-exit-node=false"
         "--accept-dns=false"
