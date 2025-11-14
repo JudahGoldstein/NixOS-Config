@@ -46,7 +46,7 @@
         (if config.audacity.enable then audacity else null)
         (if config.vlc.enable then vlc else null)
         (if config.shotcut.enable then shotcut else null)
-        (if config.ffmpeg.enable then ffmpeg-full else null)
+        (if config.ffmpeg.enable then ffmpeg else null)
       ];
   };
 }
