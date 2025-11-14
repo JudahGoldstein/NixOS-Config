@@ -51,4 +51,9 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
+  services.tailscale.extraSetFlags = [
+    "--accept-routes"
+    "--advertise-exit-node=true"
+    "--accept-dns=false"
+  ];
 }
