@@ -8,20 +8,23 @@
     };
   };
 
-  config = inputs.lib.mkIf config.gnome.enable{
-    environment.systemPackages = with pkgs; [
-      gnome-tweaks
-      gnome-extension-manager
-      gnomeExtensions.appindicator
-      gnomeExtensions.caffeine
-      gnomeExtensions.pip-on-top
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.clipboard-indicator
-      gnomeExtensions.bing-wallpaper-changer
-      gnomeExtensions.hide-top-bar
-      gnomeExtensions.gsconnect
-      gnomeExtensions.top-bar-organizer
-    ];
+  config = inputs.lib.mkIf config.gnome.enable {
+    environment.systemPackages =
+      (with inputs.pkgs-unstable.gnomeExtensions; [
+        appindicator
+        caffeine
+        pip-on-top
+        blur-my-shell
+        clipboard-indicator
+        bing-wallpaper-changer
+        hide-top-bar
+        gsconnect
+        top-bar-organizer
+      ])
+      ++ (with pkgs; [
+        gnome-tweaks
+        gnome-extension-manager
+      ]);
     services.libinput.enable = true;
     services.displayManager = {
       enable = true;
