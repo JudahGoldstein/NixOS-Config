@@ -21,7 +21,9 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "nixpkgs/91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60";
+    nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs-openwebui.url = "nixpkgs/91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60";
+
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -58,7 +60,8 @@
       # Use legacyPackages for better flake evaluation caching
       pkgs = inputs.nixpkgs.legacyPackages.${system};
       pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
-      pkgs-unstable = import inputs.nixpkgs-unstable {
+      pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+      pkgs-openwebui = import inputs.nixpkgs-openwebui {
         system = system;
         config.allowUnfree = true;
       };
@@ -99,7 +102,7 @@
             ./hosts/${hostname}
           ];
           specialArgs = {
-            inherit inputs pkgs-stable pkgs-unstable;
+            inherit inputs pkgs-stable pkgs-unstable pkgs-openwebui;
           }
           // extraSpecialArgs;
         };
