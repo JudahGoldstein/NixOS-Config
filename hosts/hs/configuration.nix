@@ -13,9 +13,12 @@
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos-server;
 
-  services.tailscale.extraSetFlags = [
-    "--accept-routes"
-    "--advertise-exit-node=true"
-    "--accept-dns=false"
-  ];
+  services.tailscale = {
+    useRoutingFeatures = "both";
+    extraSetFlags = [
+      "--accept-routes"
+      "--advertise-exit-node=true"
+      "--accept-dns=false"
+    ];
+  };
 }
