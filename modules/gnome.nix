@@ -20,6 +20,7 @@
         hide-top-bar
         gsconnect
         top-bar-organizer
+        easyeffects-preset-selector
       ])
       ++ (with pkgs; [
         gnome-tweaks
