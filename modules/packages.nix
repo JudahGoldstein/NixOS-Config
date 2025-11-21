@@ -9,18 +9,12 @@
 
     # Misc I always want
     fastfetch
-    numlockx
-    phoronix-test-suite
 
     # Communication
     packet
-    #thunderbird
 
     # Security
     bitwarden-desktop
-
-    # Misc
-    remmina
 
     # chrome for testing
     chromium
