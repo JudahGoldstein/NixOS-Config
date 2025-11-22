@@ -13,21 +13,10 @@
       description = "Enable libreoffice suite";
     };
 
-    qownnotes.enable = inputs.lib.mkOption {
-      type = inputs.lib.types.bool;
-      default = false;
-      description = "Enable qownnotes";
-    };
-
     micro.enable = inputs.lib.mkOption {
       type = inputs.lib.types.bool;
       default = true;
       description = "Enable micro";
-    };
-    apostrophe.enable = inputs.lib.mkOption {
-      type = inputs.lib.types.bool;
-      default = true;
-      description = "Enable apostrophe markdown editor";
     };
   };
 
@@ -37,9 +26,7 @@
       inputs.lib.filter (pkg: pkg != null) [
         (if config.obsidian.enable then obsidian else null)
         (if config.libreoffice.enable then libreoffice-fresh else null)
-        (if config.qownnotes.enable then qownnotes else null)
         (if config.micro.enable then micro else null)
-        (if config.apostrophe.enable then apostrophe else null)
         hunspell
         pdftk
       ];
