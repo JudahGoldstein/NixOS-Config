@@ -22,7 +22,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
-    nixpkgs-openwebui.url = "nixpkgs/91c9a64ce2a84e648d0cf9671274bb9c2fb9ba60";
+    nixpkgs-openwebui.url = "nixpkgs/a9bae20781b8a607a7455331e54eebafd9191623";
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
