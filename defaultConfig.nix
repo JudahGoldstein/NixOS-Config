@@ -10,7 +10,7 @@
 
   config = {
     services.fstrim.enable = true;
-
+    services.fwupd.enable = true;
     gnome.enable = inputs.lib.mkDefault true;
 
     hm = {
