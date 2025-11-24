@@ -17,7 +17,7 @@
 
       dotnet-sdk_9 # for polyglot
 
-      devenv
+      #devenv
 
       nix-init
     ];
