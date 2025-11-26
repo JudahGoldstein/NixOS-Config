@@ -14,5 +14,6 @@
         intelBusId = "PCI:00:02:0";
       };
     };
+    environment.systemPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
 }
