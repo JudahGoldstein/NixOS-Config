@@ -21,6 +21,7 @@
         gsconnect
         top-bar-organizer
         easyeffects-preset-selector
+        resource-monitor
       ])
       ++ (with pkgs; [
         gnome-tweaks
