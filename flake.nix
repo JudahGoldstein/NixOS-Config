@@ -82,9 +82,12 @@
             { name = hostname; }
             inputs.home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = ".nixbak";
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "nixbak";
+                overwriteBackup = true;
+              };
             }
             (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "${hostname}" ])
             inputs.sops-nix.nixosModules.sops
@@ -102,7 +105,12 @@
             ./hosts/${hostname}
           ];
           specialArgs = {
-            inherit inputs pkgs-stable pkgs-unstable pkgs-openwebui;
+            inherit
+              inputs
+              pkgs-stable
+              pkgs-unstable
+              pkgs-openwebui
+              ;
           }
           // extraSpecialArgs;
         };
