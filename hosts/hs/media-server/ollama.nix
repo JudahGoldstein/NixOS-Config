@@ -8,7 +8,6 @@ in
       enable = true;
       host = "127.0.0.1";
       port = 11434;
-      acceleration = "cuda";
     };
     services.open-webui = {
       enable = true;
