@@ -20,7 +20,6 @@
         hide-top-bar
         gsconnect
         top-bar-organizer
-        easyeffects-preset-selector
         resource-monitor
       ])
       ++ (with pkgs; [
