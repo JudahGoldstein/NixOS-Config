@@ -26,6 +26,12 @@ in
     hashedPasswordFile = inputs.lib.mkForce null;
     initialPassword = inputs.lib.mkForce null;
     initialHashedPassword = inputs.lib.mkForce null;
+    openssh.authorizedKeys.keys = 
+    [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICfe84n5+9IQpH1dhqOgoJrPcNeHZKHYziYFIWYZt+F7 yehudah.lev@gmail.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBIXo+wrGI4775CY4wT2LbuoWigKKjiKWu8S6EWzdn/6 yehudah.lev@gmail.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ6pp2JPSB1FeDX/AyOISOKvZe4YDuPP//9GmzZar518 yehudah.lev@gmail.com"
+    ];
   };
 
   time.timeZone = "America/Toronto";
@@ -47,20 +53,6 @@ in
     age
     ssh-to-age
   ];
-
-  hardware.graphics = {
-    enable = true;
-  };
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.11";
