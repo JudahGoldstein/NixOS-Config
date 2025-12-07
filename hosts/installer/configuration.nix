@@ -10,7 +10,7 @@ in
   imports = [
     "${inputs.modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
     "${inputs.modulesPath}/installer/cd-dvd/channel.nix"
-    ../../modules/desktop/gnome.nix
+    ../../modules/gnome.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
