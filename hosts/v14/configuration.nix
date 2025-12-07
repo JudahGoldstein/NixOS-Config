@@ -1,12 +1,8 @@
 { config, pkgs, ... }@inputs:
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./bootloader.nix
-    ../../defaultConfig.nix
-  ];
-
   longName = "Judah (v14)";
+
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   softColemak.enable = true;
 }
