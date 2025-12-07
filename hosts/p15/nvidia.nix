@@ -1,6 +1,7 @@
 { config, pkgs, ... }@inputs:
 {
   config = {
+    nixpkgs.config.cudaSupport = true;
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia = {
       open = false;
