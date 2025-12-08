@@ -1,7 +1,10 @@
 { config, pkgs, ... }@inputs:
 {
   networking.hostName = config.name;
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    dhcp = "dhcpcd";
+  };
 
   networking.nameservers =
     if config.blocky.enable then
