@@ -73,6 +73,10 @@
           path = "/home/${config.name}/.ssh/authorized_keys/hs.pub";
           owner = "${config.name}";
         };
+        "public-keys/v14" = {
+          path = "/home/${config.name}/.ssh/authorized_keys/v14.pub";
+          owner = "${config.name}";
+        };
         "public-keys/connectbot" = {
           path = "/home/${config.name}/.ssh/authorized_keys/connectbot.pub";
           owner = "${config.name}";
