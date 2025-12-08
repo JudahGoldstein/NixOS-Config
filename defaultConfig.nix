@@ -11,6 +11,7 @@
   config = {
     services.fstrim.enable = true;
     services.fwupd.enable = true;
+    environment.systemPackages = with pkgs; [ nixos-facter ];
     gnome.enable = inputs.lib.mkDefault true;
 
     hm = {

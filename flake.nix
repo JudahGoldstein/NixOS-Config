@@ -11,12 +11,14 @@
       "https://chaotic-nyx.cachix.org/"
       "https://devenv.cachix.org/"
       "https://cache.nixos-cuda.org"
+      "https://numtide.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+      "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
     ];
   };
 
@@ -26,10 +28,16 @@
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     nixpkgs-openwebui.url = "nixpkgs/nixpkgs-unstable";
 
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    facter-modules = {
+      url = "github:numtide/nixos-facter-modules";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -98,6 +106,8 @@
             inputs.chaotic.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.stable-diffusion-webui-nix.nixosModules.default
+            inputs.facter-modules.nixosModules.facter
+            ({ config.facter.reportPath = ./hosts/${hostname}/facter.json; })
             ({ nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; })
             ./defaultConfig.nix
           ]
