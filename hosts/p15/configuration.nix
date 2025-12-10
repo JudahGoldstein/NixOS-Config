@@ -3,7 +3,11 @@
   longName = "Judah (P15)";
 
   steam.enable = true;
-
+  programs.captive-browser = {
+    enable = true;
+    interface = "wlp0s20f3";
+  };
+  
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   softColemak.enable = true;
