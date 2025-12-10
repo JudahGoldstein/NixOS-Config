@@ -2,10 +2,6 @@
   "version": 1,
   "system": "x86_64-linux",
   "virtualisation": "none",
-  "uefi": {
-    "supported": true,
-    "platform_size": 64
-  },
   "hardware": {
     "bios": {
       "apm_info": {
@@ -2302,9 +2298,9 @@
           "hex": "ce2c",
           "value": 52780
         },
-        "sysfs_id": "/devices/platform/AMDI0010:01/i2c-1/i2c-SYNA2BA6:00/0018:06CB:CE2C.0001/input/input9",
+        "sysfs_id": "/devices/platform/AMDI0010:01/i2c-1/i2c-SYNA2BA6:00/0018:06CB:CE2C.0001/input/input10",
         "unix_device_names": [
-          "/dev/input/event5",
+          "/dev/input/event7",
           "/dev/input/ + handler"
         ]
       }
@@ -2396,14 +2392,14 @@
               "108",
               "112",
               "116",
-              "120",
-              "124",
-              "128",
               "132",
               "136",
               "140",
               "144",
-              "149"
+              "149",
+              "153",
+              "157",
+              "161"
             ],
             "frequencies": [
               "2.412",
@@ -2430,14 +2426,14 @@
               "5.54",
               "5.56",
               "5.58",
-              "5.6",
-              "5.62",
-              "5.64",
               "5.66",
               "5.68",
               "5.7",
               "5.72",
-              "5.745"
+              "5.745",
+              "5.765",
+              "5.785",
+              "5.805"
             ],
             "auth_modes": [
               "open",
@@ -2561,69 +2557,6 @@
     "network_interface": [
       {
         "index": 56,
-        "attached_to": 0,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_names": [
-          "lo"
-        ]
-      },
-      {
-        "index": 58,
-        "attached_to": 21,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Ethernet",
-          "value": 1
-        },
-        "model": "Ethernet network interface",
-        "sysfs_id": "/class/net/wlp2s0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.2/0000:02:00.0",
-        "unix_device_names": [
-          "wlp2s0"
-        ],
-        "resources": [
-          {
-            "type": "hwaddr",
-            "address": 49
-          },
-          {
-            "type": "phwaddr",
-            "address": 49
-          }
-        ],
-        "driver": "mt7921e",
-        "driver_module": "mt7921e",
-        "drivers": [
-          "mt7921e"
-        ],
-        "driver_modules": [
-          "mt7921e"
-        ]
-      },
-      {
-        "index": 59,
         "attached_to": 26,
         "class_list": [
           "network_interface"
@@ -2661,6 +2594,69 @@
         ],
         "driver_modules": [
           "r8169"
+        ]
+      },
+      {
+        "index": 58,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_names": [
+          "lo"
+        ]
+      },
+      {
+        "index": 59,
+        "attached_to": 21,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0001",
+          "name": "Ethernet",
+          "value": 1
+        },
+        "model": "Ethernet network interface",
+        "sysfs_id": "/class/net/wlp2s0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.2/0000:02:00.0",
+        "unix_device_names": [
+          "wlp2s0"
+        ],
+        "resources": [
+          {
+            "type": "hwaddr",
+            "address": 49
+          },
+          {
+            "type": "phwaddr",
+            "address": 49
+          }
+        ],
+        "driver": "mt7921e",
+        "driver_module": "mt7921e",
+        "drivers": [
+          "mt7921e"
+        ],
+        "driver_modules": [
+          "mt7921e"
         ]
       }
     ],
