@@ -34,6 +34,12 @@ in
             A = [ "admin" ];
           };
         };
+        "/Uploads/" = {
+          path = "/mnt/media/copyparty-uploads";
+          access = {
+            A = [ "admin" ];
+          };
+        };
       };
       package = (
         pkgs.copyparty.override {
