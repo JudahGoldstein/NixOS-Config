@@ -10,7 +10,7 @@
 
   config = inputs.lib.mkIf config.gnome.enable {
     environment.systemPackages =
-      (with inputs.pkgs-unstable.gnomeExtensions; [
+      (with pkgs.gnomeExtensions; [
         appindicator
         caffeine
         pip-on-top
