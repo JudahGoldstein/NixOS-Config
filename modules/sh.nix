@@ -12,7 +12,7 @@ let
     "v" = "nvim";
     "neofetch" = "fastfetch";
     "nix-update" =
-      "cd /etc/nixos/ && git switch -C main origin/main && nh os boot --update && nh clean all --keep 3 && git commit -m 'flake' flake.lock ; git push ; cd -";
+      "cd /etc/nixos/ && git fetch --all && git reset --hard origin/main && nh os boot --update && nh clean all --keep 3 && git commit -m 'flake' flake.lock ; git push ; cd -";
   };
 in
 {
