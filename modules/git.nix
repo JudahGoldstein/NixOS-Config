@@ -1,12 +1,9 @@
 { config, pkgs, ... }@inputs:
 {
-  environment.systemPackages = with pkgs; [
-    git-lfs
-    gh
-  ];
   hm = {
     programs.git = {
       enable = true;
+      lfs.enable = true;
       settings = {
         user.name = "Judah Goldstein";
         user.email = "yehudah.lev+github@gmail.com";
@@ -15,7 +12,7 @@
         safe.directory = "*";
       };
     };
-
+    programs.gh.enable = true;
     programs.lazygit = {
       enable = true;
     };
