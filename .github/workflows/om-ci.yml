@@ -18,6 +18,9 @@ jobs:
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v11
 
+      - name: Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
       - name: Configure Cachix
         uses: cachix/cachix-action@v15
         with:
