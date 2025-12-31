@@ -1,0 +1,45 @@
+name: Omnix CI Cache
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v11
+        with:
+          nixpkgs: https://nixos.org/channels/nixpkgs-unstable
+
+      - name: Configure Cachix
+        uses: cachix/cachix-action@v15
+        with:
+          name: judah-personal
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: Install omnix + cachix CLI
+        run: nix profile install nixpkgs#omnix nixpkgs#cachix
+
+      - name: Build with om ci and push to Cachix
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          set -euo pipefail
+          om ci run --out-link ./result.json \
+            | xargs --no-run-if-empty cachix push "judah-personal"
+
+      - name: Upload build metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: om-ci-result
+          path: result.json
+          if-no-files-found: ignore
