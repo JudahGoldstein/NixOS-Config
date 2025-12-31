@@ -1,9 +1,9 @@
 { config, pkgs, ... }@inputs:
 {
-  environment.systemPackages = [ pkgs.base16-schemes ];
+  environment = inputs.lib.mkIf config.stylix.enable {systemPackages = [ pkgs.base16-schemes ];};
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/evenok-dark.yaml";
   stylix.polarity = "dark";
-  hm.qt.platformTheme.name = inputs.lib.mkForce "adwaita";
   stylix.targets.qt.platform = inputs.lib.mkForce "qtct";
+  hm.qt.platformTheme = inputs.lib.mkIf config.stylix.enable {name = inputs.lib.mkForce "adwaita";};
 }
