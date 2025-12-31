@@ -33,7 +33,7 @@ jobs:
           skipPush: true
 
       - name: Install omnix + cachix CLI
-        run: nix profile install github:juspay/omnix nixpkgs#cachix
+        run: nix profile add github:juspay/omnix nixpkgs#cachix --accept-flake-config
 
       - name: Build with om ci and push to Cachix
         env:
