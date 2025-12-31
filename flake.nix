@@ -12,6 +12,7 @@
       "https://devenv.cachix.org/"
       "https://cache.nixos-cuda.org"
       "https://numtide.cachix.org"
+      "https://judah-personal.cachix.org/"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -19,6 +20,7 @@
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
+      "judah-personal.cachix.org-1:/6xuVNQCy5glYuvsrS0K11Xz1EcDpKr06pHv9Ez0HNk="
     ];
   };
 
