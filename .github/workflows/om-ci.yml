@@ -17,9 +17,7 @@ jobs:
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v11
-        with:
-          nixpkgs: https://nixos.org/channels/nixpkgs-unstable
-
+        
       - name: Configure Cachix
         uses: cachix/cachix-action@v15
         with:
