@@ -135,16 +135,16 @@
 
         hs = mkHost { hostname = "hs"; };
 
-        installer = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/installer/configuration.nix
-            inputs.sops-nix.nixosModules.sops
-          ];
-          specialArgs = {
-            inherit inputs;
-          };
-        };
+        #   installer = lib.nixosSystem {
+        #     inherit system;
+        #     modules = [
+        #       ./hosts/installer/configuration.nix
+        #       inputs.sops-nix.nixosModules.sops
+        #     ];
+        #     specialArgs = {
+        #       inherit inputs;
+        #     };
+        #   };
       };
     };
 }
