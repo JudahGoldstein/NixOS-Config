@@ -17,7 +17,7 @@ jobs:
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v11
-        
+
       - name: Configure Cachix
         uses: cachix/cachix-action@v15
         with:
@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           set -euo pipefail
-          om ci run --out-link ./result.json \
+          om ci run --out-link ./result.json -- --accept-flake-config \
             | xargs --no-run-if-empty cachix push "judah-personal"
 
       - name: Upload build metadata
