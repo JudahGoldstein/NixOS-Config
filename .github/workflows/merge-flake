@@ -1,0 +1,23 @@
+name: Auto-merge flake updates
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  auto-merge:
+    if: github.actor == 'github-actions[bot]' && contains(github.event.pull_request.labels.*.name, 'automated')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: squalrus/merge-bot@v0.4.3
+        with:
+          GITHUB_TOKEN: ${{ secrets.FLAKE_TOKEN }}
+          test: true
+          checks: true
+          method: squash
+          delete: true
