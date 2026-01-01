@@ -18,6 +18,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.FLAKE_TOKEN }}
           test: true
-          checks_enabled: true
+          labels: automated
           method: squash
           delete_source_branch: true
