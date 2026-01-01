@@ -8,6 +8,8 @@
       extraLabels = [ "self-hosted" "linux" "x64" "nixos" ];
       noDefaultLabels = true;
       url = "https://github.com/JudahGoldstein/NixOS-Config";
+      user = "github-runner-hs";
     };
   };
+  nix.settings.trusted-users = [ config.name "github-runner-hs" ];
 }
