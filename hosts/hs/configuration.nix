@@ -11,7 +11,7 @@
     ];
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-server;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   stylix.enable = inputs.lib.mkForce false;
   
