@@ -50,7 +50,7 @@
       simple-scan
       totem
       yelp
-      evince
+      papers
       file-roller
       geary
       seahorse
