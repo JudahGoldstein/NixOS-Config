@@ -10,39 +10,18 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [nixos]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v11
-
-      - name: Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@main
-
-      - name: Configure Cachix
-        uses: cachix/cachix-action@v15
-        with:
-          name: judah-personal
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-
-      - name: Configure omnix cache
-        uses: cachix/cachix-action@v15
-        with:
-          name: om
-          skipPush: true
-
-      - name: Install omnix
-        run: nix profile add github:juspay/omnix --accept-flake-config
 
       - name: Build with om ci and push to Cachix
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           set -euo pipefail
-          om ci run --out-link ./result.json -- --accept-flake-config \
-            | xargs --no-run-if-empty cachix push "judah-personal"
+          nix run github:juspay/omnix --accept-flake-config -- ci run --out-link ./result.json -- --accept-flake-config \
+            | xargs --no-run-if-empty nix run nixpkgs#cachix --accept-flake-config -- push "judah-personal" --auth-token "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
       - name: Upload build metadata
         uses: actions/upload-artifact@v4
