@@ -7,7 +7,7 @@
     interface = "wlp2s0";
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   softColemak.enable = true;
 }

@@ -8,7 +8,7 @@
     interface = "wlp0s20f3";
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   softColemak.enable = true;
 
