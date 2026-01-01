@@ -11,5 +11,10 @@
       user = "github-runner-hs";
     };
   };
+  users.users.github-runner-hs = {
+    isSystemUser = true;
+    group = "nogroup";
+    description = "GitHub Runner User for HS Media Server";
+  };  
   nix.settings.trusted-users = [ config.name "github-runner-hs" ];
 }
