@@ -18,7 +18,7 @@
   services.tailscale = {
     useRoutingFeatures = "both";
     extraSetFlags = [
-      "--advertise-exit-node=true"
+      "--advertise-exit-node"
     ];
   };
 }
