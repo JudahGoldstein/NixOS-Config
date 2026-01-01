@@ -1,0 +1,32 @@
+name: Omnix CI Cache
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: [nixos]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build with om ci and push to Cachix
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+        run: |
+          set -euo pipefail
+          nix run github:juspay/omnix --accept-flake-config -- ci run --out-link ./result.json -- --accept-flake-config \
+            | xargs --no-run-if-empty nix run nixpkgs#cachix --accept-flake-config -- push "judah-personal"
+
+      - name: Upload build metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: om-ci-result
+          path: result.json
+          if-no-files-found: ignore
