@@ -20,12 +20,9 @@
       #devenv
 
       nix-init
-    ];
 
-    hm.programs.vscode = {
-      enable = true;
-      mutableExtensionsDir = true;
-    };
+      pkgs.vscode-fhs
+    ];
 
     programs = {
       direnv.enable = true;
