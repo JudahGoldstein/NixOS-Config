@@ -13,7 +13,6 @@
       disableTaildrop = true;
       useRoutingFeatures = inputs.lib.mkDefault "client";
       extraSetFlags = inputs.lib.mkDefault [
-        "--advertise-exit-node=false"
         "--accept-dns=false"
       ];
     };
