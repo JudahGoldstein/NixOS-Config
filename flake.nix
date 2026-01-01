@@ -20,7 +20,7 @@
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
       "om.cachix.org-1:ifal/RLZJKN4sbpScyPGqJ2+appCslzu7ZZF/C01f2Q="
-      "judah-personal.cachix.org-1:/6xuVNQCy5glYuvsrS0K11Xz1EcDpKr06pHv9Ez0HNk="
+      "judah-personal.cachix.org-1:Y6TEmji7Cp47APG2jSA0iDo7tlCqmNDrgb87NEXzyfY="
     ];
   };
 
