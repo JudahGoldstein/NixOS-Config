@@ -1,23 +1,11 @@
-name: Auto-merge flake updates
-
-on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-
-jobs:
-  auto-merge:
-    if: github.event.pull_request.user.login == github.repository_owner && contains(github.event.pull_request.labels.*.name, 'automated')
+mergepal-merge: # run merge pal in the end
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
+    needs:
+      # make sure all required jobs are listed here
+      - test1-this
+      - test1-that
     steps:
-      - uses: squalrus/merge-bot@v0.4.3
+      - uses: actions/checkout@v1
+      - uses: maxkomarychev/merge-pal-action@vX.Y.Z
         with:
-          GITHUB_TOKEN: ${{ secrets.FLAKE_TOKEN }}
-          test: true
-          labels: automated
-          method: squash
-          delete_source_branch: true
+          token: ${{ secrets.GITHUB_TOKEN }}
