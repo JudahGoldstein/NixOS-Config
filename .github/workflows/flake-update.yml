@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/determinate-nix-action@v3
       - uses: DeterminateSystems/update-flake-lock@main
+        id: update
         with:
           nix-options: --accept-flake-config
           token : ${{ secrets.FLAKE_TOKEN }}
@@ -24,3 +25,31 @@ jobs:
           pr-labels: |
             dependencies
             automated
+  build:
+    needs: nix-flake-update
+    runs-on: [nixos]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build with om ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          set -euo pipefail
+          nix run github:juspay/omnix --accept-flake-config -- ci run --include-all-dependencies --out-link ./result.json -- --accept-flake-config > store-paths.txt
+  merge:
+    needs: build
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: auto-merge
+        if: steps.update.outputs.pull-request-number != ''
+        run: gh pr merge --auto --squash ${{ steps.update.outputs.pull-request-number }}
+        env:
+          GH_TOKEN: ${{ secrets.FLAKE_TOKEN }}
+
