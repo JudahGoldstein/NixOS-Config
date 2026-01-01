@@ -8,7 +8,7 @@ on:
 
 jobs:
   auto-merge:
-    if: github.actor == 'github-actions[bot]' && contains(github.event.pull_request.labels.*.name, 'automated')
+    if: github.event.pull_request.user.login == github.repository_owner && contains(github.event.pull_request.labels.*.name, 'automated')
     runs-on: ubuntu-latest
     permissions:
       contents: write
