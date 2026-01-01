@@ -19,3 +19,8 @@ jobs:
       - uses: DeterminateSystems/update-flake-lock@main
         with:
           nix-options: --accept-flake-config
+          token : ${{ secrets.FLAKE_TOKEN }}
+          pr-title: "Update flake inputs"
+          pr-labels: |
+            dependencies
+            automated
