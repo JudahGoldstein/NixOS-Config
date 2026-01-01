@@ -18,10 +18,11 @@ jobs:
       - name: Build with om ci and push to Cachix
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
         run: |
           set -euo pipefail
           nix run github:juspay/omnix --accept-flake-config -- ci run --out-link ./result.json -- --accept-flake-config \
-            | xargs --no-run-if-empty nix run nixpkgs#cachix --accept-flake-config -- push "judah-personal" --auth-token "${{ secrets.CACHIX_AUTH_TOKEN }}"
+            | xargs --no-run-if-empty nix run nixpkgs#cachix --accept-flake-config -- push "judah-personal"
 
       - name: Upload build metadata
         uses: actions/upload-artifact@v4
