@@ -3,7 +3,7 @@ name: "Flake.lock: update Nix dependencies"
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *' # daily at 01:00
+    - cron: "0 1 * * *" # daily at 01:00
 
 jobs:
   nix-flake-update:
@@ -13,6 +13,8 @@ jobs:
       issues: write
       pull-requests: write
     runs-on: ubuntu-latest
+    outputs:
+      pr-number: ${{ steps.update.outputs.pull-request-number }}
     steps:
       - uses: actions/checkout@v6
       - uses: DeterminateSystems/determinate-nix-action@v3
@@ -20,12 +22,12 @@ jobs:
         id: update
         with:
           nix-options: --accept-flake-config
-          token : ${{ secrets.FLAKE_TOKEN }}
+          token: ${{ secrets.FLAKE_TOKEN }}
           pr-title: "Update flake inputs"
           pr-labels: |
             dependencies
             automated
-            
+
   build:
     needs: nix-flake-update
     runs-on: [nixos]
@@ -41,7 +43,7 @@ jobs:
           nix run github:juspay/omnix --accept-flake-config -- ci run --out-link ./result.json -- --accept-flake-config
 
   merge:
-    needs: build
+    needs: [nix-flake-update, build]
     permissions:
       contents: write
       id-token: write
@@ -50,8 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: auto-merge
-        if: steps.update.outputs.pull-request-number != ''
-        run: gh pr merge --auto --squash ${{ steps.update.outputs.pull-request-number }}
+        if: needs.nix-flake-update.outputs.pr-number != ''
+        run: gh pr merge --auto --squash ${{ needs.nix-flake-update.outputs.pr-number }}
         env:
           GH_TOKEN: ${{ secrets.FLAKE_TOKEN }}
-
