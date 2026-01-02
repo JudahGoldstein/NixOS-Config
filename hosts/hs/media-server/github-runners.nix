@@ -2,7 +2,7 @@
 {
   services.github-runners = {
     "hs" = {
-      enable = false;
+      enable = true;
       tokenFile = "/var/lib/secrets/github-token";
       replace = true;
       extraLabels = [
