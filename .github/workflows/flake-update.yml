@@ -51,6 +51,9 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        
       - name: auto-merge
         if: needs.nix-flake-update.outputs.pr-number != ''
         run: gh pr merge --auto --squash ${{ needs.nix-flake-update.outputs.pr-number }}
