@@ -12,7 +12,7 @@ jobs:
     runs-on: [nixos]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Build with om ci
         env:
@@ -29,7 +29,7 @@ jobs:
           cat store-paths.txt | xargs --no-run-if-empty nix run nixpkgs#cachix --accept-flake-config -- push "judah-personal"
 
       - name: Upload build metadata
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: om-ci-result
           path: result.json
