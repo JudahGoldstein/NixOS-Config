@@ -26,7 +26,7 @@ jobs:
             dependencies
             automated
       
-      - name: Enable auto-merge
+      - name: auto-merge
         if: steps.update.outputs.pull-request-number != ''
         run: gh pr merge --auto --squash ${{ steps.update.outputs.pull-request-number }}
         env:
