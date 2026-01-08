@@ -4,6 +4,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 6 * * *" # daily at 01:00 est
+  push:
+    paths:
+      - 'flake.nix'
+    branches:
+      - main
 
 jobs:
   nix-flake-update:
