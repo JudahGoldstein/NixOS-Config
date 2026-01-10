@@ -100,8 +100,8 @@
             inputs.stylix.nixosModules.stylix
             inputs.stable-diffusion-webui-nix.nixosModules.default
             inputs.facter-modules.nixosModules.facter
-            ({ config.facter.reportPath = ./hosts/${hostname}/facter.json; })
-            ({ nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; })
+            { config.facter.reportPath = ./hosts/${hostname}/facter.json; }
+            { nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; }
             ./defaultConfig.nix
           ]
           ++ extraModules
