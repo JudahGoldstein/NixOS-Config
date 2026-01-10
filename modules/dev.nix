@@ -15,14 +15,57 @@
 
       dbeaver-bin
 
-      dotnet-sdk_9 # for polyglot
-
       #devenv
 
       nix-init
 
       pkgs.vscode-fhs
     ];
+
+    hm.programs.opencode.enable = true;
+    hm.programs.zed-editor = {
+      enable = true;
+      extensions = [
+        "nix"
+        "github-actions"
+        "mcp-server-github"
+        "opencode"
+      ];
+      extraPackages = with pkgs; [
+        nixd
+        nil
+        nixfmt
+      ];
+      mutableUserKeymaps = true;
+      mutableUserSettings = true;
+      mutableUserTasks = true;
+      userSettings = {
+        telemetry = {
+          diagnostics = false;
+          metrics = true;
+        };
+        auto_update = false;
+        agent = {
+          "single_file_review" = true;
+        };
+        lsp = {
+          nixd = {
+            settings.diagnostic.supress = [
+              "nixf sema-unused-def-lambda-witharg-arg"
+            ];
+            initialization_options.formatting.command = [ "nixfmt" ];
+          };
+        };
+        languages = {
+          Nix = {
+            language_servers = [
+              "nixd"
+              "!nil"
+            ];
+          };
+        };
+      };
+    };
 
     programs = {
       direnv.enable = true;
