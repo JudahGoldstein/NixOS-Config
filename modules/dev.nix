@@ -9,19 +9,6 @@
   };
 
   config = inputs.lib.mkIf config.dev.enable {
-    environment.systemPackages = with pkgs; [
-      nil
-      nixfmt
-
-      dbeaver-bin
-
-      #devenv
-
-      nix-init
-
-      pkgs.vscode-fhs
-    ];
-
     hm.programs.opencode.enable = true;
     hm.programs.zed-editor = {
       enable = true;
@@ -52,6 +39,7 @@
           nixd = {
             settings.diagnostic.supress = [
               "nixf sema-unused-def-lambda-witharg-arg"
+              "nixf sema-unused-def-let"
             ];
             initialization_options.formatting.command = [ "nixfmt" ];
           };
@@ -66,11 +54,5 @@
         };
       };
     };
-
-    programs = {
-      direnv.enable = true;
-    };
-
-    nix.settings.trusted-users = [ config.name ];
   };
 }
