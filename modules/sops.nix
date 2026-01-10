@@ -19,7 +19,7 @@
     };
 
     secrets = inputs.lib.mkMerge [
-      ({
+      {
         # keypairs
         "private-keys/github" = {
           path = "/home/${config.name}/.ssh/github";
@@ -62,8 +62,8 @@
           owner = "nutmon";
           group = "nutmon";
         };
-      })
-      ({
+      }
+      {
         # authorized keys
         "public-keys/p15" = {
           path = "/home/${config.name}/.ssh/authorized_keys/p15.pub";
@@ -81,7 +81,7 @@
           path = "/home/${config.name}/.ssh/authorized_keys/connectbot.pub";
           owner = "${config.name}";
         };
-      })
+      }
     ];
   };
 }
