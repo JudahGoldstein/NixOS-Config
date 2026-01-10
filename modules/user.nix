@@ -23,6 +23,7 @@
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
+    nix.settings.trusted-users = [ config.name ];
     users.groups.media = { }; # custom group for anything that touches media
     environment.extraInit = "umask 002";
   };
