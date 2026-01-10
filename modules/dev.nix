@@ -12,7 +12,7 @@
     hm.programs.opencode.enable = true;
     hm.programs.zed-editor = {
       enable = true;
-	  package = inputs.pkgs-stable.zed-editor;
+      package = inputs.pkgs-stable.zed-editor;
       extensions = [
         "nix"
         "github-actions"
@@ -38,9 +38,10 @@
         };
         lsp = {
           nixd = {
-            settings.diagnostic.supress = [
-              "nixf sema-unused-def-lambda-witharg-arg"
-              "nixf sema-unused-def"
+            settings.diagnostic.suppress = [
+              "sema-unused-def-lambda-witharg-arg"
+              "sema-unused-def-lambda-noarg-formal"
+              "sema-unused-def-let"
             ];
             initialization_options.formatting.command = [ "nixfmt" ];
           };
