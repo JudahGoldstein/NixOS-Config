@@ -10,6 +10,8 @@ in
     ];
     caddy.enable = true;
     torrent.enable = true;
-    services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "deluge" 8112);
+    services.caddy.virtualHosts = (
+      virtualHosts.mkLocalVirtualHost "deluge" config.servives.deluge.port
+    );
   };
 }
