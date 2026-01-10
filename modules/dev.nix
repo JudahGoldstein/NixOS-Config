@@ -39,7 +39,7 @@
           nixd = {
             settings.diagnostic.supress = [
               "nixf sema-unused-def-lambda-witharg-arg"
-              "nixf sema-unused-def-let"
+              "nixf sema-unused-def"
             ];
             initialization_options.formatting.command = [ "nixfmt" ];
           };
