@@ -1,7 +1,4 @@
 { config, pkgs, ... }@inputs:
-let
-  virtualHosts = import ../helpers/virtualHosts.nix inputs;
-in
 {
   options = {
     torrent.enable = inputs.lib.mkOption {
