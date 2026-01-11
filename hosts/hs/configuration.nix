@@ -11,6 +11,12 @@
     ];
   };
 
+  swapDevices = [{
+    device = "/swapfile";
+    size = 128 * 1024; # 128GB
+  }];
+
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   stylix.enable = inputs.lib.mkForce false;
