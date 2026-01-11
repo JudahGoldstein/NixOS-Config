@@ -29,12 +29,10 @@ jobs:
         run: |
           nix flake update --accept-flake-config
 
-          # Generate commit message with updated inputs
+          # Capture the diff showing what changed
           {
             echo 'message<<EOF'
-            echo "flake.lock: Update"
-            echo ""
-            nix flake metadata --json | jq -r '.locks.nodes | to_entries[] | select(.value.locked) | "• \(.key): \(.value.locked.rev // .value.locked.narHash // "updated")"' | head -20
+            git diff flake.lock
             echo 'EOF'
           } >> $GITHUB_OUTPUT
 
@@ -47,7 +45,11 @@ jobs:
             ${{ steps.update.outputs.message }}
           title: "Update flake inputs"
           body: |
+            Automated flake input updates.
+
+            ```diff
             ${{ steps.update.outputs.message }}
+            ```
           labels: |
             dependencies
             automated
