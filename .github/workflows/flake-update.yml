@@ -17,21 +17,44 @@ jobs:
       id-token: write
       issues: write
       pull-requests: write
-    runs-on: ubuntu-latest
+    runs-on: [nixos]
     outputs:
-      pr-number: ${{ steps.update.outputs.pull-request-number }}
+      pr-number: ${{ steps.create-pr.outputs.pull-request-number }}
     steps:
-      - uses: actions/checkout@v6
-      - uses: DeterminateSystems/determinate-nix-action@v3
-      - uses: DeterminateSystems/update-flake-lock@main
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Update flake.lock
         id: update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          nix flake update --accept-flake-config --commit-lock-file
+
+          # Capture the commit message for PR body, strip first line and narHash
+          {
+            echo 'message<<EOF'
+            git show -s --format=%B HEAD | tail -n +2 | sed "s/\?narHash=[^']*//g"
+            echo 'EOF'
+          } >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v7
         with:
-          nix-options: --accept-flake-config
           token: ${{ secrets.FLAKE_TOKEN }}
-          pr-title: "Update flake inputs"
-          pr-labels: |
+          title: "Update flake inputs"
+          body: |
+            ```
+            ${{ steps.update.outputs.message }}
+            ```
+          labels: |
             dependencies
             automated
+          branch: update_flake_lock_action
+          committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
 
   build:
     needs: nix-flake-update
@@ -58,7 +81,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        
+
       - name: auto-merge
         if: needs.nix-flake-update.outputs.pr-number != ''
         run: gh pr merge --auto --squash ${{ needs.nix-flake-update.outputs.pr-number }}
