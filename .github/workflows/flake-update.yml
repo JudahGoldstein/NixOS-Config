@@ -84,6 +84,6 @@ jobs:
 
       - name: auto-merge
         if: needs.nix-flake-update.outputs.pr-number != ''
-        run: gh pr merge --auto --squash ${{ needs.nix-flake-update.outputs.pr-number }}
+        run: nix run nixpkgs#gh -- pr merge --auto --squash ${{ needs.nix-flake-update.outputs.pr-number }}
         env:
           GH_TOKEN: ${{ secrets.FLAKE_TOKEN }}
