@@ -46,9 +46,8 @@ jobs:
           token: ${{ secrets.FLAKE_TOKEN }}
           title: "Update flake inputs"
           body: |
-            ```
             ${{ steps.update.outputs.message }}
-            ```
+
           labels: |
             dependencies
             automated
