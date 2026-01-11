@@ -29,6 +29,7 @@
     nixpkgs-stable.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable-small";
     nixpkgs-openwebui.url = "nixpkgs/nixos-unstable-small";
+    nixpkgs-zed.url = "nixpkgs/cad22e7d996aea55ecab064e84834289143e44a0";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -73,6 +74,7 @@
         system = system;
         config.allowUnfree = true;
       };
+      pkgs-zed = inputs.nixpkgs-zed.legacyPackages.${system};
 
       # Helper function to recursively import NixOS modules from a list of paths
       recursivelyImport = import ./helpers/recursivelyImport.nix { inherit lib; };
@@ -116,9 +118,11 @@
           specialArgs = {
             inherit
               inputs
+              pkgs
               pkgs-stable
               pkgs-unstable
               pkgs-openwebui
+              pkgs-zed
               ;
           }
           // extraSpecialArgs;

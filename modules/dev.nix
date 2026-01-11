@@ -12,7 +12,7 @@
     hm.programs.opencode.enable = true;
     hm.programs.zed-editor = {
       enable = true;
-      package = inputs.pkgs-stable.zed-editor;
+      package = inputs.pkgs-zed.zed-editor;
       extensions = [
         "nix"
         "github-actions"
