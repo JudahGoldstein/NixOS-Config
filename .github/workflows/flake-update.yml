@@ -35,7 +35,7 @@ jobs:
           # Capture the commit message for PR body
           {
             echo 'message<<EOF'
-            git log -1 --pretty=%B
+            git show -s --format=%B HEAD
             echo 'EOF'
           } >> $GITHUB_OUTPUT
 
@@ -45,7 +45,10 @@ jobs:
         with:
           token: ${{ secrets.FLAKE_TOKEN }}
           title: "Update flake inputs"
-          body: ${{ steps.update.outputs.message }}
+          body: |
+            ```
+            ${{ steps.update.outputs.message }}
+            ```
           labels: |
             dependencies
             automated
