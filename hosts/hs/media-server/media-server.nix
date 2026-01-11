@@ -11,7 +11,7 @@ in
     caddy.enable = true;
     torrent.enable = true;
     services.caddy.virtualHosts = (
-      virtualHosts.mkLocalVirtualHost "deluge" config.services.deluge.port
+      virtualHosts.mkLocalVirtualHost "deluge" config.services.deluge.web.port
     );
   };
 }
