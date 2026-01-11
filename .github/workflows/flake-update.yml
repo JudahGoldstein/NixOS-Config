@@ -32,10 +32,10 @@ jobs:
 
           nix flake update --accept-flake-config --commit-lock-file
 
-          # Capture the commit message for PR body
+          # Capture the commit message for PR body, strip first line and narHash
           {
             echo 'message<<EOF'
-            git show -s --format=%B HEAD
+            git show -s --format=%B HEAD | tail -n +2 | sed "s/\?narHash=[^']*//g"
             echo 'EOF'
           } >> $GITHUB_OUTPUT
 
