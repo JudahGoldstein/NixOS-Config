@@ -127,21 +127,8 @@
     {
       nixosConfigurations = {
         v14 = mkHost { hostname = "v14"; };
-
         p15 = mkHost { hostname = "p15"; };
-
         hs = mkHost { hostname = "hs"; };
-
-        #   installer = lib.nixosSystem {
-        #     inherit system;
-        #     modules = [
-        #       ./hosts/installer/configuration.nix
-        #       inputs.sops-nix.nixosModules.sops
-        #     ];
-        #     specialArgs = {
-        #       inherit inputs;
-        #     };
-        #   };
       };
     };
 }
