@@ -50,22 +50,6 @@
             };
             initialization_options.formatting.command = [ "nixfmt" ];
           };
-          nil = {
-            settings = {
-              diagnostics.ignore = [
-                "unused_binding"
-              ];
-              nix = {
-                binary = "nix";
-                flake = {
-                  autoArchive = true;
-                  autoEval = true;
-                  nixpkgsInputName = "nixpkgs";
-                };
-              };
-            };
-            initialization_options.formatting.command = [ "nixfmt" ];
-          };
         };
         languages = {
           Nix = {
