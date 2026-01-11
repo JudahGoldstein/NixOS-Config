@@ -26,6 +26,8 @@ jobs:
 
       - name: Update flake.lock
         run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           nix flake update --accept-flake-config --commit-lock-file
 
       - name: Create Pull Request
