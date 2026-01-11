@@ -27,12 +27,15 @@ jobs:
       - name: Update flake.lock
         id: update
         run: |
-          nix flake update --accept-flake-config
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Capture the diff showing what changed
+          nix flake update --accept-flake-config --commit-lock-file
+
+          # Capture the commit message that was generated
           {
             echo 'message<<EOF'
-            git diff flake.lock
+            git log -1 --pretty=%B
             echo 'EOF'
           } >> $GITHUB_OUTPUT
 
@@ -41,15 +44,10 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.FLAKE_TOKEN }}
-          commit-message: |
-            ${{ steps.update.outputs.message }}
+          commit-message: ${{ steps.update.outputs.message }}
           title: "Update flake inputs"
           body: |
-            Automated flake input updates.
-
-            ```diff
             ${{ steps.update.outputs.message }}
-            ```
           labels: |
             dependencies
             automated
