@@ -21,7 +21,6 @@
       ];
       extraPackages = with pkgs; [
         nixd
-        nil
         nixfmt
       ];
       mutableUserKeymaps = true;
@@ -47,6 +46,7 @@
               nixpkgs = {
                 expr = "import <nixpkgs> {}";
               };
+              autoArchive = true;
             };
             initialization_options.formatting.command = [ "nixfmt" ];
           };
@@ -55,7 +55,7 @@
           Nix = {
             language_servers = [
               "nixd"
-              "nil"
+              "!nil"
             ];
           };
         };
