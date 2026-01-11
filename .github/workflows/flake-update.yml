@@ -25,26 +25,35 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Update flake.lock
+        id: update
         run: |
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          nix flake update --accept-flake-config --commit-lock-file
+          nix flake update --accept-flake-config
+
+          # Generate commit message with updated inputs
+          {
+            echo 'message<<EOF'
+            echo "flake.lock: Update"
+            echo ""
+            nix flake metadata --json | jq -r '.locks.nodes | to_entries[] | select(.value.locked) | "• \(.key): \(.value.locked.rev // .value.locked.narHash // "updated")"' | head -20
+            echo 'EOF'
+          } >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         id: create-pr
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.FLAKE_TOKEN }}
-          commit-message: "flake.lock: Update"
+          commit-message: |
+            ${{ steps.update.outputs.message }}
           title: "Update flake inputs"
           body: |
-            ```
-            {{ env.GIT_COMMIT_MESSAGE }}
-            ```
+            ${{ steps.update.outputs.message }}
           labels: |
             dependencies
             automated
           branch: update_flake_lock_action
+          committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
 
   build:
     needs: nix-flake-update
