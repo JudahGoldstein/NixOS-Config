@@ -38,11 +38,32 @@
         };
         lsp = {
           nixd = {
-            settings.diagnostic.suppress = [
-              "sema-unused-def-lambda-witharg-arg"
-              "sema-unused-def-lambda-noarg-formal"
-              "sema-unused-def-let"
-            ];
+            settings = {
+              diagnostic.suppress = [
+                "sema-unused-def-lambda-witharg-arg"
+                "sema-unused-def-lambda-noarg-formal"
+                "sema-unused-def-let"
+              ];
+              nixpkgs = {
+                expr = "import <nixpkgs> {}";
+              };
+            };
+            initialization_options.formatting.command = [ "nixfmt" ];
+          };
+          nil = {
+            settings = {
+              diagnostics.ignore = [
+                "unused_binding"
+              ];
+              nix = {
+                binary = "nix";
+                flake = {
+                  autoArchive = true;
+                  autoEval = true;
+                  nixpkgsInputName = "nixpkgs";
+                };
+              };
+            };
             initialization_options.formatting.command = [ "nixfmt" ];
           };
         };
@@ -50,7 +71,7 @@
           Nix = {
             language_servers = [
               "nixd"
-              "!nil"
+              "nil"
             ];
           };
         };
