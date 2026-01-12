@@ -29,7 +29,7 @@
     nixpkgs-stable.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable-small";
     nixpkgs-openwebui.url = "nixpkgs/nixos-unstable-small";
-    nixpkgs-zed.url = "nixpkgs/d351d0653aeb7877273920cd3e823994e7579b0b";
+    nixpkgs-zed.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
