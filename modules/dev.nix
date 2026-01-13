@@ -1,13 +1,5 @@
 { config, pkgs, ... }@inputs:
 {
-  options = {
-    dev.enable = inputs.lib.mkOption {
-      type = inputs.lib.types.bool;
-      default = true;
-      description = "Enable Development Tools";
-    };
-  };
-
   config = inputs.lib.mkIf config.dev.enable {
     hm.programs.opencode.enable = true;
     hm.programs.zed-editor = {
