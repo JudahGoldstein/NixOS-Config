@@ -62,6 +62,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        if: needs.nix-flake-update.outputs.pr-number != ''
+        with:
+          ref: update_flake_lock_action
 
       - name: Build with om ci
         if: needs.nix-flake-update.outputs.pr-number != ''
