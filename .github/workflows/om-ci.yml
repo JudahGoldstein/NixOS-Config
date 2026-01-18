@@ -1,10 +1,14 @@
 name: Omnix CI Cache
 
 on:
-  # push:
-  #   branches:
-  #   - main
+  push:
+    branches:
+      - main
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -23,16 +27,14 @@ jobs:
           set -euo pipefail
           nix run github:juspay/omnix --accept-flake-config -- ci run --include-all-dependencies --out-link ./result.json -- --accept-flake-config > store-paths.txt
 
-      - name: Push to Cachix
+      - name: Push to attic
         env:
-          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          ATTIC_TOKEN: ${{ secrets.ATTIC_TOKEN }}
+          ATTIC_CACHE_URL: ${{ vars.ATTIC_CACHE_URL }}
+          ATTIC_CACHE_NAME: ${{ vars.ATTIC_CACHE_NAME }}
         run: |
           set -euo pipefail
-          cat store-paths.txt | xargs --no-run-if-empty nix run nixpkgs#cachix --accept-flake-config -- push "judah-personal"
-
-      - name: Upload build metadata
-        uses: actions/upload-artifact@v6
-        with:
-          name: om-ci-result
-          path: result.json
-          if-no-files-found: ignore
+          nix shell nixpkgs#attic-client -c bash -c "
+            attic login '${ATTIC_CACHE_NAME}' '${ATTIC_CACHE_URL}' '${ATTIC_TOKEN}' --set-default
+            cat store-paths.txt | xargs --no-run-if-empty attic push '${ATTIC_CACHE_NAME}'
+          "
