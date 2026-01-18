@@ -62,6 +62,14 @@
           owner = "nutmon";
           group = "nutmon";
         };
+        "attic-secret" = inputs.lib.mkIf (config.services.atticd.enable) {
+          path = "/var/lib/secrets/attic-secret";
+          owner = "${config.name}";
+        };
+        "attic-token" = {
+          path = "/var/lib/secrets/attic-token";
+          owner = "${config.name}";
+        };
       }
       {
         # authorized keys
