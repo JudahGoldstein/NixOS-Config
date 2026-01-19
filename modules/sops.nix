@@ -64,8 +64,6 @@
         };
         "attic-secret" = inputs.lib.mkIf (config.services.atticd.enable) {
           path = "/var/lib/secrets/attic-secret";
-          owner = config.services.atticd.user;
-          group = config.services.atticd.group;
         };
       }
       {
