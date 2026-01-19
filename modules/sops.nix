@@ -66,6 +66,10 @@
           path = "/var/lib/secrets/attic-secret";
           owner = "${config.name}";
         };
+        "attic-token" = {
+          path = "/var/lib/secrets/attic-token";
+          owner = "${config.name}";
+        };
       }
       {
         # authorized keys
