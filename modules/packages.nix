@@ -12,6 +12,7 @@
 
     # Communication
     packet
+    teams-for-linux
 
     # Security
     bitwarden-desktop
