@@ -85,6 +85,7 @@ jobs:
     runs-on: [nixos]
     steps:
       - name: Checkout
+        if: needs.nix-flake-update.outputs.pr-number != ''
         uses: actions/checkout@v6
 
       - name: auto-merge
