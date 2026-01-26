@@ -14,7 +14,7 @@ in
     ];
     authentication = inputs.lib.mkOverride 10 ''
       #type  database DBuser  auth-method
-      local  atticd   atticd  trust
+      local  atticd   all     trust
     '';
   };
   services.atticd = {
