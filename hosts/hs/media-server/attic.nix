@@ -12,7 +12,7 @@ in
         ensureDBOwnership = true;
       }
     ];
-    authentication = inputs.lib.mkOverride ''
+    authentication = inputs.lib.mkOverride 10 ''
       #type  database DBuser  auth-method
       local  atticd   atticd  trust
     '';
