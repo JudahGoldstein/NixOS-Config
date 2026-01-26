@@ -12,16 +12,16 @@ in
         ensureDBOwnership = true;
       }
     ];
-    authentication = inputs.lib.mkOverride 10 ''
-      #type  database DBuser  auth-method
-      local  atticd   all     trust
-    '';
   };
   services.atticd = {
     enable = true;
     environmentFile = "/var/lib/secrets/attic-secret";
     settings = {
       listen = "127.0.0.1:6277";
+      storage = {
+        type = "local";
+        path = "postgresql://localhost/atticd";
+      };
       chunking = {
         nar-size-threshold = 64 * 1024; # 64 KiB
         min-size = 16 * 1024; # 16 KiB
