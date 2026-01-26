@@ -3,11 +3,23 @@ let
   virtualHosts = import ../../../helpers/virtualHosts.nix inputs;
 in
 {
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "atticd" ];
+    ensureUsers = [
+      {
+        name = "atticd";
+        ensureDBOwnership = true;
+      }
+    ];
+  };
   services.atticd = {
     enable = true;
     environmentFile = "/var/lib/secrets/attic-secret";
     settings = {
       listen = "127.0.0.1:6277";
+      database.url = "postgresql:///atticd?host=/run/postgresql";
+
       chunking = {
         nar-size-threshold = 64 * 1024; # 64 KiB
         min-size = 16 * 1024; # 16 KiB
