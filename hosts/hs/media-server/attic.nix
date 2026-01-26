@@ -3,6 +3,20 @@ let
   virtualHosts = import ../../../helpers/virtualHosts.nix inputs;
 in
 {
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "atticd" ];
+    ensureUsers = [
+      {
+        name = "atticd";
+        ensureDBOwnership = true;
+      }
+    ];
+    authentication = inputs.lib.mkOverride ''
+      #type  database DBuser  auth-method
+      local  atticd   atticd  trust
+    '';
+  };
   services.atticd = {
     enable = true;
     environmentFile = "/var/lib/secrets/attic-secret";
