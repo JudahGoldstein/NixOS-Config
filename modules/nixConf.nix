@@ -22,7 +22,7 @@
       "https://cache.nixos.asia/oss" # for om in gh actions
       "https://om.cachix.org"
     ];
-    trusted-public-keys = [
+    extra-trusted-public-keys = [
       "cache:VD39qZyKDfnvijUb+AMyF5wsJMnP/2c640HZvSLoCWo="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
