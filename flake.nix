@@ -16,7 +16,7 @@
       "https://om.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "cache:xTE8Gv2F7aovlWWrdg18dqytK8F8HocznN7UeiTFR7A="
+      "cache:VD39qZyKDfnvijUb+AMyF5wsJMnP/2c640HZvSLoCWo="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
