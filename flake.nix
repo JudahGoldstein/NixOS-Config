@@ -7,7 +7,7 @@
     download-buffer-size = 536870912; # 512MiB
     auto-optimise-store = true;
     extra-substituters = [
-	  "https://attic.ts.janjuta.org/personal-cache"
+      "https://attic.ts.janjuta.org/personal-cache"
       "https://nix-community.cachix.org/"
       "https://cache.nixos-cuda.org"
       "https://numtide.cachix.org"
@@ -16,7 +16,7 @@
       "https://om.cachix.org"
     ];
     extra-trusted-public-keys = [
-	  "personal-cache:v1TL7gi821LiCxDKSqtvAq07b0KptIUPfAL7qtvWHR8="
+      "personal-cache:v1TL7gi821LiCxDKSqtvAq07b0KptIUPfAL7qtvWHR8="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
@@ -47,6 +47,9 @@
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    import-tree = {
+      url = "github:vic/import-tree";
     };
     stable-diffusion-webui-nix = {
       url = "github:Janrupf/stable-diffusion-webui-nix/main";
@@ -113,9 +116,9 @@
             ./defaultConfig.nix
           ]
           ++ extraModules
-          ++ recursivelyImport [
-            ./modules
-            ./hosts/${hostname}
+          ++ [
+            (inputs.import-tree ./modules)
+            (inputs.import-tree ./hosts/${hostname})
           ];
           specialArgs = {
             inherit
