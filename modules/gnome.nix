@@ -39,7 +39,7 @@
         };
         x11Support = false;
       };
-      preStart = "";
+      generic.preStart = "";
     };
     services.desktopManager.gnome.enable = true;
     programs.evince.enable = true;
