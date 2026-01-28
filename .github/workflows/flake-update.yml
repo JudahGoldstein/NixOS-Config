@@ -6,7 +6,7 @@ on:
     - cron: "0 6 * * *" # daily at 01:00 est
   push:
     paths:
-      - 'flake.nix'
+      - "flake.nix"
     branches:
       - main
 
@@ -59,6 +59,8 @@ jobs:
   build:
     needs: nix-flake-update
     runs-on: [nixos]
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v6
