@@ -1,11 +1,6 @@
 name: Omnix CI Cache
 
 on:
-  workflow_run:
-    workflows:
-      - "Flake.lock: update Nix dependencies"
-    types:
-      - completed
   push:
     branches:
       - main
