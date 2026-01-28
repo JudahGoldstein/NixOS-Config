@@ -30,6 +30,8 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable-small";
+
+    #these programs are prone to build failures, separating them for easyier pinning when breaks occur
     nixpkgs-openwebui.url = "nixpkgs/nixos-unstable-small";
     nixpkgs-zed.url = "nixpkgs/nixos-unstable";
 

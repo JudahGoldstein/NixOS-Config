@@ -3,7 +3,6 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
-
   nix.settings = {
     accept-flake-config = true;
     access-tokens = "$(cat ${config.sops.secrets.github-token.path})";
