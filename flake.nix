@@ -71,7 +71,6 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
 
-      # Use legacyPackages for better flake evaluation caching
       pkgs = inputs.nixpkgs.legacyPackages.${system};
       pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
       pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
@@ -81,10 +80,6 @@
       };
       pkgs-zed = inputs.nixpkgs-zed.legacyPackages.${system};
 
-      # Helper function to recursively import NixOS modules from a list of paths
-      recursivelyImport = import ./helpers/recursivelyImport.nix { inherit lib; };
-
-      # Helper function to create nixosSystem configurations
       mkHost =
         {
           hostname,
