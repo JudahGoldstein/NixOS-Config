@@ -4,7 +4,7 @@
   networking.networkmanager.enable = true;
 
   networking.nameservers =
-    if config.blocky.enable then
+    if config.services.blocky.enable then
       [ "127.0.0.1" ]
     else
       [
