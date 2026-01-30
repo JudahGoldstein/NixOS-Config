@@ -11,15 +11,17 @@
   config = {
     programs.steam = {
       enable = inputs.lib.mkDefault false;
-      protontricks.enable = true;
+      protontricks.enable = config.programs.steam.enable;
       extraCompatPackages = [ pkgs.proton-ge-bin ];
       remotePlay.openFirewall = config.steam.hosting;
       dedicatedServer.openFirewall = config.steam.hosting;
       localNetworkGameTransfers.openFirewall = config.steam.hosting;
-      gamescopeSession.enable = true;
+      gamescopeSession.enable = config.programs.steam.enable;
     };
-    programs.gamemode.enable = true;
-    users.users.${config.name}.extraGroups = [ "gamemode" ];
-    environment.systemPackages = with pkgs; [ mangohud ];
+    programs.gamemode.enable = config.programs.steam.enable;
+    users.users.${config.name}.extraGroups = inputs.lib.mkIf config.programs.steam.enable [
+      "gamemode"
+    ];
+    environment.systemPackages = inputs.lib.mkIf config.programs.steam.enable [ pkgs.mangohud ];
   };
 }
