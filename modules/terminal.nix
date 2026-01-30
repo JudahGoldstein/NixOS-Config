@@ -22,7 +22,7 @@
       enable = true;
       presets = [ "no-runtime-versions" ];
     };
-    programs.nautilus-open-any-terminal = inputs.lib.mkIf config.gnome.enable {
+    programs.nautilus-open-any-terminal = inputs.lib.mkIf config.services.desktopManager.gnome.enable {
       enable = true;
       terminal = "kitty";
     };

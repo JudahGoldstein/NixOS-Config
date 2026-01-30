@@ -3,7 +3,7 @@
   config = {
     programs.firefox = {
       enable = true;
-      nativeMessagingHosts.packages = inputs.lib.mkIf config.gnome.enable [
+      nativeMessagingHosts.packages = inputs.lib.mkIf config.services.desktopManager.gnome.enable [
         pkgs.gnomeExtensions.gsconnect
       ];
       package = inputs.pkgs-stable.firefox;
