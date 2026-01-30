@@ -8,7 +8,7 @@ in
       recyclarr
       czkawka-full
     ];
-    caddy.enable = true;
+    services.caddy.enable = true;
     torrent.enable = true;
     services.caddy.virtualHosts = (
       virtualHosts.mkLocalVirtualHost "deluge" config.services.deluge.web.port
