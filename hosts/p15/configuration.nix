@@ -2,7 +2,7 @@
 {
   longName = "Judah (P15)";
 
-  steam.enable = true;
+  programs.steam.enable = true;
   programs.captive-browser = {
     enable = true;
     interface = "wlp0s20f3";
