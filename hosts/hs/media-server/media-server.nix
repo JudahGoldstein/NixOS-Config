@@ -9,7 +9,7 @@ in
       czkawka-full
     ];
     services.caddy.enable = true;
-    torrent.enable = true;
+    services.deluge.enable = true;
     services.caddy.virtualHosts = (
       virtualHosts.mkLocalVirtualHost "deluge" config.services.deluge.web.port
     );
