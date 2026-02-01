@@ -1,7 +1,4 @@
 { config, pkgs, ... }@inputs:
-let
-  virtualHosts = import ../../../../helpers/virtualHosts.nix inputs;
-in
 {
   services.postgresql = {
     enable = true;
@@ -28,5 +25,5 @@ in
       };
     };
   };
-  services.caddy.virtualHosts = (virtualHosts.mkLocalVirtualHost "attic" 6277);
+  services.caddy.virtualHosts = (inputs.virtualHosts.mkLocalVirtualHost "attic" 6277);
 }

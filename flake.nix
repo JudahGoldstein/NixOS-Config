@@ -125,6 +125,7 @@
               pkgs-openwebui
               pkgs-zed
               ;
+            virtualHosts = import ./helpers/virtualHosts.nix { inherit lib; };
           }
           // extraSpecialArgs;
         };
