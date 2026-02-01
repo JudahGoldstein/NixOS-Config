@@ -1,6 +1,7 @@
 { config, pkgs, ... }@inputs:
 {
   environment.systemPackages = with pkgs; [
+    fastfetch
     asciinema
     asciinema-agg
     termshot
