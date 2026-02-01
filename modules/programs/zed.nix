@@ -33,6 +33,7 @@
               "sema-unused-def-lambda-witharg-arg"
               "sema-unused-def-lambda-noarg-formal"
               "sema-unused-def-let"
+              "sema-extra-with"
             ];
             nixpkgs = {
               expr = "import <nixpkgs> {}";
