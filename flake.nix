@@ -14,6 +14,7 @@
       "https://zed.cachix.org"
       "https://cache.nixos.asia/oss" # for om in gh actions
       "https://om.cachix.org"
+      "https://niri.cachix.org"
     ];
     extra-trusted-public-keys = [
       "personal-cache:v1TL7gi821LiCxDKSqtvAq07b0KptIUPfAL7qtvWHR8="
@@ -23,6 +24,7 @@
       "zed.cachix.org-1:/pHQ6dpMsAZk2DiP4WCL0p9YDNKWj2Q5FL20bNmw1cU="
       "oss:KO872wNJkCDgmGN3xy9dT89WAhvv13EiKncTtHDItVU="
       "om.cachix.org-1:ifal/RLZJKN4sbpScyPGqJ2+appCslzu7ZZF/C01f2Q="
+      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
     ];
   };
 
@@ -52,6 +54,10 @@
     };
     import-tree = {
       url = "github:vic/import-tree";
+    };
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     stable-diffusion-webui-nix = {
       url = "github:Janrupf/stable-diffusion-webui-nix/main";
@@ -105,11 +111,17 @@
             inputs.sops-nix.nixosModules.sops
             inputs.disko.nixosModules.disko
             inputs.copyparty.nixosModules.default
+            inputs.niri-flake.nixosModules.niri
             inputs.stylix.nixosModules.stylix
             inputs.stable-diffusion-webui-nix.nixosModules.default
             inputs.facter-modules.nixosModules.facter
             { config.facter.reportPath = ./hosts/${hostname}/facter.json; }
-            { nixpkgs.overlays = [ inputs.copyparty.overlays.default ]; }
+            {
+              nixpkgs.overlays = [
+                inputs.copyparty.overlays.default
+                inputs.niri-flake.overlays.niri
+              ];
+            }
             ./defaultConfig.nix
           ]
           ++ extraModules
