@@ -13,8 +13,6 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  stylix.enable = inputs.lib.mkForce false;
-
   services.tailscale = {
     useRoutingFeatures = "both";
     extraSetFlags = [
