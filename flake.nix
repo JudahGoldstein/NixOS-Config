@@ -59,6 +59,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stable-diffusion-webui-nix = {
       url = "github:Janrupf/stable-diffusion-webui-nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -112,6 +116,7 @@
             inputs.disko.nixosModules.disko
             inputs.copyparty.nixosModules.default
             inputs.niri-flake.nixosModules.niri
+            { hm.imports = [ inputs.noctalia.homeModules.default ]; }
             inputs.stylix.nixosModules.stylix
             inputs.stable-diffusion-webui-nix.nixosModules.default
             inputs.facter-modules.nixosModules.facter

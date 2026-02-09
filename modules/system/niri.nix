@@ -29,7 +29,6 @@
         mouse = { };
         trackpoint = { };
       };
-
       layout = {
         gaps = 16;
         center-focused-column = "never";
@@ -44,6 +43,9 @@
         shadow.enable = false;
       };
       hotkey-overlay.skip-at-startup = false;
+      spawn-at-startup = [
+        { argv = [ "noctalia-shell" ]; } # }
+      ];
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
       animations.enable = true;
       window-rules = [
@@ -63,7 +65,6 @@
           open-floating = true;
         }
       ];
-
       binds = {
         "Mod+Shift+Slash" = {
           action.show-hotkey-overlay = [ ];
@@ -74,17 +75,14 @@
           hotkey-overlay.title = "Open a Terminal: kitty";
         };
         "Mod+D" = {
-          action.spawn = [ "fuzzel" ];
+          action.spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "launcher"
+            "toggle"
+          ];
           hotkey-overlay.title = "Run an Application: fuzzel";
-        };
-        "Super+Alt+L" = {
-          action.spawn = [ "swaylock" ];
-          hotkey-overlay.title = "Lock the Screen: swaylock";
-        };
-        "Super+Alt+S" = {
-          action.spawn-sh = "pkill orca || exec orca";
-          allow-when-locked = true;
-          hotkey-overlay.title = "Toggle Screen Reader: orca";
         };
         "XF86AudioRaiseVolume" = {
           action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
@@ -404,14 +402,8 @@
       };
     };
   };
-  programs.dms-shell = {
+
+  hm.programs.noctalia-shell = {
     enable = true;
-    enableClipboardPaste = true;
-    enableSystemMonitoring = true;
-  };
-  services.displayManager.ly.enable = inputs.lib.mkForce false;
-  services.displayManager.dms-greeter = {
-    enable = true;
-    compositor.name = "niri";
   };
 }
