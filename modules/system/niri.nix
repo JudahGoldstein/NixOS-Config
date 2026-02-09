@@ -20,4 +20,9 @@
     enableClipboardPaste = true;
     enableSystemMonitoring = true;
   };
+  services.displayManager.ly.enable = inputs.lib.mkForce false;
+  services.displayManager.dms-greeter = {
+    enable = true;
+    compositor.name = "niri";
+  };
 }
