@@ -18,20 +18,6 @@
       gnome-extension-manager
     ]);
   services.libinput.enable = true;
-  services.displayManager = {
-    enable = true;
-    ly = {
-      enable = true;
-      settings = {
-        allow_empty_password = false;
-        clear_password = true;
-        hide_version_string = true;
-        numlock = true;
-      };
-      x11Support = false;
-    };
-    generic.preStart = "";
-  };
   services.desktopManager.gnome.enable = true;
   programs.evince.enable = true;
   environment.gnome.excludePackages = with pkgs; [
