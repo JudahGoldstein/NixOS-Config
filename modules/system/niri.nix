@@ -82,7 +82,7 @@
             "launcher"
             "toggle"
           ];
-          hotkey-overlay.title = "Run an Application: fuzzel";
+          hotkey-overlay.title = "Noctalia Launcher";
         };
         "XF86AudioRaiseVolume" = {
           action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
