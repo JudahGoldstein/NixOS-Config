@@ -67,7 +67,13 @@
       ];
       binds = {
         "Mod+Shift+Slash" = {
-          action.show-hotkey-overlay = [ ];
+          action.spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "plugin:keybind-cheatsheet"
+            "toggle"
+          ];
           hotkey-overlay.title = "Show all keybindings";
         };
         "Mod+Return" = {
@@ -405,5 +411,24 @@
 
   hm.programs.noctalia-shell = {
     enable = true;
+    plugins = {
+      sources = [
+        {
+          enabled = true;
+          name = "Official Noctalia Plugins";
+          url = "https://github.com/noctalia-dev/noctalia-plugins";
+        }
+      ];
+      states = {
+        keybind-cheatsheet = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        niri-overview-launcher = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+      };
+    };
   };
 }
