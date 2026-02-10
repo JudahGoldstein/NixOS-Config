@@ -458,6 +458,204 @@
         overviewLayer = false;
         density = "default";
       };
+      audio = {
+        volumeStep = 5;
+        volumeOverdrive = false;
+        cavaFrameRate = 30;
+        visualizerType = "linear";
+        mprisBlacklist = [ ];
+        preferredPlayer = "";
+        volumeFeedback = false;
+      };
+      brightness = {
+        brightnessStep = 5;
+        enforceMinimum = true;
+        enableDdcSupport = false;
+      };
+      templates = {
+        activeTemplates = [ ];
+        enableUserTheming = false;
+      };
+      nightLight = {
+        enabled = false;
+        forced = false;
+        autoSchedule = true;
+        nightTemp = "4000";
+        dayTemp = "6500";
+        manualSunrise = "06:30";
+        manualSunset = "18:30";
+      };
+      hooks = {
+        enabled = false;
+        wallpaperChange = "";
+        darkModeChange = "";
+        screenLock = "";
+        screenUnlock = "";
+        performanceModeEnabled = "";
+        performanceModeDisabled = "";
+        startup = "";
+        session = "";
+      };
+      plugins = {
+        autoUpdate = true;
+      };
+      desktopWidgets = {
+        enabled = false;
+        gridSnap = false;
+        monitorWidgets = [ ];
+      };
+      bar = {
+        barType = "simple";
+        position = "top";
+        monitors = [ ];
+        density = "default";
+        showOutline = false;
+        showCapsule = true;
+        capsuleColorKey = "none";
+        useSeparateOpacity = false;
+        floating = false;
+        marginVertical = 4;
+        marginHorizontal = 4;
+        frameThickness = 8;
+        frameRadius = 12;
+        outerCorners = true;
+        hideOnOverview = false;
+        displayMode = "always_visible";
+        autoHideDelay = 500;
+        autoShowDelay = 150;
+        widgets = {
+          left = [
+            {
+              id = "Launcher";
+            }
+            {
+              id = "Clock";
+            }
+            {
+              id = "SystemMonitor";
+            }
+            {
+              id = "ActiveWindow";
+            }
+            {
+              id = "MediaMini";
+            }
+          ];
+          center = [
+            {
+              id = "Workspace";
+            }
+          ];
+          right = [
+            {
+              id = "Tray";
+            }
+            {
+              id = "NotificationHistory";
+            }
+            {
+              id = "Battery";
+            }
+            {
+              id = "Volume";
+            }
+            {
+              id = "Brightness";
+            }
+            {
+              id = "ControlCenter";
+            }
+          ];
+        };
+        screenOverrides = [ ];
+      };
+      general = {
+        avatarImage = "";
+        dimmerOpacity = 0.2;
+        showScreenCorners = false;
+        forceBlackScreenCorners = false;
+        scaleRatio = 1;
+        radiusRatio = 1;
+        iRadiusRatio = 1;
+        boxRadiusRatio = 1;
+        screenRadiusRatio = 1;
+        animationSpeed = 1;
+        animationDisabled = false;
+        compactLockScreen = false;
+        lockScreenAnimations = false;
+        lockOnSuspend = true;
+        showSessionButtonsOnLockScreen = true;
+        showHibernateOnLockScreen = false;
+        enableShadows = true;
+        shadowDirection = "bottom_right";
+        shadowOffsetX = 2;
+        shadowOffsetY = 3;
+        language = "";
+        allowPanelsOnScreenWithoutBar = true;
+        showChangelogOnStartup = true;
+        telemetryEnabled = false;
+        enableLockScreenCountdown = true;
+        lockScreenCountdownDuration = 10000;
+        autoStartAuth = false;
+        allowPasswordWithFprintd = false;
+        clockStyle = "custom";
+        clockFormat = "hh\nmm";
+        lockScreenMonitors = [ ];
+        lockScreenBlur = 0;
+        lockScreenTint = 0;
+        keybinds = {
+          keyUp = "Up";
+          keyDown = "Down";
+          keyLeft = "Left";
+          keyRight = "Right";
+          keyEnter = "Return";
+          keyEscape = "Esc";
+        };
+      };
+      ui = {
+        fontDefaultScale = 1;
+        fontFixedScale = 1;
+        tooltipsEnabled = true;
+        panelsAttachedToBar = true;
+        settingsPanelMode = "attached";
+        wifiDetailsViewMode = "grid";
+        bluetoothDetailsViewMode = "grid";
+        networkPanelView = "wifi";
+        bluetoothHideUnnamedDevices = false;
+        boxBorderEnabled = false;
+      };
+      location = {
+        weatherEnabled = true;
+        weatherShowEffects = true;
+        useFahrenheit = false;
+        use12hourFormat = false;
+        showWeekNumberInCalendar = false;
+        showCalendarEvents = true;
+        showCalendarWeather = true;
+        analogClockInCalendar = false;
+        firstDayOfWeek = -1;
+        hideWeatherTimezone = false;
+        hideWeatherCityName = true;
+      };
+      calendar = {
+        cards = [
+          {
+            enabled = true;
+            id = "calendar-header-card";
+          }
+          {
+            enabled = true;
+            id = "calendar-month-card";
+          }
+          {
+            enabled = true;
+            id = "weather-card";
+          }
+        ];
+      };
+      wallpaper = {
+        enabled = false;
+      };
     };
   };
 }
