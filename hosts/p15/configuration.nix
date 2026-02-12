@@ -8,6 +8,17 @@
     interface = "wlp0s20f3";
   };
 
+  hm.programs.niri.settings.outputs = {
+    "eDP-1" = {
+      position.x = 0;
+      position.y = 0;
+    };
+    "DP-3" = {
+      position.x = 1920;
+      position.y = 0;
+    };
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   softColemak.enable = true;
