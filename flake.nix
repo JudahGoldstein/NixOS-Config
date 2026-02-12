@@ -30,7 +30,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable-small";
 
     #these programs are prone to build failures, separating them for easyier pinning when breaks occur
@@ -84,7 +83,6 @@
       lib = nixpkgs.lib;
 
       pkgs = inputs.nixpkgs.legacyPackages.${system};
-      pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
       pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
       pkgs-openwebui = import inputs.nixpkgs-openwebui {
         system = system;
@@ -137,7 +135,6 @@
           specialArgs = {
             inherit
               inputs
-              pkgs-stable
               pkgs-unstable
               pkgs-openwebui
               pkgs-zed
