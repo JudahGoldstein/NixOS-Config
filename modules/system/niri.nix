@@ -23,6 +23,10 @@
           xkb.options = "grp:win_space_toggle";
           numlock = true;
         };
+        focus-follows-mouse = {
+          enable = true;
+          max-scroll-amount = "10%";
+        };
         touchpad = {
           tap = true;
         };
