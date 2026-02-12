@@ -527,43 +527,138 @@
           left = [
             {
               id = "Launcher";
+              icon = "rocket";
+              iconColor = "none";
             }
             {
               id = "Clock";
+              clockColor = "none";
+              customFormat = "";
+              formatHorizontal = "HH:mm ddd, MMM dd";
+              formatVertical = "HH mm - dd MM";
+              tooltipFormat = "HH:mm ddd, MMM dd";
+              useCustomFormat = false;
             }
             {
               id = "SystemMonitor";
+              compactMode = true;
+              diskPath = "/";
+              iconColor = "none";
+              showCpuFreq = false;
+              showCpuTemp = true;
+              showCpuUsage = true;
+              showDiskAvailable = false;
+              showDiskUsage = false;
+              showDiskUsageAsPercent = false;
+              showGpuTemp = false;
+              showLoadAverage = false;
+              showMemoryAsPercent = false;
+              showMemoryUsage = true;
+              showNetworkStats = false;
+              showSwapUsage = false;
+              textColor = "none";
+              useMonospaceFont = true;
             }
             {
               id = "ActiveWindow";
+              colorizeIcons = false;
+              hideMode = "hidden";
+              maxWidth = 145;
+              scrollingMode = "hover";
+              showIcon = true;
+              textColor = "none";
+              useFixedWidth = false;
             }
             {
               id = "MediaMini";
+              compactMode = false;
+              compactShowAlbumArt = true;
+              compactShowVisualizer = false;
+              hideMode = "hidden";
+              hideWhenIdle = false;
+              maxWidth = 145;
+              panelShowAlbumArt = true;
+              panelShowVisualizer = true;
+              scrollingMode = "hover";
+              showAlbumArt = true;
+              showArtistFirst = true;
+              showProgressRing = true;
+              showVisualizer = false;
+              textColor = "none";
+              useFixedWidth = false;
+              visualizerType = "linear";
             }
           ];
           center = [
             {
               id = "Workspace";
+              characterCount = 2;
+              colorizeIcons = false;
+              emptyColor = "secondary";
+              enableScrollWheel = true;
+              focusedColor = "primary";
+              followFocusedScreen = false;
+              groupedBorderOpacity = 1;
+              hideUnoccupied = false;
+              iconScale = 0.8;
+              labelMode = "index";
+              occupiedColor = "secondary";
+              pillSize = 0.6;
+              reverseScroll = false;
+              showApplications = false;
+              showBadge = true;
+              showLabelsOnlyWhenOccupied = true;
+              unfocusedIconsOpacity = 1;
             }
           ];
           right = [
             {
               id = "Tray";
+              blacklist = [ ];
+              chevronColor = "none";
+              colorizeIcons = false;
+              drawerEnabled = false;
+              hidePassive = false;
+              pinned = [ ];
             }
             {
               id = "NotificationHistory";
+              hideWhenZero = true;
+              hideWhenZeroUnread = false;
+              iconColor = "none";
+              showUnreadBadge = true;
+              unreadBadgeColor = "primary";
             }
             {
               id = "Battery";
+              deviceNativePath = "__default__";
+              displayMode = "graphic-clean";
+              hideIfIdle = true;
+              hideIfNotDetected = true;
+              showNoctaliaPerformance = true;
+              showPowerProfiles = true;
             }
             {
               id = "Volume";
+              displayMode = "onhover";
+              iconColor = "none";
+              middleClickCommand = "pwvucontrol || pavucontrol";
+              textColor = "none";
             }
             {
               id = "Brightness";
+              displayMode = "onhover";
+              iconColor = "none";
+              textColor = "none";
             }
             {
               id = "ControlCenter";
+              colorizeDistroLogo = false;
+              colorizeSystemIcon = false;
+              enableColorization = false;
+              customIconPath = "";
+              icon = "noctalia";
+              useDistroLogo = true;
             }
           ];
         };
