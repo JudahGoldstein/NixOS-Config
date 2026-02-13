@@ -51,7 +51,7 @@
       };
       hotkey-overlay.skip-at-startup = false;
       spawn-at-startup = [
-        { argv = [ "noctalia-shell" ]; } # }
+        { argv = [ "noctalia-shell" ]; }
       ];
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
       animations.enable = true;

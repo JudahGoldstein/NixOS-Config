@@ -11,6 +11,15 @@
     ];
   };
 
+  hm.programs.niri.settings.spawn-at-startup = [
+    {
+      argv = [
+        "firefox"
+        "--headless"
+      ];
+    }
+  ];
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services.tailscale = {
