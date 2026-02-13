@@ -1,7 +1,11 @@
 { config, pkgs, ... }@inputs:
+let
+  officialPlugins = "https://github.com/noctalia-dev/noctalia-plugins";
+in
 {
   environment.systemPackages = with pkgs; [
     wl-clipboard-rs
+    cliphist
   ];
   hm.programs.noctalia-shell = {
     enable = true;
@@ -10,17 +14,18 @@
         {
           enabled = true;
           name = "Official Noctalia Plugins";
-          url = "https://github.com/noctalia-dev/noctalia-plugins";
+          url = officialPlugins;
         }
       ];
-      states = {
+      states = builtins.mapAttrs (name: value: value // { sourceUrl = officialPlugins; }) {
         keybind-cheatsheet = {
           enabled = true;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
         niri-overview-launcher = {
           enabled = true;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        clipper = {
+          enabled = true;
         };
       };
     };
