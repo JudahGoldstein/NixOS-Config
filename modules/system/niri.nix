@@ -29,8 +29,11 @@
         };
         touchpad = {
           tap = true;
+          natural-scroll = true;
         };
-        mouse = { };
+        mouse = {
+          natural-scroll = true;
+        };
         trackpoint = { };
       };
       layout = {
