@@ -11,14 +11,17 @@
     ];
   };
 
-  hm.programs.niri.settings.spawn-at-startup = [
-    {
-      argv = [
-        "firefox"
-        "--headless"
-      ];
-    }
-  ];
+  # systemd service to start firefox in headless mode for automation before the user logs in
+  systemd.services.firefox-headless = {
+    description = "Firefox Headless";
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.firefox}/bin/firefox --headless";
+      Restart = "always";
+      RestartSec = "5s";
+    };
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
