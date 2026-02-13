@@ -17,7 +17,8 @@
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
-      ExecStart = "${pkgs.firefox}/bin/firefox --headless";
+      user = "${config.name}";
+      ExecStart = "${pkgs.firefox}/bin/firefox --headless -P default";
       Restart = "always";
       RestartSec = "5s";
     };
