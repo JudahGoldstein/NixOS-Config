@@ -225,7 +225,7 @@
               id = "Battery";
               deviceNativePath = "__default__";
               displayMode = "graphic-clean";
-              hideIfIdle = true;
+              hideIfIdle = false;
               hideIfNotDetected = true;
               showNoctaliaPerformance = true;
               showPowerProfiles = true;
