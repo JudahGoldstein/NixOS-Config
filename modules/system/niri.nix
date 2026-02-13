@@ -158,126 +158,52 @@
         "Mod+Left" = {
           action.focus-column-left = [ ];
         };
-        "Mod+Down" = {
-          action.focus-window-down = [ ];
-        };
-        "Mod+Up" = {
-          action.focus-window-up = [ ];
-        };
         "Mod+Right" = {
           action.focus-column-right = [ ];
+        };
+        "Mod+Up" = {
+          action.focus-workspace-up = [ ];
+        };
+        "Mod+Down" = {
+          action.focus-workspace-down = [ ];
         };
         "Mod+Shift+Left" = {
           action.move-column-left = [ ];
         };
-        "Mod+Ctrl+Down" = {
-          action.move-window-down = [ ];
-        };
-        "Mod+Shift+Up" = {
-          action.move-window-up = [ ];
-        };
         "Mod+Shift+Right" = {
           action.move-column-right = [ ];
         };
-        "Mod+Ctrl+Left" = {
-          action.focus-monitor-left = [ ];
+        "Mod+Shift+Up" = {
+          action.move-column-to-workspace-up = [ ];
         };
-        "Mod+Shift+Down" = {
-          action.focus-monitor-down = [ ];
-        };
-        "Mod+Ctrl+Up" = {
-          action.focus-monitor-up = [ ];
-        };
-        "Mod+Ctrl+Right" = {
-          action.focus-monitor-right = [ ];
-        };
-        "Mod+Shift+Ctrl+Left" = {
-          action.move-column-to-monitor-left = [ ];
-        };
-        "Mod+Shift+Ctrl+Down" = {
-          action.move-column-to-monitor-down = [ ];
-        };
-        "Mod+Shift+Ctrl+Up" = {
-          action.move-column-to-monitor-up = [ ];
-        };
-        "Mod+Shift+Ctrl+Right" = {
-          action.move-column-to-monitor-right = [ ];
-        };
-        "Mod+Page_Down" = {
-          action.focus-workspace-down = [ ];
+        "Mod+Ctrl+Down" = {
+          action.move-column-to-workspace-down = [ ];
         };
         "Mod+Page_Up" = {
-          action.focus-workspace-up = [ ];
+          action.focus-monitor-right = [ ];
         };
-        "Mod+U" = {
-          action.focus-workspace-down = [ ];
-        };
-        "Mod+I" = {
-          action.focus-workspace-up = [ ];
-        };
-        "Mod+Ctrl+Page_Down" = {
-          action.move-column-to-workspace-down = [ ];
-        };
-        "Mod+Ctrl+Page_Up" = {
-          action.move-column-to-workspace-up = [ ];
-        };
-        "Mod+Ctrl+U" = {
-          action.move-column-to-workspace-down = [ ];
-        };
-        "Mod+Ctrl+I" = {
-          action.move-column-to-workspace-up = [ ];
-        };
-        "Mod+Shift+Page_Down" = {
-          action.move-workspace-down = [ ];
+        "Mod+Page_Down" = {
+          action.focus-monitor-left = [ ];
         };
         "Mod+Shift+Page_Up" = {
-          action.move-workspace-up = [ ];
+          action.move-column-to-monitor-right = [ ];
         };
-        "Mod+Shift+U" = {
-          action.move-workspace-down = [ ];
-        };
-        "Mod+Shift+I" = {
-          action.move-workspace-up = [ ];
-        };
-        "Mod+WheelScrollDown" = {
-          action.focus-workspace-down = [ ];
-          cooldown-ms = 150;
+        "Mod+Shift+Page_Down" = {
+          action.move-column-to-monitor-left = [ ];
         };
         "Mod+WheelScrollUp" = {
-          action.focus-workspace-up = [ ];
-          cooldown-ms = 150;
-        };
-        "Mod+Ctrl+WheelScrollDown" = {
-          action.move-column-to-workspace-down = [ ];
-          cooldown-ms = 150;
-        };
-        "Mod+Ctrl+WheelScrollUp" = {
-          action.move-column-to-workspace-up = [ ];
-          cooldown-ms = 150;
-        };
-        "Mod+WheelScrollRight" = {
-          action.focus-column-right = [ ];
-        };
-        "Mod+WheelScrollLeft" = {
           action.focus-column-left = [ ];
+          cooldown-ms = 150;
         };
-        "Mod+Ctrl+WheelScrollRight" = {
-          action.move-column-right = [ ];
-        };
-        "Mod+Ctrl+WheelScrollLeft" = {
-          action.move-column-left = [ ];
+        "Mod+WheelScrollDown" = {
+          action.focus-column-right = [ ];
+          cooldown-ms = 150;
         };
         "Mod+Shift+WheelScrollDown" = {
-          action.focus-column-right = [ ];
+          action.focus-workspace-down = [ ];
         };
         "Mod+Shift+WheelScrollUp" = {
-          action.focus-column-left = [ ];
-        };
-        "Mod+Ctrl+Shift+WheelScrollDown" = {
-          action.move-column-right = [ ];
-        };
-        "Mod+Ctrl+Shift+WheelScrollUp" = {
-          action.move-column-left = [ ];
+          action.focus-workspace-up = [ ];
         };
         "Mod+1" = {
           action.focus-workspace = 1;
