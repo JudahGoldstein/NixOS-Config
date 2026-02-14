@@ -37,7 +37,7 @@
         trackpoint = { };
       };
       layout = {
-        gaps = 16;
+        gaps = 8;
         center-focused-column = "never";
         preset-column-widths = [
           { proportion = 1.0 / 3.0; }
