@@ -17,7 +17,6 @@
         "wheel"
         "dialout"
         "uucp"
-        "input"
         "users"
         "media"
       ];
@@ -25,6 +24,5 @@
     };
     nix.settings.trusted-users = [ config.name ];
     users.groups.media = { }; # custom group for anything that touches media
-    environment.extraInit = "umask 002";
   };
 }
