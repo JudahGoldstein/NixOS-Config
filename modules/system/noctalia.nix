@@ -50,6 +50,7 @@ in
         showIconBackground = false;
         enableSettingsSearch = true;
         enableWindowsSearch = true;
+        enableSessionSearch = true;
         ignoreMouseInput = false;
         screenshotAnnotationTool = "";
         overviewLayer = false;
@@ -90,6 +91,7 @@ in
         screenUnlock = "";
         performanceModeEnabled = "";
         performanceModeDisabled = "";
+        weatherEnabled = false;
         startup = "";
         session = "";
       };
@@ -100,6 +102,9 @@ in
         enabled = false;
         gridSnap = false;
         monitorWidgets = [ ];
+      };
+      dock = {
+        enabled = false;
       };
       bar = {
         barType = "simple";
@@ -130,11 +135,11 @@ in
             {
               id = "Clock";
               clockColor = "none";
-              customFormat = "";
+              customFont = "";
+              useCustomFont = false;
               formatHorizontal = "HH:mm ddd, MMM dd";
               formatVertical = "HH mm - dd MM";
               tooltipFormat = "HH:mm ddd, MMM dd";
-              useCustomFormat = false;
             }
             {
               id = "SystemMonitor";
@@ -155,6 +160,7 @@ in
               showSwapUsage = false;
               textColor = "none";
               useMonospaceFont = true;
+              usePadding = true;
             }
             {
               id = "ActiveWindow";
@@ -261,6 +267,156 @@ in
         };
         screenOverrides = [ ];
       };
+      controlCenter = {
+        position = "close_to_bar_button";
+        diskPath = "/";
+        shortcuts = {
+          left = [
+            { id = "Network"; }
+            { id = "Bluetooth"; }
+          ];
+          right = [
+            { id = "NoctaliaPerformance"; }
+            { id = "PowerProfile"; }
+            { id = "KeepAwake"; }
+            { id = "NightLight"; }
+          ];
+        };
+        cards = [
+          {
+            enabled = true;
+            id = "profile-card";
+          }
+          {
+            enabled = true;
+            id = "shortcuts-card";
+          }
+          {
+            enabled = true;
+            id = "audio-card";
+          }
+          {
+            enabled = false;
+            id = "brightness-card";
+          }
+          {
+            enabled = false;
+            id = "weather-card";
+          }
+          {
+            enabled = false;
+            id = "media-sysmon-card";
+          }
+        ];
+      };
+      network = {
+        wifiEnabled = true;
+        bluetoothRssiPollingEnabled = false;
+        bluetoothRssiPollIntervalMs = 60000;
+        wifiDetailsViewMode = "grid";
+        bluetoothDetailsViewMode = "grid";
+        bluetoothHideUnnamedDevices = false;
+      };
+      notifications = {
+        enabled = true;
+        density = "default";
+        monitors = [ ];
+        location = "top_right";
+        overlayLayer = true;
+        respectExpireTimeout = false;
+        lowUrgencyDuration = 3;
+        normalUrgencyDuration = 8;
+        criticalUrgencyDuration = 15;
+        saveToHistory = {
+          low = true;
+          normal = true;
+          critical = true;
+        };
+        sounds = {
+          enabled = false;
+        };
+        enableMediaToast = false;
+        enableKeyboardLayoutToast = true;
+        enableBatteryToast = true;
+      };
+      osd = {
+        enabled = true;
+        location = "top_right";
+        autoHideMs = 2000;
+        overlayLayer = true;
+        enabledTypes = [
+          0
+          1
+          2
+        ];
+        monitors = [ ];
+      };
+      sessionMenu = {
+        enableCountdown = true;
+        countdownDuration = 10000;
+        position = "center";
+        showHeader = true;
+        largeButtonsStyle = true;
+        largeButtonsLayout = "single-row";
+        powerOptions = [
+          {
+            action = "lock";
+            enabled = false;
+          }
+          {
+            action = "suspend";
+            enabled = false;
+          }
+          {
+            action = "hibernate";
+            enabled = false;
+          }
+          {
+            action = "reboot";
+            enabled = true;
+            keybind = "1";
+          }
+          {
+            action = "logout";
+            enabled = true;
+            keybind = "2";
+          }
+          {
+            action = "shutdown";
+            enabled = true;
+            keybind = "3";
+          }
+        ];
+      };
+      systemMonitor = {
+        cpuPollingInterval = 1000;
+        cpuWarningThreshold = 80;
+        cpuCriticalThreshold = 90;
+        tempWarningThreshold = 80;
+        tempCriticalThreshold = 90;
+        gpuPollingInterval = 3000;
+        gpuWarningThreshold = 80;
+        gpuCriticalThreshold = 90;
+        memPollingInterval = 1000;
+        memWarningThreshold = 80;
+        memCriticalThreshold = 90;
+        swapWarningThreshold = 80;
+        swapCriticalThreshold = 90;
+        diskPollingInterval = 30000;
+        diskWarningThreshold = 80;
+        diskCriticalThreshold = 90;
+        diskAvailWarningThreshold = 20;
+        diskAvailCriticalThreshold = 10;
+        batteryWarningThreshold = 20;
+        batteryCriticalThreshold = 5;
+        enableDgpuMonitoring = true;
+        loadAvgPollingInterval = 3000;
+        networkPollingInterval = 1000;
+        useCustomColors = false;
+        warningColor = "";
+        criticalColor = "";
+        externalMonitor = "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor";
+      };
       general = {
         avatarImage = "";
         dimmerOpacity = 0.2;
@@ -296,12 +452,12 @@ in
         lockScreenBlur = 0;
         lockScreenTint = 0;
         keybinds = {
-          keyUp = "Up";
-          keyDown = "Down";
-          keyLeft = "Left";
-          keyRight = "Right";
-          keyEnter = "Return";
-          keyEscape = "Esc";
+          keyUp = [ "Up" ];
+          keyDown = [ "Down" ];
+          keyLeft = [ "Left" ];
+          keyRight = [ "Right" ];
+          keyEnter = [ "Return" ];
+          keyEscape = [ "Esc" ];
         };
       };
       ui = {
@@ -317,7 +473,7 @@ in
         boxBorderEnabled = false;
       };
       location = {
-        weatherEnabled = true;
+        weatherEnabled = false;
         weatherShowEffects = true;
         useFahrenheit = false;
         use12hourFormat = false;
@@ -340,7 +496,7 @@ in
             id = "calendar-month-card";
           }
           {
-            enabled = true;
+            enabled = false;
             id = "weather-card";
           }
         ];
