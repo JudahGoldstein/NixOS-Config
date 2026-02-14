@@ -9,6 +9,7 @@
       "github-actions"
       "mcp-server-github"
       "opencode"
+      "qml"
     ];
     extraPackages = with pkgs; [
       nixd
