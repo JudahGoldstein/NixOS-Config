@@ -17,17 +17,20 @@ in
           url = officialPlugins;
         }
       ];
-      states = builtins.mapAttrs (name: value: value // { sourceUrl = officialPlugins; }) {
-        keybind-cheatsheet = {
-          enabled = true;
-        };
-        niri-overview-launcher = {
-          enabled = true;
-        };
-        clipper = {
-          enabled = true;
-        };
-      };
+      states =
+        builtins.mapAttrs
+          (name: value: if value ? sourceUrl then value else value // { sourceUrl = officialPlugins; })
+          {
+            keybind-cheatsheet = {
+              enabled = true;
+            };
+            niri-overview-launcher = {
+              enabled = true;
+            };
+            clipper = {
+              enabled = true;
+            };
+          };
     };
     settings = {
       appLauncher = {
