@@ -45,7 +45,7 @@ in
         customLaunchPrefixEnabled = false;
         customLaunchPrefix = "";
         viewMode = "list";
-        showCategories = true;
+        showCategories = false;
         iconMode = "tabler";
         showIconBackground = false;
         enableSettingsSearch = true;
@@ -225,6 +225,16 @@ in
               pinned = [ ];
             }
             {
+              id = "plugin:clipper";
+              defaultSettings = {
+                enableTodoIntegration = false;
+                noteCardsEnabled = true;
+                pincardsEnabled = true;
+                position = "Top";
+                showCloseButton = true;
+              };
+            }
+            {
               id = "NotificationHistory";
               hideWhenZero = true;
               hideWhenZeroUnread = false;
@@ -238,7 +248,7 @@ in
               displayMode = "graphic-clean";
               hideIfIdle = false;
               hideIfNotDetected = true;
-              showNoctaliaPerformance = true;
+              showNoctaliaPerformance = false;
               showPowerProfiles = true;
             }
             {
@@ -276,7 +286,6 @@ in
             { id = "Bluetooth"; }
           ];
           right = [
-            { id = "NoctaliaPerformance"; }
             { id = "PowerProfile"; }
             { id = "KeepAwake"; }
             { id = "NightLight"; }
@@ -356,6 +365,7 @@ in
         countdownDuration = 10000;
         position = "center";
         showHeader = true;
+        showKeybinds = true;
         largeButtonsStyle = true;
         largeButtonsLayout = "single-row";
         powerOptions = [
@@ -409,7 +419,7 @@ in
         diskAvailCriticalThreshold = 10;
         batteryWarningThreshold = 20;
         batteryCriticalThreshold = 5;
-        enableDgpuMonitoring = true;
+        enableDgpuMonitoring = false;
         loadAvgPollingInterval = 3000;
         networkPollingInterval = 1000;
         useCustomColors = false;
@@ -457,6 +467,7 @@ in
           keyLeft = [ "Left" ];
           keyRight = [ "Right" ];
           keyEnter = [ "Return" ];
+          keyRemove = [ "Del" ];
           keyEscape = [ "Esc" ];
         };
       };

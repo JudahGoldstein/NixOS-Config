@@ -19,6 +19,8 @@
     };
   };
 
+  hm.programs.noctalia-shell.settings.bar.monitors = [ "eDP-1" ];
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   softColemak.enable = true;
