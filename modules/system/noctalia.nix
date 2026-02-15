@@ -1,11 +1,13 @@
 { config, pkgs, ... }@inputs:
 let
   officialPlugins = "https://github.com/noctalia-dev/noctalia-plugins";
+  dailyWalls = "https://github.com/JudahGoldstein/daily-walls";
 in
 {
   environment.systemPackages = with pkgs; [
     wl-clipboard-rs
     cliphist
+    swaybg
   ];
   hm.programs.noctalia-shell = {
     enable = true;
@@ -15,6 +17,11 @@ in
           enabled = true;
           name = "Official Noctalia Plugins";
           url = officialPlugins;
+        }
+        {
+          enable = true;
+          name = "Daily Walls";
+          url = dailyWalls;
         }
       ];
       states =
@@ -32,7 +39,7 @@ in
             };
             daily-walls = {
               enabled = true;
-              sourceUrl = "https://github.com/JudahGoldstein/daily-walls";
+              sourceUrl = dailyWalls;
             };
           };
     };
