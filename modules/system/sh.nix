@@ -30,6 +30,7 @@ in
     tldr
     zsh-nix-shell
     parallel
+    psmisc
   ];
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
