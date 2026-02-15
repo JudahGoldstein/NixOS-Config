@@ -1,7 +1,7 @@
 { config, pkgs, ... }@inputs:
 {
   hm.programs.opencode.enable = true;
-  hm.programs.direnv.enable = true;
+  programs.direnv.enable = true;
   environment.systemPackages = [ pkgs.devenv ];
   hm.programs.zed-editor = {
     enable = true;
