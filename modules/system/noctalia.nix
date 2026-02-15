@@ -30,6 +30,10 @@ in
             clipper = {
               enabled = true;
             };
+            daily-walls = {
+              enabled = true;
+              sourceUrl = "https://github.com/JudahGoldstein/daily-walls";
+            };
           };
     };
     settings = {
