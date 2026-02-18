@@ -31,10 +31,10 @@
         };
         touchpad = {
           tap = true;
-          natural-scroll = true;
+          natural-scroll = false;
         };
         mouse = {
-          natural-scroll = true;
+          natural-scroll = false;
         };
         trackpoint = { };
       };
