@@ -11,4 +11,16 @@
     };
     polarity = "dark";
   };
+  hm.xdg.configFile.kdeglobals.source =
+    let
+      themePackage = builtins.head (
+        builtins.filter (
+          p: builtins.match ".*stylix-kde-theme.*" (baseNameOf p) != null
+        ) config.hm.home.packages
+      );
+      colorSchemeSlug = inputs.lib.concatStrings (
+        inputs.lib.filter inputs.lib.isString (builtins.split "[^a-zA-Z]" config.lib.stylix.colors.scheme)
+      );
+    in
+    "${themePackage}/share/color-schemes/${colorSchemeSlug}.colors";
 }
