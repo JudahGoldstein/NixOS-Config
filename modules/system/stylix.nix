@@ -10,7 +10,5 @@
       package = pkgs.quintom-cursor-theme;
     };
     polarity = "dark";
-    targets.qt.platform = inputs.lib.mkForce "qtct";
   };
-  hm.qt.platformTheme = inputs.lib.mkIf config.stylix.enable { name = inputs.lib.mkForce "adwaita"; };
 }
