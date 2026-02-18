@@ -9,6 +9,12 @@
       size = 24;
       package = pkgs.quintom-cursor-theme;
     };
+    icons = {
+      enable = true;
+      package = pkgs.papirus-icon-theme;
+      light = "Papirus-Light";
+      dark = "Papirus-Dark";
+    };
     polarity = "dark";
   };
   hm.xdg.configFile.kdeglobals.source =
