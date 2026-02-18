@@ -5,9 +5,9 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
     cursor = {
-      name = "Material";
-      size = 24;
-      package = pkgs.material-cursors;
+      name = "GoogleDot-Black";
+      size = 22;
+      package = pkgs.google-cursor;
     };
     icons = {
       enable = true;
