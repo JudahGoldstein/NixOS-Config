@@ -1,6 +1,5 @@
 { config, pkgs, ... }@inputs:
 {
-
   options = {
     name = inputs.lib.mkOption {
       type = inputs.lib.types.str;
