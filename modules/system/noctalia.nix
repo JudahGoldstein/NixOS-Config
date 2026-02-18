@@ -37,6 +37,9 @@ in
             clipper = {
               enabled = true;
             };
+            kde-connect = {
+              enabled = true;
+            };
             daily-walls = {
               enabled = true;
               sourceUrl = dailyWalls;
@@ -247,6 +250,9 @@ in
                 position = "Top";
                 showCloseButton = true;
               };
+            }
+            {
+              id = "plugin:kde-connect";
             }
             {
               id = "NotificationHistory";
