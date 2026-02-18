@@ -19,7 +19,10 @@
     };
   };
 
-  hm.programs.noctalia-shell.settings.bar.monitors = [ "eDP-1" ];
+  hm.programs.noctalia-shell.settings = {
+    bar.monitors = [ "eDP-1" ];
+    notifications.monitors = [ "eDP-1" ];
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
