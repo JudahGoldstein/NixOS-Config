@@ -5,9 +5,9 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
     cursor = {
-      name = "Quintom_Ink";
+      name = "Material";
       size = 24;
-      package = pkgs.quintom-cursor-theme;
+      package = pkgs.material-cursors;
     };
     icons = {
       enable = true;
