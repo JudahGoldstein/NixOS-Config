@@ -107,7 +107,6 @@ in
         screenUnlock = "";
         performanceModeEnabled = "";
         performanceModeDisabled = "";
-        weatherEnabled = false;
         startup = "";
         session = "";
       };
@@ -248,10 +247,12 @@ in
                 pincardsEnabled = true;
                 position = "Top";
                 showCloseButton = true;
+                reverseScroll = false;
               };
             }
             {
               id = "plugin:kde-connect";
+              docker-containers = { };
             }
             {
               id = "NotificationHistory";
@@ -282,6 +283,7 @@ in
               displayMode = "onhover";
               iconColor = "none";
               textColor = "none";
+              applyToAllMonitors = true;
             }
             {
               id = "ControlCenter";
@@ -338,15 +340,18 @@ in
         ];
       };
       network = {
+        airplaneModeEnabled = false;
         wifiEnabled = true;
-        bluetoothRssiPollingEnabled = false;
-        bluetoothRssiPollIntervalMs = 60000;
         wifiDetailsViewMode = "grid";
+        bluetoothRssiPollingEnabled = true;
+        bluetoothRssiPollIntervalMs = 60000;
+        disableDiscoverability = true;
         bluetoothDetailsViewMode = "grid";
-        bluetoothHideUnnamedDevices = false;
+        bluetoothHideUnnamedDevices = true;
       };
       notifications = {
         enabled = true;
+        enableMarkdown = true;
         density = "default";
         monitors = [ ];
         location = "top_right";
@@ -355,6 +360,7 @@ in
         lowUrgencyDuration = 3;
         normalUrgencyDuration = 8;
         criticalUrgencyDuration = 15;
+        clearDismissed = true;
         saveToHistory = {
           low = true;
           normal = true;
@@ -418,20 +424,16 @@ in
         ];
       };
       systemMonitor = {
-        cpuPollingInterval = 1000;
         cpuWarningThreshold = 80;
         cpuCriticalThreshold = 90;
         tempWarningThreshold = 80;
         tempCriticalThreshold = 90;
-        gpuPollingInterval = 3000;
         gpuWarningThreshold = 80;
         gpuCriticalThreshold = 90;
-        memPollingInterval = 1000;
         memWarningThreshold = 80;
         memCriticalThreshold = 90;
         swapWarningThreshold = 80;
         swapCriticalThreshold = 90;
-        diskPollingInterval = 30000;
         diskWarningThreshold = 80;
         diskCriticalThreshold = 90;
         diskAvailWarningThreshold = 20;
@@ -439,8 +441,6 @@ in
         batteryWarningThreshold = 20;
         batteryCriticalThreshold = 5;
         enableDgpuMonitoring = false;
-        loadAvgPollingInterval = 3000;
-        networkPollingInterval = 1000;
         useCustomColors = false;
         warningColor = "";
         criticalColor = "";
@@ -480,6 +480,7 @@ in
         lockScreenMonitors = [ ];
         lockScreenBlur = 0;
         lockScreenTint = 0;
+        reverseScroll = false;
         keybinds = {
           keyUp = [ "Up" ];
           keyDown = [ "Down" ];
