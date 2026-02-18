@@ -7,7 +7,6 @@ in
   environment.systemPackages = with pkgs; [
     wl-clipboard-rs
     cliphist
-    swaybg
   ];
   hm.programs.noctalia-shell = {
     enable = true;
