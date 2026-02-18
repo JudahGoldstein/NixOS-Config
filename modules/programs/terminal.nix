@@ -10,10 +10,6 @@
     enable = true;
     presets = [ "no-runtime-versions" ];
   };
-  programs.nautilus-open-any-terminal = inputs.lib.mkIf config.services.desktopManager.gnome.enable {
-    enable = true;
-    terminal = "kitty";
-  };
   hm.programs.kitty = {
     enable = true;
   };

@@ -11,6 +11,8 @@
       common.default = [ "gnome" ];
     };
   };
+  services.power-profiles-daemon.enable = true;
+
   programs.niri = {
     enable = true;
     package = pkgs.niri-stable;
