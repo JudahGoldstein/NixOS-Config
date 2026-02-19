@@ -8,6 +8,7 @@ in
     wl-clipboard-rs
     cliphist
   ];
+  services.upower.enable = true;
   hm.programs.noctalia-shell = {
     enable = true;
     plugins = {
