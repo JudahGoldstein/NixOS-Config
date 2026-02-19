@@ -260,19 +260,22 @@ in
               unreadBadgeColor = "primary";
             }
             {
-              id = "Battery";
-              deviceNativePath = "__default__";
-              displayMode = "graphic-clean";
-              hideIfIdle = false;
-              hideIfNotDetected = true;
-              showNoctaliaPerformance = false;
-              showPowerProfiles = true;
-            }
-            {
               id = "Volume";
               displayMode = "onhover";
               iconColor = "none";
               middleClickCommand = "pwvucontrol || pavucontrol";
+              textColor = "none";
+            }
+            {
+              id = "Bluetooth";
+              displayMode = "onhover";
+              iconColor = "none";
+              textColor = "none";
+            }
+            {
+              id = "Network";
+              displayMode = "onhover";
+              iconColor = "none";
               textColor = "none";
             }
             {
@@ -281,6 +284,15 @@ in
               iconColor = "none";
               textColor = "none";
               applyToAllMonitors = true;
+            }
+            {
+              id = "Battery";
+              deviceNativePath = "__default__";
+              displayMode = "graphic-clean";
+              hideIfIdle = false;
+              hideIfNotDetected = true;
+              showNoctaliaPerformance = false;
+              showPowerProfiles = true;
             }
             {
               id = "ControlCenter";
