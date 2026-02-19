@@ -477,6 +477,7 @@ in
         lockScreenMonitors = [ ];
         lockScreenBlur = 0;
         lockScreenTint = 0;
+        passwordChars = false;
         reverseScroll = false;
         keybinds = {
           keyUp = [ "Up" ];
