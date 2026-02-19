@@ -39,10 +39,6 @@ in
             kde-connect = {
               enabled = true;
             };
-            daily-walls = {
-              enabled = true;
-              sourceUrl = dailyWalls;
-            };
           };
     };
     settings = {
