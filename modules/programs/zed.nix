@@ -23,7 +23,7 @@
     userSettings = {
       telemetry = {
         diagnostics = false;
-        metrics = true;
+        metrics = false;
       };
       auto_update = false;
       agent = {
