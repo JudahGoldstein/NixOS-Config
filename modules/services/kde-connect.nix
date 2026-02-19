@@ -1,5 +1,6 @@
 { config, pkgs, ... }@inputs:
 {
+  environment.systemPackages = [ pkgs.kdePackages.qttools ];
   hm.services.kdeconnect.enable = true;
   networking.firewall = rec {
     allowedTCPPortRanges = [
