@@ -32,7 +32,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable-small";
 
-    #these programs are prone to build failures, separating them for easyier pinning when breaks occur
+    #these programs are prone to build failures, separating them for easier pinning when breaks occur
     nixpkgs-openwebui.url = "nixpkgs/nixos-unstable-small";
     nixpkgs-zed.url = "nixpkgs/nixos-unstable";
 
@@ -60,10 +60,6 @@
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    stable-diffusion-webui-nix = {
-      url = "github:Janrupf/stable-diffusion-webui-nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     copyparty = {
@@ -116,7 +112,6 @@
             inputs.niri-flake.nixosModules.niri
             { hm.imports = [ inputs.noctalia.homeModules.default ]; }
             inputs.stylix.nixosModules.stylix
-            inputs.stable-diffusion-webui-nix.nixosModules.default
             inputs.facter-modules.nixosModules.facter
             { config.facter.reportPath = ./hosts/${hostname}/facter.json; }
             {
