@@ -19,6 +19,7 @@
   };
   hm.programs.niri = {
     settings = {
+      hotkey-overlay.skip-at-startup = true;
       input = {
         keyboard = {
           xkb.layout = "us, us(colemak)";
@@ -51,7 +52,6 @@
         border.enable = false;
         shadow.enable = false;
       };
-      hotkey-overlay.skip-at-startup = false;
       spawn-at-startup = [
         { argv = [ "noctalia-shell" ]; }
       ];
