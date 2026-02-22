@@ -24,12 +24,6 @@
           r = [ "*" ];
         };
       };
-      "/Forge/" = {
-        path = "${config.services.sd-webui-forge.dataDir}/log/images/";
-        access = {
-          A = [ "admin" ];
-        };
-      };
       "/Uploads/" = {
         path = "/mnt/media/copyparty-uploads";
         access = {
