@@ -11,6 +11,9 @@
   config = {
     programs.steam = {
       enable = inputs.lib.mkDefault false;
+      package = pkgs.steam.override {
+        extraArgs = "-system-composer";
+      };
       protontricks.enable = config.programs.steam.enable;
       extraCompatPackages = [ pkgs.proton-ge-bin ];
       remotePlay.openFirewall = config.steam.hosting;
