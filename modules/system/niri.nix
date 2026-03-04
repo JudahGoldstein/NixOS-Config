@@ -11,8 +11,10 @@
       common.default = [ "gnome" ];
     };
   };
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+  ];
   services.power-profiles-daemon.enable = true;
-
   programs.niri = {
     enable = true;
     package = pkgs.niri-stable;
