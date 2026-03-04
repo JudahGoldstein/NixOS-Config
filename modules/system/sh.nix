@@ -5,12 +5,9 @@ let
     "la" = "ls -a";
     "l" = "ls";
     "c" = "clear";
-    "e" = "exit";
     ".." = "cd ..";
     "..." = "cd ../..";
     "lg" = "lazygit";
-    "v" = "nvim";
-    "neofetch" = "fastfetch";
     "nix-update" =
       "cd /etc/nixos/ && git fetch --all && git reset --hard origin/main && nh os boot && nh clean all --keep 3 && cd -";
   };
