@@ -15,6 +15,7 @@
 
   programs.niri = {
     enable = true;
+    package = pkgs.niri-stable;
   };
   hm.programs.niri = {
     settings = {
