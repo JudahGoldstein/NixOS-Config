@@ -34,7 +34,7 @@
 
     #these programs are prone to build failures, separating them for easier pinning when breaks occur
     nixpkgs-openwebui.url = "nixpkgs/nixos-unstable-small";
-    nixpkgs-zed.url = "nixpkgs/nixos-unstable";
+    nixpkgs-zed.url = "nixpkgs/cf59864ef8aa2e178cccedbe2c178185b0365705";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
