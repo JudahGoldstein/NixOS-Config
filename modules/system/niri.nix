@@ -24,7 +24,7 @@
       hotkey-overlay.skip-at-startup = true;
       input = {
         keyboard = {
-          xkb.layout = "us, us(colemak)";
+          xkb.layout = if config.softColemak.enable then "us(colemak), us" else "us, us(colemak)";
           xkb.options = "grp:win_space_toggle";
           numlock = true;
         };
