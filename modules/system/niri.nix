@@ -11,8 +11,10 @@
       common.default = [ "gnome" ];
     };
   };
+  qt.enable = true;
   environment.systemPackages = with pkgs; [
     xwayland-satellite
+    kdePackages.qt6ct
   ];
   services.power-profiles-daemon.enable = true;
   programs.niri = {
