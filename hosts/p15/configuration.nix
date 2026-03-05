@@ -26,7 +26,5 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  softColemak.enable = true;
-
   services.fprintd.enable = true;
 }
