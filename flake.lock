@@ -351,21 +351,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-unstable": {
-      "locked": {
-        "lastModified": 1772732342,
-        "narHash": "sha256-GcO/uW4b6lb0X8eIluact8YLA4uOgEjNh8pYsu7ozCk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "d2acf504d602c98f5ec2518dacea4f35e5a4e50f",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable-small",
-        "type": "indirect"
-      }
-    },
     "nixpkgs-zed": {
       "locked": {
         "lastModified": 1772624091,
@@ -458,7 +443,6 @@
         "niri-flake": "niri-flake",
         "nixpkgs": "nixpkgs",
         "nixpkgs-openwebui": "nixpkgs-openwebui",
-        "nixpkgs-unstable": "nixpkgs-unstable",
         "nixpkgs-zed": "nixpkgs-zed",
         "noctalia": "noctalia",
         "sops-nix": "sops-nix",
