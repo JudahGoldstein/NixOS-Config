@@ -7,6 +7,7 @@ in
   environment.systemPackages = with pkgs; [
     wl-clipboard-rs
     cliphist
+    gnome-system-monitor
   ];
   services.upower.enable = true;
   hm.programs.noctalia-shell = {
