@@ -64,9 +64,9 @@
       window-rules = [
         {
           matches = [
-            { app-id = "^org\\.wezfurlong\\.wezterm$"; }
+            { app-id = "Zed"; }
           ];
-          default-column-width = { };
+          open-maximized = true;
         }
         {
           matches = [
