@@ -4,7 +4,7 @@
     enable = true;
     ly = {
       enable = true;
-      package = inputs.pkgs-unstable.ly;
+      package = pkgs.ly;
       settings = {
         allow_empty_password = false;
         clear_password = true;
