@@ -2,9 +2,9 @@
 {
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts.packages = inputs.lib.mkIf config.services.desktopManager.gnome.enable [
-      pkgs.gnomeExtensions.gsconnect
-    ];
+    preferences = {
+      "privacy.resistFingerprinting" = true;
+    };
   };
   environment.systemPackages = with pkgs; [
     chromium
