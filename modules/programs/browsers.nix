@@ -6,7 +6,5 @@
       "privacy.resistFingerprinting" = true;
     };
   };
-  environment.systemPackages = with pkgs; [
-    chromium
-  ];
+  hm.programs.chromium.enable = true;
 }
