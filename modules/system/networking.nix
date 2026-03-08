@@ -14,6 +14,7 @@
   services.avahi = {
     enable = true;
     nssmdns4 = true;
+    reflector = true;
   };
   environment.systemPackages = with pkgs; [
     dig
