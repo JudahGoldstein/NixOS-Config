@@ -19,7 +19,6 @@
       remotePlay.openFirewall = config.steam.hosting;
       dedicatedServer.openFirewall = config.steam.hosting;
       localNetworkGameTransfers.openFirewall = config.steam.hosting;
-      gamescopeSession.enable = config.programs.steam.enable;
     };
     programs.gamemode.enable = config.programs.steam.enable;
     users.users.${config.name}.extraGroups = inputs.lib.mkIf config.programs.steam.enable [
