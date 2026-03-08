@@ -6,5 +6,6 @@
     micro
     hunspell
     pdftk
+    papers
   ];
 }
