@@ -6,6 +6,6 @@
     micro
     hunspell
     pdftk
-    papers
   ];
+  programs.evince.enable = true;
 }
