@@ -11,6 +11,10 @@
         "1.1.1.1"
         "1.0.0.1"
       ];
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
   environment.systemPackages = with pkgs; [
     dig
     sshpass
