@@ -4,7 +4,7 @@
     enable = true;
     openFirewall = true;
     disableTaildrop = true;
-    useRoutingFeatures = inputs.lib.mkDefault "client";
+    useRoutingFeatures = "client";
     extraSetFlags = inputs.lib.mkDefault [
       "--accept-dns=false"
     ];
