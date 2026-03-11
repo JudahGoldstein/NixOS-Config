@@ -11,4 +11,9 @@
       "--accept-flake-config"
     ];
   };
+  nix.gc = {
+    automatic = true;
+    dates = "09:00 UTC";
+    options = "--delete-older-than 5d";
+  };
 }
