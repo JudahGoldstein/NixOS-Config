@@ -8,6 +8,7 @@
     allowReboot = true;
     flags = [
       "--print-build-logs"
+      "--accept-flake-config"
     ];
   };
 }
