@@ -4,7 +4,7 @@
     80
     443
   ];
-  security.acme = inputs.lib.mkIf config.services.caddy.enable {
+  security.acme = {
     acceptTerms = true;
     defaults = {
       email = "yehudah.lev@gmail.com";
@@ -27,7 +27,7 @@
     };
   };
   services.caddy = {
-    enable = inputs.lib.mkDefault false;
+    enable = true;
     group = "caddy";
     user = "caddy";
     virtualHosts."janjuta.org" = {
