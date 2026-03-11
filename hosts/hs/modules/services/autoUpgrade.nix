@@ -11,9 +11,9 @@
       "--accept-flake-config"
     ];
   };
-  nix.gc = {
-    automatic = true;
+  programs.nh.clean = {
+    enable = true;
     dates = "09:00 UTC";
-    options = "--delete-older-than 5d";
+    extraArgs = "--keep 3";
   };
 }
