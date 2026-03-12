@@ -8,10 +8,9 @@ let
     ".." = "cd ..";
     "..." = "cd ../..";
     "lg" = "lazygit";
-    "nix-update" =
-      "cd /etc/nixos/ && git fetch --all && git reset --hard origin/main && nh os boot && nh clean all --keep 3 && cd -";
+    "nix-update" = "nh os boot github:JudahGoldstein/NixOS-Config && nh clean all --keep 3";
     "nix-update-ssh" =
-      "cd /etc/nixos/ && git fetch --all && git reset --hard origin/main && nh os boot --no-nom && nh clean all --keep 3 && systemctl reboot";
+      "nh os boot github:JudahGoldstein/NixOS-Config --no-nom && nh clean all --keep 3 && systemctl reboot";
   };
 in
 {
