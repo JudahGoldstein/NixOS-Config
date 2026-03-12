@@ -3,7 +3,7 @@
   services.searx = {
     enable = true;
     settings.server = {
-      bind_address = "::1";
+      bind_address = "127.0.0.1";
       port = 6578;
       secret_key = config.sops.secrets.searx-secret.path;
     };
