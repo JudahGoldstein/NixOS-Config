@@ -62,6 +62,10 @@
           owner = "nutmon";
           group = "nutmon";
         };
+        "searx-secret" = inputs.lib.mkIf (config.services.searx.enable) {
+          path = "/var/lib/secrets/searx-secret";
+          owner = "${config.name}";
+        };
         "attic-secret" = inputs.lib.mkIf (config.services.atticd.enable) {
           path = "/var/lib/secrets/attic-secret";
           owner = "${config.name}";
