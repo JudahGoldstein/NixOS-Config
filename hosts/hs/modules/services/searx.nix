@@ -8,5 +8,5 @@
       secret_key = config.sops.secrets.searx-secret.path;
     };
   };
-  services.caddy.virtualHosts = (inputs.virtualHosts.mkLocalVirtualHost "search" 65878);
+  services.caddy.virtualHosts = (inputs.virtualHosts.mkLocalVirtualHost "search" 6578);
 }
