@@ -8,9 +8,9 @@ let
     ".." = "cd ..";
     "..." = "cd ../..";
     "lg" = "lazygit";
-    "nix-update" = "nh os boot github:JudahGoldstein/NixOS-Config && nh clean all --keep 3";
+    "nix-update" = "nh os boot github:JudahGoldstein/NixOS-Config --fallback && nh clean all --keep 3";
     "nix-update-ssh" =
-      "nh os boot github:JudahGoldstein/NixOS-Config --no-nom && nh clean all --keep 3 && systemctl reboot";
+      "nh os boot github:JudahGoldstein/NixOS-Config --no-nom --fallback && nh clean all --keep 3 && systemctl reboot";
   };
 in
 {
