@@ -75,7 +75,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           set -euo pipefail
-          nix run github:juspay/omnix -- ci run -- --accept-flake-config
+          nix run github:juspay/omnix -- ci run -- --accept-flake-config --fallback
 
   merge:
     needs: [nix-flake-update, build]
