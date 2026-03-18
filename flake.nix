@@ -29,7 +29,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
     #these programs are prone to build failures, separating them for easier pinning when breaks occur
     nixpkgs-openwebui.url = "nixpkgs/nixos-unstable-small";
