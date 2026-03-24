@@ -11,6 +11,7 @@
         push.autoSetupRemote = true;
         safe.directory = "*";
       };
+      signing.format = "openpgp";
     };
     programs.gh.enable = true;
     programs.lazygit = {
