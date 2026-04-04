@@ -88,6 +88,10 @@ in
         activeTemplates = [ ];
         enableUserTheming = false;
       };
+      noctaliaPerformance = {
+        disableDesktopWidgets = true;
+        disableWallpaper = true;
+      };
       nightLight = {
         enabled = false;
         forced = false;
@@ -250,7 +254,7 @@ in
             }
             {
               id = "plugin:kde-connect";
-              docker-containers = { };
+              defaultSettings = { };
             }
             {
               id = "NotificationHistory";
@@ -340,7 +344,7 @@ in
             id = "brightness-card";
           }
           {
-            enabled = false;
+            enabled = true;
             id = "weather-card";
           }
           {
@@ -350,9 +354,10 @@ in
         ];
       };
       network = {
-        airplaneModeEnabled = false;
         wifiEnabled = true;
+        networkPanelView = true;
         wifiDetailsViewMode = "grid";
+        bluetoothAutoConnect = true;
         bluetoothRssiPollingEnabled = true;
         bluetoothRssiPollIntervalMs = 60000;
         disableDiscoverability = true;
@@ -492,12 +497,16 @@ in
         lockScreenTint = 0;
         passwordChars = false;
         reverseScroll = false;
+        smoothScrollEnabled = true;
         keybinds = {
           keyUp = [ "Up" ];
           keyDown = [ "Down" ];
           keyLeft = [ "Left" ];
           keyRight = [ "Right" ];
-          keyEnter = [ "Return" ];
+          keyEnter = [
+            "Return"
+            "Enter"
+          ];
           keyRemove = [ "Del" ];
           keyEscape = [ "Esc" ];
         };
@@ -508,15 +517,13 @@ in
         tooltipsEnabled = true;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
-        wifiDetailsViewMode = "grid";
-        bluetoothDetailsViewMode = "grid";
-        networkPanelView = "wifi";
-        bluetoothHideUnnamedDevices = false;
         boxBorderEnabled = false;
       };
       location = {
-        weatherEnabled = false;
-        weatherShowEffects = true;
+        autoLocate = true;
+        weatherEnabled = true;
+        weatherShowEffects = false;
+        weatherTaliaMascotAlways = false;
         useFahrenheit = false;
         use12hourFormat = false;
         showWeekNumberInCalendar = false;
