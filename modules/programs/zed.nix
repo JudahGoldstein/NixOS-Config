@@ -1,6 +1,5 @@
 { config, pkgs, ... }@inputs:
 {
-  hm.programs.opencode.enable = true;
   programs.direnv.enable = true;
   environment.systemPackages = [ pkgs.devenv ];
   hm.programs.zed-editor = {
@@ -10,7 +9,6 @@
       "nix"
       "github-actions"
       "mcp-server-github"
-      "opencode"
       "qml"
     ];
     extraPackages = with pkgs; [
