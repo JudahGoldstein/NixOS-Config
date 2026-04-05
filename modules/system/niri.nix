@@ -7,9 +7,7 @@
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-gnome
     ];
-    config = {
-      common.default = [ "gnome" ];
-    };
+    config.common.default = "gtk";
   };
   qt.enable = true;
   environment.systemPackages = with pkgs; [
