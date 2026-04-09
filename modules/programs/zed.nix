@@ -4,7 +4,6 @@
   environment.systemPackages = [ pkgs.devenv ];
   hm.programs.zed-editor = {
     enable = true;
-    package = inputs.pkgs-zed.zed-editor;
     extensions = [
       "nix"
       "github-actions"

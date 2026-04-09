@@ -33,9 +33,6 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    #these programs are prone to build failures, separating them for easier pinning when breaks occur
-    nixpkgs-zed.url = "nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
