@@ -15,7 +15,6 @@
       SCARF_NO_ANALYTICS = "True";
       OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
     };
-    package = inputs.pkgs-openwebui.open-webui;
   };
   services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "ollama" 11435);
 }
