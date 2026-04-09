@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite
     kdePackages.qt6ct
+    brightnessctl
   ];
   services.power-profiles-daemon.enable = true;
   programs.niri = {
