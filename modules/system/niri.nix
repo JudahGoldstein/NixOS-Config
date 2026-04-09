@@ -91,6 +91,10 @@
           action.spawn = [ "kitty" ];
           hotkey-overlay.title = "Open a Terminal: kitty";
         };
+        "Mod+B" = {
+          action.spawn = [ "firefox" ];
+          hotkey-overlay.title = "Open a Browser: Firefox";
+        };
         "Mod+D" = {
           action.spawn = [
             "noctalia-shell"
