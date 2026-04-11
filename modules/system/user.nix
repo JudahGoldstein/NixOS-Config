@@ -19,6 +19,7 @@
         "uucp"
         "users"
         "media"
+        "docker"
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
