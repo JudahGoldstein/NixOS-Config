@@ -76,7 +76,8 @@
         };
         "slskd-env" = {
           path = "/var/lib/secrets/slskd-env";
-          owner = "${config.services.slskd.user}";
+          owner = config.services.slskd.user;
+          group = config.services.slskd.group;
         };
       }
       {
