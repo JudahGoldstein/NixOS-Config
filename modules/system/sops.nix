@@ -74,6 +74,10 @@
           path = "/var/lib/secrets/attic-token";
           owner = "${config.name}";
         };
+        "slskd-env" = {
+          path = "/var/lib/secrets/slskd-env";
+          owner = "${config.services.slskd.user}";
+        };
       }
       {
         # authorized keys
