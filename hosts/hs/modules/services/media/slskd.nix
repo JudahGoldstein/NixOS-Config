@@ -6,7 +6,7 @@
     openFirewall = true;
     settings.directories.downloads = "/mnt/media/slskd/complete";
     settings.shares.directories = [
-        "/mnt/media/soulsync/"
+      "/mnt/media/soulsync/"
     ];
     group = "media";
     environmentFile = inputs.config.sops.secrets."slskd-env".path;
