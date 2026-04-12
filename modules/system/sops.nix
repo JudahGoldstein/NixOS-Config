@@ -74,7 +74,7 @@
           path = "/var/lib/secrets/attic-token";
           owner = "${config.name}";
         };
-        "slskd-env" = {
+        "slskd-env" = inputs.lib.mkIf (config.services.slskd.enable) {
           path = "/var/lib/secrets/slskd-env";
           owner = config.services.slskd.user;
           group = config.services.slskd.group;
