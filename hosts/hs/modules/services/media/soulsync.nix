@@ -28,7 +28,7 @@
       "/var/log/soulsync:/app/logs:rw"
       "/var/lib/soulsync/scripts:/app/scripts:rw"
       "soulsync_soulsync_database:/app/data:rw"
-      "/mnt/media/soulsync:/host/downloads:rw"
+      "/mnt/media/soulsync:/app/Transfer:rw"
     ];
     ports = [
       "8008:8008/tcp"
