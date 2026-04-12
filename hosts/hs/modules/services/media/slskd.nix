@@ -4,7 +4,6 @@
     enable = true;
     settings.web.port = 5030;
     openFirewall = true;
-    settings.directories.downloads = "/mnt/media/slskd/complete";
     settings.shares.directories = [
       "/mnt/media/soulsync/"
     ];
