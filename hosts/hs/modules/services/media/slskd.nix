@@ -4,7 +4,11 @@
     enable = true;
     settings.web.port = 5030;
     openFirewall = true;
-    settings.directories.complete = "/mnt/media/slskd/complete";
+    settings.directories.downloads = "/mnt/media/slskd/complete";
+    settings.shares.directories = [
+        "/mnt/media/slskd/complete"
+        "/mnt/media/soulsync"
+    ];
     group = "media";
     environmentFile = inputs.config.sops.secrets."slskd-env".path;
   };
