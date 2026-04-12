@@ -24,12 +24,6 @@
           r = [ "*" ];
         };
       };
-      "/Music/" = {
-        path = "/mnt/media/soulsync";
-        access = {
-          A = [ "admin" ];
-        };
-      };
       "/Uploads/" = {
         path = "/mnt/media/copyparty-uploads";
         access = {
