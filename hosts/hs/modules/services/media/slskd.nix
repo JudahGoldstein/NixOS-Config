@@ -1,7 +1,7 @@
 { config, pkgs, ... }@inputs:
 {
   services.slskd = {
-    enable = true;
+    enable = false;
     settings.web.port = 5030;
     openFirewall = true;
     settings.directories.downloads = "/mnt/media/slskd/complete";
