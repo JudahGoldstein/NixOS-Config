@@ -5,8 +5,8 @@
     settings.web.port = 5030;
     openFirewall = true;
     settings.directories = {
-      complete = "/mnt/media/slsd/complete";
-      incomplete = "/mnt/media/slsd/incomplete";
+      complete = "/mnt/media/slskd/complete";
+      incomplete = "/mnt/media/slskd/incomplete";
     };
     group = "media";
     environmentFile = inputs.config.sops.secrets."slskd-env".path;
