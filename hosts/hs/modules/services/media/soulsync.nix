@@ -24,7 +24,7 @@
       "/var/lib/soulsync/MusicVideos:/app/MusicVideos:rw"
       "/var/lib/soulsync/Staging:/app/Staging:rw"
       "/var/lib/soulsync/config:/app/config:rw"
-      "/var/lib/soulsync/downloads:/app/downloads:rw"
+      "/mnt/media/slsd/complete:/app/downloads:rw"
       "/var/log/soulsync:/app/logs:rw"
       "/var/lib/soulsync/scripts:/app/scripts:rw"
       "soulsync_soulsync_database:/app/data:rw"
