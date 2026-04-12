@@ -5,7 +5,7 @@
     settings.web.port = 5030;
     openFirewall = true;
     settings.shares.directories = [
-      "/mnt/media/soulsync/"
+      "/mnt/media/soulsync"
     ];
     settings.remote_file_management = true;
     group = "media";
