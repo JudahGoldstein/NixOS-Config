@@ -5,6 +5,7 @@
     settings.Port = 4533;
     settings = {
       MusicFolder = "/mnt/media/soulsync";
+      PID.Album = "albumartistid,album,albumversion";
     };
     openFirewall = true;
     group = "media";
