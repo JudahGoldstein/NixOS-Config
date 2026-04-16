@@ -19,14 +19,10 @@
         "dialout"
         "uucp"
         "users"
-        "media"
         "docker"
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
     nix.settings.trusted-users = [ config.name ];
-    users.groups.media = {
-      gid = 973;
-    }; # custom group for anything that touches media
   };
 }
