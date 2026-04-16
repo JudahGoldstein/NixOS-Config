@@ -11,6 +11,7 @@
     users.mutableUsers = false;
     users.users.${config.name} = {
       isNormalUser = true;
+      uid = 1000;
       description = config.longName;
       extraGroups = [
         "networkmanager"
@@ -24,6 +25,8 @@
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
     nix.settings.trusted-users = [ config.name ];
-    users.groups.media = { }; # custom group for anything that touches media
+    users.groups.media = {
+      gid = 973;
+    }; # custom group for anything that touches media
   };
 }
