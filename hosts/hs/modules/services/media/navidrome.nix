@@ -8,6 +8,7 @@
       PID.Album = "albumartistid,album,albumversion";
     };
     openFirewall = true;
+    user = "music";
     group = "media";
   };
   services.caddy.virtualHosts = (inputs.virtualHosts.mkLocalVirtualHost "navidrome" 4533);

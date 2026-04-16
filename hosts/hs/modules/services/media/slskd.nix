@@ -8,8 +8,9 @@
       "/mnt/media/soulsync"
     ];
     settings.remote_file_management = true;
-    group = "media";
     environmentFile = inputs.config.sops.secrets."slskd-env".path;
+    user = "music";
+    group = "media";
   };
   services.caddy.virtualHosts = (inputs.virtualHosts.mkLocalVirtualHost "slskd" 5030);
 }

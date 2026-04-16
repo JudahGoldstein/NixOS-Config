@@ -12,7 +12,7 @@
   virtualisation.oci-containers.containers."soulsync-webui" = {
     image = "boulderbadgedad/soulsync:latest";
     environment = {
-      "PUID" = "${toString (config.users.users.hs.uid)}";
+      "PUID" = "${toString (config.users.users.music.uid)}";
       "PGID" = "${toString (config.users.groups.media.gid)}";
       "FLASK_ENV" = "production";
       "PYTHONPATH" = "/app";

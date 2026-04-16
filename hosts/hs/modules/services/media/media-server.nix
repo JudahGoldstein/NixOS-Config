@@ -8,6 +8,7 @@
     users.music = {
       isSystemUser = true;
       uid = 973;
+      group = "media";
     };
     groups.media = {
       gid = 973;
