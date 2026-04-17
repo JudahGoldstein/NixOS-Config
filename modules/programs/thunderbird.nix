@@ -1,7 +1,7 @@
 { config, pkgs, ... }@inputs:
 {
   hm.programs.thunderbird = {
-    enable = true;
+    enable = false;
     profiles."default" = {
       isDefault = true;
     };
