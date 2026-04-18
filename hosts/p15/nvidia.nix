@@ -14,6 +14,7 @@
         nvidiaBusId = "PCI:01:00:0";
         intelBusId = "PCI:00:02:0";
       };
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     };
     environment.systemPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
