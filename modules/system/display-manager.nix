@@ -15,5 +15,15 @@
     };
     generic.preStart = "";
   };
-  services.syslog-ng.enable = true;
+  services.syslog-ng = {
+    enable = true;
+    configHeader = ''
+      @version: current
+      @include "scl.conf"
+      log {
+      	source { system(); };
+      	destination { file("/var/log/syslog"); };
+      };
+    '';
+  };
 }
