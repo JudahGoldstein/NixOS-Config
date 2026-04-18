@@ -13,7 +13,7 @@
       position.x = 0;
       position.y = 0;
     };
-    "DP-3" = {
+    "DP-1" = {
       position.x = 1920;
       position.y = 0;
     };
