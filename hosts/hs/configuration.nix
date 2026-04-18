@@ -23,7 +23,4 @@
       RestartSec = "5s";
     };
   };
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
 }

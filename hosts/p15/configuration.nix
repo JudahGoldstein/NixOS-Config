@@ -3,6 +3,7 @@
   longName = "Judah (P15)";
 
   programs.steam.enable = true;
+
   programs.captive-browser = {
     enable = true;
     interface = "wlp0s20f3";
@@ -23,6 +24,4 @@
     bar.monitors = [ "eDP-1" ];
     notifications.monitors = [ "eDP-1" ];
   };
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

@@ -13,7 +13,5 @@
       scale = 1.0;
     };
   };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   softColemak.enable = true;
 }

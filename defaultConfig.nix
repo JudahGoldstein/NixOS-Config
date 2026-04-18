@@ -26,6 +26,11 @@
         TERM = "kitty";
       };
     };
+    boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelParams = [
+      "udev.log_level=3"
+    ];
+    boot.consoleLogLevel = 3;
     system.stateVersion = "23.11";
   };
 }
