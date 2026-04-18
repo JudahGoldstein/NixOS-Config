@@ -11,7 +11,6 @@
     users.mutableUsers = false;
     users.users.${config.name} = {
       isNormalUser = true;
-      uid = 1000;
       description = config.longName;
       extraGroups = [
         "networkmanager"
