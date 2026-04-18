@@ -15,4 +15,5 @@
     };
     generic.preStart = "";
   };
+  services.syslog-ng.enable = true;
 }
