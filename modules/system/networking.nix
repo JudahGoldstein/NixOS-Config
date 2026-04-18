@@ -20,4 +20,6 @@
     dig
     sshpass
   ];
+
+  hm.services.mpris-proxy.enable = true;
 }
