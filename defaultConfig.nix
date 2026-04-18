@@ -11,6 +11,7 @@
     services.fstrim.enable = true;
     services.fwupd.enable = true;
     environment.systemPackages = with pkgs; [ nixos-facter ];
+    security.sudo-rs.enable = true;
 
     hm = {
       programs.home-manager.enable = true;
