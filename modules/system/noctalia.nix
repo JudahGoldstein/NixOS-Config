@@ -48,12 +48,13 @@ in
         enableClipboardHistory = true;
         autoPasteClipboard = true;
         enableClipPreview = true;
+        enableClipboardChips = true;
+        enableClipboardSmartIcons = true;
         clipboardWrapText = true;
         clipboardWatchTextCommand = "wl-paste --type text --watch cliphist store";
         clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
         position = "center";
         pinnedApps = [ ];
-        useApp2Unit = false;
         sortByMostUsed = true;
         terminalCommand = "kitty -e";
         customLaunchPrefixEnabled = false;
@@ -73,8 +74,10 @@ in
       audio = {
         volumeStep = 5;
         volumeOverdrive = false;
-        cavaFrameRate = 30;
         visualizerType = "linear";
+        spectrumFrameRate = 30;
+        spectrumMirrored = true;
+        volumeFeedbackSoundFile = "";
         mprisBlacklist = [ ];
         preferredPlayer = "";
         volumeFeedback = false;
@@ -114,6 +117,7 @@ in
       };
       plugins = {
         autoUpdate = true;
+        notifyUpdates = false;
       };
       desktopWidgets = {
         enabled = false;
@@ -132,7 +136,6 @@ in
         showCapsule = true;
         capsuleColorKey = "none";
         useSeparateOpacity = false;
-        floating = false;
         marginVertical = 4;
         marginHorizontal = 4;
         frameThickness = 8;
@@ -165,6 +168,7 @@ in
               iconColor = "none";
               showCpuFreq = false;
               showCpuTemp = true;
+              showCpuCores = false;
               showCpuUsage = true;
               showDiskAvailable = false;
               showDiskUsage = false;
@@ -192,18 +196,15 @@ in
             {
               id = "MediaMini";
               compactMode = false;
-              compactShowAlbumArt = true;
-              compactShowVisualizer = false;
               hideMode = "hidden";
               hideWhenIdle = false;
               maxWidth = 145;
               panelShowAlbumArt = true;
-              panelShowVisualizer = true;
               scrollingMode = "hover";
               showAlbumArt = true;
+              showAlbumVisualizer = true;
               showArtistFirst = true;
               showProgressRing = true;
-              showVisualizer = false;
               textColor = "none";
               useFixedWidth = false;
               visualizerType = "linear";
@@ -224,7 +225,6 @@ in
               labelMode = "index";
               occupiedColor = "secondary";
               pillSize = 0.6;
-              reverseScroll = false;
               showApplications = false;
               showBadge = true;
               showLabelsOnlyWhenOccupied = true;
@@ -354,8 +354,7 @@ in
         ];
       };
       network = {
-        wifiEnabled = true;
-        networkPanelView = true;
+        networkPanelView = "true";
         wifiDetailsViewMode = "grid";
         bluetoothAutoConnect = true;
         bluetoothRssiPollingEnabled = true;
@@ -471,10 +470,12 @@ in
         iRadiusRatio = 1;
         boxRadiusRatio = 1;
         screenRadiusRatio = 1;
+        enableBlurBehind = true;
         animationSpeed = 1;
         animationDisabled = false;
         compactLockScreen = false;
         lockScreenAnimations = false;
+        enableLockScreenMediaControls = false;
         lockOnSuspend = true;
         showSessionButtonsOnLockScreen = true;
         showHibernateOnLockScreen = false;
