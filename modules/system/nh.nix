@@ -2,6 +2,6 @@
 {
   programs.nh = {
     enable = true;
-    flake = "/etc/nixos";
+    flake = "github:JudahGoldstein/NixOS-Config";
   };
 }
