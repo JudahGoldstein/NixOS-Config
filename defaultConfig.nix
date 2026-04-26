@@ -10,7 +10,12 @@
   config = {
     services.fstrim.enable = true;
     services.fwupd.enable = true;
-    environment.systemPackages = with pkgs; [ nixos-facter ];
+    environment.systemPackages = with pkgs; [
+      nixos-facter
+      ddcutil
+      ddcutil-service
+    ];
+    hardware.i2c.enable = true;
     security.sudo-rs.enable = true;
 
     hm = {

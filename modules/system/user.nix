@@ -19,6 +19,7 @@
         "uucp"
         "users"
         "docker"
+        "i2c"
       ];
       hashedPasswordFile = config.sops.secrets.user-password.path;
     };
