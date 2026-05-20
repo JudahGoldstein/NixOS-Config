@@ -12,6 +12,7 @@
   qt.enable = true;
   environment.systemPackages = with pkgs; [
     xwayland-satellite
+    xhost
     kdePackages.qt6ct
     brightnessctl
   ];
@@ -58,6 +59,12 @@
       };
       spawn-at-startup = [
         { argv = [ "noctalia-shell" ]; }
+        {
+          argv = [
+            "xhost"
+            "si:localuser:root"
+          ];
+        }
       ];
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
       animations.enable = true;
