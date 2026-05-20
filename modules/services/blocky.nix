@@ -21,7 +21,7 @@
             "https://big.oisd.nl/domainswild"
           ];
           scams = [ "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/fake.txt" ];
-          threatIntel = [ "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/dnsmasq/tif.txt" ];
+          threatIntel = [ "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.txt" ];
           mobile = [ "https://adaway.org/hosts.txt" ];
         };
         allowlists = {
