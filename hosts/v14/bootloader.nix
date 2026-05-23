@@ -1,11 +1,28 @@
 { config, pkgs, ... }@inputs:
 {
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
+  boot = {
+    loader = {
+      systemd-boot.enable = false;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+      grub = {
+        enable = true;
+        device = "nodev";
+        useOSProber = false;
+        efiSupport = true;
+        copyKernels = true;
+        extraFiles = {
+          "netbootxyz.efi" = "${pkgs.netbootxyz-efi}";
+        };
+        extraEntries = ''
+          menuentry "netbootxyz" {
+            chainloader /netbootxyz.efi
+          }
+        '';
+      };
     };
-    timeout = 10;
+    initrd.verbose = false;
   };
 }

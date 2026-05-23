@@ -48,6 +48,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    preservation.url = "github:nix-community/preservation";
     import-tree = {
       url = "github:vic/import-tree";
     };
@@ -104,6 +105,7 @@
             (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "${hostname}" ])
             inputs.sops-nix.nixosModules.sops
             inputs.disko.nixosModules.disko
+            inputs.preservation.nixosModules.default
             inputs.copyparty.nixosModules.default
             inputs.niri-flake.nixosModules.niri
             { hm.imports = [ inputs.noctalia.homeModules.default ]; }
