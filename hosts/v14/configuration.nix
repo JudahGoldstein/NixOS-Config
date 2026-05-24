@@ -1,7 +1,10 @@
 { config, pkgs, ... }@inputs:
 {
   longName = "Judah (v14)";
-
+  sops.age = {
+    keyFile = inputs.lib.mkForce "/persist/root/.config/sops/age/keys.txt";
+    sshKeyPaths = inputs.lib.mkForce [ "/persist/etc/ssh/ssh_host_ed25519_key" ];
+  };
   programs.captive-browser = {
     enable = true;
     interface = "wlp2s0";

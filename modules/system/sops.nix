@@ -15,7 +15,6 @@
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
       keyFile = "/root/.config/sops/age/keys.txt";
-      generateKey = true;
     };
 
     secrets = inputs.lib.mkMerge [

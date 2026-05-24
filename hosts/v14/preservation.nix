@@ -6,7 +6,10 @@
     preserveAt."/persist" = {
       directories = [
         # tmp can get large sometimes, will clear on boot separately
-        "/tmp"
+        {
+          directory = "/tmp";
+          mode = "0777";
+        }
         # Logs
         "/var/log"
         "/var/lib/lastlog"
@@ -35,6 +38,7 @@
         { file = "/etc/ssh/ssh_host_ed25519_key.pub"; }
         { file = "/etc/ssh/ssh_host_rsa_key"; }
         { file = "/etc/ssh/ssh_host_rsa_key.pub"; }
+        { file = "/root/.config/sops/age/keys.txt"; }
         {
           file = "/etc/machine-id";
           inInitrd = true;
@@ -68,7 +72,7 @@
           ".config/noctalia"
           ".config/obsidian"
           ".config/obs-studio"
-          ".config/sops"
+          ".config/sops/age"
           ".config/solaar"
           ".config/teams-for-linux"
           ".config/Vencord"
