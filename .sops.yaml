@@ -4,7 +4,7 @@ keys:
   - &hosts
     - &p15 age1us5c7c994fjc7mfl0xa3gqjavjeujs5j7saapg3fgvugy9eq3srsd4craq
     - &hs age1clck3zkmagrkma0q9am4e5ue02j97fzs3c9fk2zpzegpejsm9u9sdvmqn2
-    - &v14 age18y9dtx62naz57vx76dlc8uhn7v7ss2skfnn9gwhkx7my08m4tyxqeczwzf
+    - &v14 age16cpng0qmq0thu2smf4wevz4p7dv6er7dtvlehyrxxpgkfmgtq50ssvsz2q
 creation_rules:
   - path_regex: secrets.yaml$
     key_groups:
