@@ -9,7 +9,7 @@
     SOPS_EDITOR = "micro";
   };
   sops = {
-    defaultSopsFile = "/etc/nixos/secrets.yaml";
+    defaultSopsFile = inputs.self + "/secrets.yaml";
     validateSopsFiles = false;
 
     age = {

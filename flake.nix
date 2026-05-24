@@ -127,6 +127,7 @@
           ];
           specialArgs = {
             inherit
+              self
               inputs
               pkgs-openwebui
               pkgs-zed
