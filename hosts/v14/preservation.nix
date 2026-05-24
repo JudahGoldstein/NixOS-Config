@@ -34,11 +34,26 @@
         "/var/cache/tailscale"
       ];
       files = [
-        { file = "/etc/ssh/ssh_host_ed25519_key"; }
-        { file = "/etc/ssh/ssh_host_ed25519_key.pub"; }
-        { file = "/etc/ssh/ssh_host_rsa_key"; }
-        { file = "/etc/ssh/ssh_host_rsa_key.pub"; }
-        { file = "/root/.config/sops/age/keys.txt"; }
+        {
+          file = "/etc/ssh/ssh_host_ed25519_key";
+          mode = "0600";
+        }
+        {
+          file = "/etc/ssh/ssh_host_ed25519_key.pub";
+          mode = "0644";
+        }
+        {
+          file = "/etc/ssh/ssh_host_rsa_key";
+          mode = "0600";
+        }
+        {
+          file = "/etc/ssh/ssh_host_rsa_key.pub";
+          mode = "0644";
+        }
+        {
+          file = "/root/.config/sops/age/keys.txt";
+          mode = "0600";
+        }
         {
           file = "/etc/machine-id";
           inInitrd = true;
