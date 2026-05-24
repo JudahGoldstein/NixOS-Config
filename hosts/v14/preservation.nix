@@ -68,6 +68,7 @@
           ".config/noctalia"
           ".config/obsidian"
           ".config/obs-studio"
+          ".config/sops"
           ".config/solaar"
           ".config/teams-for-linux"
           ".config/Vencord"
