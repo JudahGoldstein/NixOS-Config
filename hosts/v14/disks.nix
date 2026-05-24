@@ -1,7 +1,7 @@
 { ... }:
 {
   fileSystems."/nix".neededForBoot = true;
-
+  fileSystems."/persist".neededForBoot = true;
   disko.devices = {
     disk.main = {
       device = "/dev/nvme0n1";
@@ -30,7 +30,7 @@
               type = "btrfs";
               extraArgs = [ "-f" ];
               subvolumes = {
-                "/persistent" = {
+                "/persist" = {
                   mountOptions = [
                     "subvol=persist"
                     "noatime"
