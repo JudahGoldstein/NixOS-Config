@@ -15,7 +15,11 @@
         "/var/lib/lastlog"
         # System state
         "/var/lib/nixos"
-        "/etc/nixos"
+        {
+          directory = "/etc/nixos";
+          user = "v14";
+          group = "users";
+        }
         "/var/lib/systemd"
         "/var/lib/dhcpcd"
         # Application state
@@ -70,14 +74,14 @@
           "Projects"
           "Mail"
           # Application data directories
-          ".mozzila"
+          ".mozilla"
+          ".config/mozilla"
+          ".cache/mozilla"
           ".thunderbird"
           ".local/state/lazygit"
           ".config/Bitwarden"
           ".config/chromium"
           ".config/containers"
-          ".config/Discord"
-          ".config/discord"
           ".config/easyeffects"
           ".config/gh"
           ".config/git"
@@ -85,21 +89,19 @@
           ".config/lazygit"
           ".config/nautilus"
           ".config/noctalia"
-          ".config/obsidian"
-          ".config/obs-studio"
           ".config/sops/age"
           ".config/solaar"
-          ".config/teams-for-linux"
-          ".config/Vencord"
-          ".config/vesktop"
           ".config/zed"
-          # Caches not strictly necessary to preserve, but can speed up user experience
+          ".cache/zed"
+          ".local/share/zed"
+          ".local/share/keyrings"
           ".cache/nix"
           ".cache/chromium"
-          ".cache/mozilla"
           ".cache/noctalia"
           ".cache/noctalia-qs"
-          ".cache/zed"
+          ".cache/cliphist"
+          ".cache/com.bitwarden.desktop"
+          ".cache/mozilla"
         ];
         files = [
           { file = ".zsh_history"; }
