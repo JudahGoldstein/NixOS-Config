@@ -2,6 +2,7 @@
 {
   services.github-runners = {
     "hs" = {
+      package = inputs.pkgs-insecure.github-runner;
       enable = true;
       tokenFile = "/var/lib/secrets/github-token";
       replace = true;
