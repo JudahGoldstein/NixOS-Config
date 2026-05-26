@@ -1,6 +1,17 @@
 { config, pkgs, ... }@inputs:
 {
   boot.tmp.cleanOnBoot = true;
+  systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
+  systemd.services.systemd-machine-id-commit = {
+    unitConfig.ConditionPathIsMountPoint = [
+      ""
+      "/persistent/etc/machine-id"
+    ];
+    serviceConfig.ExecStart = [
+      ""
+      "systemd-machine-id-setup --commit --root /persistent"
+    ];
+  };
   preservation = {
     enable = true;
     preserveAt."/persist" = {
@@ -60,7 +71,8 @@
         }
         {
           file = "/etc/machine-id";
-          inInitrd = true;
+          how = "symlink";
+          configureParent = true;
         }
       ];
       users.v14 = {
