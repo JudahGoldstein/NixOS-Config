@@ -77,11 +77,15 @@
       lib = nixpkgs.lib;
 
       pkgs = inputs.nixpkgs.legacyPackages.${system};
-      pkgs-openwebui = import inputs.nixpkgs-openwebui {
-        system = system;
-        config.allowUnfree = true;
+      pkgs-insecure = import inputs.nixpkgs {
+        inherit system;
+        config = {
+          allowBroken = true;
+          permittedInsecurePackages = [
+            "nodejs-20.20.2"
+          ];
+        };
       };
-      pkgs-zed = inputs.nixpkgs-zed.legacyPackages.${system};
 
       mkHost =
         {
@@ -129,8 +133,7 @@
             inherit
               self
               inputs
-              pkgs-openwebui
-              pkgs-zed
+              pkgs-insecure
               ;
             virtualHosts = import ./helpers/virtualHosts.nix { inherit lib; };
           }
