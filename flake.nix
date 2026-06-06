@@ -82,8 +82,7 @@
         config = {
           allowBroken = true;
           permittedInsecurePackages = [
-            "nodejs-20.20.2"
-            "nodejs-slim-20.20.2"
+            "electron-39.8.10"
           ];
         };
       };
