@@ -8,6 +8,7 @@
   };
 
   config = {
+    boot.tmp.cleanOnBoot = true;
     services.fstrim.enable = true;
     services.fwupd.enable = true;
     environment.systemPackages = with pkgs; [

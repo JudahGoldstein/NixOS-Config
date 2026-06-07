@@ -1,6 +1,5 @@
 { config, pkgs, ... }@inputs:
 {
-  boot.tmp.cleanOnBoot = true;
   systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
   systemd.services.systemd-machine-id-commit = {
     unitConfig.ConditionPathIsMountPoint = [
