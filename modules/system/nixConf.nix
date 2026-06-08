@@ -13,7 +13,7 @@
     download-buffer-size = 536870912; # 512MiB
     auto-optimise-store = true;
     substituters = [
-      "https://attic.ts.janjuta.org/personal-cache"
+      "https://cache.ts.janjuta.org"
       "https://nix-community.cachix.org/"
       "https://cache.nixos-cuda.org"
       "https://numtide.cachix.org"
@@ -24,7 +24,7 @@
       "https://noctalia.cachix.org"
     ];
     trusted-public-keys = [
-      "personal-cache:v1TL7gi821LiCxDKSqtvAq07b0KptIUPfAL7qtvWHR8="
+      "cache.ts.janjuta.org:yEqVNtVe6txtHxsqSEuuywtppbFsd85OiRNi0VMBonw="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
