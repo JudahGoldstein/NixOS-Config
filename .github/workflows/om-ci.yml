@@ -6,6 +6,7 @@ on:
       - main
     paths-ignore:
       - flake.nix
+      - flake.lock
   workflow_dispatch:
 
 concurrency:
@@ -27,16 +28,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           set -euo pipefail
-          nix run github:juspay/omnix --accept-flake-config -- ci run --include-all-dependencies --out-link ./result.json -- --accept-flake-config --fallback > store-paths.txt
-
-      - name: Push to attic
-        env:
-          ATTIC_TOKEN: ${{ secrets.ATTIC_TOKEN }}
-          ATTIC_CACHE_URL: ${{ vars.ATTIC_CACHE_URL }}
-          ATTIC_CACHE_NAME: ${{ vars.ATTIC_CACHE_NAME }}
-        run: |
-          set -euo pipefail
-          nix shell nixpkgs#attic-client -c bash -c "
-            attic login '${ATTIC_CACHE_NAME}' '${ATTIC_CACHE_URL}' '${ATTIC_TOKEN}' --set-default
-            cat store-paths.txt | xargs --no-run-if-empty attic push '${ATTIC_CACHE_NAME}'
-          "
+          nix run github:juspay/omnix --accept-flake-config -- ci run --include-all-dependencies -- --accept-flake-config --fallback

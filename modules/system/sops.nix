@@ -46,6 +46,10 @@
           path = "/var/lib/secrets/github-token";
           owner = "${config.name}";
         };
+        "harmonia-secret" = {
+          path = "/var/lib/secrets/harmonia.secret";
+          owner = "${config.name}";
+        };
         "couchdb-creds" = inputs.lib.mkIf (config.services.couchdb.enable) {
           path = "/var/lib/secrets/couchdb-creds";
           owner = config.services.couchdb.user;

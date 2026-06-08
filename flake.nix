@@ -7,6 +7,7 @@
     download-buffer-size = 536870912; # 512MiB
     auto-optimise-store = true;
     extra-substituters = [
+      "https://cache.ts.janjuta.org"
       "https://nix-community.cachix.org/"
       "https://cache.nixos-cuda.org"
       "https://numtide.cachix.org"
@@ -17,6 +18,7 @@
       "https://noctalia.cachix.org"
     ];
     extra-trusted-public-keys = [
+      "cache.ts.janjuta.org:yEqVNtVe6txtHxsqSEuuywtppbFsd85OiRNi0VMBonw="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
@@ -49,6 +51,9 @@
     preservation.url = "github:nix-community/preservation";
     import-tree = {
       url = "github:vic/import-tree";
+    };
+    harmonia = {
+      url = "github:nix-community/harmonia";
     };
     niri-flake = {
       url = "github:sodiboo/niri-flake";
@@ -108,6 +113,7 @@
             inputs.sops-nix.nixosModules.sops
             inputs.disko.nixosModules.disko
             inputs.preservation.nixosModules.default
+            inputs.harmonia.nixosModules.harmonia
             inputs.copyparty.nixosModules.default
             inputs.niri-flake.nixosModules.niri
             { hm.imports = [ inputs.noctalia.homeModules.default ]; }
