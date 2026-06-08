@@ -65,14 +65,6 @@
           path = "/var/lib/secrets/searx-secret";
           owner = "${config.name}";
         };
-        "attic-secret" = inputs.lib.mkIf (config.services.atticd.enable) {
-          path = "/var/lib/secrets/attic-secret";
-          owner = "${config.name}";
-        };
-        "attic-token" = {
-          path = "/var/lib/secrets/attic-token";
-          owner = "${config.name}";
-        };
         "slskd-env" = inputs.lib.mkIf (config.services.slskd.enable) {
           path = "/var/lib/secrets/slskd-env";
           owner = config.services.slskd.user;
