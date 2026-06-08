@@ -7,5 +7,5 @@
       signKeyPaths = [ "/var/lib/secrets/harmonia.secret" ];
     };
   };
-  services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "cache" 5000);
+  services.caddy.virtualHosts = (inputs.virtualHosts.mkLocalVirtualHost "cache" 5000);
 }
