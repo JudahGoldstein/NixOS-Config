@@ -16,5 +16,5 @@
       OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
     };
   };
-  services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "ollama" 11435);
+  services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "chat" 11435);
 }
