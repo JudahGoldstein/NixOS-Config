@@ -10,17 +10,4 @@
       "nodiscard"
     ];
   };
-
-  # systemd service to start firefox in headless mode for automation before the user logs in
-  systemd.services.firefox-headless = {
-    description = "Firefox Headless";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      user = "${config.name}";
-      ExecStart = "${pkgs.firefox}/bin/firefox --headless -P default";
-      Restart = "always";
-      RestartSec = "5s";
-    };
-  };
 }
