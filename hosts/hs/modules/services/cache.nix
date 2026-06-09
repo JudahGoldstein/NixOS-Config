@@ -9,7 +9,7 @@
         bind = "[::]:5000";
         workers = 8;
         max_connection_rate = 512;
-        priority = 30;
+        priority = 41;
       };
     };
   };
