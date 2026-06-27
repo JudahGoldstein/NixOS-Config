@@ -20,7 +20,7 @@
     };
   };
 
-  hm.programs.noctalia-shell.settings = {
+  hm.programs.noctalia.settings = {
     bar.monitors = [ "eDP-1" ];
     notifications.monitors = [ "eDP-1" ];
   };

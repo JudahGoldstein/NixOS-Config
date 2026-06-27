@@ -58,7 +58,7 @@
         shadow.enable = false;
       };
       spawn-at-startup = [
-        { argv = [ "noctalia-shell" ]; }
+        { argv = [ "noctalia" ]; }
         {
           argv = [
             "xhost"
@@ -106,11 +106,10 @@
         };
         "Mod+D" = {
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
+            "noctalia"
+            "msg"
+            "panel-toggle"
             "launcher"
-            "toggle"
           ];
           hotkey-overlay.title = "Noctalia Launcher";
         };
