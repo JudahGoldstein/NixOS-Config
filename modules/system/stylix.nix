@@ -5,9 +5,9 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/material-darker.yaml";
     cursor = {
-      name = "GoogleDot-Black";
-      size = 22;
-      package = pkgs.google-cursor;
+      name = "phinger-cursors-dark";
+      size = 24;
+      package = pkgs.phinger-cursors;
     };
     icons = {
       enable = true;
