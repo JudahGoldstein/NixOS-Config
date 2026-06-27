@@ -110,7 +110,10 @@ in
           }
         ];
       };
-      theme.builtin = "Catppuccin"; # until i get stylix working
+      theme = {
+        source = "custom";
+        custom_palette = "stylix";
+      };
       wallpaper.enabled = false;
       widget = {
         battery.display_mode = "graphic";
@@ -127,4 +130,28 @@ in
       };
     };
   };
+  hm.xdg.configFile."noctalia/palettes/stylix.json".text =
+    let
+      colors = config.lib.stylix.colors.withHashtag;
+    in
+    builtins.toJSON {
+      dark = {
+        mPrimary = colors.base0D;
+        mOnPrimary = colors.base00;
+        mSecondary = colors.base0E;
+        mOnSecondary = colors.base00;
+        mTertiary = colors.base0C;
+        mOnTertiary = colors.base00;
+        mError = colors.base08;
+        mOnError = colors.base00;
+        mSurface = colors.base00;
+        mOnSurface = colors.base05;
+        mHover = colors.base0C;
+        mOnHover = colors.base00;
+        mSurfaceVariant = colors.base01;
+        mOnSurfaceVariant = colors.base04;
+        mOutline = colors.base03;
+        mShadow = colors.base00;
+      };
+    };
 }
