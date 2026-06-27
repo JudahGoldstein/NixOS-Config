@@ -1,6 +1,12 @@
 { config, pkgs, ... }@inputs:
 {
-  hm.services.ssh-agent.enable = true;
+  programs.ssh = {
+    startAgent = false;
+    extraConfig = ''
+      Host *
+        AddKeysToAgent yes
+    '';
+  };
   services.openssh = {
     enable = true;
     settings = {
