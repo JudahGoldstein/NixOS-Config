@@ -111,6 +111,10 @@ in
         ];
       };
       theme = {
+        templates = {
+          enable_builtin_templates = false;
+          enable_community_templates = false;
+        };
         source = "custom";
         custom_palette = "stylix";
       };
@@ -152,6 +156,34 @@ in
         mOnSurfaceVariant = colors.base04;
         mOutline = colors.base03;
         mShadow = colors.base00;
+        terminal = {
+          foreground = colors.base07;
+          background = colors.base00;
+          normal = {
+            black = colors.base00;
+            red = colors.base08;
+            green = colors.base0B;
+            yellow = colors.base0A;
+            blue = colors.base0D;
+            magenta = colors.base0E;
+            cyan = colors.base0C;
+            white = colors.base07;
+          };
+          bright = {
+            black = colors.base00;
+            red = colors.base08;
+            green = colors.base0B;
+            yellow = colors.base0A;
+            blue = colors.base0D;
+            magenta = colors.base0E;
+            cyan = colors.base0C;
+            white = colors.base07;
+          };
+          cursor = colors.base07;
+          cursorText = colors.base00;
+          selectionFg = colors.base00;
+          selectionBg = colors.base07;
+        };
       };
     };
 }
