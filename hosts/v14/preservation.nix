@@ -102,6 +102,7 @@
           ".cache/zed"
           ".local/share/zed"
           ".local/share/keyrings"
+          ".local/state/noctalia"
           ".cache/nix"
           ".cache/chromium"
           ".cache/noctalia"
