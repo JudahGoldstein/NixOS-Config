@@ -134,6 +134,7 @@ in
       };
     };
   };
+  hm.stylix.targets.noctalia-shell.enable = false;
   hm.xdg.configFile."noctalia/palettes/stylix.json".text =
     let
       colors = config.lib.stylix.colors.withHashtag;
