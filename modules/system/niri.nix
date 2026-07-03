@@ -1,14 +1,5 @@
 { config, pkgs, ... }@inputs:
 {
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-gnome
-    ];
-    config.common.default = "gtk";
-  };
   qt.enable = true;
   environment.systemPackages = with pkgs; [
     xwayland-satellite
