@@ -3,6 +3,7 @@
   longName = "Judah (P15)";
 
   programs.steam.enable = true;
+  programs.obs-studio.enable = true;
 
   programs.captive-browser = {
     enable = true;
