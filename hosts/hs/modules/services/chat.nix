@@ -6,7 +6,7 @@
     port = 11434;
   };
   services.open-webui = {
-    enable = true;
+    enable = false;
     port = 11435;
     openFirewall = true;
     environment = {
