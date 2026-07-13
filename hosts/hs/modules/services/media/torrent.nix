@@ -8,7 +8,7 @@
       };
 
   services.deluge = {
-    enable = inputs.lib.mkDefault false;
+    enable = true;
     group = "media";
     openFirewall = true;
     web.enable = true;
@@ -22,4 +22,7 @@
       );
     };
   };
+  services.caddy.virtualHosts = (
+    inputs.virtualHosts.mkLocalVirtualHost "deluge" config.services.deluge.web.port
+  );
 }

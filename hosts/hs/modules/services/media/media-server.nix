@@ -15,8 +15,4 @@
     };
     users.${config.name}.extraGroups = [ "media" ];
   };
-
-  services.caddy.virtualHosts = (
-    inputs.virtualHosts.mkLocalVirtualHost "deluge" config.services.deluge.web.port
-  );
 }
