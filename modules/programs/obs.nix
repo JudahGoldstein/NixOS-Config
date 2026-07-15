@@ -11,7 +11,6 @@
     plugins = with pkgs.obs-studio-plugins; [
       obs-source-clone
       wlrobs
-      obs-backgroundremoval
     ];
   };
 }
