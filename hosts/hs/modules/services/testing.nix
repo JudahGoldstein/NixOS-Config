@@ -1,13 +1,9 @@
 { config, pkgs, ... }@inputs:
 {
-  services.caddy.virtualHosts."comparedoc.wan.janjuta.org" = {
-    useACMEHost = "janjuta.org";
-    extraConfig = 
-    ''root * /home/${config.name}/testing
-      encode gzip
-      file_server {
-        hide .git
-      }
-    '';
-    };
+  services.static-web-server ={
+    enable = true;
+    root = "/home/${config.name}/testing";
+    listen = "[::]:8043";
+  };
+  services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "testing" 8043);
 }
