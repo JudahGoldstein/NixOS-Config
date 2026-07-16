@@ -23,6 +23,7 @@
         metrics = false;
       };
       auto_update = false;
+      format_on_save = "on";
       agent = {
         "single_file_review" = true;
       };
