@@ -10,7 +10,7 @@
 
   # Containers
   virtualisation.oci-containers.containers."soulsync-webui" = {
-    image = "boulderbadgedad/soulsync:latest";
+    image = "nezreka/soulsync:latest";
     environment = {
       "PUID" = "${toString (config.users.users.music.uid)}";
       "PGID" = "${toString (config.users.groups.media.gid)}";
