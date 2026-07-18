@@ -2,6 +2,10 @@
   "version": 1,
   "system": "x86_64-linux",
   "virtualisation": "none",
+  "uefi": {
+    "supported": true,
+    "platform_size": 64
+  },
   "hardware": {
     "bios": {
       "apm_info": {
@@ -1621,7 +1625,7 @@
           "[13]",
           "[14]"
         ],
-        "bogo": 4192,
+        "bogo": 4191,
         "cache": 512,
         "units": 12,
         "page_size": 4096,
@@ -1833,7 +1837,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.0-cachyos xhci-hcd",
+          "name": "Linux 6.18.37 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1847,7 +1851,7 @@
           "value": 0
         },
         "serial": "0000:04:00.4",
-        "model": "Linux 6.18.0-cachyos xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.37 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:04:00.4/usb3/3-0:1.0",
         "sysfs_bus_id": "3-0:1.0",
         "resources": [
@@ -1920,7 +1924,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.0-cachyos xhci-hcd",
+          "name": "Linux 6.18.37 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1934,7 +1938,7 @@
           "value": 0
         },
         "serial": "0000:04:00.4",
-        "model": "Linux 6.18.0-cachyos xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.37 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:04:00.4/usb4/4-0:1.0",
         "sysfs_bus_id": "4-0:1.0",
         "detail": {
@@ -1997,7 +2001,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.0-cachyos xhci-hcd",
+          "name": "Linux 6.18.37 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2011,7 +2015,7 @@
           "value": 0
         },
         "serial": "0000:04:00.3",
-        "model": "Linux 6.18.0-cachyos xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.37 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:04:00.3/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -2084,7 +2088,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.18.0-cachyos xhci-hcd",
+          "name": "Linux 6.18.37 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2098,7 +2102,7 @@
           "value": 0
         },
         "serial": "0000:04:00.3",
-        "model": "Linux 6.18.0-cachyos xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.37 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:04:00.3/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -2392,14 +2396,14 @@
               "108",
               "112",
               "116",
+              "120",
+              "124",
+              "128",
               "132",
               "136",
               "140",
               "144",
-              "149",
-              "153",
-              "157",
-              "161"
+              "149"
             ],
             "frequencies": [
               "2.412",
@@ -2426,14 +2430,14 @@
               "5.54",
               "5.56",
               "5.58",
+              "5.6",
+              "5.62",
+              "5.64",
               "5.66",
               "5.68",
               "5.7",
               "5.72",
-              "5.745",
-              "5.765",
-              "5.785",
-              "5.805"
+              "5.745"
             ],
             "auth_modes": [
               "open",
@@ -2556,70 +2560,7 @@
     ],
     "network_interface": [
       {
-        "index": 56,
-        "attached_to": 26,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Ethernet",
-          "value": 1
-        },
-        "model": "Ethernet network interface",
-        "sysfs_id": "/class/net/enp1s0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:01:00.0",
-        "unix_device_names": [
-          "enp1s0"
-        ],
-        "resources": [
-          {
-            "type": "hwaddr",
-            "address": 55
-          },
-          {
-            "type": "phwaddr",
-            "address": 55
-          }
-        ],
-        "driver": "r8169",
-        "driver_module": "r8169",
-        "drivers": [
-          "r8169"
-        ],
-        "driver_modules": [
-          "r8169"
-        ]
-      },
-      {
-        "index": 58,
-        "attached_to": 0,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_names": [
-          "lo"
-        ]
-      },
-      {
-        "index": 59,
+        "index": 57,
         "attached_to": 21,
         "class_list": [
           "network_interface"
@@ -2657,6 +2598,69 @@
         ],
         "driver_modules": [
           "mt7921e"
+        ]
+      },
+      {
+        "index": 58,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_names": [
+          "lo"
+        ]
+      },
+      {
+        "index": 59,
+        "attached_to": 26,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0001",
+          "name": "Ethernet",
+          "value": 1
+        },
+        "model": "Ethernet network interface",
+        "sysfs_id": "/class/net/enp1s0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:01:00.0",
+        "unix_device_names": [
+          "enp1s0"
+        ],
+        "resources": [
+          {
+            "type": "hwaddr",
+            "address": 55
+          },
+          {
+            "type": "phwaddr",
+            "address": 55
+          }
+        ],
+        "driver": "r8169",
+        "driver_module": "r8169",
+        "drivers": [
+          "r8169"
+        ],
+        "driver_modules": [
+          "r8169"
         ]
       }
     ],
