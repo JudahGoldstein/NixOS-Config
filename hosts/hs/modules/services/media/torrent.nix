@@ -14,13 +14,6 @@
     web.enable = true;
     web.openFirewall = true;
     web.port = 8112;
-    package = pkgs.deluge-2_x.override {
-      python3Packages = pkgs.python3Packages.overrideScope (
-        final: prev: {
-          setuptools = prev.setuptools_80;
-        }
-      );
-    };
   };
   services.caddy.virtualHosts = (
     inputs.virtualHosts.mkLocalVirtualHost "deluge" config.services.deluge.web.port
