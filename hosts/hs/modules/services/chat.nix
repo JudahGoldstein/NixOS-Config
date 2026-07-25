@@ -1,7 +1,7 @@
 { config, pkgs, ... }@inputs:
 {
   services.ollama = {
-    enable = true;
+    enable = false;
     host = "127.0.0.1";
     port = 11434;
   };
@@ -16,5 +16,5 @@
       OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
     };
   };
-  services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "chat" 11435);
+  #services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "chat" 11435);
 }
