@@ -5,6 +5,7 @@
     preferences = {
       "privacy.resistFingerprinting" = true;
     };
+    package = pkgs.firefox-bin;
   };
   hm.programs.chromium.enable = true;
   hm.xdg.mimeApps = {
