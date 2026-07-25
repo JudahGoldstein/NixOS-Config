@@ -5,15 +5,16 @@ let
     set -euo pipefail
 
     echo "Pulling latest soulsync image..."
-    docker pull ${config.virtualisation.oci-containers.containers."soulsync-webui".image}
+    pull_output=$(docker pull ${config.virtualisation.oci-containers.containers."soulsync-webui".image} 2>&1)
 
-    echo "Stopping soulsync container..."
-    systemctl stop docker-soulsync-webui.service
-
-    echo "Starting soulsync container..."
-    systemctl start docker-soulsync-webui.service
-
-    echo "Soulsync update complete."
+    if echo "$pull_output" | grep -q "Downloaded"; then
+      echo "New image pulled. Restarting soulsync container..."
+      systemctl stop docker-soulsync-webui.service
+      systemctl start docker-soulsync-webui.service
+      echo "Soulsync update complete."
+    else
+      echo "Image already up to date. No restart needed."
+    fi
   '';
 in
 {
