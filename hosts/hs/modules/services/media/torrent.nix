@@ -7,14 +7,6 @@
         allowedUDPPorts = [ 32085 ];
       };
 
-  services.deluge = {
-    enable = true;
-    group = "media";
-    openFirewall = true;
-    web.enable = true;
-    web.openFirewall = true;
-    web.port = 8112;
-  };
   services.qbittorrent = {
     enable = true;
     group = "media";
@@ -42,7 +34,7 @@
     package = pkgs.qbittorrent-nox;
   };
 
-  services.caddy.virtualHosts =
-    inputs.virtualHosts.mkLocalVirtualHost "deluge" config.services.deluge.web.port
-    // inputs.virtualHosts.mkLocalVirtualHost "qbittorrent" config.services.qbittorrent.webuiPort;
+  services.caddy.virtualHosts = (
+    inputs.virtualHosts.mkLocalVirtualHost "qbittorrent" config.services.qbittorrent.webuiPort
+  );
 }
