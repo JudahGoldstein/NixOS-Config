@@ -31,6 +31,7 @@
         General.Locale = "en";
       };
     };
+    package = pkgs.qbittorrent-nox;
   };
 
   services.caddy.virtualHosts =
