@@ -23,6 +23,14 @@
     webuiPort = 9786;
     serverConfig = {
       LegalNotice.Accepted = true;
+      BitTorrent.Session = {
+        DefaultSavePath = "/mnt/media/Downloads";
+        TempPathEnabled = true;
+        GlobalMaxRatio = 1.1;
+        ShareLimitAction = "Stop";
+        QueueingSystemEnabled = true;
+        IgnoreSlowTorrentsForQueueing = true;
+      };
       Preferences = {
         WebUI = {
           Username = "user";
