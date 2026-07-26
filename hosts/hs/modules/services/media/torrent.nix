@@ -15,7 +15,7 @@
       LegalNotice.Accepted = true;
       BitTorrent.Session = {
         DefaultSavePath = "/mnt/media/Downloads";
-        TempPath = "/var/lib/qbittorrent/downloads";
+        TempPath = "/var/lib/qBittorrent/qBittorrent/downloads";
         TempPathEnabled = true;
         GlobalMaxRatio = 1.1;
         ShareLimitAction = "Stop";
