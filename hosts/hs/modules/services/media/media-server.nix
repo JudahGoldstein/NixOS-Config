@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     czkawka-full
   ];
-  services.deluge.enable = true;
   users = {
     users.music = {
       isSystemUser = true;

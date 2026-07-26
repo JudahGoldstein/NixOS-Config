@@ -1,11 +1,9 @@
 { config, pkgs, ... }@inputs:
 {
-  networking.firewall =
-    inputs.lib.mkIf config.services.deluge.enable # peer port
-      {
-        allowedTCPPorts = [ 32085 ];
-        allowedUDPPorts = [ 32085 ];
-      };
+  networking.firewall = {
+    allowedTCPPorts = [ 32085 ];
+    allowedUDPPorts = [ 32085 ];
+  };
 
   services.qbittorrent = {
     enable = true;
