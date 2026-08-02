@@ -128,8 +128,10 @@ in
         network.show_label = false;
         ram.display = "graph";
         sysmon = {
-          display = "text";
           stat = "cpu_temp";
+          show_glyph = false;
+          show_value = true;
+          visualization = "none";
         };
       };
     };
