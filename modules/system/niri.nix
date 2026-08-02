@@ -77,16 +77,6 @@
         }
       ];
       binds = {
-        "Mod+Shift+Slash" = {
-          action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "plugin:keybind-cheatsheet"
-            "toggle"
-          ];
-          hotkey-overlay.title = "Show all keybindings";
-        };
         "Mod+Return" = {
           action.spawn = [ "kitty" ];
           hotkey-overlay.title = "Open a Terminal: kitty";
