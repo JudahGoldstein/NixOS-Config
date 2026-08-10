@@ -7,7 +7,7 @@
     dataDir = "/var/lib/jellyfin";
     logDir = "/var/log/jellyfin";
     group = "media";
-    package = pkgs.jellyfin;
+    package = inputs.pkgs-old.jellyfin;
   };
   services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "jellyfin" 8096);
 }

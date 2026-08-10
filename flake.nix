@@ -32,7 +32,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-
+    nixpkgs-old.url = "github:NixOS/nixpkgs/c4013e501c048ae7c4a8940c92837636042bf6c3";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -80,6 +80,7 @@
       lib = nixpkgs.lib;
 
       pkgs = inputs.nixpkgs.legacyPackages.${system};
+      pkgs-old = inputs.nixpkgs-old.legacyPackages.${system};
       pkgs-insecure = import inputs.nixpkgs {
         inherit system;
         config = {
@@ -139,6 +140,7 @@
               self
               inputs
               pkgs-insecure
+              pkgs-old
               ;
             virtualHosts = import ./helpers/virtualHosts.nix { inherit lib; };
           }
