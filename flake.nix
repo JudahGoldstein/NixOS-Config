@@ -140,6 +140,7 @@
               self
               inputs
               pkgs-insecure
+              pkgs-old
               ;
             virtualHosts = import ./helpers/virtualHosts.nix { inherit lib; };
           }
