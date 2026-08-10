@@ -20,6 +20,7 @@
       "https://zed.cachix.org"
       "https://cache.nixos.asia/oss" # for om in gh actions
       "https://om.cachix.org"
+      "https://niri-epireyn.cachix.org"
       "https://niri.cachix.org"
       "https://noctalia.cachix.org"
     ];
@@ -32,6 +33,7 @@
       "oss:KO872wNJkCDgmGN3xy9dT89WAhvv13EiKncTtHDItVU="
       "om.cachix.org-1:ifal/RLZJKN4sbpScyPGqJ2+appCslzu7ZZF/C01f2Q="
       "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+      "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA="
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
