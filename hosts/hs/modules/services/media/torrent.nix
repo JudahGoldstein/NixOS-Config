@@ -19,8 +19,7 @@
         TempPathEnabled = true;
         GlobalMaxRatio = 1.1;
         ShareLimitAction = "Stop";
-        QueueingSystemEnabled = true;
-        IgnoreSlowTorrentsForQueueing = true;
+        QueueingSystemEnabled = false;
       };
       Preferences = {
         WebUI = {
