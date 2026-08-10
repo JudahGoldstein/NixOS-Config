@@ -9,6 +9,5 @@
     group = "media";
     package = pkgs.jellyfin;
   };
-  environment.systemPackages = [ pkgs.jellyfin-ffmpeg ];
   services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "jellyfin" 8096);
 }
