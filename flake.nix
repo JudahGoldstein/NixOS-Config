@@ -15,7 +15,6 @@
       "https://cache.nixos.asia/oss" # for om in gh actions
       "https://om.cachix.org"
       "https://niri-epireyn.cachix.org"
-      "https://noctalia.cachix.org"
     ];
     extra-trusted-public-keys = [
       "cache.ts.janjuta.org:yEqVNtVe6txtHxsqSEuuywtppbFsd85OiRNi0VMBonw="
@@ -26,7 +25,6 @@
       "oss:KO872wNJkCDgmGN3xy9dT89WAhvv13EiKncTtHDItVU="
       "om.cachix.org-1:ifal/RLZJKN4sbpScyPGqJ2+appCslzu7ZZF/C01f2Q="
       "niri-epireyn.cachix.org-1:tlVyFN7CtsDT+ZcLPS+ekFWeT1X6X4OqvWqbBMyIzFA="
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
 
@@ -57,10 +55,6 @@
     };
     niri-flake = {
       url = "github:epireyn/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     copyparty = {
@@ -118,7 +112,6 @@
             inputs.harmonia.nixosModules.harmonia
             inputs.copyparty.nixosModules.default
             inputs.niri-flake.nixosModules.niri
-            { hm.imports = [ inputs.noctalia.homeModules.default ]; }
             inputs.stylix.nixosModules.stylix
             inputs.facter-modules.nixosModules.facter
             { config.facter.reportPath = ./hosts/${hostname}/facter.json; }
