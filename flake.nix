@@ -118,7 +118,6 @@
             inputs.harmonia.nixosModules.harmonia
             inputs.copyparty.nixosModules.default
             inputs.niri-flake.nixosModules.niri
-            { hm.imports = [ inputs.noctalia.homeModules.default ]; }
             inputs.stylix.nixosModules.stylix
             inputs.facter-modules.nixosModules.facter
             { config.facter.reportPath = ./hosts/${hostname}/facter.json; }
