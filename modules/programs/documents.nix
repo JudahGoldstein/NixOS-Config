@@ -1,7 +1,7 @@
 { config, pkgs, ... }@inputs:
 {
   environment.systemPackages = with pkgs; [
-    libreoffice-fresh
+    libreoffice-stable
     micro
     hunspell
     pdftk
