@@ -3,7 +3,6 @@
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_18;
-    dataDir = "/var/lib/postgresql";
     ensureDatabases = [ "demo" ];
     ensureUsers = [
       {
