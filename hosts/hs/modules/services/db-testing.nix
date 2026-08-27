@@ -15,12 +15,22 @@
       }
     ];
     enableTCPIP = true;
-    settings.port = 4380;
+    settings = {
+      port = 4380;
+      ssl = "on";
+      ssl_cert_file = "/var/lib/acme/janjuta.org/fullchain.pem";
+      ssl_key_file = "/var/lib/acme/janjuta.org/key.pem";
+    };
     authentication = pkgs.lib.mkOverride 10 ''
-      #type  database  user  address   method
-      local  all       all             trust
-      host   sameuser  all   0.0.0.0/0 scram-sha-256
+      #type    database  user  address   method
+      local    all       all             trust
+      hostssl  sameuser  all   0.0.0.0/0 scram-sha-256
     '';
   };
-  services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "demo" 4380);
+
+  users.users.postgres.extraGroups = [ "caddy" ];
+
+  networking.firewall.allowedTCPPorts = [ 4380 ];
+
+  security.acme.certs."janjuta.org".postRun = "systemctl restart postgresql";
 }
