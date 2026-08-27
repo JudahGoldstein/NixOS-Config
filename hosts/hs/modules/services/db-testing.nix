@@ -16,7 +16,7 @@
       }
     ];
     enableTCPIP = true;
-    port = 4380;
+    settings.port = 4380;
     authentication = pkgs.lib.mkOverride 10 ''
       #type  database  user  address   method
       local  all       all             trust
