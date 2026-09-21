@@ -11,5 +11,5 @@
       session.COOKIE_SECURE = true;
     };
   };
-  services.caddy.virtualHosts = (inputs.virtualHosts.mkPublicVirtualHost "git" 6982);
+  services.caddy.virtualHosts = (inputs.virtualHosts.mkLocalVirtualHost "git" 6982);
 }
