@@ -13,14 +13,6 @@
         useOSProber = false;
         efiSupport = true;
         copyKernels = true;
-        extraFiles = {
-          "netbootxyz.efi" = "${pkgs.netbootxyz-efi}";
-        };
-        extraEntries = ''
-          menuentry "netbootxyz" {
-            chainloader /netbootxyz.efi
-          }
-        '';
       };
     };
     initrd.verbose = false;
