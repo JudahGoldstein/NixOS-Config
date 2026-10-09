@@ -1,9 +1,10 @@
 { config, pkgs, ... }@inputs:
 {
   services.gitea = {
-    enable = true;
+    enable = false;
     settings = {
       server = {
+      	ROOT_URL = "https://git.wan.janjuta.org/";
         DISABLE_SSH = true;
         HTTP_PORT = 6982;
       };
