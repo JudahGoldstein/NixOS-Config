@@ -19,6 +19,14 @@
       position.x = 1920;
       position.y = 0;
     };
+    "DP-5" = {
+      position.x = 0;
+      position.y = 0;
+    };
+    "DP-4" = {
+      position.x = 1920;
+      position.y = 0;
+    };
   };
 
   hm.programs.noctalia.settings = {
