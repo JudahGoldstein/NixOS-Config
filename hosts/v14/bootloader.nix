@@ -15,6 +15,5 @@
         copyKernels = true;
       };
     };
-    initrd.verbose = false;
   };
 }
