@@ -68,14 +68,14 @@ jobs:
         with:
           ref: update_flake_lock_action
 
-      - name: Build with om ci
+      - name: Build NixOS configurations
         if: needs.nix-flake-update.outputs.pr-number != ''
         timeout-minutes: 30
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           set -euo pipefail
-          nix run github:juspay/omnix --accept-flake-config --fallback -- ci run --include-all-dependencies -- --accept-flake-config --fallback
+          nix run nixpkgs#nix-fast-build --accept-flake-config --fallback -- --skip-cached
 
   merge:
     needs: [nix-flake-update, build]

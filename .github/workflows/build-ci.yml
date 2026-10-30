@@ -1,4 +1,4 @@
-name: Omnix CI Cache
+name: NixOS CI
 
 on:
   push:
@@ -23,9 +23,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Build with om ci
+      - name: Build NixOS configurations
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           set -euo pipefail
-          nix run github:juspay/omnix --accept-flake-config --fallback -- ci run --include-all-dependencies -- --accept-flake-config --fallback
+          nix run nixpkgs#nix-fast-build --accept-flake-config --fallback -- --skip-cached
