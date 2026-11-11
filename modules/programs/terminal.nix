@@ -4,7 +4,6 @@
     fastfetch
     asciinema
     asciinema-agg
-    termshot
   ];
   programs.starship = {
     enable = true;
