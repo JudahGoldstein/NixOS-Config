@@ -10,7 +10,6 @@
       email = "yehudah.lev@gmail.com";
       dnsResolver = "1.1.1.1:53";
       dnsProvider = "cloudflare";
-      dnsPropagationCheck = true;
       environmentFile = config.sops.secrets."cloudflare-dns-api-key".path;
       group = config.services.caddy.group;
     };
