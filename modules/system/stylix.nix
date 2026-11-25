@@ -17,7 +17,6 @@
     };
     polarity = "dark";
   };
-  hm.stylix.targets.wayprompt.enable = false;
   hm.xdg.configFile.kdeglobals.source =
     let
       themePackage = builtins.head (
