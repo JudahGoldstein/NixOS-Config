@@ -134,7 +134,7 @@ in
   systemd.timers.update-soulsync = {
     description = "Update soulsync container image and restart the service.";
     timerConfig = {
-      OnCalendar = "daily 03:00";
+      OnCalendar = " *-*-* 03:00:00";
       Persistent = true;
     };
     wantedBy = [ "timers.target" ];
